@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ZfJ-pr-9TD">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="fA6-gg-LLs">
+            <objects>
+                <viewController id="ZfJ-pr-9TD" customClass="LoginViewController" customModule="OfficeHours" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3BV-4L-9DA"/>
+                        <viewControllerLayoutGuide type="bottom" id="Hgx-7a-p6n"/>
+                    </layoutGuides>
+                    <view key="view" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="nT5-at-eE7">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vYK-gC-e91" userLabel="ResQLogoView">
+                                <rect key="frame" x="250" y="120" width="100" height="100"/>
+                                <animations/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="3sp-g6-oWT"/>
+                                    <constraint firstAttribute="width" secondItem="vYK-gC-e91" secondAttribute="height" multiplier="1:1" id="NUH-4O-Vgo"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yu6-Rc-ife" customClass="DesignableView" customModule="TripPlanner">
+                                <rect key="frame" x="125" y="250" width="350" height="100"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="GLR-9p-hYk" customClass="DesignableTextField" customModule="TripPlanner">
+                                        <rect key="frame" x="0.0" y="0.0" width="350" height="50"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="sidePadding">
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="bottomBorder" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="lineHeight">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="delegate" destination="ZfJ-pr-9TD" id="m6t-rF-1Pw"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="cVG-c5-NSg" customClass="DesignableTextField" customModule="TripPlanner">
+                                        <rect key="frame" x="0.0" y="50" width="350" height="50"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="go" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="sidePadding">
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="rightPadding">
+                                                <real key="value" value="40"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="delegate" destination="ZfJ-pr-9TD" id="qZX-Iv-TuX"/>
+                                        </connections>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FZe-jp-1MG">
+                                        <rect key="frame" x="297" y="62" width="45" height="30"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="tintColor" red="0.01176470588" green="0.50588235290000005" blue="0.78823529410000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Forgot">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="GLR-9p-hYk" firstAttribute="leading" secondItem="yu6-Rc-ife" secondAttribute="leading" id="0L2-ae-JNm"/>
+                                    <constraint firstAttribute="bottom" secondItem="FZe-jp-1MG" secondAttribute="bottom" constant="8" id="0Sz-SB-Ygl"/>
+                                    <constraint firstAttribute="trailing" secondItem="GLR-9p-hYk" secondAttribute="trailing" id="0yb-2C-NJ1"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" priority="999" constant="350" id="B0n-ob-t6d"/>
+                                    <constraint firstAttribute="height" secondItem="cVG-c5-NSg" secondAttribute="height" id="EzF-Mb-jRk"/>
+                                    <constraint firstAttribute="trailing" secondItem="cVG-c5-NSg" secondAttribute="trailing" id="Fm3-2p-78t"/>
+                                    <constraint firstAttribute="bottom" secondItem="cVG-c5-NSg" secondAttribute="bottom" id="TUD-vr-c4Y"/>
+                                    <constraint firstItem="cVG-c5-NSg" firstAttribute="top" secondItem="GLR-9p-hYk" secondAttribute="bottom" id="WBn-sJ-F12"/>
+                                    <constraint firstAttribute="trailing" secondItem="FZe-jp-1MG" secondAttribute="trailing" constant="8" id="bmr-CF-atN"/>
+                                    <constraint firstAttribute="height" constant="100" id="ee4-ig-ACh"/>
+                                    <constraint firstItem="GLR-9p-hYk" firstAttribute="height" secondItem="cVG-c5-NSg" secondAttribute="height" id="fik-b0-8zG"/>
+                                    <constraint firstItem="GLR-9p-hYk" firstAttribute="top" secondItem="yu6-Rc-ife" secondAttribute="top" id="gw8-Ox-tNR"/>
+                                    <constraint firstItem="cVG-c5-NSg" firstAttribute="leading" secondItem="yu6-Rc-ife" secondAttribute="leading" id="mix-KL-FTb"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.75" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.29999999999999999"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOffsetY">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="EzF-Mb-jRk"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ld-KL-F5l" userLabel="LoginButton" customClass="DesignableButton" customModule="TripPlanner">
+                                <rect key="frame" x="125" y="380" width="350" height="44"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.85490196078431369" green="0.96470588235294119" blue="0.396078431372549" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="FQd-40-mIM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Log In">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="0.20000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOffsetY">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="loginPressed:" destination="ZfJ-pr-9TD" eventType="touchUpInside" id="S2p-qq-73d"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MRp-nP-Twd" customClass="DesignableButton" customModule="OfficeHours" customModuleProvider="target">
+                                <rect key="frame" x="225" y="545" width="150" height="40"/>
+                                <animations/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Xkm-xL-kM8"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" priority="999" constant="150" id="yf9-D7-Mjo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Register"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="0.20000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOffsetY">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="YeV-uk-ZAy" kind="presentation" id="ehI-2l-dMu"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" red="0.011764705882352941" green="0.50588235294117645" blue="0.78823529411764703" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="yu6-Rc-ife" firstAttribute="leading" secondItem="nT5-at-eE7" secondAttribute="leading" priority="999" constant="20" id="GHN-j8-yhn"/>
+                            <constraint firstAttribute="centerY" secondItem="yu6-Rc-ife" secondAttribute="centerY" id="NZh-ym-sH8"/>
+                            <constraint firstItem="Hgx-7a-p6n" firstAttribute="top" secondItem="MRp-nP-Twd" secondAttribute="bottom" constant="15" id="PMd-VF-5YR"/>
+                            <constraint firstItem="yu6-Rc-ife" firstAttribute="centerX" secondItem="nT5-at-eE7" secondAttribute="centerX" id="QrS-m6-fhh"/>
+                            <constraint firstItem="MRp-nP-Twd" firstAttribute="leading" secondItem="6ld-KL-F5l" secondAttribute="leading" priority="998" id="Ru1-J3-gSL"/>
+                            <constraint firstItem="6ld-KL-F5l" firstAttribute="top" secondItem="yu6-Rc-ife" secondAttribute="bottom" constant="30" id="Suh-y0-Vhc"/>
+                            <constraint firstItem="6ld-KL-F5l" firstAttribute="top" secondItem="yu6-Rc-ife" secondAttribute="top" constant="121" id="VN4-Vm-uax"/>
+                            <constraint firstItem="6ld-KL-F5l" firstAttribute="trailing" secondItem="yu6-Rc-ife" secondAttribute="trailing" id="YeL-BR-AfQ"/>
+                            <constraint firstItem="MRp-nP-Twd" firstAttribute="centerX" secondItem="6ld-KL-F5l" secondAttribute="centerX" id="ZGo-W8-i0l"/>
+                            <constraint firstItem="vYK-gC-e91" firstAttribute="centerX" secondItem="yu6-Rc-ife" secondAttribute="centerX" id="aGU-jF-cBs"/>
+                            <constraint firstItem="yu6-Rc-ife" firstAttribute="top" secondItem="vYK-gC-e91" secondAttribute="bottom" constant="30" id="dS2-MM-Ous"/>
+                            <constraint firstItem="MRp-nP-Twd" firstAttribute="trailing" secondItem="6ld-KL-F5l" secondAttribute="trailing" priority="998" id="dcb-Lb-Bt9"/>
+                            <constraint firstItem="6ld-KL-F5l" firstAttribute="leading" secondItem="yu6-Rc-ife" secondAttribute="leading" id="gec-W5-cbH"/>
+                            <constraint firstAttribute="trailing" secondItem="yu6-Rc-ife" secondAttribute="trailing" priority="999" constant="20" id="nwW-6n-gzu"/>
+                            <constraint firstAttribute="centerX" secondItem="yu6-Rc-ife" secondAttribute="centerX" id="tme-wA-l4K"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="tme-wA-l4K"/>
+                                <exclude reference="VN4-Vm-uax"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <connections>
+                        <outlet property="inputContainerCenterConstraint" destination="NZh-ym-sH8" id="rNu-vf-zjN"/>
+                        <outlet property="loginButton" destination="6ld-KL-F5l" id="S65-ms-ZUP"/>
+                        <outlet property="passwordTextField" destination="cVG-c5-NSg" id="qdX-gX-OJE"/>
+                        <outlet property="userNameTextField" destination="GLR-9p-hYk" id="3f2-eQ-ENv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Te-86-BQT" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-430" y="272"/>
+        </scene>
+        <!--Sign Up View Controller-->
+        <scene sceneID="Jgq-Mx-OTj">
+            <objects>
+                <viewController id="YeV-uk-ZAy" customClass="SignUpViewController" customModule="OfficeHours" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Kuy-Gu-Hcl"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ezi-s3-xCw"/>
+                    </layoutGuides>
+                    <view key="view" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="zYM-gx-n6o">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="P4p-Zr-jjj" userLabel="ResQLogoView">
+                                <rect key="frame" x="250" y="95" width="100" height="100"/>
+                                <animations/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="P4p-Zr-jjj" secondAttribute="height" multiplier="1:1" id="1CF-In-hda"/>
+                                    <constraint firstAttribute="height" constant="100" id="SSP-an-fMQ"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="din-Cd-K8W" customClass="DesignableView" customModule="TripPlanner">
+                                <rect key="frame" x="125" y="225" width="350" height="150"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="hGv-gJ-Xzd" customClass="DesignableTextField" customModule="TripPlanner">
+                                        <rect key="frame" x="0.0" y="0.0" width="350" height="50"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="sidePadding">
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="bottomBorder" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="lineHeight">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="delegate" destination="YeV-uk-ZAy" id="qlx-QV-yTb"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="dGt-bd-YuT" customClass="DesignableTextField" customModule="TripPlanner">
+                                        <rect key="frame" x="0.0" y="50" width="350" height="50"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="sidePadding">
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="lineHeight">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="bottomBorder" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="delegate" destination="YeV-uk-ZAy" id="I76-fZ-ZQ6"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Verify Password" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="LPL-jT-qfe" customClass="DesignableTextField" customModule="TripPlanner">
+                                        <rect key="frame" x="0.0" y="100" width="350" height="50"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="go" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="sidePadding">
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="delegate" destination="YeV-uk-ZAy" id="UQ4-eJ-2kg"/>
+                                        </connections>
+                                    </textField>
+                                </subviews>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" priority="999" constant="350" id="0YZ-ge-dMd"/>
+                                    <constraint firstAttribute="bottom" secondItem="dGt-bd-YuT" secondAttribute="bottom" id="0fk-Pz-S92"/>
+                                    <constraint firstAttribute="trailing" secondItem="LPL-jT-qfe" secondAttribute="trailing" id="AtU-Uq-jbo"/>
+                                    <constraint firstItem="LPL-jT-qfe" firstAttribute="leading" secondItem="din-Cd-K8W" secondAttribute="leading" id="F7C-iu-xpT"/>
+                                    <constraint firstItem="LPL-jT-qfe" firstAttribute="height" secondItem="dGt-bd-YuT" secondAttribute="height" id="GK9-rm-dIi"/>
+                                    <constraint firstItem="LPL-jT-qfe" firstAttribute="top" secondItem="dGt-bd-YuT" secondAttribute="bottom" id="GxR-q8-Knf"/>
+                                    <constraint firstAttribute="bottom" secondItem="LPL-jT-qfe" secondAttribute="bottom" id="Ja4-5Y-5xI"/>
+                                    <constraint firstAttribute="trailing" secondItem="hGv-gJ-Xzd" secondAttribute="trailing" id="MII-Ci-wCe"/>
+                                    <constraint firstAttribute="height" constant="150" id="RVx-v4-1dV"/>
+                                    <constraint firstAttribute="height" secondItem="dGt-bd-YuT" secondAttribute="height" id="dYJ-Jm-0rE"/>
+                                    <constraint firstItem="hGv-gJ-Xzd" firstAttribute="top" secondItem="din-Cd-K8W" secondAttribute="top" id="e6u-XR-WlO"/>
+                                    <constraint firstItem="dGt-bd-YuT" firstAttribute="leading" secondItem="din-Cd-K8W" secondAttribute="leading" id="ezA-hy-Oka"/>
+                                    <constraint firstItem="hGv-gJ-Xzd" firstAttribute="height" secondItem="dGt-bd-YuT" secondAttribute="height" id="nbd-tF-4Qh"/>
+                                    <constraint firstItem="dGt-bd-YuT" firstAttribute="top" secondItem="hGv-gJ-Xzd" secondAttribute="bottom" id="prg-r9-gFg"/>
+                                    <constraint firstAttribute="trailing" secondItem="dGt-bd-YuT" secondAttribute="trailing" id="r5u-p5-Hqg"/>
+                                    <constraint firstItem="hGv-gJ-Xzd" firstAttribute="leading" secondItem="din-Cd-K8W" secondAttribute="leading" id="tCZ-bx-PCk"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.75" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="0.59999999999999998"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.29999999999999999"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOffsetY">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="0fk-Pz-S92"/>
+                                        <exclude reference="dYJ-Jm-0rE"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XJm-qZ-pMy" userLabel="LoginButton" customClass="DesignableButton" customModule="TripPlanner">
+                                <rect key="frame" x="125" y="395" width="350" height="44"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.85490196080000003" green="0.96470588239999999" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="J5v-ti-Z3e"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Sign Up">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="0.20000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.20000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOffsetY">
+                                        <real key="value" value="1.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="signUpPressed:" destination="YeV-uk-ZAy" eventType="touchUpInside" id="A4Q-Tn-dA3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cxs-X4-20F" customClass="DesignableButton" customModule="OfficeHours" customModuleProvider="target">
+                                <rect key="frame" x="225" y="545" width="150" height="40"/>
+                                <animations/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" priority="999" constant="150" id="lsH-k2-R0X"/>
+                                    <constraint firstAttribute="height" constant="40" id="txw-iG-gDS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Cancel"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="0.20000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOffsetY">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="hHW-6h-29E" kind="unwind" unwindAction="unwindSignUp:sender:" id="vbi-SY-MPe"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" red="0.011764705882352941" green="0.50588235294117645" blue="0.78823529411764703" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="XJm-qZ-pMy" firstAttribute="trailing" secondItem="din-Cd-K8W" secondAttribute="trailing" id="56b-9S-ga1"/>
+                            <constraint firstItem="din-Cd-K8W" firstAttribute="leading" secondItem="zYM-gx-n6o" secondAttribute="leading" priority="999" constant="20" id="Ae3-pL-eOg"/>
+                            <constraint firstItem="P4p-Zr-jjj" firstAttribute="centerX" secondItem="din-Cd-K8W" secondAttribute="centerX" id="B2B-rq-ula"/>
+                            <constraint firstAttribute="trailing" secondItem="din-Cd-K8W" secondAttribute="trailing" priority="999" constant="20" id="GHI-xo-8uX"/>
+                            <constraint firstAttribute="centerX" secondItem="din-Cd-K8W" secondAttribute="centerX" id="Lsj-3s-5Yb"/>
+                            <constraint firstItem="din-Cd-K8W" firstAttribute="centerX" secondItem="zYM-gx-n6o" secondAttribute="centerX" id="NGX-LB-ZmK"/>
+                            <constraint firstItem="cxs-X4-20F" firstAttribute="centerX" secondItem="XJm-qZ-pMy" secondAttribute="centerX" id="VL2-p6-Ca7"/>
+                            <constraint firstItem="Ezi-s3-xCw" firstAttribute="top" secondItem="cxs-X4-20F" secondAttribute="bottom" constant="15" id="WrZ-9M-Oju"/>
+                            <constraint firstItem="cxs-X4-20F" firstAttribute="trailing" secondItem="XJm-qZ-pMy" secondAttribute="trailing" priority="998" id="eDm-8d-0Om"/>
+                            <constraint firstItem="XJm-qZ-pMy" firstAttribute="leading" secondItem="din-Cd-K8W" secondAttribute="leading" id="fBJ-Gq-eHY"/>
+                            <constraint firstItem="din-Cd-K8W" firstAttribute="top" secondItem="P4p-Zr-jjj" secondAttribute="bottom" constant="30" id="jt9-pl-goV"/>
+                            <constraint firstItem="XJm-qZ-pMy" firstAttribute="top" secondItem="din-Cd-K8W" secondAttribute="top" constant="121" id="p7H-Zm-y2W"/>
+                            <constraint firstAttribute="centerY" secondItem="din-Cd-K8W" secondAttribute="centerY" id="tHz-hJ-FQz"/>
+                            <constraint firstItem="XJm-qZ-pMy" firstAttribute="top" secondItem="din-Cd-K8W" secondAttribute="bottom" constant="20" id="tRr-lp-X4Y"/>
+                            <constraint firstItem="cxs-X4-20F" firstAttribute="leading" secondItem="XJm-qZ-pMy" secondAttribute="leading" priority="998" id="vim-1q-UWe"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Lsj-3s-5Yb"/>
+                                <exclude reference="p7H-Zm-y2W"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <connections>
+                        <outlet property="inputContainerCenterConstraint" destination="tHz-hJ-FQz" id="kjM-fe-Byl"/>
+                        <outlet property="loginButton" destination="XJm-qZ-pMy" id="FVA-LL-ehc"/>
+                        <outlet property="passwordTextField" destination="dGt-bd-YuT" id="zlP-Bi-u4J"/>
+                        <outlet property="userNameTextField" destination="hGv-gJ-Xzd" id="GVL-c7-uH3"/>
+                        <outlet property="verifyPasswordTextField" destination="LPL-jT-qfe" id="7El-co-PBJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Id7-fi-d7q" sceneMemberID="firstResponder"/>
+                <exit id="hHW-6h-29E" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="250" y="272"/>
+        </scene>
+    </scenes>
+</document>
