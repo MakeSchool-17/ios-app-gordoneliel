@@ -15,9 +15,14 @@ class MentorCell: UICollectionViewCell {
     @IBOutlet weak var jobTitle: UILabel!
     @IBOutlet weak var workName: UILabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-
+    var mentor: User? {
+        didSet {
+            profileImage.image = mentor?.image.value
+        }
+    }
+    
+    func configureCell() {
+        
     }
 
 }

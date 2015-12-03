@@ -8,7 +8,7 @@
         <!--Office Hours-->
         <scene sceneID="UqY-VS-qKT">
             <objects>
-                <viewController id="2e9-0L-0Dj" sceneMemberID="viewController">
+                <viewController id="2e9-0L-0Dj" customClass="HomeViewController" customModule="OfficeHours" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ven-Rn-K1k"/>
                         <viewControllerLayoutGuide type="bottom" id="Eby-vE-Ntt"/>
@@ -39,19 +39,61 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Office Hours" id="Qqs-Ne-Xc8"/>
+                    <connections>
+                        <outlet property="mentorView" destination="oWm-hp-o6B" id="g50-jQ-Cmc"/>
+                        <outlet property="noMentorView" destination="MWt-Ou-asI" id="ErN-l7-qQa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZOm-bp-MZH" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <view contentMode="scaleToFill" id="MWt-Ou-asI" userLabel="NoMentorView">
                     <rect key="frame" x="0.0" y="0.0" width="424" height="390"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oRQ-Ed-3tM">
+                            <rect key="frame" x="143" y="154" width="138" height="81"/>
+                            <animations/>
+                            <color key="backgroundColor" red="0.011764706112444401" green="0.5058823823928833" blue="0.78823530673980713" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="81" id="Mbf-fU-dM8"/>
+                            </constraints>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <state key="normal" title="Push"/>
+                        </button>
+                    </subviews>
                     <animations/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="oRQ-Ed-3tM" firstAttribute="centerX" secondItem="MWt-Ou-asI" secondAttribute="centerX" id="gx4-Wx-zFo"/>
+                        <constraint firstItem="oRQ-Ed-3tM" firstAttribute="centerY" secondItem="MWt-Ou-asI" secondAttribute="centerY" id="h08-lk-sky"/>
+                    </constraints>
                 </view>
-                <view contentMode="scaleToFill" id="oWm-hp-o6B" userLabel="MentorView">
+                <view contentMode="scaleToFill" id="oWm-hp-o6B" userLabel="MentorView" customClass="MentorView" customModule="OfficeHours" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="462" height="387"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1Oa-1m-kpY">
+                            <rect key="frame" x="0.0" y="0.0" width="462" height="387"/>
+                            <animations/>
+                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wK7-VQ-6DZ">
+                                <size key="itemSize" width="50" height="50"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                            <cells/>
+                        </collectionView>
+                    </subviews>
                     <animations/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="1Oa-1m-kpY" firstAttribute="top" secondItem="oWm-hp-o6B" secondAttribute="top" id="1x7-Qb-MAz"/>
+                        <constraint firstAttribute="trailing" secondItem="1Oa-1m-kpY" secondAttribute="trailing" id="Sdi-Xp-Vov"/>
+                        <constraint firstAttribute="bottom" secondItem="1Oa-1m-kpY" secondAttribute="bottom" id="cOe-c3-TBo"/>
+                        <constraint firstItem="1Oa-1m-kpY" firstAttribute="leading" secondItem="oWm-hp-o6B" secondAttribute="leading" id="txV-R2-zVS"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="collectionView" destination="1Oa-1m-kpY" id="cXC-aJ-cXF"/>
+                    </connections>
                 </view>
             </objects>
             <point key="canvasLocation" x="1315" y="448"/>
