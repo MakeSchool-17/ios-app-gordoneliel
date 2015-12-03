@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Bond
 
 class ConnectionCell: UICollectionViewCell {
 
@@ -15,15 +16,14 @@ class ConnectionCell: UICollectionViewCell {
     @IBOutlet weak var jobTitle: UILabel!
     @IBOutlet weak var workName: UILabel!
     
-    var user: User {
+    var user: User? {
         didSet {
-            profileImage.image = user.image.value
+            profileImage.image = user?.image.value
         }
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
 }

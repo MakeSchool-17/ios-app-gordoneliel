@@ -4,5 +4,14 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--LoginSignup-->
+        <scene sceneID="pEX-r2-wDH">
+            <objects>
+                <viewControllerPlaceholder storyboardName="LoginSignup" id="y0T-Ov-Hd9" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kpe-Iw-iqd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="271" y="272"/>
+        </scene>
+    </scenes>
 </document>

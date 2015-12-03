@@ -13,9 +13,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
+    struct NavigationStyling {
+        static func removeHairline() {
+            UINavigationBar.appearance().shadowImage = UIImage()
+            UINavigationBar.appearance().setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+        }
+    }
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        NavigationStyling.removeHairline()
         return true
     }
 

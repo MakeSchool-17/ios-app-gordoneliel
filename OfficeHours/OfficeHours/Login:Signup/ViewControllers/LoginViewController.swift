@@ -21,12 +21,12 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         
         // Disable the login button till there is input for username and password
-//        loginButton(false)
+        loginButton(false)
         userNameTextField.text = "eliel"
         passwordTextField.text = "gordon"
         
-//        userNameTextField.addTarget(self, action: "textFieldDidChangeAnimation", forControlEvents: UIControlEvents.EditingChanged)
-//        passwordTextField.addTarget(self, action: "textFieldDidChangeAnimation", forControlEvents: UIControlEvents.EditingChanged)
+        userNameTextField.addTarget(self, action: "textFieldDidChangeAnimation", forControlEvents: UIControlEvents.EditingChanged)
+        passwordTextField.addTarget(self, action: "textFieldDidChangeAnimation", forControlEvents: UIControlEvents.EditingChanged)
     }
     
     /**
@@ -67,7 +67,7 @@ class LoginViewController: UIViewController {
      Logs in a user from the REST API
     */
     func loginUser() {
-        SVProgressHUD.showWithStatus("Logging In", maskType: .Black)
+        SVProgressHUD.showWithStatus("Logging In", maskType: .Clear)
     
         SVProgressHUD.dismiss()
         
