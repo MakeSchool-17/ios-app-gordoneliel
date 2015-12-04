@@ -12,6 +12,7 @@ class HomeViewController: UIViewController {
     
     @IBOutlet var mentorView: MentorView!
     @IBOutlet var noMentorView: UIView!
+
     var mentors: [User]?
     
     override func viewDidLoad() {

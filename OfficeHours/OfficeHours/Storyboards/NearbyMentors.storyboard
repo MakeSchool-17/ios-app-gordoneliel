@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+    </dependencies>
+    <scenes>
+        <!--NearbyMentors-->
+        <scene sceneID="yb1-PR-gLy">
+            <objects>
+                <viewController storyboardIdentifier="NearbyMentorsVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="pYr-vP-Qba" userLabel="NearbyMentors" customClass="HomeViewController" customModule="OfficeHours" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pBT-eS-ApW"/>
+                        <viewControllerLayoutGuide type="bottom" id="66P-DG-fdO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="v1J-xo-x05">
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Office Hours" id="bUl-T1-h34"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="mentorView" destination="Xuv-vD-BSj" id="xRa-3Z-Jvu"/>
+                        <outlet property="noMentorView" destination="tib-nK-Fp0" id="4Yc-iS-Zgd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6kJ-yh-y6t" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="tib-nK-Fp0" userLabel="NoMentorView">
+                    <rect key="frame" x="0.0" y="0.0" width="424" height="390"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x2f-cV-YAT">
+                            <rect key="frame" x="143" y="154" width="138" height="81"/>
+                            <animations/>
+                            <color key="backgroundColor" red="0.01176470611" green="0.50588238240000005" blue="0.78823530669999997" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="81" id="d3f-nY-FVb"/>
+                            </constraints>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <state key="normal" title="Push"/>
+                        </button>
+                    </subviews>
+                    <animations/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="x2f-cV-YAT" firstAttribute="centerY" secondItem="tib-nK-Fp0" secondAttribute="centerY" id="2mP-cx-3a2"/>
+                        <constraint firstItem="x2f-cV-YAT" firstAttribute="centerX" secondItem="tib-nK-Fp0" secondAttribute="centerX" id="HFq-V2-psB"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" id="Xuv-vD-BSj" userLabel="MentorView" customClass="MentorView" customModule="OfficeHours" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="462" height="387"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cNO-Ln-SLS">
+                            <rect key="frame" x="0.0" y="0.0" width="462" height="387"/>
+                            <animations/>
+                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="y2J-ur-b7n">
+                                <size key="itemSize" width="50" height="50"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                            <cells/>
+                        </collectionView>
+                    </subviews>
+                    <animations/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="cNO-Ln-SLS" firstAttribute="top" secondItem="Xuv-vD-BSj" secondAttribute="top" id="LUG-5X-fPc"/>
+                        <constraint firstItem="cNO-Ln-SLS" firstAttribute="leading" secondItem="Xuv-vD-BSj" secondAttribute="leading" id="O0Q-7e-9t5"/>
+                        <constraint firstAttribute="trailing" secondItem="cNO-Ln-SLS" secondAttribute="trailing" id="SDk-Vy-qyR"/>
+                        <constraint firstAttribute="bottom" secondItem="cNO-Ln-SLS" secondAttribute="bottom" id="c0D-MT-OYF"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="collectionView" destination="cNO-Ln-SLS" id="fCA-ol-gBr"/>
+                    </connections>
+                </view>
+            </objects>
+            <point key="canvasLocation" x="997" y="446"/>
+        </scene>
+    </scenes>
+</document>

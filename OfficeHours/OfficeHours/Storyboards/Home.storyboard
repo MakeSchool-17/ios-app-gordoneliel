@@ -1,123 +1,143 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="YEf-ib-pdG">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="PEz-Kd-M8v">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
     </dependencies>
     <scenes>
-        <!--Office Hours-->
-        <scene sceneID="UqY-VS-qKT">
+        <!--Tab Bar Controller-->
+        <scene sceneID="yAq-RW-Itx">
             <objects>
-                <viewController id="2e9-0L-0Dj" customClass="HomeViewController" customModule="OfficeHours" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="ven-Rn-K1k"/>
-                        <viewControllerLayoutGuide type="bottom" id="Eby-vE-Ntt"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="V93-z1-cue">
-                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a9F-dS-oc0">
-                                <rect key="frame" x="0.0" y="487" width="600" height="49"/>
-                                <animations/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <items>
-                                    <tabBarItem title="Nearby" image="Location" id="ODr-dU-h1W"/>
-                                    <tabBarItem title="Connections" image="Connections" id="0q7-I9-EwQ"/>
-                                    <tabBarItem title="Messaging" image="Messaging" id="rgQ-9X-0TX"/>
-                                    <tabBarItem title="Settings" image="Settings" id="HZP-2J-A8z"/>
-                                </items>
-                                <color key="tintColor" red="0.85882353779999998" green="0.26443377140000002" blue="0.21562096480000001" alpha="1" colorSpace="calibratedRGB"/>
-                            </tabBar>
-                        </subviews>
+                <tabBarController id="PEz-Kd-M8v" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="A34-CM-PNT"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="obe-2U-bXz">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="a9F-dS-oc0" secondAttribute="trailing" id="8jv-ZL-Mkg"/>
-                            <constraint firstItem="Eby-vE-Ntt" firstAttribute="top" secondItem="a9F-dS-oc0" secondAttribute="bottom" id="UZe-jB-xda"/>
-                            <constraint firstItem="a9F-dS-oc0" firstAttribute="leading" secondItem="V93-z1-cue" secondAttribute="leading" id="ghF-c0-QNe"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Office Hours" id="Qqs-Ne-Xc8"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
                     <connections>
-                        <outlet property="mentorView" destination="oWm-hp-o6B" id="g50-jQ-Cmc"/>
-                        <outlet property="noMentorView" destination="MWt-Ou-asI" id="ErN-l7-qQa"/>
+                        <segue destination="Mns-SA-a3z" kind="relationship" relationship="viewControllers" id="0Ye-Zb-uDO"/>
+                        <segue destination="Lha-Qc-5q0" kind="relationship" relationship="viewControllers" id="h8a-hC-1Wy"/>
+                        <segue destination="CYJ-Dg-KWY" kind="relationship" relationship="viewControllers" id="TtY-ob-Njz"/>
+                        <segue destination="QzY-PX-ho3" kind="relationship" relationship="viewControllers" id="3If-q8-vCr"/>
                     </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ZOm-bp-MZH" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <view contentMode="scaleToFill" id="MWt-Ou-asI" userLabel="NoMentorView">
-                    <rect key="frame" x="0.0" y="0.0" width="424" height="390"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oRQ-Ed-3tM">
-                            <rect key="frame" x="143" y="154" width="138" height="81"/>
-                            <animations/>
-                            <color key="backgroundColor" red="0.011764706112444401" green="0.5058823823928833" blue="0.78823530673980713" alpha="1" colorSpace="calibratedRGB"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="81" id="Mbf-fU-dM8"/>
-                            </constraints>
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <state key="normal" title="Push"/>
-                        </button>
-                    </subviews>
-                    <animations/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstItem="oRQ-Ed-3tM" firstAttribute="centerX" secondItem="MWt-Ou-asI" secondAttribute="centerX" id="gx4-Wx-zFo"/>
-                        <constraint firstItem="oRQ-Ed-3tM" firstAttribute="centerY" secondItem="MWt-Ou-asI" secondAttribute="centerY" id="h08-lk-sky"/>
-                    </constraints>
-                </view>
-                <view contentMode="scaleToFill" id="oWm-hp-o6B" userLabel="MentorView" customClass="MentorView" customModule="OfficeHours" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="0.0" width="462" height="387"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <subviews>
-                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1Oa-1m-kpY">
-                            <rect key="frame" x="0.0" y="0.0" width="462" height="387"/>
-                            <animations/>
-                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wK7-VQ-6DZ">
-                                <size key="itemSize" width="50" height="50"/>
-                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                            </collectionViewFlowLayout>
-                            <cells/>
-                        </collectionView>
-                    </subviews>
-                    <animations/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstItem="1Oa-1m-kpY" firstAttribute="top" secondItem="oWm-hp-o6B" secondAttribute="top" id="1x7-Qb-MAz"/>
-                        <constraint firstAttribute="trailing" secondItem="1Oa-1m-kpY" secondAttribute="trailing" id="Sdi-Xp-Vov"/>
-                        <constraint firstAttribute="bottom" secondItem="1Oa-1m-kpY" secondAttribute="bottom" id="cOe-c3-TBo"/>
-                        <constraint firstItem="1Oa-1m-kpY" firstAttribute="leading" secondItem="oWm-hp-o6B" secondAttribute="leading" id="txV-R2-zVS"/>
-                    </constraints>
-                    <connections>
-                        <outlet property="collectionView" destination="1Oa-1m-kpY" id="cXC-aJ-cXF"/>
-                    </connections>
-                </view>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cgS-u2-49T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1315" y="448"/>
+            <point key="canvasLocation" x="-1756" y="-850"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="CEj-7W-t1N">
+        <!--Nearby-->
+        <scene sceneID="9EB-n2-1gh">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YEf-ib-pdG" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="0qE-xf-ryt">
+                <navigationController id="Mns-SA-a3z" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Nearby" image="Location" id="mgV-fl-ckJ"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eWV-9i-YnY">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <animations/>
-                        <color key="backgroundColor" red="0.011764706112444401" green="0.5058823823928833" blue="0.78823530673980713" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="barTintColor" red="0.01176470611" green="0.50588238240000005" blue="0.78823530669999997" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
-                    <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="2e9-0L-0Dj" kind="relationship" relationship="rootViewController" id="2SO-0E-WOr"/>
+                        <segue destination="ZAh-O7-uRr" kind="relationship" relationship="rootViewController" id="RBa-nI-Jch"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Wpm-ny-Xv5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IQT-sV-swP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="503" y="448"/>
+            <point key="canvasLocation" x="-650" y="-1675"/>
+        </scene>
+        <!--NearbyMentorsVC-->
+        <scene sceneID="ni4-0Z-0c6">
+            <objects>
+                <viewControllerPlaceholder storyboardName="NearbyMentors" referencedIdentifier="NearbyMentorsVC" id="ZAh-O7-uRr" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Tud-SJ-cMt"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9NH-Kc-SYw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-110.5" y="-1675"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="K2O-OF-b0d">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Oyh-WW-rMp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController id="QzY-PX-ho3" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Settings" image="Settings" id="5ud-Eg-dr6"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tbR-fy-ffr">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="luV-Y4-tQK" kind="relationship" relationship="rootViewController" id="tXw-2S-MLr"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="-650" y="319"/>
+        </scene>
+        <!--SettingsVC-->
+        <scene sceneID="MsR-6h-IQS">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nDV-0w-j7F" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="Settings" referencedIdentifier="SettingsVC" id="luV-Y4-tQK" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="efC-bB-HWH"/>
+                </viewControllerPlaceholder>
+            </objects>
+            <point key="canvasLocation" x="-89" y="319"/>
+        </scene>
+        <!--Connections-->
+        <scene sceneID="nFO-tf-n7t">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cD4-Yw-9l5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController id="Lha-Qc-5q0" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Connections" image="Connections" id="bgD-46-AGH"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wRu-VB-yLV">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="IP0-29-9Ds" kind="relationship" relationship="rootViewController" id="25k-q9-PiR"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="-656" y="-1015"/>
+        </scene>
+        <!--ConnectionsVC-->
+        <scene sceneID="9aR-ck-kPq">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xTT-OS-1Z2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="Connections" referencedIdentifier="ConnectionsVC" id="IP0-29-9Ds" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="7ED-KQ-fLO"/>
+                </viewControllerPlaceholder>
+            </objects>
+            <point key="canvasLocation" x="-101.5" y="-1015"/>
+        </scene>
+        <!--Messaging-->
+        <scene sceneID="sxc-Lv-18i">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9hR-7Y-oqn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController id="CYJ-Dg-KWY" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Messaging" image="Messaging" id="Wp2-1P-M3j"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gcw-Nj-rdY">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="fZK-MK-fu4" kind="relationship" relationship="rootViewController" id="VUj-AP-zKs"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="-656" y="-361"/>
+        </scene>
+        <!--MessagesVC-->
+        <scene sceneID="Soi-3D-vRm">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VqN-0Y-bfH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="Messages" referencedIdentifier="MessagesVC" id="fZK-MK-fu4" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Pfv-7v-YFc"/>
+                </viewControllerPlaceholder>
+            </objects>
+            <point key="canvasLocation" x="-94" y="-361"/>
         </scene>
     </scenes>
     <resources>
