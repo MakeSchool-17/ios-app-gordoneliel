@@ -9,6 +9,7 @@
 import UIKit
 import Bond
 
+let ConnectionCellIdentifier = "ConnectionCell"
 class ConnectionCell: UICollectionViewCell {
 
     @IBOutlet weak var profileImage: UIImageView!

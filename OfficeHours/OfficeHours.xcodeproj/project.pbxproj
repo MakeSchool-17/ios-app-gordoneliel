@@ -16,6 +16,9 @@
 		053148921C11210300AEADF2 /* Connections.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 053148911C11210300AEADF2 /* Connections.storyboard */; };
 		053148941C11210E00AEADF2 /* Messages.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 053148931C11210E00AEADF2 /* Messages.storyboard */; };
 		053148961C11211500AEADF2 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 053148951C11211500AEADF2 /* Settings.storyboard */; };
+		053148981C1123E200AEADF2 /* ConnectonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053148971C1123E200AEADF2 /* ConnectonsViewController.swift */; };
+		0531489B1C11298100AEADF2 /* OfficeHoursNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053148991C11298100AEADF2 /* OfficeHoursNavigation.swift */; };
+		0531489F1C11300300AEADF2 /* ParseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0531489E1C11300300AEADF2 /* ParseHelper.swift */; };
 		05B872A51C0E70DA00F5D3FB /* LoginSignup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05B872A11C0E70DA00F5D3FB /* LoginSignup.storyboard */; };
 		05B872A61C0E70DA00F5D3FB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B872A31C0E70DA00F5D3FB /* LoginViewController.swift */; };
 		05B872A71C0E70DA00F5D3FB /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B872A41C0E70DA00F5D3FB /* SignUpViewController.swift */; };
@@ -55,6 +58,9 @@
 		053148911C11210300AEADF2 /* Connections.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Connections.storyboard; sourceTree = "<group>"; };
 		053148931C11210E00AEADF2 /* Messages.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Messages.storyboard; sourceTree = "<group>"; };
 		053148951C11211500AEADF2 /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		053148971C1123E200AEADF2 /* ConnectonsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectonsViewController.swift; sourceTree = "<group>"; };
+		053148991C11298100AEADF2 /* OfficeHoursNavigation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfficeHoursNavigation.swift; sourceTree = "<group>"; };
+		0531489E1C11300300AEADF2 /* ParseHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseHelper.swift; sourceTree = "<group>"; };
 		05B872A11C0E70DA00F5D3FB /* LoginSignup.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LoginSignup.storyboard; sourceTree = "<group>"; };
 		05B872A31C0E70DA00F5D3FB /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		05B872A41C0E70DA00F5D3FB /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -111,9 +117,18 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
+		0531489D1C112FF200AEADF2 /* ParseHelpers */ = {
+			isa = PBXGroup;
+			children = (
+				0531489E1C11300300AEADF2 /* ParseHelper.swift */,
+			);
+			path = ParseHelpers;
+			sourceTree = "<group>";
+		};
 		05B8729F1C0E708C00F5D3FB /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				0531489D1C112FF200AEADF2 /* ParseHelpers */,
 				05B872B91C0EB1E700F5D3FB /* Datasource */,
 			);
 			path = Helpers;
@@ -141,6 +156,7 @@
 				05B872AB1C0E747B00F5D3FB /* DesignableButton.swift */,
 				05B872AC1C0E747B00F5D3FB /* DesignableTextField.swift */,
 				05B872AD1C0E747B00F5D3FB /* DesignableView.swift */,
+				053148991C11298100AEADF2 /* OfficeHoursNavigation.swift */,
 			);
 			path = Designables;
 			sourceTree = "<group>";
@@ -244,6 +260,7 @@
 			isa = PBXGroup;
 			children = (
 				051587781C0FFAF8005439ED /* HomeViewController.swift */,
+				053148971C1123E200AEADF2 /* ConnectonsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -435,17 +452,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				05B872BB1C0EB1E700F5D3FB /* ArrayDataSource.swift in Sources */,
+				0531489B1C11298100AEADF2 /* OfficeHoursNavigation.swift in Sources */,
 				05B872B71C0EAEFC00F5D3FB /* MentorCell.swift in Sources */,
 				05B872A91C0E724500F5D3FB /* User.swift in Sources */,
 				05B872AF1C0E747B00F5D3FB /* DesignableTextField.swift in Sources */,
 				0515877B1C0FFB2F005439ED /* MentorView.swift in Sources */,
 				05B872A71C0E70DA00F5D3FB /* SignUpViewController.swift in Sources */,
+				0531489F1C11300300AEADF2 /* ParseHelper.swift in Sources */,
 				05B872A61C0E70DA00F5D3FB /* LoginViewController.swift in Sources */,
 				05B872B01C0E747B00F5D3FB /* DesignableView.swift in Sources */,
 				051587731C0F7358005439ED /* UserSummaryCell.swift in Sources */,
 				05B872AE1C0E747B00F5D3FB /* DesignableButton.swift in Sources */,
 				05E461DC1C0E4F0F006D956F /* AppDelegate.swift in Sources */,
 				05B872B31C0E791400F5D3FB /* ConnectionCell.swift in Sources */,
+				053148981C1123E200AEADF2 /* ConnectonsViewController.swift in Sources */,
 				051587791C0FFAF8005439ED /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

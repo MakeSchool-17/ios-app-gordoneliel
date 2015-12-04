@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,8 +21,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
     
+    func setupParse() {
+        Parse.setApplicationId("ZAPP8nFlwnGTeeglDN8Yd9EC8koBJl3tABfFsjUQ", clientKey: "nWCKSkkOqjshjCvkv8STnMROFmDDEi0GRvBCxo22")
+    }
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         NavigationStyling.removeHairline()
+        setupParse()
+        
         return true
     }
 
