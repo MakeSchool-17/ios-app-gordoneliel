@@ -37,8 +37,9 @@ When logged in as a mentee, the first screen is the home screen which has a list
 - Settings
 
 ###### Classes
- - Mentor
- - Mentee
+ - User
+ - Connection
+ - Appointment
 
 ####Data Models
 
@@ -46,10 +47,13 @@ When logged in as a mentee, the first screen is the home screen which has a list
 ###### Week 1
 - Login / Signup
 - LinkedIn API integration
+- Sign up with an email address or a Facebook account
 
 ###### Week 2
 - Mentor finder/ Home View
 - Mentor - Mentee relationship / Properties
+- Follow other users
 
 ###### Week 3
 - Messaging / Voice Calling
+- Find other users by searching for their username
