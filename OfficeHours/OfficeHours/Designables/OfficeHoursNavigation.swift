@@ -17,6 +17,7 @@ class OfficeHoursNavigation: UINavigationController {
         
         navigationBar.barTintColor = NavBarColor
         navigationBar.barStyle = .Black
+        navigationBar.translucent = false
         
         navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Avenir-Medium", size: 18.0)!, NSForegroundColorAttributeName:UIColor.whiteColor()]
         

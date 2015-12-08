@@ -16,8 +16,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O9P-ja-rfB">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.01176470611" green="0.50588238240000005" blue="0.78823530669999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="B3S-2t-eEF">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="44" width="600" height="556"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.01176470611" green="0.50588238240000005" blue="0.78823530669999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="FXh-Uf-HkZ">
@@ -33,12 +40,20 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="B3S-2t-eEF" firstAttribute="top" secondItem="evz-dV-7Ic" secondAttribute="top" id="2cA-rq-oEK"/>
+                            <constraint firstItem="O9P-ja-rfB" firstAttribute="top" secondItem="evz-dV-7Ic" secondAttribute="top" id="2mo-IM-8zZ"/>
                             <constraint firstAttribute="trailing" secondItem="B3S-2t-eEF" secondAttribute="trailing" id="83f-Z6-pZw"/>
+                            <constraint firstAttribute="trailing" secondItem="O9P-ja-rfB" secondAttribute="trailing" id="Ome-TT-9OV"/>
                             <constraint firstItem="Vnu-ga-s4h" firstAttribute="top" secondItem="B3S-2t-eEF" secondAttribute="bottom" id="U5X-u3-gqv"/>
                             <constraint firstItem="B3S-2t-eEF" firstAttribute="leading" secondItem="evz-dV-7Ic" secondAttribute="leading" id="Xa5-Bk-VCD"/>
+                            <constraint firstItem="B3S-2t-eEF" firstAttribute="top" secondItem="O9P-ja-rfB" secondAttribute="bottom" id="ecy-uj-2uz"/>
+                            <constraint firstItem="O9P-ja-rfB" firstAttribute="leading" secondItem="evz-dV-7Ic" secondAttribute="leading" id="qeH-sk-D2Q"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="2cA-rq-oEK"/>
+                            </mask>
+                        </variation>
                     </view>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="collectionView" destination="B3S-2t-eEF" id="iNw-VG-f2x"/>
                     </connections>

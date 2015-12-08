@@ -7,7 +7,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="yAq-RW-Itx">
             <objects>
-                <tabBarController id="PEz-Kd-M8v" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="HomeTabBar" useStoryboardIdentifierAsRestorationIdentifier="YES" id="PEz-Kd-M8v" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <navigationItem key="navigationItem" id="A34-CM-PNT"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="obe-2U-bXz">

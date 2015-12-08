@@ -70,3 +70,8 @@ class NearbyMentorViewController: UIViewController {
     }
 }
 
+extension NearbyMentorViewController: UICollectionViewDelegate {
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        performSegueWithIdentifier("mentorDetail", sender: self)
+    }
+}

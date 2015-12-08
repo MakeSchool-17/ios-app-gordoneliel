@@ -26,6 +26,7 @@
                     <connections>
                         <outlet property="mentorView" destination="Xuv-vD-BSj" id="xRa-3Z-Jvu"/>
                         <outlet property="noMentorView" destination="tib-nK-Fp0" id="4Yc-iS-Zgd"/>
+                        <segue destination="F2l-Jn-TmN" kind="show" identifier="mentorDetail" id="pgJ-ty-fJz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6kJ-yh-y6t" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -61,13 +62,13 @@
                     <rect key="frame" x="0.0" y="0.0" width="462" height="387"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <searchBar contentMode="redraw" barStyle="black" searchBarStyle="minimal" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cox-aY-rbY">
+                        <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search for mentors" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cox-aY-rbY">
                             <rect key="frame" x="0.0" y="0.0" width="462" height="44"/>
                             <animations/>
                             <color key="backgroundColor" red="0.01176470611" green="0.50588238240000005" blue="0.78823530669999997" alpha="1" colorSpace="calibratedRGB"/>
-                            <color key="tintColor" red="0.01176470611" green="0.50588238240000005" blue="0.78823530669999997" alpha="1" colorSpace="calibratedRGB"/>
-                            <color key="barTintColor" red="0.01176470611" green="0.50588238240000005" blue="0.78823530669999997" alpha="1" colorSpace="calibratedRGB"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" keyboardAppearance="light" returnKeyType="search" enablesReturnKeyAutomatically="YES"/>
                         </searchBar>
                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cNO-Ln-SLS">
                             <rect key="frame" x="0.0" y="44" width="462" height="343"/>
@@ -80,7 +81,20 @@
                                 <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                             </collectionViewFlowLayout>
                             <cells/>
+                            <connections>
+                                <outlet property="delegate" destination="pYr-vP-Qba" id="ZvT-Bs-dYc"/>
+                            </connections>
                         </collectionView>
+                        <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Y7-O0-0N3">
+                            <rect key="frame" x="0.0" y="0.0" width="462" height="44"/>
+                            <animations/>
+                            <color key="backgroundColor" red="0.011764706112444401" green="0.5058823823928833" blue="0.78823530673980713" alpha="1" colorSpace="calibratedRGB"/>
+                            <items>
+                                <barButtonItem image="Filter" style="plain" id="I9e-Vn-zYc"/>
+                            </items>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="barTintColor" red="0.011764706112444401" green="0.5058823823928833" blue="0.78823530673980713" alpha="1" colorSpace="calibratedRGB"/>
+                        </toolbar>
                     </subviews>
                     <animations/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -88,13 +102,20 @@
                         <constraint firstItem="cNO-Ln-SLS" firstAttribute="top" secondItem="cox-aY-rbY" secondAttribute="bottom" id="4VX-45-ZbJ"/>
                         <constraint firstItem="cNO-Ln-SLS" firstAttribute="top" secondItem="Xuv-vD-BSj" secondAttribute="top" id="LUG-5X-fPc"/>
                         <constraint firstItem="cNO-Ln-SLS" firstAttribute="leading" secondItem="Xuv-vD-BSj" secondAttribute="leading" id="O0Q-7e-9t5"/>
+                        <constraint firstItem="cNO-Ln-SLS" firstAttribute="top" secondItem="0Y7-O0-0N3" secondAttribute="bottom" id="OHb-RM-dvb"/>
+                        <constraint firstAttribute="trailing" secondItem="0Y7-O0-0N3" secondAttribute="trailing" id="Po1-AO-5oQ"/>
                         <constraint firstAttribute="trailing" secondItem="cNO-Ln-SLS" secondAttribute="trailing" id="SDk-Vy-qyR"/>
                         <constraint firstAttribute="trailing" secondItem="cox-aY-rbY" secondAttribute="trailing" id="V5R-fv-ui8"/>
                         <constraint firstAttribute="bottom" secondItem="cNO-Ln-SLS" secondAttribute="bottom" id="c0D-MT-OYF"/>
+                        <constraint firstItem="0Y7-O0-0N3" firstAttribute="leading" secondItem="Xuv-vD-BSj" secondAttribute="leading" id="f0X-Dq-gWq"/>
                         <constraint firstItem="cox-aY-rbY" firstAttribute="leading" secondItem="Xuv-vD-BSj" secondAttribute="leading" id="g07-Nj-ZFd"/>
                         <constraint firstItem="cox-aY-rbY" firstAttribute="top" secondItem="Xuv-vD-BSj" secondAttribute="top" id="jkd-hj-7GK"/>
+                        <constraint firstItem="0Y7-O0-0N3" firstAttribute="top" secondItem="Xuv-vD-BSj" secondAttribute="top" id="twc-Yr-wTn"/>
                     </constraints>
                     <variation key="default">
+                        <mask key="subviews">
+                            <exclude reference="0Y7-O0-0N3"/>
+                        </mask>
                         <mask key="constraints">
                             <exclude reference="LUG-5X-fPc"/>
                         </mask>
@@ -104,7 +125,29 @@
                     </connections>
                 </view>
             </objects>
-            <point key="canvasLocation" x="491" y="449"/>
+            <point key="canvasLocation" x="439" y="449"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="a8A-rR-ugn">
+            <objects>
+                <viewController hidesBottomBarWhenPushed="YES" id="F2l-Jn-TmN" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Q9e-EK-5EM"/>
+                        <viewControllerLayoutGuide type="bottom" id="Mq5-OQ-KEh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="uA3-Yw-l84">
+                        <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Ry-1I-20A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1385" y="449"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Filter" width="22" height="22"/>
+    </resources>
 </document>

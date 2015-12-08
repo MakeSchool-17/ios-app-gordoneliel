@@ -22,18 +22,18 @@ class LoginViewController: UIViewController {
         
         // Disable the login button till there is input for username and password
         loginButton(false)
-        userNameTextField.text = "eliel"
-        passwordTextField.text = "gordon"
+        //        userNameTextField.text = "eliel"
+        //        passwordTextField.text = "gordon"
         
         userNameTextField.addTarget(self, action: "textFieldDidChangeAnimation", forControlEvents: UIControlEvents.EditingChanged)
         passwordTextField.addTarget(self, action: "textFieldDidChangeAnimation", forControlEvents: UIControlEvents.EditingChanged)
     }
     
     /**
-    Determines whether the login button should be enabled or disabled.
-    
-    - parameter enabled: - A boolean of the state of the login button.
-    */
+     Determines whether the login button should be enabled or disabled.
+     
+     - parameter enabled: - A boolean of the state of the login button.
+     */
     func loginButton(enabled: Bool) -> ()
     {
         func enable()
@@ -64,17 +64,22 @@ class LoginViewController: UIViewController {
     }
     
     /*
-     Logs in a user from the REST API
+    Logs in a user from the REST API
     */
     func loginUser() {
         SVProgressHUD.showWithStatus("Logging In", maskType: .Clear)
-    
-        SVProgressHUD.dismiss()
+        guard let username = userNameTextField.text, let password = passwordTextField.text else {return}
         
+        User.logInWithUsernameInBackground(username,
+            password: password) {
+                (user, error) in
+                
+                self.moveToTabBarController()
+                SVProgressHUD.dismiss()
+        }
     }
     // MARK: Login Action
     @IBAction func loginPressed(sender: AnyObject) {
-
         loginUser()
     }
     
@@ -84,19 +89,19 @@ class LoginViewController: UIViewController {
     
     func moveToTabBarController() {
         dispatch_async(dispatch_get_main_queue())  {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let viewController = storyboard.instantiateViewControllerWithIdentifier("PlannedTripsNav") as! UINavigationController
+            let storyboard = UIStoryboard(name: "Home", bundle: nil)
+            let viewController = storyboard.instantiateViewControllerWithIdentifier("HomeTabBar") as! UITabBarController
             let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
             appDelegate.window?.rootViewController = viewController
-
+            
         }
     }
     
     /**
-    Prefer the status bar to be hidden
-    
-    - returns: true -> we want a hidden status bar
-    */
+     Prefer the status bar to be hidden
+     
+     - returns: true -> we want a hidden status bar
+     */
     override func prefersStatusBarHidden() -> Bool {
         return true
     }
@@ -127,8 +132,8 @@ extension LoginViewController: UITextFieldDelegate {
     }
     
     /**
-    Helper method that moves the container view for the uitextfields
-    */
+     Helper method that moves the container view for the uitextfields
+     */
     func moveInputContainer(moveUp: Bool) {
         
         if moveUp {
@@ -149,10 +154,10 @@ extension LoginViewController: UITextFieldDelegate {
             }
         }
     }
-
+    
     /**
-    Enables or disables the login button, based on text entry
-    */
+     Enables or disables the login button, based on text entry
+     */
     func textFieldDidChangeAnimation()
     {
         if userNameTextField.text!.isEmpty || passwordTextField.text!.isEmpty

@@ -32,11 +32,11 @@ class MentorView: UIView {
     
 }
 
-extension MentorView: UICollectionViewDelegate {
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        
-    }
-}
+//extension MentorView: UICollectionViewDelegate {
+//    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+//        
+//    }
+//}
 
 extension MentorView: UICollectionViewDelegateFlowLayout {
     

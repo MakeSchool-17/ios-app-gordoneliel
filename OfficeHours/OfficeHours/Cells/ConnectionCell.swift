@@ -35,6 +35,10 @@ class ConnectionCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        let selectedView = UIView()
+        selectedView.backgroundColor = UIColor.lighterGrayColor()
+        selectedBackgroundView = selectedView
+
         profileImage.layer.cornerRadius = profileImage.frame.size.width / 2
         profileImage.clipsToBounds = true
         

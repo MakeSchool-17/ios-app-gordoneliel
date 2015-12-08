@@ -4,3 +4,4 @@ use_frameworks!
 pod 'Parse'
 pod 'Bond'
 pod 'SVProgressHUD'
+pod 'JSQMessagesViewController' 

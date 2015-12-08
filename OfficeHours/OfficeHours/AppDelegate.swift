@@ -26,6 +26,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UITabBar.appearance().tintColor = UIColor.primaryBlueColor()
             UITabBar.appearance().barTintColor = UIColor.whiteColor()
         }
+        static func backButtonStyling() {
+            // Custom back icon
+            UINavigationBar.appearance().backIndicatorImage = UIImage(named: "BackButton");
+            UINavigationBar.appearance().backIndicatorTransitionMaskImage = UIImage(named: "BackButton");
+            UINavigationBar.appearance().tintColor = UIColor.whiteColor()
+            
+            // Adjust the back text for our new image
+            UIBarButtonItem.appearance().setBackButtonTitlePositionAdjustment(UIOffset(horizontal: -600.0, vertical: 100.0), forBarMetrics: .Default);
+            UITabBarItem.appearance().setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Avenir-Medium", size: 10)!], forState: .Normal)
+
+        }
     }
     
     func setupParse() {
@@ -35,6 +46,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         NavigationStyling.removeHairline()
         NavigationStyling.tintTabBar()
+        NavigationStyling.backButtonStyling()
         setupParse()
         
         // TODO: Remove

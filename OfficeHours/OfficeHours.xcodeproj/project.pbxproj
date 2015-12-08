@@ -37,6 +37,7 @@
 		05E461E31C0E4F0F006D956F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05E461E21C0E4F0F006D956F /* Assets.xcassets */; };
 		05E461E61C0E4F0F006D956F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05E461E41C0E4F0F006D956F /* LaunchScreen.storyboard */; };
 		05E461F11C0E4F0F006D956F /* OfficeHoursTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E461F01C0E4F0F006D956F /* OfficeHoursTests.swift */; };
+		05F6646D1C16D5A200304703 /* InboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F6646C1C16D5A200304703 /* InboxViewController.swift */; };
 		1ED0157CC5C2AAA89C7A283D /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EE32775534450FA9E06015F /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -85,6 +86,7 @@
 		05E461EC1C0E4F0F006D956F /* OfficeHoursTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OfficeHoursTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		05E461F01C0E4F0F006D956F /* OfficeHoursTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfficeHoursTests.swift; sourceTree = "<group>"; };
 		05E461F21C0E4F0F006D956F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		05F6646C1C16D5A200304703 /* InboxViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InboxViewController.swift; sourceTree = "<group>"; };
 		2EE32775534450FA9E06015F /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		38AAA7A4E91501AED98291D2 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		62355974EC452B7CF09AF22B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -267,6 +269,7 @@
 			children = (
 				051587781C0FFAF8005439ED /* NearbyMentorViewController.swift */,
 				053148971C1123E200AEADF2 /* ConnectonsViewController.swift */,
+				05F6646C1C16D5A200304703 /* InboxViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -476,6 +479,7 @@
 				051587731C0F7358005439ED /* UserSummaryCell.swift in Sources */,
 				05B872AE1C0E747B00F5D3FB /* DesignableButton.swift in Sources */,
 				05E461DC1C0E4F0F006D956F /* AppDelegate.swift in Sources */,
+				05F6646D1C16D5A200304703 /* InboxViewController.swift in Sources */,
 				05B872B31C0E791400F5D3FB /* ConnectionCell.swift in Sources */,
 				053148981C1123E200AEADF2 /* ConnectonsViewController.swift in Sources */,
 				053892131C162838009C109D /* UIColor+Extensions.swift in Sources */,
