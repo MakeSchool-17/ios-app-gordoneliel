@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import Bond
+import Parse
 
+let MentorCellIdentifier = "MentorCell"
 class MentorCell: UICollectionViewCell {
-
+    
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var jobTitle: UILabel!
@@ -17,12 +20,27 @@ class MentorCell: UICollectionViewCell {
     
     var mentor: User? {
         didSet {
-            profileImage.image = mentor?.image.value
+            mentor?.fetchProfileImage()
+            
+            name.text = mentor?.name
+            jobTitle.text = mentor?.jobTitle
+            
+            mentor?.image.bindTo(profileImage.bnd_image)
         }
     }
     
     func configureCell() {
         
     }
-
+    
+    static func nib() -> UINib {
+        return UINib(nibName: MentorCellIdentifier, bundle: nil)
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        layer.cornerRadius = 3
+        clipsToBounds = true
+    }
 }

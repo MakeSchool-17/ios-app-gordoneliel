@@ -17,14 +17,29 @@ class ConnectionCell: UICollectionViewCell {
     @IBOutlet weak var jobTitle: UILabel!
     @IBOutlet weak var workName: UILabel!
     
-    var user: User? {
+    var mentor: User? {
         didSet {
-            profileImage.image = user?.image.value
+            mentor?.fetchProfileImage()
+            
+            mentor?.image.bindTo(profileImage.bnd_image)
+            
+            name.text = mentor?.name
+            jobTitle.text = mentor?.jobTitle
         }
+    }
+    
+    static func nib() -> UINib {
+        return UINib(nibName: ConnectionCellIdentifier, bundle: nil)
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        profileImage.layer.cornerRadius = profileImage.frame.size.width / 2
+        profileImage.clipsToBounds = true
+        
+        layer.cornerRadius = 3
+        clipsToBounds = true
     }
 
 }

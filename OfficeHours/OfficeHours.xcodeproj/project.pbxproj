@@ -10,7 +10,7 @@
 		051587731C0F7358005439ED /* UserSummaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051587711C0F7358005439ED /* UserSummaryCell.swift */; };
 		051587741C0F7358005439ED /* UserSummaryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 051587721C0F7358005439ED /* UserSummaryCell.xib */; };
 		051587771C0FB625005439ED /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 051587761C0FB625005439ED /* Home.storyboard */; };
-		051587791C0FFAF8005439ED /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051587781C0FFAF8005439ED /* HomeViewController.swift */; };
+		051587791C0FFAF8005439ED /* NearbyMentorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051587781C0FFAF8005439ED /* NearbyMentorViewController.swift */; };
 		0515877B1C0FFB2F005439ED /* MentorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0515877A1C0FFB2F005439ED /* MentorView.swift */; };
 		053148901C111F7400AEADF2 /* NearbyMentors.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0531488F1C111F7400AEADF2 /* NearbyMentors.storyboard */; };
 		053148921C11210300AEADF2 /* Connections.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 053148911C11210300AEADF2 /* Connections.storyboard */; };
@@ -19,6 +19,8 @@
 		053148981C1123E200AEADF2 /* ConnectonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053148971C1123E200AEADF2 /* ConnectonsViewController.swift */; };
 		0531489B1C11298100AEADF2 /* OfficeHoursNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053148991C11298100AEADF2 /* OfficeHoursNavigation.swift */; };
 		0531489F1C11300300AEADF2 /* ParseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0531489E1C11300300AEADF2 /* ParseHelper.swift */; };
+		053892131C162838009C109D /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053892121C162838009C109D /* UIColor+Extensions.swift */; };
+		053892151C164378009C109D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 053892141C164378009C109D /* MapKit.framework */; };
 		05B872A51C0E70DA00F5D3FB /* LoginSignup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05B872A11C0E70DA00F5D3FB /* LoginSignup.storyboard */; };
 		05B872A61C0E70DA00F5D3FB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B872A31C0E70DA00F5D3FB /* LoginViewController.swift */; };
 		05B872A71C0E70DA00F5D3FB /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B872A41C0E70DA00F5D3FB /* SignUpViewController.swift */; };
@@ -52,7 +54,7 @@
 		051587711C0F7358005439ED /* UserSummaryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSummaryCell.swift; sourceTree = "<group>"; };
 		051587721C0F7358005439ED /* UserSummaryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserSummaryCell.xib; sourceTree = "<group>"; };
 		051587761C0FB625005439ED /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
-		051587781C0FFAF8005439ED /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		051587781C0FFAF8005439ED /* NearbyMentorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NearbyMentorViewController.swift; sourceTree = "<group>"; };
 		0515877A1C0FFB2F005439ED /* MentorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MentorView.swift; sourceTree = "<group>"; };
 		0531488F1C111F7400AEADF2 /* NearbyMentors.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NearbyMentors.storyboard; sourceTree = "<group>"; };
 		053148911C11210300AEADF2 /* Connections.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Connections.storyboard; sourceTree = "<group>"; };
@@ -61,6 +63,8 @@
 		053148971C1123E200AEADF2 /* ConnectonsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectonsViewController.swift; sourceTree = "<group>"; };
 		053148991C11298100AEADF2 /* OfficeHoursNavigation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfficeHoursNavigation.swift; sourceTree = "<group>"; };
 		0531489E1C11300300AEADF2 /* ParseHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseHelper.swift; sourceTree = "<group>"; };
+		053892121C162838009C109D /* UIColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		053892141C164378009C109D /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		05B872A11C0E70DA00F5D3FB /* LoginSignup.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LoginSignup.storyboard; sourceTree = "<group>"; };
 		05B872A31C0E70DA00F5D3FB /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		05B872A41C0E70DA00F5D3FB /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -91,6 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				053892151C164378009C109D /* MapKit.framework in Frameworks */,
 				1ED0157CC5C2AAA89C7A283D /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,6 +142,7 @@
 		05B872A01C0E709500F5D3FB /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				053892121C162838009C109D /* UIColor+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -259,7 +265,7 @@
 		05E461FF1C0E6A5A006D956F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				051587781C0FFAF8005439ED /* HomeViewController.swift */,
+				051587781C0FFAF8005439ED /* NearbyMentorViewController.swift */,
 				053148971C1123E200AEADF2 /* ConnectonsViewController.swift */,
 			);
 			path = ViewControllers;
@@ -276,6 +282,7 @@
 		82DE8D99E221AFEDAECE6471 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				053892141C164378009C109D /* MapKit.framework */,
 				2EE32775534450FA9E06015F /* Pods.framework */,
 			);
 			name = Frameworks;
@@ -344,6 +351,11 @@
 					05E461D71C0E4F0F006D956F = {
 						CreatedOnToolsVersion = 7.1.1;
 						DevelopmentTeam = F7AL96RPTB;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					05E461EB1C0E4F0F006D956F = {
 						CreatedOnToolsVersion = 7.1.1;
@@ -466,7 +478,8 @@
 				05E461DC1C0E4F0F006D956F /* AppDelegate.swift in Sources */,
 				05B872B31C0E791400F5D3FB /* ConnectionCell.swift in Sources */,
 				053148981C1123E200AEADF2 /* ConnectonsViewController.swift in Sources */,
-				051587791C0FFAF8005439ED /* HomeViewController.swift in Sources */,
+				053892131C162838009C109D /* UIColor+Extensions.swift in Sources */,
+				051587791C0FFAF8005439ED /* NearbyMentorViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

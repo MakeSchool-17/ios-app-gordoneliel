@@ -14,10 +14,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    /**
+     *  Styling
+     */
     struct NavigationStyling {
         static func removeHairline() {
             UINavigationBar.appearance().shadowImage = UIImage()
             UINavigationBar.appearance().setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+        }
+        static func tintTabBar() {
+            UITabBar.appearance().tintColor = UIColor.primaryBlueColor()
+            UITabBar.appearance().barTintColor = UIColor.whiteColor()
         }
     }
     
@@ -27,7 +34,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         NavigationStyling.removeHairline()
+        NavigationStyling.tintTabBar()
         setupParse()
+        
+        // TODO: Remove
+        try! User.logInWithUsername("gordoneliel", password: "men")
         
         return true
     }

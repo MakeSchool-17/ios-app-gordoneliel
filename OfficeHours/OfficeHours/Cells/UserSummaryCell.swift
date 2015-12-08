@@ -19,9 +19,4 @@ class UserSummaryCell: UICollectionViewCell {
             name.text = user?.username.value
         }
     }
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
 }

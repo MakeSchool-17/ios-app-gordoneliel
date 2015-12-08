@@ -1,26 +1,28 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--NearbyMentors-->
         <scene sceneID="yb1-PR-gLy">
             <objects>
-                <viewController storyboardIdentifier="NearbyMentorsVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="pYr-vP-Qba" userLabel="NearbyMentors" customClass="HomeViewController" customModule="OfficeHours" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NearbyMentorsVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="pYr-vP-Qba" userLabel="NearbyMentors" customClass="NearbyMentorViewController" customModule="OfficeHours" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pBT-eS-ApW"/>
                         <viewControllerLayoutGuide type="bottom" id="66P-DG-fdO"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="v1J-xo-x05">
-                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" title="Office Hours" id="bUl-T1-h34"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
                     <connections>
                         <outlet property="mentorView" destination="Xuv-vD-BSj" id="xRa-3Z-Jvu"/>
                         <outlet property="noMentorView" destination="tib-nK-Fp0" id="4Yc-iS-Zgd"/>
@@ -31,15 +33,21 @@
                     <rect key="frame" x="0.0" y="0.0" width="424" height="390"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x2f-cV-YAT">
-                            <rect key="frame" x="194.5" y="154" width="35" height="81"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x2f-cV-YAT" customClass="DesignableButton" customModule="OfficeHours" customModuleProvider="target">
+                            <rect key="frame" x="122" y="173" width="180" height="45"/>
                             <animations/>
                             <color key="backgroundColor" red="0.01176470611" green="0.50588238240000005" blue="0.78823530669999997" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="81" id="d3f-nY-FVb"/>
+                                <constraint firstAttribute="width" secondItem="x2f-cV-YAT" secondAttribute="height" multiplier="4:1" id="a1g-Z7-pUH"/>
+                                <constraint firstAttribute="height" constant="45" id="d3f-nY-FVb"/>
                             </constraints>
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <state key="normal" title="Push"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="3"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
                         </button>
                     </subviews>
                     <animations/>
@@ -53,9 +61,18 @@
                     <rect key="frame" x="0.0" y="0.0" width="462" height="387"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cNO-Ln-SLS">
-                            <rect key="frame" x="0.0" y="0.0" width="462" height="387"/>
+                        <searchBar contentMode="redraw" barStyle="black" searchBarStyle="minimal" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cox-aY-rbY">
+                            <rect key="frame" x="0.0" y="0.0" width="462" height="44"/>
                             <animations/>
+                            <color key="backgroundColor" red="0.01176470611" green="0.50588238240000005" blue="0.78823530669999997" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" red="0.01176470611" green="0.50588238240000005" blue="0.78823530669999997" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="barTintColor" red="0.01176470611" green="0.50588238240000005" blue="0.78823530669999997" alpha="1" colorSpace="calibratedRGB"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cNO-Ln-SLS">
+                            <rect key="frame" x="0.0" y="44" width="462" height="343"/>
+                            <animations/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="y2J-ur-b7n">
                                 <size key="itemSize" width="50" height="50"/>
                                 <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -68,17 +85,26 @@
                     <animations/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
+                        <constraint firstItem="cNO-Ln-SLS" firstAttribute="top" secondItem="cox-aY-rbY" secondAttribute="bottom" id="4VX-45-ZbJ"/>
                         <constraint firstItem="cNO-Ln-SLS" firstAttribute="top" secondItem="Xuv-vD-BSj" secondAttribute="top" id="LUG-5X-fPc"/>
                         <constraint firstItem="cNO-Ln-SLS" firstAttribute="leading" secondItem="Xuv-vD-BSj" secondAttribute="leading" id="O0Q-7e-9t5"/>
                         <constraint firstAttribute="trailing" secondItem="cNO-Ln-SLS" secondAttribute="trailing" id="SDk-Vy-qyR"/>
+                        <constraint firstAttribute="trailing" secondItem="cox-aY-rbY" secondAttribute="trailing" id="V5R-fv-ui8"/>
                         <constraint firstAttribute="bottom" secondItem="cNO-Ln-SLS" secondAttribute="bottom" id="c0D-MT-OYF"/>
+                        <constraint firstItem="cox-aY-rbY" firstAttribute="leading" secondItem="Xuv-vD-BSj" secondAttribute="leading" id="g07-Nj-ZFd"/>
+                        <constraint firstItem="cox-aY-rbY" firstAttribute="top" secondItem="Xuv-vD-BSj" secondAttribute="top" id="jkd-hj-7GK"/>
                     </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="LUG-5X-fPc"/>
+                        </mask>
+                    </variation>
                     <connections>
                         <outlet property="collectionView" destination="cNO-Ln-SLS" id="fCA-ol-gBr"/>
                     </connections>
                 </view>
             </objects>
-            <point key="canvasLocation" x="997" y="446"/>
+            <point key="canvasLocation" x="491" y="449"/>
         </scene>
     </scenes>
 </document>

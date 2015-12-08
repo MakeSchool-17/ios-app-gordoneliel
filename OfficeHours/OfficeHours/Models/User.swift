@@ -12,8 +12,12 @@ import Parse
 
 class User: PFUser {
     @NSManaged var about: String?
-    @NSManaged var phone: String?
+    @NSManaged var phoneNumber: String?
     @NSManaged var profileImage: PFFile?
+    @NSManaged var jobTitle: String?
+    @NSManaged var name: String?
+    @NSManaged var location: PFGeoPoint?
+    
     
     var image: Observable<UIImage?> = Observable(nil)
     

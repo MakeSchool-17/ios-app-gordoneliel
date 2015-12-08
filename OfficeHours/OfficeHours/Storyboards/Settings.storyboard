@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Settings-->
         <scene sceneID="L0S-xp-xNC">
             <objects>
                 <viewController storyboardIdentifier="SettingsVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gDT-3J-7aT" sceneMemberID="viewController">
@@ -13,11 +13,40 @@
                         <viewControllerLayoutGuide type="bottom" id="kKL-8e-w4c"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="wud-Zo-aAQ">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NMm-7d-buk">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="487"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="S1F-ps-c3C">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="S1F-ps-c3C" id="WFk-s1-d4x">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <animations/>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                            </tableView>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="NMm-7d-buk" firstAttribute="leading" secondItem="wud-Zo-aAQ" secondAttribute="leading" id="615-wU-YYY"/>
+                            <constraint firstItem="kKL-8e-w4c" firstAttribute="top" secondItem="NMm-7d-buk" secondAttribute="bottom" id="754-fD-aum"/>
+                            <constraint firstItem="NMm-7d-buk" firstAttribute="top" secondItem="Ble-ed-s0y" secondAttribute="bottom" id="O2L-IL-Od7"/>
+                            <constraint firstAttribute="trailing" secondItem="NMm-7d-buk" secondAttribute="trailing" id="kPI-VR-X7K"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Settings" id="KGC-z9-dIe"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r4k-ty-gD2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
