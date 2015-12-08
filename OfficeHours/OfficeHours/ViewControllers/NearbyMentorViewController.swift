@@ -14,7 +14,7 @@ class NearbyMentorViewController: UIViewController {
     @IBOutlet var noMentorView: UIView!
     
     var mentors: [User]?
-    let defaultNearbyMentorRange = 0...4
+    let defaultNearbyMentorRange = 0...10
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,4 +65,8 @@ class NearbyMentorViewController: UIViewController {
         }
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+    }
 }
+

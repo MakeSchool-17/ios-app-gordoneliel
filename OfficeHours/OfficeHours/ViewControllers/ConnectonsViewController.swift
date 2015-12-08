@@ -14,7 +14,7 @@ class ConnectonsViewController: UIViewController {
     
     var dataSource: ArrayDataSource?
     var mentors: [User]?
-    let defaultNearbyMentorRange = 0...4
+    let defaultNearbyMentorRange = 0...10
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -65,8 +65,9 @@ extension ConnectonsViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         let width = (Int(collectionView.frame.size.width)) - 20
-        let height = Int(collectionView.frame.size.height) / 5
+        let height = 100 //Int(collectionView.frame.size.height) / 6
         let size = CGSize(width: width, height: height)
+        
         return size
     }
     

@@ -13,11 +13,11 @@
                         <viewControllerLayoutGuide type="bottom" id="Vnu-ga-s4h"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="evz-dV-7Ic">
-                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="B3S-2t-eEF">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="B3S-2t-eEF">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.01176470611" green="0.50588238240000005" blue="0.78823530669999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="FXh-Uf-HkZ">
@@ -38,7 +38,7 @@
                             <constraint firstItem="B3S-2t-eEF" firstAttribute="leading" secondItem="evz-dV-7Ic" secondAttribute="leading" id="Xa5-Bk-VCD"/>
                         </constraints>
                     </view>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="collectionView" destination="B3S-2t-eEF" id="iNw-VG-f2x"/>
                     </connections>

@@ -40,6 +40,9 @@ class MentorCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        profileImage.layer.cornerRadius = profileImage.frame.size.width / 2
+        profileImage.clipsToBounds = true
+        
         layer.cornerRadius = 3
         clipsToBounds = true
     }

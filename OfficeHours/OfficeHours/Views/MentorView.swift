@@ -30,19 +30,19 @@ class MentorView: UIView {
         collectionView.registerNib(MentorCell.nib(), forCellWithReuseIdentifier: MentorCellIdentifier)
     }
     
-    override func awakeFromNib() {
-    }
 }
 
 extension MentorView: UICollectionViewDelegate {
-    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        
+    }
 }
 
 extension MentorView: UICollectionViewDelegateFlowLayout {
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        let width = (Int(collectionView.frame.size.width) / 2) - 15
-        let height = Int(collectionView.frame.size.height) / 3
+        let width = (Int(collectionView.frame.size.width) / 3) - 15
+        let height = 180 //Int(collectionView.frame.size.height) / 3
         let size = CGSize(width: width, height: height)
         return size
     }
