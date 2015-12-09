@@ -33,6 +33,9 @@
 		05B872B71C0EAEFC00F5D3FB /* MentorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B872B51C0EAEFC00F5D3FB /* MentorCell.swift */; };
 		05B872B81C0EAEFC00F5D3FB /* MentorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05B872B61C0EAEFC00F5D3FB /* MentorCell.xib */; };
 		05B872BB1C0EB1E700F5D3FB /* ArrayDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B872BA1C0EB1E700F5D3FB /* ArrayDataSource.swift */; };
+		05D152E51C17EC04003DABFF /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D152E31C17EC04003DABFF /* ProfileView.swift */; };
+		05D152E61C17EC04003DABFF /* ProfileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05D152E41C17EC04003DABFF /* ProfileView.xib */; };
+		05D152E81C17FE00003DABFF /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D152E71C17FE00003DABFF /* ProfileViewController.swift */; };
 		05E461DC1C0E4F0F006D956F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E461DB1C0E4F0F006D956F /* AppDelegate.swift */; };
 		05E461E31C0E4F0F006D956F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05E461E21C0E4F0F006D956F /* Assets.xcassets */; };
 		05E461E61C0E4F0F006D956F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05E461E41C0E4F0F006D956F /* LaunchScreen.storyboard */; };
@@ -78,6 +81,9 @@
 		05B872B51C0EAEFC00F5D3FB /* MentorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MentorCell.swift; sourceTree = "<group>"; };
 		05B872B61C0EAEFC00F5D3FB /* MentorCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MentorCell.xib; sourceTree = "<group>"; };
 		05B872BA1C0EB1E700F5D3FB /* ArrayDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayDataSource.swift; sourceTree = "<group>"; };
+		05D152E31C17EC04003DABFF /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		05D152E41C17EC04003DABFF /* ProfileView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileView.xib; sourceTree = "<group>"; };
+		05D152E71C17FE00003DABFF /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		05E461D81C0E4F0F006D956F /* OfficeHours.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OfficeHours.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05E461DB1C0E4F0F006D956F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05E461E21C0E4F0F006D956F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -238,6 +244,8 @@
 				05B872B61C0EAEFC00F5D3FB /* MentorCell.xib */,
 				051587711C0F7358005439ED /* UserSummaryCell.swift */,
 				051587721C0F7358005439ED /* UserSummaryCell.xib */,
+				05D152E31C17EC04003DABFF /* ProfileView.swift */,
+				05D152E41C17EC04003DABFF /* ProfileView.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -270,6 +278,7 @@
 			isa = PBXGroup;
 			children = (
 				051587781C0FFAF8005439ED /* NearbyMentorViewController.swift */,
+				05D152E71C17FE00003DABFF /* ProfileViewController.swift */,
 				053148971C1123E200AEADF2 /* ConnectonsViewController.swift */,
 				05F6646C1C16D5A200304703 /* InboxViewController.swift */,
 			);
@@ -400,6 +409,7 @@
 				05E461E31C0E4F0F006D956F /* Assets.xcassets in Resources */,
 				053148901C111F7400AEADF2 /* NearbyMentors.storyboard in Resources */,
 				05B872A51C0E70DA00F5D3FB /* LoginSignup.storyboard in Resources */,
+				05D152E61C17EC04003DABFF /* ProfileView.xib in Resources */,
 				051587771C0FB625005439ED /* Home.storyboard in Resources */,
 				053148941C11210E00AEADF2 /* Messages.storyboard in Resources */,
 				053148921C11210300AEADF2 /* Connections.storyboard in Resources */,
@@ -470,6 +480,7 @@
 			files = (
 				05B872BB1C0EB1E700F5D3FB /* ArrayDataSource.swift in Sources */,
 				0531489B1C11298100AEADF2 /* OfficeHoursNavigation.swift in Sources */,
+				05D152E81C17FE00003DABFF /* ProfileViewController.swift in Sources */,
 				05B872B71C0EAEFC00F5D3FB /* MentorCell.swift in Sources */,
 				05B872A91C0E724500F5D3FB /* User.swift in Sources */,
 				05B872AF1C0E747B00F5D3FB /* DesignableTextField.swift in Sources */,
@@ -484,6 +495,7 @@
 				05F6646D1C16D5A200304703 /* InboxViewController.swift in Sources */,
 				05B872B31C0E791400F5D3FB /* ConnectionCell.swift in Sources */,
 				053148981C1123E200AEADF2 /* ConnectonsViewController.swift in Sources */,
+				05D152E51C17EC04003DABFF /* ProfileView.swift in Sources */,
 				053892131C162838009C109D /* UIColor+Extensions.swift in Sources */,
 				051587791C0FFAF8005439ED /* NearbyMentorViewController.swift in Sources */,
 			);
@@ -614,6 +626,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "OfficeHours-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -630,6 +643,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.SaltarGroup.OfficeHours;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "OfficeHours-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

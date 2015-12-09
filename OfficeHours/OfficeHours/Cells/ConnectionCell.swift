@@ -22,9 +22,9 @@ class ConnectionCell: UICollectionViewCell {
             mentor?.fetchProfileImage()
             
             mentor?.image.bindTo(profileImage.bnd_image)
-            
-            name.text = mentor?.name
-            jobTitle.text = mentor?.jobTitle
+            mentor?.userName.bindTo(name.bnd_text)
+            mentor?.userJobTitle.bindTo(jobTitle.bnd_text)
+            mentor?.userWorkName.bindTo(workName.bnd_text)
         }
     }
     

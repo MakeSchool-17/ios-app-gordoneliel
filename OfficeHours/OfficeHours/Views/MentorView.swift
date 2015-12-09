@@ -13,6 +13,8 @@ class MentorView: UIView {
     var dataSource: ArrayDataSource?
     var mentors: [User]?
     
+    let insets = UIEdgeInsets(top: 10, left: 5, bottom: 10, right: 5)
+    
     @IBOutlet weak var collectionView: UICollectionView!
     
     func setupCollectionView() {
@@ -34,7 +36,7 @@ class MentorView: UIView {
 
 //extension MentorView: UICollectionViewDelegate {
 //    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-//        
+//
 //    }
 //}
 
@@ -42,7 +44,7 @@ extension MentorView: UICollectionViewDelegateFlowLayout {
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         let width = (Int(collectionView.frame.size.width) / 3) - 15
-        let height = 180 //Int(collectionView.frame.size.height) / 3
+        let height = 180
         let size = CGSize(width: width, height: height)
         return size
     }
@@ -51,11 +53,7 @@ extension MentorView: UICollectionViewDelegateFlowLayout {
         return 10
     }
     
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAtIndex section: Int) -> CGFloat {
-        return 10
-    }
-    
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        return insets
     }
 }

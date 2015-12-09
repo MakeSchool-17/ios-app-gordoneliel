@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class ConnectonsViewController: UIViewController {
     
@@ -16,13 +17,22 @@ class ConnectonsViewController: UIViewController {
     var mentors: [User]?
     let defaultNearbyMentorRange = 0...10
     
+    let insets = UIEdgeInsets(top: 10, left: 5, bottom: 10, right: 5)
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+    }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        
+        SVProgressHUD.show()
         loadNearbyMentorsInRange(defaultNearbyMentorRange, distanceFilter: 10) {
             [unowned self] users in
             
             self.mentors = users
             self.setupCollectionView()
+            SVProgressHUD.dismiss()
         }
     }
     
@@ -47,24 +57,21 @@ class ConnectonsViewController: UIViewController {
                 connectionsCell.mentor = user
             }
         }
-
+        
         collectionView.dataSource = dataSource
         collectionView.delegate = self
         collectionView.registerNib(ConnectionCell.nib(), forCellWithReuseIdentifier: ConnectionCellIdentifier)
+//        collectionView.registerNib(ProfileView.nib(), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: ProfileViewCellIdentifier)
+
     }
-    
-    
-    
 }
 
 extension ConnectonsViewController: UICollectionViewDelegate {
-    
 }
 
 extension ConnectonsViewController: UICollectionViewDelegateFlowLayout {
-    
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        let width = (Int(collectionView.frame.size.width)) - 20
+        let width = Int((collectionView.frame.size.width) - (insets.left * 2))
         let height = 100 //Int(collectionView.frame.size.height) / 6
         let size = CGSize(width: width, height: height)
         
@@ -75,11 +82,7 @@ extension ConnectonsViewController: UICollectionViewDelegateFlowLayout {
         return 10
     }
     
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAtIndex section: Int) -> CGFloat {
-        return 10
-    }
-    
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        return insets
     }
 }

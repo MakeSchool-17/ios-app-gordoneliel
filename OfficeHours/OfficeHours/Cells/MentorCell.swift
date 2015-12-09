@@ -16,16 +16,14 @@ class MentorCell: UICollectionViewCell {
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var jobTitle: UILabel!
-    @IBOutlet weak var workName: UILabel!
     
     var mentor: User? {
         didSet {
             mentor?.fetchProfileImage()
             
-            name.text = mentor?.name
-            jobTitle.text = mentor?.jobTitle
-            
             mentor?.image.bindTo(profileImage.bnd_image)
+            mentor?.userName.bindTo(name.bnd_text)
+            mentor?.userJobTitle.bindTo(jobTitle.bnd_text)
         }
     }
     

@@ -15,11 +15,15 @@ class User: PFUser {
     @NSManaged var phoneNumber: String?
     @NSManaged var profileImage: PFFile?
     @NSManaged var jobTitle: String?
+    @NSManaged var workName: String?
     @NSManaged var name: String?
     @NSManaged var location: PFGeoPoint?
     
     
     var image: Observable<UIImage?> = Observable(nil)
+    var userName: Observable<String?> = Observable(nil)
+    var userJobTitle: Observable<String?> = Observable(nil)
+    var userWorkName: Observable<String?> = Observable(nil)
     
     var photoUploadTask: UIBackgroundTaskIdentifier?
     
@@ -30,6 +34,12 @@ class User: PFUser {
     // MARK: Fetch Profile image from parse
     func fetchProfileImage() {
         
+        if userWorkName.value == nil || userName.value == nil || userJobTitle.value == nil {
+            userWorkName.value = workName
+            userName.value = name
+            userJobTitle.value = jobTitle
+        }
+
         if image.value == nil {
             profileImage?.getDataInBackgroundWithBlock {
                 (data, error) in

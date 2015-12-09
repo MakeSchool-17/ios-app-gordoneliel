@@ -41,12 +41,6 @@
                             <constraint firstAttribute="height" constant="70" id="B1A-VA-WzX"/>
                             <constraint firstAttribute="width" secondItem="wuD-dq-uHL" secondAttribute="height" multiplier="1:1" id="F9s-Wg-NNK"/>
                         </constraints>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                <integer key="value" value="45"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="boolean" keyPath="clipToBounds" value="YES"/>
-                        </userDefinedRuntimeAttributes>
                     </imageView>
                 </subviews>
                 <animations/>
@@ -68,12 +62,6 @@
                 <constraint firstItem="yTh-3N-YCE" firstAttribute="leading" secondItem="wuD-dq-uHL" secondAttribute="trailing" constant="20" id="yUP-Ni-7NZ"/>
             </constraints>
             <size key="customSize" width="402" height="153"/>
-            <userDefinedRuntimeAttributes>
-                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                    <integer key="value" value="3"/>
-                </userDefinedRuntimeAttribute>
-                <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
-            </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="jobTitle" destination="9xP-Xt-DCZ" id="7lc-hu-eX4"/>
                 <outlet property="name" destination="yTh-3N-YCE" id="YGT-wp-vHy"/>

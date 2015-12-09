@@ -41,6 +41,9 @@ extension ArrayDataSource: UICollectionViewDataSource {
         return items.count
     }
     
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+        return 2
+    }
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(cellIdentifier!, forIndexPath: indexPath)
         
@@ -49,6 +52,16 @@ extension ArrayDataSource: UICollectionViewDataSource {
         cellConfigureCallback?(cell: cell, item: item)
         
         return cell
+    }
+    
+    func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
+        if kind == UICollectionElementKindSectionHeader {
+            let headerView = collectionView.dequeueReusableSupplementaryViewOfKind(UICollectionElementKindSectionHeader,
+                withReuseIdentifier:ProfileViewCellIdentifier, forIndexPath: indexPath) as! ProfileView
+            return headerView
+        } else {
+            return UICollectionReusableView()
+        }
     }
 }
 

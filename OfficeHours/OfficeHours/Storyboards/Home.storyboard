@@ -84,11 +84,11 @@
             </objects>
             <point key="canvasLocation" x="-89" y="319"/>
         </scene>
-        <!--Connections-->
+        <!--Profile-->
         <scene sceneID="nFO-tf-n7t">
             <objects>
                 <navigationController id="Lha-Qc-5q0" customClass="OfficeHoursNavigation" customModule="OfficeHours" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Connections" image="Connections" id="bgD-46-AGH"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="Connections" id="bgD-46-AGH"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="wRu-VB-yLV">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -102,10 +102,10 @@
             </objects>
             <point key="canvasLocation" x="-650" y="-1015"/>
         </scene>
-        <!--ConnectionsVC-->
+        <!--ProfileVC-->
         <scene sceneID="9aR-ck-kPq">
             <objects>
-                <viewControllerPlaceholder storyboardName="Connections" referencedIdentifier="ConnectionsVC" id="IP0-29-9Ds" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Connections" referencedIdentifier="ProfileVC" id="IP0-29-9Ds" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="7ED-KQ-fLO"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xTT-OS-1Z2" userLabel="First Responder" sceneMemberID="firstResponder"/>
