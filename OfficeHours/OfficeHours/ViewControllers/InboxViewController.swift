@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import Foundation
+import JSQMessagesViewController
 
 class InboxViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+//         self.collectionView.collectionViewLayout.springinessEnabled = true
         // Do any additional setup after loading the view.
     }
 
