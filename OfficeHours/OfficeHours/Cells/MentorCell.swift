@@ -30,9 +30,10 @@ class MentorCell: UICollectionViewCell {
     static func nib() -> UINib {
         return UINib(nibName: MentorCellIdentifier, bundle: nil)
     }
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        
         let selectedView = UIView()
         selectedView.backgroundColor = UIColor.lighterGrayColor()
         selectedBackgroundView = selectedView

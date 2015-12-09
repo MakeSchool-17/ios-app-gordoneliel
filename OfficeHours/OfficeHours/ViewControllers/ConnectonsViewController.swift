@@ -41,6 +41,10 @@ class ConnectonsViewController: UIViewController {
         ParseHelper.mentorsNearbyCurrentUser(range, distanceFilter: distanceFilter) {
             (result, error) -> Void in
             
+            if error != nil {
+                SVProgressHUD.showErrorWithStatus("Error, Please try again")
+            }
+            
             let mentors = result as? [User] ?? []
             
             completionBlock(mentors)

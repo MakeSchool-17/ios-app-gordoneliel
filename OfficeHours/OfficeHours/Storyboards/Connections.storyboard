@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
@@ -19,7 +19,6 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="B3S-2t-eEF">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <animations/>
                                 <color key="backgroundColor" red="0.01176470611" green="0.50588238240000005" blue="0.78823530669999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="FXh-Uf-HkZ">
                                     <size key="itemSize" width="568" height="152"/>
@@ -30,7 +29,6 @@
                                 <cells/>
                             </collectionView>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="B3S-2t-eEF" firstAttribute="top" secondItem="evz-dV-7Ic" secondAttribute="top" id="2cA-rq-oEK"/>
@@ -72,7 +70,6 @@
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bhN-bA-cZx">
                                         <rect key="frame" x="150" y="25" width="100" height="100"/>
-                                        <animations/>
                                         <color key="backgroundColor" red="1" green="0.85882352939999995" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="bhN-bA-cZx" secondAttribute="height" multiplier="1:1" id="IJ4-oS-aBA"/>
@@ -80,15 +77,13 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sofware Engineer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="umS-ea-gx3">
-                                        <rect key="frame" x="5" y="167" width="390" height="27.5"/>
-                                        <animations/>
+                                        <rect key="frame" x="5" y="167" width="390" height="28"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
                                         <color key="textColor" red="0.14155353479999999" green="0.14155353479999999" blue="0.14155353479999999" alpha="0.82999998330000002" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vrM-vQ-U5Y">
                                         <rect key="frame" x="0.0" y="250" width="200" height="50"/>
-                                        <animations/>
                                         <color key="backgroundColor" red="0.11372549019607843" green="0.67843137254901964" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -101,22 +96,19 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Elise Goodman" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RdS-0R-fYu">
-                                        <rect key="frame" x="5" y="140" width="390" height="27.5"/>
-                                        <animations/>
+                                        <rect key="frame" x="5" y="140" width="390" height="28"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
                                         <color key="textColor" red="0.14155353479999999" green="0.14155353479999999" blue="0.14155353479999999" alpha="0.82999998330000002" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Uber" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="afo-sp-qDA">
-                                        <rect key="frame" x="5" y="195" width="390" height="27.5"/>
-                                        <animations/>
+                                        <rect key="frame" x="5" y="195" width="390" height="28"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
                                         <color key="textColor" red="0.14155353479999999" green="0.14155353479999999" blue="0.14155353479999999" alpha="0.82999998330000002" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lxR-Ho-EIg">
                                         <rect key="frame" x="200" y="250" width="200" height="50"/>
-                                        <animations/>
                                         <color key="backgroundColor" red="0.11372549019607843" green="0.67843137254901964" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="UQC-A3-KNO"/>
@@ -131,7 +123,6 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="umS-ea-gx3" firstAttribute="top" secondItem="RdS-0R-fYu" secondAttribute="bottom" id="0SS-5L-dE2"/>
@@ -162,11 +153,6 @@
                                     <constraint firstAttribute="bottom" secondItem="vrM-vQ-U5Y" secondAttribute="bottom" id="tcT-wV-kAs"/>
                                     <constraint firstItem="umS-ea-gx3" firstAttribute="leading" secondItem="RdS-0R-fYu" secondAttribute="leading" id="ynf-nA-7lk"/>
                                 </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="3"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="bFf-EU-FxT"/>
@@ -179,89 +165,14 @@
                                     <outlet property="workName" destination="afo-sp-qDA" id="xdz-wT-zp0"/>
                                 </connections>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PGS-iW-i7s">
-                                <rect key="frame" x="40" y="250" width="260" height="50"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.01106377249" green="0.6416942377" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="tAi-db-mB3"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="My Mentors">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SuH-KE-Xi4">
-                                <rect key="frame" x="300" y="250" width="260" height="50"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.01106377249" green="0.6416942377" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="Edit Profile">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="play.png" translatesAutoresizingMaskIntoConstraints="NO" id="pbz-sD-ALs">
-                                <rect key="frame" x="250" y="35" width="100" height="100"/>
-                                <animations/>
-                                <color key="backgroundColor" red="1" green="0.85882352939999995" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="LPl-MT-IsE"/>
-                                    <constraint firstAttribute="width" secondItem="pbz-sD-ALs" secondAttribute="height" multiplier="1:1" id="Yyu-Bd-K2W"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Elise Goodman" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lPq-bh-8ue">
-                                <rect key="frame" x="55" y="149.5" width="490" height="27.5"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
-                                <color key="textColor" red="0.14155353479999999" green="0.14155353479999999" blue="0.14155353479999999" alpha="0.82999998330000002" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sofware Engineer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GH4-7S-eNr">
-                                <rect key="frame" x="55" y="177" width="490" height="22"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
-                                <color key="textColor" red="0.14155353479999999" green="0.14155353479999999" blue="0.14155353479999999" alpha="0.82999998330000002" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Uber" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gDF-fo-5Sc">
-                                <rect key="frame" x="55" y="199" width="490" height="22"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
-                                <color key="textColor" red="0.14155353479999999" green="0.14155353479999999" blue="0.14155353479999999" alpha="0.82999998330000002" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" red="0.011764706112444401" green="0.5058823823928833" blue="0.78823530673980713" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="PGS-iW-i7s" firstAttribute="height" secondItem="SuH-KE-Xi4" secondAttribute="height" id="3fe-FJ-lSP"/>
-                            <constraint firstItem="gDF-fo-5Sc" firstAttribute="trailing" secondItem="GH4-7S-eNr" secondAttribute="trailing" id="5eV-2O-9FO"/>
                             <constraint firstItem="8Zq-VO-RaS" firstAttribute="leading" secondItem="3Sb-gp-Lmd" secondAttribute="leading" priority="999" constant="5" id="FJw-Pc-LCU"/>
                             <constraint firstItem="8Zq-VO-RaS" firstAttribute="top" secondItem="3Sb-gp-Lmd" secondAttribute="top" constant="5" id="ROU-3v-RaD"/>
-                            <constraint firstItem="GH4-7S-eNr" firstAttribute="top" secondItem="lPq-bh-8ue" secondAttribute="bottom" id="TqR-7f-WQi"/>
-                            <constraint firstItem="gDF-fo-5Sc" firstAttribute="leading" secondItem="GH4-7S-eNr" secondAttribute="leading" id="ZzU-vk-nnF"/>
                             <constraint firstItem="8Zq-VO-RaS" firstAttribute="centerX" secondItem="3Sb-gp-Lmd" secondAttribute="centerX" id="cKO-d4-tvH"/>
-                            <constraint firstItem="GH4-7S-eNr" firstAttribute="trailing" secondItem="lPq-bh-8ue" secondAttribute="trailing" id="cQk-pv-jLS"/>
-                            <constraint firstItem="pbz-sD-ALs" firstAttribute="width" secondItem="pbz-sD-ALs" secondAttribute="height" multiplier="1:1" id="fjb-qR-qGg"/>
-                            <constraint firstItem="lPq-bh-8ue" firstAttribute="top" secondItem="pbz-sD-ALs" secondAttribute="bottom" constant="15" id="g82-Fs-ndH"/>
                             <constraint firstAttribute="trailing" secondItem="8Zq-VO-RaS" secondAttribute="trailing" priority="999" constant="5" id="jwK-ZO-dwZ"/>
-                            <constraint firstItem="PGS-iW-i7s" firstAttribute="width" secondItem="SuH-KE-Xi4" secondAttribute="width" id="n6J-Wt-VxD"/>
-                            <constraint firstItem="SuH-KE-Xi4" firstAttribute="leading" secondItem="PGS-iW-i7s" secondAttribute="trailing" id="ny0-th-ZTZ"/>
-                            <constraint firstItem="gDF-fo-5Sc" firstAttribute="top" secondItem="GH4-7S-eNr" secondAttribute="bottom" id="pnL-y6-Bnq"/>
-                            <constraint firstItem="GH4-7S-eNr" firstAttribute="leading" secondItem="lPq-bh-8ue" secondAttribute="leading" id="uyT-Hr-YNm"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="PGS-iW-i7s"/>
-                                <exclude reference="SuH-KE-Xi4"/>
-                                <exclude reference="pbz-sD-ALs"/>
-                                <exclude reference="lPq-bh-8ue"/>
-                                <exclude reference="GH4-7S-eNr"/>
-                                <exclude reference="gDF-fo-5Sc"/>
-                            </mask>
-                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Iyl-GA-tAg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -269,7 +180,4 @@
             <point key="canvasLocation" x="240" y="226"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="play.png" width="28" height="28"/>
-    </resources>
 </document>

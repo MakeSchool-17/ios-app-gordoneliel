@@ -43,8 +43,8 @@ class MentorView: UIView {
 extension MentorView: UICollectionViewDelegateFlowLayout {
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        let width = (Int(collectionView.frame.size.width) / 3) - 15
-        let height = 180
+        let width = (Int(collectionView.frame.size.width) / 3) - 10
+        let height = 170
         let size = CGSize(width: width, height: height)
         return size
     }
