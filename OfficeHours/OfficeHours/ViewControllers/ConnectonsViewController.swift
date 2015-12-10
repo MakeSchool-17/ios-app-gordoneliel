@@ -75,13 +75,15 @@ class ConnectonsViewController: UIViewController {
 
 extension ConnectonsViewController: UICollectionViewDelegate {
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        let mentorProfileViewController = MentorProfileViewController()
-        mentorProfileViewController.modalPresentationStyle = .FullScreen
+        let mentorProfileViewController = MentorBrowserViewController()
+        mentorProfileViewController.modalPresentationStyle = .OverFullScreen
+        mentorProfileViewController.modalTransitionStyle = .CrossDissolve
         
         if let mentors = mentors {
-            mentorProfileViewController.mentor = mentors[indexPath.row]
+            mentorProfileViewController.mentors = mentors
+            mentorProfileViewController.selectedIndex = indexPath.row
+            presentViewController(mentorProfileViewController, animated: true, completion: nil)
         }
-        presentViewController(mentorProfileViewController, animated: true, completion: nil)
     }
 }
 

@@ -21,10 +21,10 @@
 		0531489F1C11300300AEADF2 /* ParseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0531489E1C11300300AEADF2 /* ParseHelper.swift */; };
 		053892131C162838009C109D /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053892121C162838009C109D /* UIColor+Extensions.swift */; };
 		053892151C164378009C109D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 053892141C164378009C109D /* MapKit.framework */; };
-		0553FBF81C1916110082BDBC /* MentorProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0553FBF61C1916110082BDBC /* MentorProfileViewController.swift */; };
-		0553FBF91C1916110082BDBC /* MentorProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0553FBF71C1916110082BDBC /* MentorProfileViewController.xib */; };
 		057F47661C1A18A3007AC5DB /* MentorBrowserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057F47641C1A18A3007AC5DB /* MentorBrowserCell.swift */; };
 		057F47671C1A18A3007AC5DB /* MentorBrowserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 057F47651C1A18A3007AC5DB /* MentorBrowserCell.xib */; };
+		057F476B1C1A1BE7007AC5DB /* MentorBrowserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 057F47691C1A1BE7007AC5DB /* MentorBrowserViewController.xib */; };
+		057F476D1C1A3A5A007AC5DB /* MentorBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057F476C1C1A3A5A007AC5DB /* MentorBrowserViewController.swift */; };
 		05B872A51C0E70DA00F5D3FB /* LoginSignup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05B872A11C0E70DA00F5D3FB /* LoginSignup.storyboard */; };
 		05B872A61C0E70DA00F5D3FB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B872A31C0E70DA00F5D3FB /* LoginViewController.swift */; };
 		05B872A71C0E70DA00F5D3FB /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B872A41C0E70DA00F5D3FB /* SignUpViewController.swift */; };
@@ -73,10 +73,10 @@
 		0531489E1C11300300AEADF2 /* ParseHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseHelper.swift; sourceTree = "<group>"; };
 		053892121C162838009C109D /* UIColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		053892141C164378009C109D /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		0553FBF61C1916110082BDBC /* MentorProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MentorProfileViewController.swift; sourceTree = "<group>"; };
-		0553FBF71C1916110082BDBC /* MentorProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MentorProfileViewController.xib; sourceTree = "<group>"; };
 		057F47641C1A18A3007AC5DB /* MentorBrowserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MentorBrowserCell.swift; sourceTree = "<group>"; };
 		057F47651C1A18A3007AC5DB /* MentorBrowserCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MentorBrowserCell.xib; sourceTree = "<group>"; };
+		057F47691C1A1BE7007AC5DB /* MentorBrowserViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MentorBrowserViewController.xib; sourceTree = "<group>"; };
+		057F476C1C1A3A5A007AC5DB /* MentorBrowserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MentorBrowserViewController.swift; sourceTree = "<group>"; };
 		05B872A11C0E70DA00F5D3FB /* LoginSignup.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LoginSignup.storyboard; sourceTree = "<group>"; };
 		05B872A31C0E70DA00F5D3FB /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		05B872A41C0E70DA00F5D3FB /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -291,8 +291,8 @@
 				05D152E71C17FE00003DABFF /* ProfileViewController.swift */,
 				053148971C1123E200AEADF2 /* ConnectonsViewController.swift */,
 				05F6646C1C16D5A200304703 /* InboxViewController.swift */,
-				0553FBF61C1916110082BDBC /* MentorProfileViewController.swift */,
-				0553FBF71C1916110082BDBC /* MentorProfileViewController.xib */,
+				057F476C1C1A3A5A007AC5DB /* MentorBrowserViewController.swift */,
+				057F47691C1A1BE7007AC5DB /* MentorBrowserViewController.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -413,6 +413,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				057F476B1C1A1BE7007AC5DB /* MentorBrowserViewController.xib in Resources */,
 				05B872B81C0EAEFC00F5D3FB /* MentorCell.xib in Resources */,
 				057F47671C1A18A3007AC5DB /* MentorBrowserCell.xib in Resources */,
 				051587741C0F7358005439ED /* UserSummaryCell.xib in Resources */,
@@ -425,7 +426,6 @@
 				05D152E61C17EC04003DABFF /* ProfileView.xib in Resources */,
 				051587771C0FB625005439ED /* Home.storyboard in Resources */,
 				053148941C11210E00AEADF2 /* Messages.storyboard in Resources */,
-				0553FBF91C1916110082BDBC /* MentorProfileViewController.xib in Resources */,
 				053148921C11210300AEADF2 /* Profile.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -500,7 +500,6 @@
 				05B872AF1C0E747B00F5D3FB /* DesignableTextField.swift in Sources */,
 				0515877B1C0FFB2F005439ED /* MentorView.swift in Sources */,
 				05B872A71C0E70DA00F5D3FB /* SignUpViewController.swift in Sources */,
-				0553FBF81C1916110082BDBC /* MentorProfileViewController.swift in Sources */,
 				0531489F1C11300300AEADF2 /* ParseHelper.swift in Sources */,
 				05B872A61C0E70DA00F5D3FB /* LoginViewController.swift in Sources */,
 				057F47661C1A18A3007AC5DB /* MentorBrowserCell.swift in Sources */,
@@ -509,6 +508,7 @@
 				05B872AE1C0E747B00F5D3FB /* DesignableButton.swift in Sources */,
 				05E461DC1C0E4F0F006D956F /* AppDelegate.swift in Sources */,
 				05F6646D1C16D5A200304703 /* InboxViewController.swift in Sources */,
+				057F476D1C1A3A5A007AC5DB /* MentorBrowserViewController.swift in Sources */,
 				05B872B31C0E791400F5D3FB /* ConnectionCell.swift in Sources */,
 				053148981C1123E200AEADF2 /* ConnectonsViewController.swift in Sources */,
 				05D152E51C17EC04003DABFF /* ProfileView.swift in Sources */,

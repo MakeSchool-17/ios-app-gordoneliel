@@ -72,27 +72,22 @@ class NearbyMentorViewController: UIViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        let mentorProfileViewController = segue.destinationViewController as! MentorProfileViewController
-//        
-//        if let selectedIndex = selectedIndex, mentors = mentors {
-//             mentorProfileViewController.mentor = mentors[selectedIndex]
-//        }
     }
 }
 
 // MARK: UICollectionView Delegate - NearbyMentor VC handles collection view display, MentorView handles DataSource
 extension NearbyMentorViewController: UICollectionViewDelegate {
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-//        selectedIndex = indexPath.row
-//        performSegueWithIdentifier("MentorDetail", sender: self)
         
-        let mentorProfileViewController = MentorProfileViewController()
-        mentorProfileViewController.modalPresentationStyle = .FullScreen
+        let mentorProfileViewController = MentorBrowserViewController()
+        mentorProfileViewController.modalPresentationStyle = .OverFullScreen
+        mentorProfileViewController.modalTransitionStyle = .CrossDissolve
         
         if let mentors = mentors {
-            mentorProfileViewController.mentor = mentors[indexPath.row]
+            mentorProfileViewController.mentors = mentors
+            mentorProfileViewController.selectedIndex = indexPath.row
+            presentViewController(mentorProfileViewController, animated: true, completion: nil)
         }
-        presentViewController(mentorProfileViewController, animated: true, completion: nil)
     }
 }
 
