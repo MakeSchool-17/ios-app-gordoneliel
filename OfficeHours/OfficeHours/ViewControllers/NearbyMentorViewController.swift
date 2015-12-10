@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class NearbyMentorViewController: UIViewController {
     
@@ -15,6 +16,9 @@ class NearbyMentorViewController: UIViewController {
     
     var mentors: [User]?
     let defaultNearbyMentorRange = 0...10
+    var selectedIndex: Int?
+    
+    let insets = UIEdgeInsets(top: 10, left: 5, bottom: 10, right: 5)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,10 +26,12 @@ class NearbyMentorViewController: UIViewController {
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        SVProgressHUD.show()
         loadNearbyMentorsInRange(defaultNearbyMentorRange, distanceFilter: 10) {
             [unowned self] users in
             
             self.mentors = users
+            SVProgressHUD.dismiss()
             self.viewToPresent()
         }
     }
@@ -66,12 +72,44 @@ class NearbyMentorViewController: UIViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
+//        let mentorProfileViewController = segue.destinationViewController as! MentorProfileViewController
+//        
+//        if let selectedIndex = selectedIndex, mentors = mentors {
+//             mentorProfileViewController.mentor = mentors[selectedIndex]
+//        }
     }
 }
 
+// MARK: UICollectionView Delegate - NearbyMentor VC handles collection view display, MentorView handles DataSource
 extension NearbyMentorViewController: UICollectionViewDelegate {
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        performSegueWithIdentifier("mentorDetail", sender: self)
+//        selectedIndex = indexPath.row
+//        performSegueWithIdentifier("MentorDetail", sender: self)
+        
+        let mentorProfileViewController = MentorProfileViewController()
+        mentorProfileViewController.modalPresentationStyle = .FullScreen
+        
+        if let mentors = mentors {
+            mentorProfileViewController.mentor = mentors[indexPath.row]
+        }
+        presentViewController(mentorProfileViewController, animated: true, completion: nil)
+    }
+}
+
+extension NearbyMentorViewController: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        let width = ((collectionView.frame.size.width) / 3)  - (insets.left * 2)
+        let height: CGFloat = 170
+        let size = CGSize(width: width, height: height)
+        return size
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
+        return 10
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
+        return insets
     }
 }

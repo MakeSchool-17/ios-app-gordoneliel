@@ -22,8 +22,8 @@ class LoginViewController: UIViewController {
         
         // Disable the login button till there is input for username and password
         loginButton(false)
-        //        userNameTextField.text = "eliel"
-        //        passwordTextField.text = "gordon"
+        userNameTextField.text = "gordoneliel"
+        passwordTextField.text = "men"
         
         userNameTextField.addTarget(self, action: "textFieldDidChangeAnimation", forControlEvents: UIControlEvents.EditingChanged)
         passwordTextField.addTarget(self, action: "textFieldDidChangeAnimation", forControlEvents: UIControlEvents.EditingChanged)
@@ -67,15 +67,20 @@ class LoginViewController: UIViewController {
     Logs in a user from the REST API
     */
     func loginUser() {
-        SVProgressHUD.showWithStatus("Logging In", maskType: .Clear)
+        SVProgressHUD.show()
         guard let username = userNameTextField.text, let password = passwordTextField.text else {return}
         
         User.logInWithUsernameInBackground(username,
             password: password) {
                 (user, error) in
                 
-                self.moveToTabBarController()
-                SVProgressHUD.dismiss()
+                if error == nil {
+                    self.moveToTabBarController()
+                    SVProgressHUD.dismiss()
+                }else {
+                    SVProgressHUD.showErrorWithStatus("Username or password incorrect", maskType: .Black)
+                }
+                
         }
     }
     // MARK: Login Action

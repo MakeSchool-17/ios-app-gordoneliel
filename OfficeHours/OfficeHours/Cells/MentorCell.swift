@@ -35,7 +35,7 @@ class MentorCell: UICollectionViewCell {
         super.awakeFromNib()
         
         let selectedView = UIView()
-        selectedView.backgroundColor = UIColor.lighterGrayColor()
+        selectedView.backgroundColor = UIColor.whiteColor()
         selectedBackgroundView = selectedView
         
         profileImage.layer.cornerRadius = profileImage.frame.size.width / 2

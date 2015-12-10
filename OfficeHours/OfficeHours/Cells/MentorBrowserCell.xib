@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="MentorBrowserCell" customModule="OfficeHours" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="390" height="649"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="390" height="649"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sZb-mk-d2L">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="300"/>
+                        <color key="backgroundColor" red="0.81176471709999998" green="0.22352941330000001" blue="0.18823529780000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="300" id="6Vs-Rl-IbU"/>
+                        </constraints>
+                    </imageView>
+                    <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0SK-Oo-Nt7">
+                        <rect key="frame" x="0.0" y="300" width="390" height="60"/>
+                        <color key="backgroundColor" red="0.01176470611" green="0.50588238240000005" blue="0.78823530669999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="60" id="PXe-Nl-yKr"/>
+                        </constraints>
+                        <items>
+                            <barButtonItem image="Connections" style="plain" id="er6-yM-BM9"/>
+                            <barButtonItem style="plain" systemItem="flexibleSpace" id="GeR-r5-Ic5"/>
+                            <barButtonItem image="Messaging" id="8Bb-xL-MjL"/>
+                            <barButtonItem style="plain" systemItem="flexibleSpace" id="DoO-lI-FJZ"/>
+                        </items>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.01176470611" green="0.50588238240000005" blue="0.78823530669999997" alpha="1" colorSpace="calibratedRGB"/>
+                    </toolbar>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Be-FN-OHQ" userLabel="Close Button">
+                        <rect key="frame" x="15" y="30" width="15" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="15" id="56e-Xi-85h"/>
+                            <constraint firstAttribute="width" secondItem="0Be-FN-OHQ" secondAttribute="height" multiplier="1:1" id="NIi-BK-Uk5"/>
+                        </constraints>
+                        <state key="normal" image="CloseButton"/>
+                    </button>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="aJ3-5K-cD3">
+                        <rect key="frame" x="0.0" y="360" width="390" height="289"/>
+                        <inset key="scrollIndicatorInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="10"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="6lT-23-VIb">
+                            <size key="itemSize" width="380" height="100"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="10" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                    </collectionView>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <constraints>
+                <constraint firstItem="aJ3-5K-cD3" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="5d3-0f-02i"/>
+                <constraint firstAttribute="trailing" secondItem="aJ3-5K-cD3" secondAttribute="trailing" id="BHv-Pq-YLn"/>
+                <constraint firstItem="sZb-mk-d2L" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="JHS-mP-OO2"/>
+                <constraint firstItem="0SK-Oo-Nt7" firstAttribute="top" secondItem="sZb-mk-d2L" secondAttribute="bottom" id="Jy8-cS-NKk"/>
+                <constraint firstItem="0Be-FN-OHQ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="15" id="Ka2-Hx-B17"/>
+                <constraint firstItem="aJ3-5K-cD3" firstAttribute="top" secondItem="0SK-Oo-Nt7" secondAttribute="bottom" id="Odk-v4-bUd"/>
+                <constraint firstItem="0Be-FN-OHQ" firstAttribute="width" secondItem="0Be-FN-OHQ" secondAttribute="height" multiplier="1:1" id="P2V-1o-52V"/>
+                <constraint firstItem="0Be-FN-OHQ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="30" id="W8J-eh-1yV"/>
+                <constraint firstItem="sZb-mk-d2L" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Xt1-g9-u4g"/>
+                <constraint firstAttribute="trailing" secondItem="sZb-mk-d2L" secondAttribute="trailing" id="itA-9a-pfk"/>
+                <constraint firstAttribute="bottom" secondItem="aJ3-5K-cD3" secondAttribute="bottom" id="lMB-tn-Txl"/>
+                <constraint firstAttribute="trailing" secondItem="0SK-Oo-Nt7" secondAttribute="trailing" id="niX-5i-KKK"/>
+                <constraint firstItem="0SK-Oo-Nt7" firstAttribute="top" secondItem="sZb-mk-d2L" secondAttribute="bottom" id="tQv-ak-DGS"/>
+                <constraint firstItem="0SK-Oo-Nt7" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="y8V-V8-AZY"/>
+            </constraints>
+            <size key="customSize" width="390" height="649"/>
+            <connections>
+                <outlet property="collectionView" destination="aJ3-5K-cD3" id="5lz-La-67L"/>
+                <outlet property="profileImage" destination="sZb-mk-d2L" id="Nsr-wp-36m"/>
+            </connections>
+            <point key="canvasLocation" x="374" y="357.5"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="CloseButton" width="30" height="30"/>
+        <image name="Connections" width="29" height="23"/>
+        <image name="Messaging" width="23" height="23"/>
+    </resources>
+</document>

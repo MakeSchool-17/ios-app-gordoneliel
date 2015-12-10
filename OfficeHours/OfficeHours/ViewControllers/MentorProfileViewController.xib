@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MentorProfileViewController" customModule="OfficeHours" customModuleProvider="target">
+            <connections>
+                <outlet property="mentorImage" destination="WAw-xc-aom" id="MbV-dC-mWc"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WAw-xc-aom">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
+                    <color key="backgroundColor" red="0.81176471709999998" green="0.22352941330000001" blue="0.18823529780000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="300" id="rxz-Zd-hkr"/>
+                    </constraints>
+                </imageView>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nak-0K-J0P">
+                    <rect key="frame" x="0.0" y="300" width="600" height="60"/>
+                    <color key="backgroundColor" red="0.01176470611" green="0.50588238240000005" blue="0.78823530669999997" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="htR-x7-pLB"/>
+                    </constraints>
+                    <items>
+                        <barButtonItem image="Connections" style="plain" id="18j-hv-4gb"/>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="N5N-2l-m1c"/>
+                        <barButtonItem image="Messaging" id="xxz-ah-5LP"/>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="c8e-vc-gjL"/>
+                    </items>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="barTintColor" red="0.01176470611" green="0.50588238240000005" blue="0.78823530669999997" alpha="1" colorSpace="calibratedRGB"/>
+                </toolbar>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Wv-2U-uku">
+                    <rect key="frame" x="15" y="30" width="15" height="15"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="15" id="6xT-W1-1ME"/>
+                        <constraint firstAttribute="width" secondItem="1Wv-2U-uku" secondAttribute="height" multiplier="1:1" id="eVI-1P-RHD"/>
+                    </constraints>
+                    <state key="normal" image="CloseButton"/>
+                    <connections>
+                        <action selector="dismissMentorProfileView:" destination="-1" eventType="touchUpInside" id="tkb-Bq-uh0"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="WAw-xc-aom" secondAttribute="trailing" id="456-6S-793"/>
+                <constraint firstItem="Nak-0K-J0P" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="6MU-IX-hGS"/>
+                <constraint firstItem="1Wv-2U-uku" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="Bud-PH-Dpd"/>
+                <constraint firstItem="WAw-xc-aom" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="S91-7u-5yv"/>
+                <constraint firstAttribute="trailing" secondItem="Nak-0K-J0P" secondAttribute="trailing" id="a1t-Gf-fpQ"/>
+                <constraint firstItem="Nak-0K-J0P" firstAttribute="top" secondItem="WAw-xc-aom" secondAttribute="bottom" id="eVc-m1-gem"/>
+                <constraint firstItem="WAw-xc-aom" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="wgS-oC-P9y"/>
+                <constraint firstItem="1Wv-2U-uku" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="30" id="zpI-vO-sXj"/>
+            </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+            <point key="canvasLocation" x="577" y="380"/>
+        </view>
+        <view contentMode="scaleToFill" id="iRa-ia-jWN">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="mWu-bF-nQg">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="aRE-rO-zU4">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="mWu-bF-nQg" secondAttribute="bottom" id="Kjm-T7-aHv"/>
+                <constraint firstItem="mWu-bF-nQg" firstAttribute="top" secondItem="iRa-ia-jWN" secondAttribute="top" id="gqc-Fr-iqN"/>
+                <constraint firstItem="mWu-bF-nQg" firstAttribute="leading" secondItem="iRa-ia-jWN" secondAttribute="leading" id="gx6-Uo-Ogk"/>
+                <constraint firstAttribute="trailing" secondItem="mWu-bF-nQg" secondAttribute="trailing" id="qyC-eO-8Mk"/>
+            </constraints>
+            <point key="canvasLocation" x="1224" y="380"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="CloseButton" width="30" height="30"/>
+        <image name="Connections" width="29" height="23"/>
+        <image name="Messaging" width="23" height="23"/>
+    </resources>
+</document>

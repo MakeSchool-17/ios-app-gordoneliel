@@ -23,6 +23,7 @@ class ConnectonsViewController: UIViewController {
         super.viewDidLoad()
         
     }
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -65,18 +66,29 @@ class ConnectonsViewController: UIViewController {
         collectionView.dataSource = dataSource
         collectionView.delegate = self
         collectionView.registerNib(ConnectionCell.nib(), forCellWithReuseIdentifier: ConnectionCellIdentifier)
-//        collectionView.registerNib(ProfileView.nib(), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: ProfileViewCellIdentifier)
-
+    }
+    
+    // MARK: Navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     }
 }
 
 extension ConnectonsViewController: UICollectionViewDelegate {
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        let mentorProfileViewController = MentorProfileViewController()
+        mentorProfileViewController.modalPresentationStyle = .FullScreen
+        
+        if let mentors = mentors {
+            mentorProfileViewController.mentor = mentors[indexPath.row]
+        }
+        presentViewController(mentorProfileViewController, animated: true, completion: nil)
+    }
 }
 
 extension ConnectonsViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         let width = Int((collectionView.frame.size.width) - (insets.left * 2))
-        let height = 100 //Int(collectionView.frame.size.height) / 6
+        let height = 80
         let size = CGSize(width: width, height: height)
         
         return size

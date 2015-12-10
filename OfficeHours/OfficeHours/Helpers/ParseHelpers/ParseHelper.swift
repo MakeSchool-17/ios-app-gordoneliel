@@ -30,6 +30,7 @@ class ParseHelper: NSObject {
      */
     static func mentorsNearbyCurrentUser(range: Range<Int>, distanceFilter: Double, completionBlock: PFQueryArrayResultBlock) {
         let nearbyUsersQuery = User.query()
+        nearbyUsersQuery?.cachePolicy = .CacheThenNetwork
         
         PFGeoPoint.geoPointForCurrentLocationInBackground {
             (geoPoint, error) -> Void in

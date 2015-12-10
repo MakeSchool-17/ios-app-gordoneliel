@@ -49,9 +49,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         NavigationStyling.backButtonStyling()
         setupParse()
         
-        // TODO: Remove
-        try! User.logInWithUsername("gordoneliel", password: "men")
-        
         return true
     }
 
