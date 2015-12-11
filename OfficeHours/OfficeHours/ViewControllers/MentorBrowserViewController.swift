@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import MCCardPickerCollectionViewController
+import EBCardCollectionViewLayout
 
 class MentorBrowserViewController: UIViewController {
 
@@ -36,9 +38,27 @@ class MentorBrowserViewController: UIViewController {
         }
         collectionView.dataSource = dataSource
         collectionView.delegate = self
+        
+        // CollectionView Layout
+        let layout = EBCardCollectionViewLayout()
+        layout.layoutType = .Horizontal
+        collectionView.collectionViewLayout = layout
+        
+        var anOffset = UIOffsetZero
+        if (layout.layoutType == .Horizontal) {
+            anOffset = UIOffsetMake(20, 20)
+            layout.offset = anOffset
+            layout.layoutType = .Horizontal
+
+        }
+        
         collectionView.registerNib(MentorBrowserCell.nib(), forCellWithReuseIdentifier: MentorBrowserCellIdentifier)
     }
 
+    override func shouldAutorotate() -> Bool {
+        collectionView.collectionViewLayout.invalidateLayout()
+        return true
+    }
     @IBAction func dismissMentorBrowser(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
     }
@@ -53,7 +73,7 @@ extension MentorBrowserViewController: UICollectionViewDelegate {
 extension MentorBrowserViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         let width = Int((collectionView.frame.size.width) - (insets.left * 2))
-        let height = Int((view.frame.height) - (insets.top + insets.bottom))
+        let height = Int((view.frame.height) - (insets.bottom))
         let size = CGSize(width: width, height: height)
         
         return size
@@ -62,8 +82,4 @@ extension MentorBrowserViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
         return insets
     }
-}
-
-extension MentorBrowserViewController: UIScrollViewDelegate {
-
 }

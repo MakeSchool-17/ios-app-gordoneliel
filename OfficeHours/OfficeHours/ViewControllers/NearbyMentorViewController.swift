@@ -8,6 +8,7 @@
 
 import UIKit
 import SVProgressHUD
+import MCCardPickerCollectionViewController
 
 class NearbyMentorViewController: UIViewController {
     
@@ -15,15 +16,16 @@ class NearbyMentorViewController: UIViewController {
     @IBOutlet var noMentorView: UIView!
     
     var mentors: [User]?
-    let defaultNearbyMentorRange = 0...10
+    let defaultNearbyMentorRange = 0...50
     var selectedIndex: Int?
     
     let insets = UIEdgeInsets(top: 10, left: 5, bottom: 10, right: 5)
+    var dataSource: ArrayDataSource?
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         SVProgressHUD.show()
@@ -48,8 +50,8 @@ class NearbyMentorViewController: UIViewController {
     
     // MARK: View To Present
     /**
-     Presents a view based on whether a user has trips or not
-     */
+    Presents a view based on whether a user has trips or not
+    */
     func viewToPresent() {
         
         guard let mentors = mentors else {return}
@@ -79,14 +81,20 @@ class NearbyMentorViewController: UIViewController {
 extension NearbyMentorViewController: UICollectionViewDelegate {
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
-        let mentorProfileViewController = MentorBrowserViewController()
-        mentorProfileViewController.modalPresentationStyle = .OverFullScreen
-        mentorProfileViewController.modalTransitionStyle = .CrossDissolve
+//        let mentorProfileViewController = MentorBrowserViewController()
+//        mentorProfileViewController.modalPresentationStyle = .OverFullScreen
+//        mentorProfileViewController.modalTransitionStyle = .CrossDissolve
         
+        let mtn = MentorBrowserViewController()
+        mtn.modalPresentationStyle = .OverFullScreen
+        mtn.modalTransitionStyle = .CrossDissolve
+
+
         if let mentors = mentors {
-            mentorProfileViewController.mentors = mentors
-            mentorProfileViewController.selectedIndex = indexPath.row
-            presentViewController(mentorProfileViewController, animated: true, completion: nil)
+//            mentorProfileViewController.mentors = mentors
+            mtn.selectedIndex = indexPath.row
+            mtn.mentors = mentors
+            presentViewController(mtn, animated: true, completion: nil)
         }
     }
 }

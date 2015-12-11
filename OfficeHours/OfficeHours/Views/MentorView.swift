@@ -15,6 +15,7 @@ class MentorView: UIView {
     
     let insets = UIEdgeInsets(top: 10, left: 5, bottom: 10, right: 5)
     
+    @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     
     func setupCollectionView() {
@@ -29,5 +30,16 @@ class MentorView: UIView {
         }
         collectionView.dataSource = dataSource
         collectionView.registerNib(MentorCell.nib(), forCellWithReuseIdentifier: MentorCellIdentifier)
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        let locationHelper = LocationHelper()
+        locationHelper.getUserLocationName() {
+            (address) -> Void in
+            
+            self.locationLabel.text = address
+        }
     }
 }

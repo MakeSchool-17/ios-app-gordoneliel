@@ -21,14 +21,12 @@ class UserSummaryCell: UICollectionViewCell {
             mentor?.fetchProfileImage()
             mentor?.userName.bindTo(name.bnd_text)
             mentor?.userJobTitle.bindTo(jobTitle.bnd_text)
+            mentor?.userAbout.bindTo(userSummary.bnd_text)
         }
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        layer.cornerRadius = 8
-        clipsToBounds = true
         
     }
     static func nib() -> UINib {

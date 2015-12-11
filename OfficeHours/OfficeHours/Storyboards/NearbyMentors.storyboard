@@ -19,7 +19,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <navigationItem key="navigationItem" title="Office Hours" id="bUl-T1-h34"/>
+                    <navigationItem key="navigationItem" title="Office Hours" id="bUl-T1-h34">
+                        <barButtonItem key="rightBarButtonItem" image="Filter" id="QpM-wi-cFE">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
                     <connections>
@@ -66,8 +70,25 @@
                             <color key="barTintColor" red="0.01176470611" green="0.50588238240000005" blue="0.78823530669999997" alpha="1" colorSpace="calibratedRGB"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" keyboardAppearance="light" returnKeyType="search" enablesReturnKeyAutomatically="YES"/>
                         </searchBar>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vjy-4u-ZUu">
+                            <rect key="frame" x="0.0" y="0.0" width="462" height="35"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BiL-sd-qDm">
+                                    <rect key="frame" x="10" y="8.5" width="55" height="19.5"/>
+                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="14"/>
+                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="BiL-sd-qDm" firstAttribute="leading" secondItem="vjy-4u-ZUu" secondAttribute="leading" constant="10" id="PdR-0g-CvU"/>
+                                <constraint firstItem="BiL-sd-qDm" firstAttribute="centerY" secondItem="vjy-4u-ZUu" secondAttribute="centerY" id="hMi-2P-At7"/>
+                                <constraint firstAttribute="height" constant="35" id="uXD-dZ-DiZ"/>
+                            </constraints>
+                        </view>
                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cNO-Ln-SLS">
-                            <rect key="frame" x="0.0" y="0.0" width="462" height="387"/>
+                            <rect key="frame" x="0.0" y="35" width="462" height="352"/>
                             <color key="backgroundColor" red="0.93407352440000002" green="0.93407352440000002" blue="0.93407352440000002" alpha="1" colorSpace="calibratedRGB"/>
                             <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="y2J-ur-b7n">
                                 <size key="itemSize" width="50" height="50"/>
@@ -94,17 +115,21 @@
                     <constraints>
                         <constraint firstItem="cNO-Ln-SLS" firstAttribute="top" secondItem="cox-aY-rbY" secondAttribute="bottom" id="4VX-45-ZbJ"/>
                         <constraint firstItem="cNO-Ln-SLS" firstAttribute="top" secondItem="Xuv-vD-BSj" secondAttribute="top" id="LUG-5X-fPc"/>
+                        <constraint firstItem="vjy-4u-ZUu" firstAttribute="top" secondItem="Xuv-vD-BSj" secondAttribute="top" id="NVk-8i-hFs"/>
                         <constraint firstItem="cNO-Ln-SLS" firstAttribute="leading" secondItem="Xuv-vD-BSj" secondAttribute="leading" id="O0Q-7e-9t5"/>
                         <constraint firstItem="cNO-Ln-SLS" firstAttribute="top" secondItem="0Y7-O0-0N3" secondAttribute="bottom" id="OHb-RM-dvb"/>
                         <constraint firstAttribute="trailing" secondItem="0Y7-O0-0N3" secondAttribute="trailing" id="Po1-AO-5oQ"/>
                         <constraint firstAttribute="trailing" secondItem="cNO-Ln-SLS" secondAttribute="trailing" id="SDk-Vy-qyR"/>
+                        <constraint firstAttribute="trailing" secondItem="vjy-4u-ZUu" secondAttribute="trailing" id="Tnl-nG-StP"/>
                         <constraint firstAttribute="trailing" secondItem="cox-aY-rbY" secondAttribute="trailing" id="V5R-fv-ui8"/>
                         <constraint firstAttribute="bottom" secondItem="cNO-Ln-SLS" secondAttribute="bottom" id="c0D-MT-OYF"/>
                         <constraint firstItem="0Y7-O0-0N3" firstAttribute="leading" secondItem="Xuv-vD-BSj" secondAttribute="leading" id="f0X-Dq-gWq"/>
                         <constraint firstItem="cox-aY-rbY" firstAttribute="leading" secondItem="Xuv-vD-BSj" secondAttribute="leading" id="g07-Nj-ZFd"/>
+                        <constraint firstItem="vjy-4u-ZUu" firstAttribute="leading" secondItem="Xuv-vD-BSj" secondAttribute="leading" id="jKo-mk-xfN"/>
                         <constraint firstItem="cox-aY-rbY" firstAttribute="top" secondItem="Xuv-vD-BSj" secondAttribute="top" id="jkd-hj-7GK"/>
                         <constraint firstItem="cNO-Ln-SLS" firstAttribute="top" secondItem="Xuv-vD-BSj" secondAttribute="top" id="ncM-aH-hpl"/>
                         <constraint firstItem="0Y7-O0-0N3" firstAttribute="top" secondItem="Xuv-vD-BSj" secondAttribute="top" id="twc-Yr-wTn"/>
+                        <constraint firstItem="cNO-Ln-SLS" firstAttribute="top" secondItem="vjy-4u-ZUu" secondAttribute="bottom" id="uCd-yg-tBj"/>
                     </constraints>
                     <variation key="default">
                         <mask key="subviews">
@@ -113,10 +138,12 @@
                         </mask>
                         <mask key="constraints">
                             <exclude reference="LUG-5X-fPc"/>
+                            <exclude reference="ncM-aH-hpl"/>
                         </mask>
                     </variation>
                     <connections>
                         <outlet property="collectionView" destination="cNO-Ln-SLS" id="fCA-ol-gBr"/>
+                        <outlet property="locationLabel" destination="BiL-sd-qDm" id="Ar5-64-K4u"/>
                     </connections>
                 </view>
             </objects>
@@ -141,4 +168,7 @@
             <point key="canvasLocation" x="1385" y="449"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Filter" width="22" height="22"/>
+    </resources>
 </document>

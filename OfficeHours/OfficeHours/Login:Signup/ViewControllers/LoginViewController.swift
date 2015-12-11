@@ -21,7 +21,7 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         
         // Disable the login button till there is input for username and password
-        loginButton(false)
+//        loginButton(false)
         userNameTextField.text = "gordoneliel"
         passwordTextField.text = "men"
         

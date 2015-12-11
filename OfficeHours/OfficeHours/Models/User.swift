@@ -24,6 +24,7 @@ class User: PFUser {
     var userName: Observable<String?> = Observable(nil)
     var userJobTitle: Observable<String?> = Observable(nil)
     var userWorkName: Observable<String?> = Observable(nil)
+    var userAbout: Observable<String?> = Observable(nil)
     
     var photoUploadTask: UIBackgroundTaskIdentifier?
     
@@ -34,10 +35,11 @@ class User: PFUser {
     // MARK: Fetch Profile image from parse
     func fetchProfileImage() {
         
-        if userWorkName.value == nil || userName.value == nil || userJobTitle.value == nil {
+        if userWorkName.value == nil && userName.value == nil && userJobTitle.value == nil && userAbout.value == nil {
             userWorkName.value = workName
             userName.value = name
             userJobTitle.value = jobTitle
+            userAbout.value = about
         }
 
         if image.value == nil {

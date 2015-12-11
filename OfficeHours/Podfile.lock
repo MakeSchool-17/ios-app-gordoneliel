@@ -1,24 +1,30 @@
 PODS:
   - Bolts/Tasks (1.5.0)
   - Bond (4.3.0)
+  - EBCardCollectionViewLayout (0.2.0)
   - JSQMessagesViewController (7.2.0):
     - JSQSystemSoundPlayer (~> 2.0.1)
   - JSQSystemSoundPlayer (2.0.1)
+  - MCCardPickerCollectionViewController (1.0.0)
   - Parse (1.10.0):
     - Bolts/Tasks (~> 1.5)
   - SVProgressHUD (1.1.3)
 
 DEPENDENCIES:
   - Bond
+  - EBCardCollectionViewLayout
   - JSQMessagesViewController
+  - MCCardPickerCollectionViewController
   - Parse
   - SVProgressHUD
 
 SPEC CHECKSUMS:
   Bolts: 722ab9a4f8b50fc4ed1b9998a5a7a2b3f16d80b4
   Bond: ebe2364b18130690083cbceff036420b21494ae4
+  EBCardCollectionViewLayout: 83acdccba21001480f50e7d4f5547cbcfb75e1e7
   JSQMessagesViewController: 73cab48aa92fc2d512f3b6724f3425cc47a19eb5
   JSQSystemSoundPlayer: c5850e77a4363ffd374cd851154b9af93264ed8d
+  MCCardPickerCollectionViewController: c279f9b800d961929457f0c70739750a2912ce5d
   Parse: 90b2544822200f84b18bfacc4e8b0a3a6c3584a2
   SVProgressHUD: 748080e4f36e603f6c02aec292664239df5279c1
 

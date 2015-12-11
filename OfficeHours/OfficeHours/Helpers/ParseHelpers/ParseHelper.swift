@@ -49,6 +49,7 @@ class ParseHelper: NSObject {
     
     static func fetchUserConnection(range: Range<Int>, completionBlock: PFQueryArrayResultBlock) {
         let userConnectionQuery = PFQuery(className: ParseConnectionClass)
+        userConnectionQuery.cachePolicy = .NetworkOnly
         
         userConnectionQuery.whereKey(ParseFromUser, equalTo: User.currentUser()!)
         

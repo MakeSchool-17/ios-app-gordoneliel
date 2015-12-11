@@ -15,7 +15,7 @@ class MentorBrowserCell: UICollectionViewCell {
     @IBOutlet weak var profileImage: UIImageView!
     
     @IBOutlet weak var collectionView: UICollectionView!
-    let insets = UIEdgeInsets(top: 0, left: 10, bottom: 10, right: 10)
+    let insets = UIEdgeInsets(top: 0, left: 0, bottom: 10, right: 0)
     
     var mentor: User? {
         didSet {
@@ -62,7 +62,7 @@ extension MentorBrowserCell: UICollectionViewDelegateFlowLayout {
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         
         let width = Int((collectionView.frame.size.width) - (insets.left * 2))
-        let height = 130
+        let height = 125
         let size = CGSize(width: width, height: height)
         return size
     }

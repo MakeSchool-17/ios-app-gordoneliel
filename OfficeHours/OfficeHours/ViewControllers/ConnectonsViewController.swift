@@ -28,7 +28,7 @@ class ConnectonsViewController: UIViewController {
         super.viewWillAppear(animated)
         
         SVProgressHUD.show()
-        loadNearbyMentorsInRange(defaultNearbyMentorRange, distanceFilter: 10) {
+        loadUserConnectionInRange(defaultNearbyMentorRange, distanceFilter: 10) {
             [unowned self] users in
             
             self.mentors = users
@@ -38,18 +38,25 @@ class ConnectonsViewController: UIViewController {
     }
     
     // MARK: Load Nearby Mentors
-    func loadNearbyMentorsInRange(range: Range<Int>, distanceFilter: Double, completionBlock: ([User]?) -> Void) {
-        ParseHelper.mentorsNearbyCurrentUser(range, distanceFilter: distanceFilter) {
+    func loadUserConnectionInRange(range: Range<Int>, distanceFilter: Double, completionBlock: ([User]?) -> Void) {
+        ParseHelper.fetchUserConnection(range) {
             (result, error) -> Void in
-            
-            if error != nil {
-                SVProgressHUD.showErrorWithStatus("Error, Please try again")
-            }
             
             let mentors = result as? [User] ?? []
             
             completionBlock(mentors)
         }
+//        ParseHelper.mentorsNearbyCurrentUser(range, distanceFilter: distanceFilter) {
+//            (result, error) -> Void in
+//            
+//            if error != nil {
+//                SVProgressHUD.showErrorWithStatus("Error, Please try again")
+//            }
+//            
+//            let mentors = result as? [User] ?? []
+//            
+//            completionBlock(mentors)
+//        }
     }
     
     func setupCollectionView() {
