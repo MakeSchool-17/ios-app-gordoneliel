@@ -15,11 +15,13 @@ class MentorBrowserCell: UICollectionViewCell {
     @IBOutlet weak var profileImage: UIImageView!
     
     @IBOutlet weak var collectionView: UICollectionView!
+    let insets = UIEdgeInsets(top: 0, left: 10, bottom: 10, right: 10)
     
     var mentor: User? {
         didSet {
             mentor?.fetchProfileImage()
             mentor?.image.bindTo(profileImage.bnd_image)
+            setupCollectionView()
         }
     }
     
@@ -40,17 +42,32 @@ class MentorBrowserCell: UICollectionViewCell {
 extension MentorBrowserCell {
     
     func setupCollectionView() {
-        dataSource = ArrayDataSource(items: [mentor!], cellIdentifier: MentorBrowserCellIdentifier) {
+        dataSource = ArrayDataSource(items: [mentor!], cellIdentifier: UserSummaryCellIdentifier) {
             (cell, user) in
             
-            let mentorBrowserCell = cell as! MentorBrowserCell
+            let userSummaryCell = cell as! UserSummaryCell
             
             if let user = user as? User {
-                mentorBrowserCell.mentor = user
+                userSummaryCell.mentor = user
             }
         }
         
         collectionView.dataSource = dataSource
-        collectionView.registerNib(MentorBrowserCell.nib(), forCellWithReuseIdentifier: MentorBrowserCellIdentifier)
+        collectionView.delegate = self
+        collectionView.registerNib(UserSummaryCell.nib(), forCellWithReuseIdentifier: UserSummaryCellIdentifier)
+    }
+}
+
+extension MentorBrowserCell: UICollectionViewDelegateFlowLayout {
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        
+        let width = Int((collectionView.frame.size.width) - (insets.left * 2))
+        let height = 130
+        let size = CGSize(width: width, height: height)
+        return size
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
+        return insets
     }
 }
