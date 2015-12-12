@@ -34,22 +34,17 @@ class LoginViewController: UIViewController {
      
      - parameter enabled: - A boolean of the state of the login button.
      */
-    func loginButton(enabled: Bool) -> ()
-    {
-        func enable()
-        {
-            UIView.animateWithDuration(0.3, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations:
-                {
+    func loginButton(enabled: Bool) -> () {
+        func enable() {
+            UIView.animateWithDuration(0.3, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
                     self.loginButton.backgroundColor = UIColor(red: 10/255, green: 101/255, blue: 172/255, alpha: 1.0)
                 }, completion: nil)
             
             loginButton.enabled = true
         }
-        func disable()
-        {
+        func disable() {
             loginButton.enabled = false
-            UIView.animateWithDuration(0.3, delay: 0, options: UIViewAnimationOptions.CurveEaseOut, animations:
-                {
+            UIView.animateWithDuration(0.3, delay: 0, options: UIViewAnimationOptions.CurveEaseOut, animations: {
                     self.loginButton.backgroundColor = UIColor(red: 100/255, green: 100/255, blue: 100/255, alpha: 1.0)
                 }, completion: nil)
         }
@@ -57,8 +52,7 @@ class LoginViewController: UIViewController {
     }
     
     // Resign the keyboard when user touches anything other than the keyboard
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?)
-    {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         view.endEditing(true)
         moveInputContainer(false)
     }
@@ -98,6 +92,7 @@ class LoginViewController: UIViewController {
             let viewController = storyboard.instantiateViewControllerWithIdentifier("HomeTabBar") as! UITabBarController
             let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
             appDelegate.window?.rootViewController = viewController
+            self.dismissViewControllerAnimated(true, completion: nil)
             
         }
     }
@@ -163,14 +158,11 @@ extension LoginViewController: UITextFieldDelegate {
     /**
      Enables or disables the login button, based on text entry
      */
-    func textFieldDidChangeAnimation()
-    {
-        if userNameTextField.text!.isEmpty || passwordTextField.text!.isEmpty
-        {
+    func textFieldDidChangeAnimation() {
+        if userNameTextField.text!.isEmpty || passwordTextField.text!.isEmpty {
             self.loginButton(false)
         }
-        else
-        {
+        else {
             self.loginButton(true)
         }
     }

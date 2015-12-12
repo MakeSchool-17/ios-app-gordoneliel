@@ -9,7 +9,7 @@
         <!--Login View Controller-->
         <scene sceneID="fA6-gg-LLs">
             <objects>
-                <viewController id="ZfJ-pr-9TD" customClass="LoginViewController" customModule="OfficeHours" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ZfJ-pr-9TD" customClass="LoginViewController" customModule="OfficeHours" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3BV-4L-9DA"/>
                         <viewControllerLayoutGuide type="bottom" id="Hgx-7a-p6n"/>
