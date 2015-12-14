@@ -26,6 +26,10 @@
 		057F476B1C1A1BE7007AC5DB /* MentorBrowserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 057F47691C1A1BE7007AC5DB /* MentorBrowserViewController.xib */; };
 		057F476D1C1A3A5A007AC5DB /* MentorBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057F476C1C1A3A5A007AC5DB /* MentorBrowserViewController.swift */; };
 		057F47751C1B72CE007AC5DB /* LocationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057F47741C1B72CE007AC5DB /* LocationHelper.swift */; };
+		059703881C1B94C20014E024 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 059703821C1B94C20014E024 /* Onboarding.storyboard */; };
+		059703891C1B94C20014E024 /* OnboardingDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059703841C1B94C20014E024 /* OnboardingDataModel.swift */; };
+		0597038A1C1B94C20014E024 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059703851C1B94C20014E024 /* PageViewController.swift */; };
+		0597038B1C1B94C20014E024 /* PagingContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059703861C1B94C20014E024 /* PagingContentViewController.swift */; };
 		05B872A51C0E70DA00F5D3FB /* LoginSignup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05B872A11C0E70DA00F5D3FB /* LoginSignup.storyboard */; };
 		05B872A61C0E70DA00F5D3FB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B872A31C0E70DA00F5D3FB /* LoginViewController.swift */; };
 		05B872A71C0E70DA00F5D3FB /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B872A41C0E70DA00F5D3FB /* SignUpViewController.swift */; };
@@ -79,6 +83,10 @@
 		057F47691C1A1BE7007AC5DB /* MentorBrowserViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MentorBrowserViewController.xib; sourceTree = "<group>"; };
 		057F476C1C1A3A5A007AC5DB /* MentorBrowserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MentorBrowserViewController.swift; sourceTree = "<group>"; };
 		057F47741C1B72CE007AC5DB /* LocationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationHelper.swift; sourceTree = "<group>"; };
+		059703821C1B94C20014E024 /* Onboarding.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
+		059703841C1B94C20014E024 /* OnboardingDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingDataModel.swift; sourceTree = "<group>"; };
+		059703851C1B94C20014E024 /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		059703861C1B94C20014E024 /* PagingContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagingContentViewController.swift; sourceTree = "<group>"; };
 		05B872A11C0E70DA00F5D3FB /* LoginSignup.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LoginSignup.storyboard; sourceTree = "<group>"; };
 		05B872A31C0E70DA00F5D3FB /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		05B872A41C0E70DA00F5D3FB /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -157,6 +165,16 @@
 			path = LocationHelper;
 			sourceTree = "<group>";
 		};
+		059703831C1B94C20014E024 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				059703851C1B94C20014E024 /* PageViewController.swift */,
+				059703861C1B94C20014E024 /* PagingContentViewController.swift */,
+				059703841C1B94C20014E024 /* OnboardingDataModel.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		05B8729F1C0E708C00F5D3FB /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -230,10 +248,10 @@
 				05B872AA1C0E747B00F5D3FB /* Designables */,
 				05B872A01C0E709500F5D3FB /* Extensions */,
 				05B8729F1C0E708C00F5D3FB /* Helpers */,
-				05E461FB1C0E6A5A006D956F /* Cells */,
 				05E461FE1C0E6A5A006D956F /* Onboarding */,
 				05E461FC1C0E6A5A006D956F /* Login:Signup */,
 				05E461FD1C0E6A5A006D956F /* Models */,
+				05E461FB1C0E6A5A006D956F /* Cells */,
 				05E461FF1C0E6A5A006D956F /* ViewControllers */,
 				05E462001C0E6A5A006D956F /* Views */,
 				051587751C0FB5F2005439ED /* Storyboards */,
@@ -291,6 +309,8 @@
 		05E461FE1C0E6A5A006D956F /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				059703821C1B94C20014E024 /* Onboarding.storyboard */,
+				059703831C1B94C20014E024 /* ViewControllers */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -430,6 +450,7 @@
 				051587741C0F7358005439ED /* UserSummaryCell.xib in Resources */,
 				053148961C11211500AEADF2 /* Settings.storyboard in Resources */,
 				05B872B41C0E791400F5D3FB /* ConnectionCell.xib in Resources */,
+				059703881C1B94C20014E024 /* Onboarding.storyboard in Resources */,
 				05E461E61C0E4F0F006D956F /* LaunchScreen.storyboard in Resources */,
 				05E461E31C0E4F0F006D956F /* Assets.xcassets in Resources */,
 				053148901C111F7400AEADF2 /* NearbyMentors.storyboard in Resources */,
@@ -505,6 +526,7 @@
 			files = (
 				05B872BB1C0EB1E700F5D3FB /* ArrayDataSource.swift in Sources */,
 				0531489B1C11298100AEADF2 /* OfficeHoursNavigation.swift in Sources */,
+				0597038B1C1B94C20014E024 /* PagingContentViewController.swift in Sources */,
 				05D152E81C17FE00003DABFF /* ProfileViewController.swift in Sources */,
 				05B872B71C0EAEFC00F5D3FB /* MentorCell.swift in Sources */,
 				05B872A91C0E724500F5D3FB /* User.swift in Sources */,
@@ -514,6 +536,7 @@
 				05B872A71C0E70DA00F5D3FB /* SignUpViewController.swift in Sources */,
 				0531489F1C11300300AEADF2 /* ParseHelper.swift in Sources */,
 				05B872A61C0E70DA00F5D3FB /* LoginViewController.swift in Sources */,
+				0597038A1C1B94C20014E024 /* PageViewController.swift in Sources */,
 				057F47661C1A18A3007AC5DB /* MentorBrowserCell.swift in Sources */,
 				05B872B01C0E747B00F5D3FB /* DesignableView.swift in Sources */,
 				051587731C0F7358005439ED /* UserSummaryCell.swift in Sources */,
@@ -521,6 +544,7 @@
 				05E461DC1C0E4F0F006D956F /* AppDelegate.swift in Sources */,
 				05F6646D1C16D5A200304703 /* InboxViewController.swift in Sources */,
 				057F476D1C1A3A5A007AC5DB /* MentorBrowserViewController.swift in Sources */,
+				059703891C1B94C20014E024 /* OnboardingDataModel.swift in Sources */,
 				05B872B31C0E791400F5D3FB /* ConnectionCell.swift in Sources */,
 				053148981C1123E200AEADF2 /* ConnectonsViewController.swift in Sources */,
 				05D152E51C17EC04003DABFF /* ProfileView.swift in Sources */,

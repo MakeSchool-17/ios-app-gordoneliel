@@ -7,13 +7,13 @@
 //
 
 import UIKit
-import MCCardPickerCollectionViewController
 import EBCardCollectionViewLayout
 
 class MentorBrowserViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
+    @IBOutlet weak var pageControl: UIPageControl!
     var dataSource: ArrayDataSource?
     var (mentors, selectedIndex): ([User]?, Int?)
         
@@ -23,7 +23,11 @@ class MentorBrowserViewController: UIViewController {
         super.viewDidLoad()
         
         setupCollectionView()
+        pageControl.numberOfPages = mentors!.count
         
+        let indexPath = NSIndexPath(forItem: 5, inSection: 0)
+
+        collectionView.scrollToItemAtIndexPath(indexPath, atScrollPosition: UICollectionViewScrollPosition.Right, animated: true)
     }
     
     func setupCollectionView() {
@@ -36,6 +40,7 @@ class MentorBrowserViewController: UIViewController {
                 mentorBrowserCell.mentor = user
             }
         }
+        
         collectionView.dataSource = dataSource
         collectionView.delegate = self
         
@@ -49,7 +54,6 @@ class MentorBrowserViewController: UIViewController {
             anOffset = UIOffsetMake(20, 20)
             layout.offset = anOffset
             layout.layoutType = .Horizontal
-
         }
         
         collectionView.registerNib(MentorBrowserCell.nib(), forCellWithReuseIdentifier: MentorBrowserCellIdentifier)
@@ -59,6 +63,7 @@ class MentorBrowserViewController: UIViewController {
         collectionView.collectionViewLayout.invalidateLayout()
         return true
     }
+    
     @IBAction func dismissMentorBrowser(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
     }
