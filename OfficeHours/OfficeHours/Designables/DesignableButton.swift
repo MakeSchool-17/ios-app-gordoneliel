@@ -50,4 +50,47 @@ import UIKit
         }
     }
     
+    @IBInspectable public var backgroundColorNormal: UIColor? {
+        didSet {
+            backgroundColor = backgroundColorNormal
+        }
+    }
+    
+    @IBInspectable public var backgroundColorHighlighted: UIColor?
+    var _backgroundColorHighlighted: UIColor? {
+        return backgroundColorHighlighted != nil ? backgroundColorHighlighted : backgroundColorNormal
+    }
+    
+    @IBInspectable public var backgroundColorSelected: UIColor?
+    var _backgroundColorSelected: UIColor? {
+        return backgroundColorSelected != nil ? backgroundColorSelected : _backgroundColorHighlighted
+    }
+    
+    @IBInspectable public var textColorHighlightedSelected: UIColor? {
+        didSet {
+            setTitleColor(textColorHighlightedSelected, forState: .Highlighted)
+            setTitleColor(textColorHighlightedSelected, forState: .Selected)
+        }
+    }
+    
+    @IBInspectable public var backgroundColorHighlightedSelected: UIColor?
+    var _backgroundColorHighlightedSelected: UIColor? {
+        return backgroundColorHighlightedSelected != nil ? backgroundColorHighlightedSelected : _backgroundColorHighlighted
+    }
+    
+    override public var highlighted: Bool {
+        didSet {
+            switch (highlighted, selected) {
+            case (true, false):
+                backgroundColor = _backgroundColorHighlighted
+            case (true, true):
+                backgroundColor = _backgroundColorHighlightedSelected
+            case (false, true):
+                backgroundColor = _backgroundColorSelected
+            default:
+                backgroundColor = backgroundColorNormal
+            }
+        }
+    }
+    
 }

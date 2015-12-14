@@ -62,6 +62,8 @@ class LoginViewController: UIViewController {
     */
     func loginUser() {
         SVProgressHUD.show()
+        view.userInteractionEnabled = false
+        
         guard let username = userNameTextField.text, let password = passwordTextField.text else {return}
         
         User.logInWithUsernameInBackground(username,
@@ -70,11 +72,12 @@ class LoginViewController: UIViewController {
                 
                 if error == nil {
                     self.moveToTabBarController()
-                    SVProgressHUD.dismiss()
                 }else {
                     SVProgressHUD.showErrorWithStatus("Username or password incorrect", maskType: .Black)
                 }
                 
+                SVProgressHUD.dismiss()
+               self.view.userInteractionEnabled = true
         }
     }
     // MARK: Login Action
@@ -135,9 +138,7 @@ extension LoginViewController: UITextFieldDelegate {
      Helper method that moves the container view for the uitextfields
      */
     func moveInputContainer(moveUp: Bool) {
-        
         if moveUp {
-            
             // Move TextFields up
             UIView.animateWithDuration(0.4, delay: 0.0, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.5, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
                 self.inputContainerCenterConstraint.constant = 100
@@ -146,7 +147,6 @@ extension LoginViewController: UITextFieldDelegate {
                 }, completion: nil)
             
         } else {
-            
             // Move TextFields down
             UIView.animateWithDuration(0.3) {
                 self.inputContainerCenterConstraint.constant = 0

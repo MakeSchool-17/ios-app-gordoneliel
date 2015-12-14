@@ -11,7 +11,7 @@ import UIKit
 class PageViewController: UIPageViewController {
     
     // Init
-    let pageTitles = ["Find Mentors In Your City", "Connect and engage with mentors", "Let's get started"]
+    let pageTitles = ["Find mentors in your city", "Connect and engage with mentors", "Let's get started"]
     
     override func viewDidLoad() {
         super.viewDidLoad()

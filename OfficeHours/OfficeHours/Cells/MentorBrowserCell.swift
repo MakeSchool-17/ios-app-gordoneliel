@@ -30,7 +30,7 @@ class MentorBrowserCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        layer.cornerRadius = 8
+        layer.cornerRadius = 6
         clipsToBounds = true
     }
 
@@ -62,7 +62,7 @@ extension MentorBrowserCell: UICollectionViewDelegateFlowLayout {
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         
         let width = Int((collectionView.frame.size.width) - (insets.left * 2))
-        let height = 125
+        let height = 115
         let size = CGSize(width: width, height: height)
         return size
     }

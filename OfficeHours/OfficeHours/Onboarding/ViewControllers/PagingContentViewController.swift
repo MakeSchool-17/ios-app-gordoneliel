@@ -10,6 +10,7 @@ import UIKit
 
 class PagingContentViewController: UIViewController {
 
+    @IBOutlet weak var circleContainerView: DesignableView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var pageControl: UIPageControl!
@@ -22,6 +23,9 @@ class PagingContentViewController: UIViewController {
     }
     
     func configureTutorialView() {
+        circleContainerView.layer.cornerRadius = circleContainerView.frame.size.width / 2
+        circleContainerView.clipsToBounds = true
+        
         pageControl.currentPage = model!.index
         titleLabel.text = model?.title
         imageView.image = model?.circleImage.toUIImage()

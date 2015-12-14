@@ -8,6 +8,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MentorBrowserViewController" customModule="OfficeHours" customModuleProvider="target">
             <connections>
                 <outlet property="collectionView" destination="d0D-ME-jDe" id="AM4-1p-9zJ"/>
+                <outlet property="pageControl" destination="dZE-30-vAZ" id="V6z-T6-hRS"/>
                 <outlet property="view" destination="Tww-si-hs2" id="9Ly-KW-Whd"/>
             </connections>
         </placeholder>
@@ -38,19 +39,36 @@
                         <action selector="dismissMentorBrowser:" destination="-1" eventType="touchUpInside" id="o3u-Bg-Jsd"/>
                     </connections>
                 </button>
+                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="dZE-30-vAZ">
+                    <rect key="frame" x="280.5" y="26.5" width="39" height="37"/>
+                </pageControl>
             </subviews>
             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="d0D-ME-jDe" secondAttribute="bottom" id="5Vu-H7-6lc"/>
                 <constraint firstItem="TR5-cm-o8j" firstAttribute="width" secondItem="TR5-cm-o8j" secondAttribute="height" multiplier="1:1" id="9eT-3k-faH"/>
+                <constraint firstAttribute="trailing" secondItem="dZE-30-vAZ" secondAttribute="trailing" constant="15" id="BmX-nf-t5H"/>
                 <constraint firstItem="TR5-cm-o8j" firstAttribute="width" secondItem="TR5-cm-o8j" secondAttribute="height" multiplier="1:1" id="FJX-uN-0gR"/>
+                <constraint firstItem="dZE-30-vAZ" firstAttribute="top" secondItem="TR5-cm-o8j" secondAttribute="top" id="H1g-UN-wkB"/>
                 <constraint firstItem="d0D-ME-jDe" firstAttribute="top" secondItem="Tww-si-hs2" secondAttribute="top" constant="50" id="Lau-mn-xZG"/>
+                <constraint firstItem="dZE-30-vAZ" firstAttribute="centerY" secondItem="TR5-cm-o8j" secondAttribute="centerY" id="Tni-Ki-5OM"/>
                 <constraint firstItem="TR5-cm-o8j" firstAttribute="top" secondItem="Tww-si-hs2" secondAttribute="top" constant="30" id="UDU-2L-lKJ"/>
                 <constraint firstItem="TR5-cm-o8j" firstAttribute="leading" secondItem="Tww-si-hs2" secondAttribute="leading" constant="15" id="e9z-mq-4zV"/>
+                <constraint firstItem="dZE-30-vAZ" firstAttribute="centerY" secondItem="TR5-cm-o8j" secondAttribute="centerY" id="f4n-Mg-CPX"/>
                 <constraint firstAttribute="trailing" secondItem="d0D-ME-jDe" secondAttribute="trailing" id="geF-Gi-2oM"/>
+                <constraint firstItem="dZE-30-vAZ" firstAttribute="centerX" secondItem="Tww-si-hs2" secondAttribute="centerX" id="od8-dO-1FP"/>
                 <constraint firstItem="d0D-ME-jDe" firstAttribute="leading" secondItem="Tww-si-hs2" secondAttribute="leading" id="qc1-B2-Da6"/>
+                <constraint firstItem="dZE-30-vAZ" firstAttribute="leading" secondItem="TR5-cm-o8j" secondAttribute="trailing" constant="15" id="rdc-pt-aGa"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="BmX-nf-t5H"/>
+                    <exclude reference="H1g-UN-wkB"/>
+                    <exclude reference="Tni-Ki-5OM"/>
+                    <exclude reference="rdc-pt-aGa"/>
+                </mask>
+            </variation>
             <point key="canvasLocation" x="1224" y="380"/>
         </view>
     </objects>

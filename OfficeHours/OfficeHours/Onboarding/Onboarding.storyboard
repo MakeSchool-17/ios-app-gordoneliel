@@ -35,11 +35,13 @@
                                         <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="YhP-ls-Sy2" secondAttribute="trailing" id="2Wm-p9-sNI"/>
                                     <constraint firstAttribute="bottom" secondItem="YhP-ls-Sy2" secondAttribute="bottom" id="DG2-4g-dsx"/>
-                                    <constraint firstAttribute="height" constant="250" id="Mfz-No-bEq"/>
+                                    <constraint firstAttribute="height" constant="250" id="Mfz-No-bEq">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="250"/>
+                                    </constraint>
                                     <constraint firstItem="YhP-ls-Sy2" firstAttribute="top" secondItem="yLw-Cs-5h5" secondAttribute="top" id="Sue-n2-hNg"/>
                                     <constraint firstItem="YhP-ls-Sy2" firstAttribute="leading" secondItem="yLw-Cs-5h5" secondAttribute="leading" id="oc5-9p-Z7d"/>
                                     <constraint firstAttribute="width" secondItem="yLw-Cs-5h5" secondAttribute="height" multiplier="1:1" id="r7B-Ib-mWT"/>
@@ -53,94 +55,72 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find Mentors In Your City" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cJh-e4-Yn9">
                                 <rect key="frame" x="150" y="70" width="300" height="31.5"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="300" id="S3P-dI-4Mq"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="300" id="S3P-dI-4Mq">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="500"/>
+                                    </constraint>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="23"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ckR-nk-ETC" userLabel="Login/Signup">
-                                <rect key="frame" x="125" y="540" width="350" height="45"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eGi-00-fk1" customClass="DesignableButton" customModule="OfficeHours" customModuleProvider="target">
-                                        <rect key="frame" x="15" y="0.0" width="155" height="45"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="150" id="PMz-9N-VBd"/>
-                                            <constraint firstAttribute="height" constant="45" id="htb-8w-wub"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
-                                        <state key="normal" title="Login">
-                                            <color key="titleColor" red="0.01176470611" green="0.50588238240000005" blue="0.78823530669999997" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="3"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="PMz-9N-VBd"/>
-                                                <exclude reference="htb-8w-wub"/>
-                                            </mask>
-                                        </variation>
-                                        <connections>
-                                            <segue destination="GyV-yb-7kx" kind="showDetail" id="hbH-c4-R9B"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mns-Lb-WFG" customClass="DesignableButton" customModule="OfficeHours" customModuleProvider="target">
-                                        <rect key="frame" x="180" y="0.0" width="155" height="45"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
-                                        <state key="normal" title="Signup">
-                                            <color key="titleColor" red="0.01176470611" green="0.50588238240000005" blue="0.78823530669999997" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="3"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <segue destination="GyV-yb-7kx" kind="showDetail" id="cy1-i0-saY"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mns-Lb-WFG" customClass="DesignableButton" customModule="OfficeHours" customModuleProvider="target">
+                                <rect key="frame" x="175" y="508" width="250" height="45"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="Mns-Lb-WFG" firstAttribute="top" secondItem="ckR-nk-ETC" secondAttribute="top" id="0XX-OR-fFR"/>
-                                    <constraint firstAttribute="trailing" secondItem="Mns-Lb-WFG" secondAttribute="trailing" constant="15" id="1Uc-aT-agE"/>
-                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="350" id="49C-Ch-Ks6"/>
-                                    <constraint firstItem="Mns-Lb-WFG" firstAttribute="leading" secondItem="eGi-00-fk1" secondAttribute="trailing" constant="10" id="A0Q-iD-qr8"/>
-                                    <constraint firstItem="eGi-00-fk1" firstAttribute="leading" secondItem="ckR-nk-ETC" secondAttribute="leading" constant="15" id="B8x-uX-kAC"/>
-                                    <constraint firstAttribute="bottom" secondItem="Mns-Lb-WFG" secondAttribute="bottom" id="FKd-k5-G7H"/>
-                                    <constraint firstItem="eGi-00-fk1" firstAttribute="leading" secondItem="ckR-nk-ETC" secondAttribute="leading" constant="49" id="SAw-ED-aXO"/>
-                                    <constraint firstItem="eGi-00-fk1" firstAttribute="top" secondItem="ckR-nk-ETC" secondAttribute="top" id="e4U-L7-znn"/>
-                                    <constraint firstAttribute="height" constant="45" id="hZv-1X-XgJ"/>
-                                    <constraint firstItem="Mns-Lb-WFG" firstAttribute="width" secondItem="eGi-00-fk1" secondAttribute="width" id="iOI-Ww-DyM"/>
-                                    <constraint firstItem="Mns-Lb-WFG" firstAttribute="centerY" secondItem="eGi-00-fk1" secondAttribute="centerY" id="mcC-iS-4sh"/>
-                                    <constraint firstItem="eGi-00-fk1" firstAttribute="centerY" secondItem="ckR-nk-ETC" secondAttribute="centerY" id="rAh-9A-5TQ"/>
-                                    <constraint firstAttribute="bottom" secondItem="eGi-00-fk1" secondAttribute="bottom" id="xgT-aW-htN"/>
+                                    <constraint firstAttribute="height" constant="45" id="7z4-FV-hvl"/>
                                 </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="SAw-ED-aXO"/>
-                                    </mask>
-                                </variation>
-                            </view>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
+                                <state key="normal" title="Get Started">
+                                    <color key="titleColor" red="0.01176470611" green="0.50588238240000005" blue="0.78823530669999997" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="0.80000000000000004"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.20000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOffsetY">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="backgroundColorNormal">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="backgroundColorHighlighted">
+                                        <color key="value" red="0.90980392160000001" green="0.68627450980000004" blue="0.078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="backgroundColorSelected">
+                                        <color key="value" red="0.90980392160000001" green="0.68627450980000004" blue="0.078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="textColorHighlightedSelected">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="backgroundColorHighlightedSelected">
+                                        <color key="value" red="0.90980392160000001" green="0.68627450980000004" blue="0.078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="GyV-yb-7kx" kind="showDetail" id="cy1-i0-saY"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.011764706112444401" green="0.5058823823928833" blue="0.78823530673980713" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="ckR-nk-ETC" secondAttribute="trailing" priority="999" constant="15" id="6wv-qP-9Ha"/>
+                            <constraint firstItem="Mns-Lb-WFG" firstAttribute="leading" secondItem="cyq-L4-8O3" secondAttribute="leading" id="9VZ-dv-VfO"/>
                             <constraint firstItem="cJh-e4-Yn9" firstAttribute="top" secondItem="T1Y-az-h9e" secondAttribute="bottom" constant="50" id="BP8-hX-2Bc"/>
-                            <constraint firstItem="ckR-nk-ETC" firstAttribute="centerX" secondItem="cyq-L4-8O3" secondAttribute="centerX" id="Gql-Ov-dgD"/>
+                            <constraint firstItem="Mns-Lb-WFG" firstAttribute="trailing" secondItem="cyq-L4-8O3" secondAttribute="trailing" id="H9n-nR-yjw"/>
                             <constraint firstItem="cyq-L4-8O3" firstAttribute="leading" secondItem="yLw-Cs-5h5" secondAttribute="leading" id="Icy-1D-6nr"/>
+                            <constraint firstItem="M5N-Ym-lBC" firstAttribute="top" secondItem="Mns-Lb-WFG" secondAttribute="bottom" constant="47" id="PW1-2c-1fc"/>
                             <constraint firstItem="cJh-e4-Yn9" firstAttribute="centerX" secondItem="wrs-Yx-tS3" secondAttribute="centerX" id="Tf1-H6-0cc"/>
-                            <constraint firstItem="M5N-Ym-lBC" firstAttribute="top" secondItem="ckR-nk-ETC" secondAttribute="bottom" constant="15" id="XyB-fJ-bK7"/>
                             <constraint firstItem="cyq-L4-8O3" firstAttribute="top" secondItem="yLw-Cs-5h5" secondAttribute="bottom" constant="25" id="aTV-jt-K6x"/>
-                            <constraint firstItem="ckR-nk-ETC" firstAttribute="top" secondItem="cyq-L4-8O3" secondAttribute="bottom" constant="50" id="eAQ-MC-GBd"/>
                             <constraint firstItem="cJh-e4-Yn9" firstAttribute="leading" secondItem="wrs-Yx-tS3" secondAttribute="leading" priority="999" constant="15" id="iPb-Dp-9F8"/>
                             <constraint firstItem="cyq-L4-8O3" firstAttribute="trailing" secondItem="yLw-Cs-5h5" secondAttribute="trailing" id="qbM-3M-hXr"/>
-                            <constraint firstItem="ckR-nk-ETC" firstAttribute="leading" secondItem="wrs-Yx-tS3" secondAttribute="leading" priority="999" constant="15" id="qfZ-1n-gU6"/>
                             <constraint firstItem="yLw-Cs-5h5" firstAttribute="centerY" secondItem="wrs-Yx-tS3" secondAttribute="centerY" constant="-30" id="wRc-xB-f6i"/>
                             <constraint firstAttribute="trailing" secondItem="cJh-e4-Yn9" secondAttribute="trailing" priority="999" constant="15" id="xd3-fA-oFl"/>
                             <constraint firstItem="yLw-Cs-5h5" firstAttribute="centerX" secondItem="wrs-Yx-tS3" secondAttribute="centerX" id="y3T-J4-rNb"/>
@@ -149,11 +129,11 @@
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="zSB-gP-oXJ"/>
-                                <exclude reference="eAQ-MC-GBd"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="circleContainerView" destination="yLw-Cs-5h5" id="FTG-gE-czj"/>
                         <outlet property="imageView" destination="YhP-ls-Sy2" id="bm1-hy-DZO"/>
                         <outlet property="pageControl" destination="cyq-L4-8O3" id="1oa-FM-m8H"/>
                         <outlet property="titleLabel" destination="cJh-e4-Yn9" id="M6p-qo-VXV"/>
@@ -169,13 +149,10 @@
                 <viewControllerPlaceholder storyboardName="LoginSignup" referencedIdentifier="LoginVC" id="GyV-yb-7kx" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oNX-SC-I3f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1055" y="384"/>
+            <point key="canvasLocation" x="1055" y="409"/>
         </scene>
     </scenes>
     <resources>
-        <image name="CityIllustration" width="479" height="479"/>
+        <image name="CityIllustration" width="481" height="480"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="cy1-i0-saY"/>
-    </inferredMetricsTieBreakers>
 </document>
