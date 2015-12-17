@@ -8,14 +8,17 @@
 
 import UIKit
 import SVProgressHUD
+import Parse
+import Bond
 
 class ConnectonsViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
     var dataSource: ArrayDataSource?
-    var mentors: [User]?
-    let defaultNearbyMentorRange = 0...10
+    var connectedMentors: [User]?
+    let defaultNearbyMentorRange = 0...50
+    var connectionDisposable: DisposableType?
     
     let insets = UIEdgeInsets(top: 10, left: 5, bottom: 10, right: 5)
     
@@ -28,39 +31,39 @@ class ConnectonsViewController: UIViewController {
         super.viewWillAppear(animated)
         
         SVProgressHUD.show()
-        loadUserConnectionInRange(defaultNearbyMentorRange, distanceFilter: 10) {
-            [unowned self] users in
-            
-            self.mentors = users
-            self.setupCollectionView()
-            SVProgressHUD.dismiss()
+        User.currentUser()?.fetchConnections()
+        connectionDisposable?.dispose()
+        connectionDisposable = User.currentUser()?.connections.observe {
+            (value: [User]?) -> () in
+            if let value = value {
+                self.connectedMentors = value
+                self.setupCollectionView()
+            }
         }
+        
+//        loadUserConnectionInRange(defaultNearbyMentorRange, distanceFilter: 10)
+        
+        SVProgressHUD.dismiss()
+        
     }
     
     // MARK: Load Nearby Mentors
-    func loadUserConnectionInRange(range: Range<Int>, distanceFilter: Double, completionBlock: ([User]?) -> Void) {
-        ParseHelper.fetchUserConnection(range) {
-            (result, error) -> Void in
+    func loadUserConnectionInRange(range: Range<Int>, distanceFilter: Double) {
+        ParseHelper.connectionsForUser(User.currentUser()!) {
+            [unowned self] (results, error) -> Void in
             
-            let mentors = result as? [User] ?? []
+            let relations = results ?? []
+            // use map to extract the User from a Follow object
+            self.connectedMentors = relations.map {
+                $0.objectForKey(ParseHelper.ParseToUser) as! User
+            }
             
-            completionBlock(mentors)
+            self.setupCollectionView()
         }
-//        ParseHelper.mentorsNearbyCurrentUser(range, distanceFilter: distanceFilter) {
-//            (result, error) -> Void in
-//            
-//            if error != nil {
-//                SVProgressHUD.showErrorWithStatus("Error, Please try again")
-//            }
-//            
-//            let mentors = result as? [User] ?? []
-//            
-//            completionBlock(mentors)
-//        }
     }
     
     func setupCollectionView() {
-        dataSource = ArrayDataSource(items: mentors!, cellIdentifier: ConnectionCellIdentifier) {
+        dataSource = ArrayDataSource(items: connectedMentors!, cellIdentifier: ConnectionCellIdentifier) {
             (cell, user) in
             
             let connectionsCell = cell as! ConnectionCell
@@ -86,7 +89,7 @@ extension ConnectonsViewController: UICollectionViewDelegate {
         mentorProfileViewController.modalPresentationStyle = .OverFullScreen
         mentorProfileViewController.modalTransitionStyle = .CrossDissolve
         
-        if let mentors = mentors {
+        if let mentors = connectedMentors {
             mentorProfileViewController.mentors = mentors
             mentorProfileViewController.selectedIndex = indexPath.row
             presentViewController(mentorProfileViewController, animated: true, completion: nil)
@@ -97,7 +100,7 @@ extension ConnectonsViewController: UICollectionViewDelegate {
 extension ConnectonsViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         let width = Int((collectionView.frame.size.width) - (insets.left * 2))
-        let height = 80
+        let height = 90
         let size = CGSize(width: width, height: height)
         
         return size

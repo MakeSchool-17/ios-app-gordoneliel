@@ -29,7 +29,7 @@ class LocationHelper: NSObject, CLLocationManagerDelegate {
     func getUserLocationName(callback : LocationCallback) {
         let geoCoder = CLGeocoder()
         
-        let locValue:CLLocationCoordinate2D = locationManager.location!.coordinate
+        guard let locValue = locationManager.location?.coordinate else {return}
         
         let location = CLLocation(latitude: locValue.latitude, longitude: locValue.longitude)
         

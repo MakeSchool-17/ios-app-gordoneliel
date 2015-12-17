@@ -11,63 +11,43 @@ import UIKit
 let MentorBrowserCellIdentifier = "MentorBrowserCell"
 
 class MentorBrowserCell: UICollectionViewCell {
-
-    @IBOutlet weak var profileImage: UIImageView!
     
-    @IBOutlet weak var collectionView: UICollectionView!
-    let insets = UIEdgeInsets(top: 0, left: 0, bottom: 10, right: 0)
+    @IBOutlet weak var summary: UILabel!
+    @IBOutlet weak var jobTitle: UILabel!
+    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var profileImage: UIImageView!
     
     var mentor: User? {
         didSet {
             mentor?.fetchProfileImage()
             mentor?.image.bindTo(profileImage.bnd_image)
-            setupCollectionView()
+            mentor?.userName.bindTo(name.bnd_text)
+            mentor?.userJobTitle.bindTo(jobTitle.bnd_text)
+            mentor?.userAbout.bindTo(summary.bnd_text)
         }
     }
     
-    var dataSource: ArrayDataSource?
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        self.roundCorners([UIRectCorner.TopRight, UIRectCorner.TopLeft], radius: 6)
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        layer.cornerRadius = 6
-        clipsToBounds = true
-    }
 
+    }
+    
+    @IBAction func requestPressed(sender: DesignableButton) {
+        if sender.selected {
+            sender.selected = false
+            sender.setTitle("Request", forState: .Normal)
+        } else {
+            sender.selected = true
+            sender.setTitle("Pending", forState: .Selected)
+        }
+    }
+    
     static func nib() -> UINib {
         return UINib(nibName: MentorBrowserCellIdentifier, bundle: nil)
-    }
-}
-
-extension MentorBrowserCell {
-    
-    func setupCollectionView() {
-        dataSource = ArrayDataSource(items: [mentor!], cellIdentifier: UserSummaryCellIdentifier) {
-            (cell, user) in
-            
-            let userSummaryCell = cell as! UserSummaryCell
-            
-            if let user = user as? User {
-                userSummaryCell.mentor = user
-            }
-        }
-        
-        collectionView.dataSource = dataSource
-        collectionView.delegate = self
-        collectionView.registerNib(UserSummaryCell.nib(), forCellWithReuseIdentifier: UserSummaryCellIdentifier)
-    }
-}
-
-extension MentorBrowserCell: UICollectionViewDelegateFlowLayout {
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        
-        let width = Int((collectionView.frame.size.width) - (insets.left * 2))
-        let height = 115
-        let size = CGSize(width: width, height: height)
-        return size
-    }
-    
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
-        return insets
     }
 }
