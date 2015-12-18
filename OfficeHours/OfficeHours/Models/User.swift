@@ -47,16 +47,13 @@ class User: PFUser {
             (var connections: [PFObject]?, error: NSError?)  -> Void in
             
             // 3
-            connections = connections?.filter {
-                connection in
+            connections = connections?.filter { connection in
                 
                 connection[ParseHelper.ParseToUser] != nil
             }
             
             // 4
-            self.connections.value = connections?.map {
-                connection in
-                
+            self.connections.value = connections?.map { connection in
                 let toUser = connection[ParseHelper.ParseToUser] as! User
                 
                 return toUser

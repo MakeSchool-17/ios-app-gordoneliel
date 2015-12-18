@@ -25,42 +25,38 @@ class ConnectonsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        
         SVProgressHUD.show()
-        User.currentUser()?.fetchConnections()
+        
         connectionDisposable?.dispose()
+        User.currentUser()?.fetchConnections()
         connectionDisposable = User.currentUser()?.connections.observe {
             (value: [User]?) -> () in
             if let value = value {
                 self.connectedMentors = value
                 self.setupCollectionView()
+                SVProgressHUD.dismiss()
             }
         }
         
-//        loadUserConnectionInRange(defaultNearbyMentorRange, distanceFilter: 10)
+        //        loadUserConnectionInRange(defaultNearbyMentorRange, distanceFilter: 10)
         
-        SVProgressHUD.dismiss()
-        
+        //        SVProgressHUD.dismiss()
     }
     
     // MARK: Load Nearby Mentors
-    func loadUserConnectionInRange(range: Range<Int>, distanceFilter: Double) {
-        ParseHelper.connectionsForUser(User.currentUser()!) {
-            [unowned self] (results, error) -> Void in
-            
-            let relations = results ?? []
-            // use map to extract the User from a Follow object
-            self.connectedMentors = relations.map {
-                $0.objectForKey(ParseHelper.ParseToUser) as! User
-            }
-            
-            self.setupCollectionView()
-        }
-    }
+//    func loadUserConnectionInRange(range: Range<Int>, distanceFilter: Double) {
+//        ParseHelper.connectionsForUser(User.currentUser()!) {
+//            [unowned self] (results, error) -> Void in
+//            
+//            let relations = results ?? []
+//            // use map to extract the User from a Follow object
+//            self.connectedMentors = relations.map {
+//                $0.objectForKey(ParseHelper.ParseToUser) as! User
+//            }
+//            
+//            self.setupCollectionView()
+//        }
+//    }
     
     func setupCollectionView() {
         dataSource = ArrayDataSource(items: connectedMentors!, cellIdentifier: ConnectionCellIdentifier) {
