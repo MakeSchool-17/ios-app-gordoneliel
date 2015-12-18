@@ -12,7 +12,7 @@ class ParseHelper: NSObject {
     
     // Connection Relation
     static let ParseConnectionClass = "Connection"
-    static let ParseFromUser =  "fromUser"
+    static let ParseFromUser = "fromUser"
     static let ParseToUser = "toUser"
     
     // User properties
@@ -47,9 +47,10 @@ class ParseHelper: NSObject {
         }
     }
     
-    static func fetchUserConnection(range: Range<Int>, completionBlock: PFQueryArrayResultBlock) {
+    static func connectionsForUser(user: User, completionBlock: PFQueryArrayResultBlock) {
         let userConnectionQuery = PFQuery(className: ParseConnectionClass)
         userConnectionQuery.cachePolicy = .NetworkOnly
+        userConnectionQuery.includeKey(ParseToUser)
         
         userConnectionQuery.whereKey(ParseFromUser, equalTo: User.currentUser()!)
         

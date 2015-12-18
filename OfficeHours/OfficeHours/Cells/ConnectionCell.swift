@@ -38,11 +38,10 @@ class ConnectionCell: UICollectionViewCell {
         let selectedView = UIView()
         selectedView.backgroundColor = UIColor.lighterGrayColor()
         selectedBackgroundView = selectedView
-
-        profileImage.layer.cornerRadius = profileImage.frame.size.width / 2
-        profileImage.clipsToBounds = true
         
-        layer.cornerRadius = 3
+        profileImage.roundCorners(.AllCorners, radius: profileImage.frame.size.width / 2)
+
+        layer.cornerRadius = 6
         clipsToBounds = true
     }
 

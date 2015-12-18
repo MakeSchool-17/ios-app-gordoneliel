@@ -33,11 +33,8 @@ class ProfileView: UICollectionReusableView {
         
         user = User.currentUser()
         
-        profileImage.layer.cornerRadius = profileImage.frame.size.width / 2
-        profileImage.clipsToBounds = true
-        
-        layer.cornerRadius = 3
-        clipsToBounds = true
+        profileImage.roundCorners(.AllCorners, radius: profileImage.frame.size.width / 2)
+        roundCorners(.AllCorners, radius: 6)
     }
     
     @IBAction func editProfilePressed(sender: AnyObject) {

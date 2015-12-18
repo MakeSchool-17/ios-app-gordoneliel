@@ -29,6 +29,7 @@ class NearbyMentorViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         SVProgressHUD.show()
+        
         loadNearbyMentorsInRange(defaultNearbyMentorRange, distanceFilter: 10) {
             [unowned self] users in
             
@@ -72,6 +73,10 @@ class NearbyMentorViewController: UIViewController {
             mentorView.setupCollectionView()
         }
     }
+
+    override func willRotateToInterfaceOrientation(toInterfaceOrientation: UIInterfaceOrientation, duration: NSTimeInterval) {
+        mentorView.collectionView.collectionViewLayout.invalidateLayout()
+    }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     }
@@ -81,20 +86,15 @@ class NearbyMentorViewController: UIViewController {
 extension NearbyMentorViewController: UICollectionViewDelegate {
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
-//        let mentorProfileViewController = MentorBrowserViewController()
-//        mentorProfileViewController.modalPresentationStyle = .OverFullScreen
-//        mentorProfileViewController.modalTransitionStyle = .CrossDissolve
-        
-        let mtn = MentorBrowserViewController()
-        mtn.modalPresentationStyle = .OverFullScreen
-        mtn.modalTransitionStyle = .CrossDissolve
+        let mentorBrowserVC = MentorBrowserViewController()
+        mentorBrowserVC.modalPresentationStyle = .OverFullScreen
+        mentorBrowserVC.modalTransitionStyle = .CrossDissolve
 
 
         if let mentors = mentors {
-//            mentorProfileViewController.mentors = mentors
-            mtn.selectedIndex = indexPath.row
-            mtn.mentors = mentors
-            presentViewController(mtn, animated: true, completion: nil)
+            mentorBrowserVC.selectedIndex = indexPath.row
+            mentorBrowserVC.mentors = mentors
+            presentViewController(mentorBrowserVC, animated: true, completion: nil)
         }
     }
 }

@@ -29,7 +29,6 @@
                     <connections>
                         <outlet property="mentorView" destination="Xuv-vD-BSj" id="xRa-3Z-Jvu"/>
                         <outlet property="noMentorView" destination="tib-nK-Fp0" id="4Yc-iS-Zgd"/>
-                        <segue destination="F2l-Jn-TmN" kind="show" identifier="MentorDetail" id="pgJ-ty-fJz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6kJ-yh-y6t" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -38,7 +37,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BuildingCircleBottom" translatesAutoresizingMaskIntoConstraints="NO" id="I2E-wc-zQ1">
-                            <rect key="frame" x="112" y="95" width="200" height="200"/>
+                            <rect key="frame" x="112" y="75" width="200" height="200"/>
                             <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="I2E-wc-zQ1" secondAttribute="height" multiplier="1:1" id="8zA-fT-PdD"/>
@@ -46,7 +45,7 @@
                             </constraints>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oops. Looks like there aren’t any mentors in your area" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wiD-Xo-N7D">
-                            <rect key="frame" x="15" y="310" width="394" height="49.5"/>
+                            <rect key="frame" x="15" y="290" width="394" height="49.5"/>
                             <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
@@ -57,7 +56,7 @@
                         <constraint firstAttribute="trailing" secondItem="wiD-Xo-N7D" secondAttribute="trailing" constant="15" id="GVH-HG-qbs"/>
                         <constraint firstItem="wiD-Xo-N7D" firstAttribute="top" secondItem="I2E-wc-zQ1" secondAttribute="bottom" constant="15" id="StH-Ts-qZV"/>
                         <constraint firstItem="wiD-Xo-N7D" firstAttribute="leading" secondItem="tib-nK-Fp0" secondAttribute="leading" constant="15" id="Vfk-Up-vLd"/>
-                        <constraint firstItem="I2E-wc-zQ1" firstAttribute="centerY" secondItem="tib-nK-Fp0" secondAttribute="centerY" id="gq7-JR-QAV"/>
+                        <constraint firstItem="I2E-wc-zQ1" firstAttribute="centerY" secondItem="tib-nK-Fp0" secondAttribute="centerY" constant="-20" id="gq7-JR-QAV"/>
                         <constraint firstItem="I2E-wc-zQ1" firstAttribute="centerX" secondItem="tib-nK-Fp0" secondAttribute="centerX" id="ujs-Ob-FOQ"/>
                     </constraints>
                 </view>
@@ -150,24 +149,6 @@
                 </view>
             </objects>
             <point key="canvasLocation" x="439" y="449"/>
-        </scene>
-        <!--Mentor Profile-->
-        <scene sceneID="a8A-rR-ugn">
-            <objects>
-                <viewController title="Mentor Profile" hidesBottomBarWhenPushed="YES" id="F2l-Jn-TmN" customClass="MentorProfileViewController" customModule="OfficeHours" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Q9e-EK-5EM"/>
-                        <viewControllerLayoutGuide type="bottom" id="Mq5-OQ-KEh"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="uA3-Yw-l84">
-                        <rect key="frame" x="0.0" y="64" width="600" height="487"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5Ry-1I-20A" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1385" y="449"/>
         </scene>
     </scenes>
     <resources>

@@ -10,24 +10,34 @@ import UIKit
 import EBCardCollectionViewLayout
 
 class MentorBrowserViewController: UIViewController {
-
+    
     @IBOutlet weak var collectionView: UICollectionView!
     
     @IBOutlet weak var pageControl: UIPageControl!
     var dataSource: ArrayDataSource?
     var (mentors, selectedIndex): ([User]?, Int?)
-        
+    
     let insets = UIEdgeInsets(top: 50, left: 20, bottom: 10, right: 20)
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupCollectionView()
         pageControl.numberOfPages = mentors!.count
         
-        let indexPath = NSIndexPath(forItem: 5, inSection: 0)
-
-        collectionView.scrollToItemAtIndexPath(indexPath, atScrollPosition: UICollectionViewScrollPosition.Right, animated: true)
+        
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        let indexPath = NSIndexPath(forItem: selectedIndex!, inSection: 0)
+        //
+        if selectedIndex > 1 {
+            collectionView.scrollToItemAtIndexPath(NSIndexPath(forItem: selectedIndex! - 1, inSection: 0), atScrollPosition: UICollectionViewScrollPosition.CenteredHorizontally, animated: false)
+        }
+        
+        collectionView.scrollToItemAtIndexPath(indexPath, atScrollPosition: UICollectionViewScrollPosition.CenteredHorizontally, animated: true)
     }
     
     func setupCollectionView() {
@@ -58,11 +68,11 @@ class MentorBrowserViewController: UIViewController {
         
         collectionView.registerNib(MentorBrowserCell.nib(), forCellWithReuseIdentifier: MentorBrowserCellIdentifier)
     }
-
-    override func shouldAutorotate() -> Bool {
+    
+    override func willRotateToInterfaceOrientation(toInterfaceOrientation: UIInterfaceOrientation, duration: NSTimeInterval) {
         collectionView.collectionViewLayout.invalidateLayout()
-        return true
     }
+    
     
     @IBAction func dismissMentorBrowser(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
@@ -83,7 +93,7 @@ extension MentorBrowserViewController: UICollectionViewDelegateFlowLayout {
         
         return size
     }
-
+    
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
         return insets
     }

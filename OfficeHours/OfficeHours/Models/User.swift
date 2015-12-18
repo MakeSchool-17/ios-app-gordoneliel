@@ -19,17 +19,54 @@ class User: PFUser {
     @NSManaged var name: String?
     @NSManaged var location: PFGeoPoint?
     
-    
     var image: Observable<UIImage?> = Observable(nil)
     var userName: Observable<String?> = Observable(nil)
     var userJobTitle: Observable<String?> = Observable(nil)
     var userWorkName: Observable<String?> = Observable(nil)
     var userAbout: Observable<String?> = Observable(nil)
+    var connectionRequests: Observable<User?> = Observable(nil)
+    var connections: Observable<[User]?> = Observable(nil)
     
     var photoUploadTask: UIBackgroundTaskIdentifier?
     
     override init() {
         super.init()
+    }
+    
+    /**
+     Fetches all connections of a user
+     */
+    func fetchConnections() {
+        // 1
+        if (connections.value != nil) {
+            return
+        }
+        
+        // 2
+        ParseHelper.connectionsForUser(self) {
+            (var connections: [PFObject]?, error: NSError?)  -> Void in
+            
+            // 3
+            connections = connections?.filter { connection in
+                
+                connection[ParseHelper.ParseToUser] != nil
+            }
+            
+            // 4
+            self.connections.value = connections?.map { connection in
+                let toUser = connection[ParseHelper.ParseToUser] as! User
+                
+                return toUser
+            }
+        }
+    }
+    
+    func isUserConnectedWithMentor(user: User) -> Bool {
+        if let connections = connections.value {
+            return connections.contains(user)
+        } else {
+            return false
+        }
     }
     
     // MARK: Fetch Profile image from parse
@@ -41,7 +78,7 @@ class User: PFUser {
             userJobTitle.value = jobTitle
             userAbout.value = about
         }
-
+        
         if image.value == nil {
             profileImage?.getDataInBackgroundWithBlock {
                 (data, error) in
@@ -66,7 +103,7 @@ class User: PFUser {
             imageFile?.saveInBackground() // Error Handling Later
             
             self.profileImage = imageFile
-    
+            
             saveInBackgroundWithBlock {
                 (success, error) -> Void in
                 UIApplication.sharedApplication().endBackgroundTask(self.photoUploadTask!)

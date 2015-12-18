@@ -17,9 +17,9 @@
                     </tabBar>
                     <connections>
                         <segue destination="Mns-SA-a3z" kind="relationship" relationship="viewControllers" id="0Ye-Zb-uDO"/>
-                        <segue destination="Lha-Qc-5q0" kind="relationship" relationship="viewControllers" id="h8a-hC-1Wy"/>
-                        <segue destination="CYJ-Dg-KWY" kind="relationship" relationship="viewControllers" id="TtY-ob-Njz"/>
                         <segue destination="QzY-PX-ho3" kind="relationship" relationship="viewControllers" id="3If-q8-vCr"/>
+                        <segue destination="CYJ-Dg-KWY" kind="relationship" relationship="viewControllers" id="TtY-ob-Njz"/>
+                        <segue destination="Lha-Qc-5q0" kind="relationship" relationship="viewControllers" id="h8a-hC-1Wy"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cgS-u2-49T" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -54,11 +54,11 @@
             </objects>
             <point key="canvasLocation" x="-110.5" y="-1675"/>
         </scene>
-        <!--Settings-->
+        <!--Activity-->
         <scene sceneID="K2O-OF-b0d">
             <objects>
                 <navigationController id="QzY-PX-ho3" customClass="OfficeHoursNavigation" customModule="OfficeHours" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Settings" image="Settings" id="5ud-Eg-dr6"/>
+                    <tabBarItem key="tabBarItem" title="Activity" image="AddFriend" id="5ud-Eg-dr6"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="tbR-fy-ffr">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -137,9 +137,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="AddFriend" width="30" height="22"/>
         <image name="Connections" width="29" height="23"/>
         <image name="Location" width="15" height="21"/>
         <image name="Messaging" width="23" height="23"/>
-        <image name="Settings" width="23" height="23"/>
     </resources>
 </document>

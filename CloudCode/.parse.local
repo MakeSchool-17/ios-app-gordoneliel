@@ -1,0 +1,10 @@
+{
+  "applications": {
+    "OfficeHours": {
+      "applicationId": "ZAPP8nFlwnGTeeglDN8Yd9EC8koBJl3tABfFsjUQ"
+    },
+    "_default": {
+      "link": "OfficeHours"
+    }
+  }
+}
