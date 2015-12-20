@@ -26,7 +26,7 @@ class PagingContentViewController: UIViewController {
         circleContainerView.layer.cornerRadius = circleContainerView.frame.size.width / 2
         circleContainerView.clipsToBounds = true
         
-        pageControl.currentPage = model!.index
+//        pageControl.currentPage = model!.index
         titleLabel.text = model?.title
         imageView.image = model?.circleImage.toUIImage()
 
