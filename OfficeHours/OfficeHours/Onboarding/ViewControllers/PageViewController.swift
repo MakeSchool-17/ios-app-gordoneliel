@@ -18,7 +18,7 @@ class PageViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.primaryBlueColor()
         
-        /* Getting the page View controller */
+        /* Setup the page view controller */
         pageViewController = storyboard?.instantiateViewControllerWithIdentifier("PageViewController") as! UIPageViewController
         
         pageViewController.dataSource = self
@@ -27,8 +27,9 @@ class PageViewController: UIViewController {
         let pageContentViewController = createViewController(0)
         pageViewController.setViewControllers([pageContentViewController], direction: .Forward, animated: true, completion: nil)
         
-        /* We are substracting 60 because we have a start again button whose height is 60*/
+        /* We are substracting 60 because we have a get started button whose height is 60*/
         pageViewController.view.frame = CGRectMake(0, 0, self.view.frame.width, self.view.frame.height - 60)
+        
         addChildViewController(pageViewController)
         view.addSubview(pageViewController.view)
         pageViewController.didMoveToParentViewController(self)
