@@ -41,7 +41,6 @@ class User: PFUser {
         if (connections.value != nil) {
             return
         }
-        
         // 2
         ParseHelper.connectionsForUser(self) {
             (var connections: [PFObject]?, error: NSError?)  -> Void in

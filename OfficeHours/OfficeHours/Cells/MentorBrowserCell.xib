@@ -179,6 +179,7 @@ Ported and re-architeched an Objective C iOS game</string>
             </constraints>
             <size key="customSize" width="390" height="649"/>
             <connections>
+                <outlet property="connectionButton" destination="BQR-rx-61w" id="5E1-PF-VpW"/>
                 <outlet property="jobTitle" destination="N39-Xk-BeH" id="3HB-4C-XzO"/>
                 <outlet property="name" destination="Gq9-dh-jwr" id="1in-xB-HQd"/>
                 <outlet property="profileImage" destination="5uF-DJ-m46" id="zdP-cf-N1q"/>

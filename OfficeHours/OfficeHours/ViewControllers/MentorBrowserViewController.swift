@@ -81,20 +81,10 @@ class MentorBrowserViewController: UIViewController {
 
 extension MentorBrowserViewController: UICollectionViewDelegate {
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        
     }
-}
-
-extension MentorBrowserViewController: UICollectionViewDelegateFlowLayout {
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        let width = Int((collectionView.frame.size.width) - (insets.left * 2))
-        let height = Int((view.frame.height) - (insets.bottom))
-        let size = CGSize(width: width, height: height)
-        
-        return size
-    }
-    
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
-        return insets
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        var tmp = floor(CGRectGetMidX(scrollView.bounds) / CGRectGetWidth(scrollView.bounds))
+        tmp %= CGFloat(mentors!.count + 1)
+        pageControl.currentPage = Int(tmp)
     }
 }

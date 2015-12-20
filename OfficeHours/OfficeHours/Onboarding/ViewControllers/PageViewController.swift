@@ -19,7 +19,7 @@ class PageViewController: UIPageViewController {
         
         setViewControllers([createViewController(0)],
             direction: .Forward,
-            animated: false,
+            animated: true,
             completion: nil)
         
         dataSource = self
@@ -66,5 +66,9 @@ extension PageViewController: UIPageViewControllerDataSource {
         }
         index--
         return createViewController(index)
+    }
+    
+    func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
+        return pageTitles.count
     }
 }

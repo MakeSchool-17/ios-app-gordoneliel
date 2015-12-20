@@ -37,8 +37,7 @@ class MentorCell: UICollectionViewCell {
         selectedView.backgroundColor = UIColor.whiteColor()
         selectedBackgroundView = selectedView
         
-        profileImage.layer.cornerRadius = profileImage.frame.size.width / 2
-        profileImage.clipsToBounds = true
+        profileImage.roundCorners(.AllCorners, radius: profileImage.frame.size.width / 2)
         
         layer.cornerRadius = 3
         clipsToBounds = true
