@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ZfJ-pr-9TD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="cFd-G9-kRK">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -16,11 +16,11 @@
                         <viewControllerLayoutGuide type="bottom" id="Hgx-7a-p6n"/>
                     </layoutGuides>
                     <view key="view" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="nT5-at-eE7">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="44" width="600" height="556"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AppLogo" translatesAutoresizingMaskIntoConstraints="NO" id="vYK-gC-e91" userLabel="ResQLogoView">
-                                <rect key="frame" x="250" y="50" width="100" height="100"/>
+                                <rect key="frame" x="250" y="28" width="100" height="100"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" red="0.01176470611" green="0.50588238240000005" blue="0.78823530669999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -31,7 +31,7 @@
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yu6-Rc-ife" customClass="DesignableView" customModule="OfficeHours">
-                                <rect key="frame" x="110" y="250" width="380" height="100"/>
+                                <rect key="frame" x="110" y="228" width="380" height="100"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="GLR-9p-hYk" customClass="DesignableTextField" customModule="OfficeHours" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="380" height="50"/>
@@ -115,7 +115,7 @@
                                 </variation>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ld-KL-F5l" userLabel="LoginButton" customClass="DesignableButton" customModule="OfficeHours">
-                                <rect key="frame" x="110" y="380" width="380" height="45"/>
+                                <rect key="frame" x="110" y="358" width="380" height="45"/>
                                 <color key="backgroundColor" red="0.039215686274509803" green="0.396078431372549" blue="0.67450980392156867" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="FQd-40-mIM"/>
@@ -162,7 +162,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MRp-nP-Twd" customClass="DesignableButton" customModule="OfficeHours" customModuleProvider="target">
-                                <rect key="frame" x="110" y="455" width="380" height="45"/>
+                                <rect key="frame" x="110" y="433" width="380" height="45"/>
                                 <color key="backgroundColor" red="1" green="0.85882352939999995" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="Xkm-xL-kM8"/>
@@ -330,6 +330,7 @@
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" id="C0t-z9-fF8"/>
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="inputContainerCenterConstraint" destination="NZh-ym-sH8" id="rNu-vf-zjN"/>
@@ -340,7 +341,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Te-86-BQT" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-431" y="271.5"/>
+            <point key="canvasLocation" x="382" y="272"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="Jgq-Mx-OTj">
@@ -351,11 +352,11 @@
                         <viewControllerLayoutGuide type="bottom" id="Ezi-s3-xCw"/>
                     </layoutGuides>
                     <view key="view" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="zYM-gx-n6o">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="44" width="600" height="556"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AppLogo" translatesAutoresizingMaskIntoConstraints="NO" id="P4p-Zr-jjj" userLabel="ResQLogoView">
-                                <rect key="frame" x="250" y="25" width="100" height="100"/>
+                                <rect key="frame" x="250" y="3" width="100" height="100"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" red="0.01176470611" green="0.50588238240000005" blue="0.78823530669999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -364,7 +365,7 @@
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="din-Cd-K8W" customClass="DesignableView" customModule="OfficeHours">
-                                <rect key="frame" x="110" y="225" width="380" height="150"/>
+                                <rect key="frame" x="110" y="203" width="380" height="150"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="hGv-gJ-Xzd" customClass="DesignableTextField" customModule="OfficeHours">
                                         <rect key="frame" x="0.0" y="0.0" width="380" height="50"/>
@@ -458,7 +459,7 @@
                                 </variation>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XJm-qZ-pMy" userLabel="LoginButton" customClass="DesignableButton" customModule="OfficeHours">
-                                <rect key="frame" x="110" y="395" width="380" height="45"/>
+                                <rect key="frame" x="110" y="373" width="380" height="45"/>
                                 <color key="backgroundColor" red="0.039215686274509803" green="0.396078431372549" blue="0.67450980392156867" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="J5v-ti-Z3e"/>
@@ -505,7 +506,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cxs-X4-20F" customClass="DesignableButton" customModule="OfficeHours">
-                                <rect key="frame" x="225" y="540" width="150" height="45"/>
+                                <rect key="frame" x="225" y="496" width="150" height="45"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" priority="999" constant="150" id="lsH-k2-R0X"/>
@@ -613,7 +614,26 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Id7-fi-d7q" sceneMemberID="firstResponder"/>
                 <exit id="hHW-6h-29E" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="299" y="271.5"/>
+            <point key="canvasLocation" x="1111" y="272"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="DeI-Wz-HVa">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cFd-G9-kRK" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="rTa-u0-k9N">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ZfJ-pr-9TD" kind="relationship" relationship="rootViewController" id="K0o-LI-geC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cRa-pG-9bx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-430" y="272"/>
         </scene>
     </scenes>
     <resources>

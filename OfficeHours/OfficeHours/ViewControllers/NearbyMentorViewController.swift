@@ -28,24 +28,21 @@ class NearbyMentorViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        
         SVProgressHUD.show()
         
-        loadNearbyMentorsInRange(defaultNearbyMentorRange, distanceFilter: 10) {
-            [unowned self] users in
-            
-            self.mentors = users
-            SVProgressHUD.dismiss()
-            self.viewToPresent()
-        }
+        loadNearbyMentorsInRange(defaultNearbyMentorRange, distanceFilter: 10)
     }
     // MARK: Load Nearby Mentors
-    func loadNearbyMentorsInRange(range: Range<Int>, distanceFilter: Double, completionBlock: ([User]?) -> Void) {
+    func loadNearbyMentorsInRange(range: Range<Int>, distanceFilter: Double) {
         ParseHelper.mentorsNearbyCurrentUser(range, distanceFilter: distanceFilter) {
             (result, error) -> Void in
             
             let mentors = result as? [User] ?? []
             
-            completionBlock(mentors)
+            self.mentors = mentors
+            SVProgressHUD.dismiss()
+            self.viewToPresent()
         }
     }
     

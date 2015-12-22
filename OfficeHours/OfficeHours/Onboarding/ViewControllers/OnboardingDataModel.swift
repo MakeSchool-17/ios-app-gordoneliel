@@ -39,9 +39,9 @@ extension OnboardingDataModel {
     /**
     Describes the image to use for a view
     
-    - LogHours:  Image for Automatically log hours screen
-    - WorkForce: Image for WorkForce screen
-    - QText:     Image for QText screen
+    - City:  Image for City Illustration
+    - Mentor: Image for Mentor Illustration
+    - Logo:     Image App Logo
     */
     enum CircleImage {
         case City

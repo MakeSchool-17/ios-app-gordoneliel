@@ -64,6 +64,33 @@ class MentorBrowserCell: UICollectionViewCell {
         }
     }
     
+    @IBAction func handlePanGesture(sender: UIPanGestureRecognizer) {
+        if sender.state == UIGestureRecognizerState.Ended {
+            // 1
+            let velocity = sender.velocityInView(contentView)
+            let magnitude = sqrt((velocity.x * velocity.x) + (velocity.y * velocity.y))
+            let slideMultiplier = magnitude / 200
+            print("magnitude: \(magnitude), slideMultiplier: \(slideMultiplier)")
+            
+            // 2
+            let slideFactor = 0.3 * slideMultiplier     //Increase for more of a slide
+            // 3
+            var finalPoint = CGPoint(x:sender.view!.center.x,
+                y:sender.view!.center.y + (velocity.y * slideFactor))
+            // 4
+            finalPoint.x = min(max(finalPoint.x, 0), self.contentView.bounds.size.width)
+            finalPoint.y = min(max(finalPoint.y, 0), self.contentView.bounds.size.height)
+            
+            // 5
+            UIView.animateWithDuration(Double(slideFactor * 2),
+                delay: 0,
+                // 6
+                options: UIViewAnimationOptions.CurveEaseOut,
+                animations: {sender.view!.center = finalPoint },
+                completion: nil)
+        }
+    }
+    
     static func nib() -> UINib {
         return UINib(nibName: MentorBrowserCellIdentifier, bundle: nil)
     }

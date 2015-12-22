@@ -24,8 +24,6 @@ class MentorBrowserViewController: UIViewController {
         
         setupCollectionView()
         pageControl.numberOfPages = mentors!.count
-        
-        
     }
     
     override func viewDidLayoutSubviews() {
@@ -61,7 +59,7 @@ class MentorBrowserViewController: UIViewController {
         
         var anOffset = UIOffsetZero
         if (layout.layoutType == .Horizontal) {
-            anOffset = UIOffsetMake(20, 20)
+            anOffset = UIOffsetMake(20, 10)
             layout.offset = anOffset
             layout.layoutType = .Horizontal
         }
@@ -73,7 +71,6 @@ class MentorBrowserViewController: UIViewController {
         collectionView.collectionViewLayout.invalidateLayout()
     }
     
-    
     @IBAction func dismissMentorBrowser(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
     }
@@ -84,7 +81,7 @@ extension MentorBrowserViewController: UICollectionViewDelegate {
     }
     func scrollViewDidScroll(scrollView: UIScrollView) {
         var tmp = floor(CGRectGetMidX(scrollView.bounds) / CGRectGetWidth(scrollView.bounds))
-        tmp %= CGFloat(mentors!.count + 1)
+        tmp %= CGFloat(mentors!.count)
         pageControl.currentPage = Int(tmp)
     }
 }

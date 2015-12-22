@@ -89,7 +89,6 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods/EBCardCollectionViewLayout.framework"
   install_framework "Pods/JSQMessagesViewController.framework"
   install_framework "Pods/JSQSystemSoundPlayer.framework"
-  install_framework "Pods/MCCardPickerCollectionViewController.framework"
   install_framework "Pods/Parse.framework"
   install_framework "Pods/SVProgressHUD.framework"
 fi
@@ -99,7 +98,6 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods/EBCardCollectionViewLayout.framework"
   install_framework "Pods/JSQMessagesViewController.framework"
   install_framework "Pods/JSQSystemSoundPlayer.framework"
-  install_framework "Pods/MCCardPickerCollectionViewController.framework"
   install_framework "Pods/Parse.framework"
   install_framework "Pods/SVProgressHUD.framework"
 fi

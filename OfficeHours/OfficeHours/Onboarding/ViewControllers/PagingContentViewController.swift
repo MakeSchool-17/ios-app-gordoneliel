@@ -29,7 +29,6 @@ class PagingContentViewController: UIViewController {
     func configureTutorialView() {
         circleContainerView.roundCorners(.AllCorners, radius: circleContainerView.frame.size.width / 2)
         
-        pageControl.currentPage = model!.index
         titleLabel.text = model?.title
         imageView.image = model?.circleImage.toUIImage()
 

@@ -32,8 +32,8 @@
                 <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="dZE-30-vAZ">
                     <rect key="frame" x="65" y="29" width="470" height="37"/>
                 </pageControl>
-                <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="d0D-ME-jDe">
-                    <rect key="frame" x="0.0" y="50" width="600" height="486"/>
+                <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="d0D-ME-jDe">
+                    <rect key="frame" x="0.0" y="60" width="600" height="476"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="0A7-6I-d9H" customClass="EBCardCollectionViewLayout">
                         <size key="itemSize" width="530" height="700"/>
@@ -44,6 +44,7 @@
                 </collectionView>
             </subviews>
             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
+            <gestureRecognizers/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="d0D-ME-jDe" secondAttribute="bottom" id="5Vu-H7-6lc"/>
                 <constraint firstAttribute="trailing" secondItem="dZE-30-vAZ" secondAttribute="trailing" priority="999" constant="15" id="5fC-Aa-6M2"/>
@@ -51,7 +52,7 @@
                 <constraint firstAttribute="trailing" secondItem="dZE-30-vAZ" secondAttribute="trailing" constant="15" id="BmX-nf-t5H"/>
                 <constraint firstItem="TR5-cm-o8j" firstAttribute="width" secondItem="TR5-cm-o8j" secondAttribute="height" multiplier="1:1" id="FJX-uN-0gR"/>
                 <constraint firstItem="dZE-30-vAZ" firstAttribute="top" secondItem="TR5-cm-o8j" secondAttribute="top" id="H1g-UN-wkB"/>
-                <constraint firstItem="d0D-ME-jDe" firstAttribute="top" secondItem="Tww-si-hs2" secondAttribute="top" constant="50" id="Lau-mn-xZG"/>
+                <constraint firstItem="d0D-ME-jDe" firstAttribute="top" secondItem="Tww-si-hs2" secondAttribute="top" constant="60" id="Lau-mn-xZG"/>
                 <constraint firstItem="dZE-30-vAZ" firstAttribute="centerY" secondItem="TR5-cm-o8j" secondAttribute="centerY" id="Tni-Ki-5OM"/>
                 <constraint firstItem="TR5-cm-o8j" firstAttribute="top" secondItem="Tww-si-hs2" secondAttribute="top" constant="30" id="UDU-2L-lKJ"/>
                 <constraint firstItem="TR5-cm-o8j" firstAttribute="leading" secondItem="Tww-si-hs2" secondAttribute="leading" constant="15" id="e9z-mq-4zV"/>

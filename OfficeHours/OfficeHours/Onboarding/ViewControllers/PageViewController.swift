@@ -8,8 +8,9 @@
 
 import UIKit
 
-class PageViewController: UIPageViewController {
+class PageViewController: UIViewController {
     
+    var pageViewController: UIPageViewController!
     // Init
     let pageTitles = ["Find mentors in your city", "Connect and engage with mentors", "Let's get started"]
     
@@ -17,12 +18,22 @@ class PageViewController: UIPageViewController {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.primaryBlueColor()
         
-        setViewControllers([createViewController(0)],
-            direction: .Forward,
-            animated: true,
-            completion: nil)
+        /* Setup the page view controller */
+        pageViewController = storyboard?.instantiateViewControllerWithIdentifier("PageViewController") as! UIPageViewController
         
-        dataSource = self
+        pageViewController.dataSource = self
+        pageViewController.delegate = self
+        
+        let pageContentViewController = createViewController(0)
+        pageViewController.setViewControllers([pageContentViewController], direction: .Forward, animated: true, completion: nil)
+        
+        /* We are substracting 60 because we have a get started button whose height is 60*/
+        pageViewController.view.frame = CGRectMake(0, 0, self.view.frame.width, self.view.frame.height - 60)
+        
+        addChildViewController(pageViewController)
+        view.addSubview(pageViewController.view)
+        pageViewController.didMoveToParentViewController(self)
+
     }
     
     func createViewController(pageNumber: Int) -> UIViewController {
@@ -42,6 +53,19 @@ class PageViewController: UIPageViewController {
     
     override func prefersStatusBarHidden() -> Bool {
         return true
+    }
+    
+    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
+        return [.Portrait, .PortraitUpsideDown]
+    }
+}
+
+extension PageViewController: UIPageViewControllerDelegate {
+    func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
+        return pageTitles.count
+    }
+    func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
+        return 0
     }
 }
 
@@ -66,9 +90,5 @@ extension PageViewController: UIPageViewControllerDataSource {
         }
         index--
         return createViewController(index)
-    }
-    
-    func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
-        return pageTitles.count
     }
 }

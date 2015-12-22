@@ -157,6 +157,7 @@ Ported and re-architeched an Objective C iOS game</string>
                                 </variation>
                             </view>
                         </subviews>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="DF4-6D-lSS" secondAttribute="trailing" id="69s-hH-WXF"/>
                             <constraint firstAttribute="bottom" secondItem="DF4-6D-lSS" secondAttribute="bottom" id="I8G-gt-w7n"/>

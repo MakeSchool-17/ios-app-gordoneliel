@@ -37,26 +37,7 @@ class ConnectonsViewController: UIViewController {
                 SVProgressHUD.dismiss()
             }
         }
-        
-        //        loadUserConnectionInRange(defaultNearbyMentorRange, distanceFilter: 10)
-        
-        //        SVProgressHUD.dismiss()
     }
-    
-    // MARK: Load Nearby Mentors
-//    func loadUserConnectionInRange(range: Range<Int>, distanceFilter: Double) {
-//        ParseHelper.connectionsForUser(User.currentUser()!) {
-//            [unowned self] (results, error) -> Void in
-//            
-//            let relations = results ?? []
-//            // use map to extract the User from a Follow object
-//            self.connectedMentors = relations.map {
-//                $0.objectForKey(ParseHelper.ParseToUser) as! User
-//            }
-//            
-//            self.setupCollectionView()
-//        }
-//    }
     
     func setupCollectionView() {
         dataSource = ArrayDataSource(items: connectedMentors!, cellIdentifier: ConnectionCellIdentifier) {
@@ -103,7 +84,7 @@ extension ConnectonsViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
-        return 10
+        return 5
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
