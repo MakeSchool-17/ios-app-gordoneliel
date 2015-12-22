@@ -16,11 +16,15 @@ class ConnectonsViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     var dataSource: ArrayDataSource?
-    var connectedMentors: [User]?
+    var connectedMentors: [User]? {
+        didSet {
+            setupCollectionView()
+        }
+    }
     let defaultNearbyMentorRange = 0...50
     var connectionDisposable: DisposableType?
     
-    let insets = UIEdgeInsets(top: 10, left: 5, bottom: 10, right: 5)
+    let insets = UIEdgeInsets(top: 10, left: 8, bottom: 10, right: 8)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +37,6 @@ class ConnectonsViewController: UIViewController {
             (value: [User]?) -> () in
             if let value = value {
                 self.connectedMentors = value
-                self.setupCollectionView()
                 SVProgressHUD.dismiss()
             }
         }
@@ -77,14 +80,14 @@ extension ConnectonsViewController: UICollectionViewDelegate {
 extension ConnectonsViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         let width = Int((collectionView.frame.size.width) - (insets.left * 2))
-        let height = 90
+        let height = 85
         let size = CGSize(width: width, height: height)
         
         return size
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
-        return 5
+        return 10
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {

@@ -15,7 +15,12 @@ class NearbyMentorViewController: UIViewController {
     @IBOutlet var mentorView: MentorView!
     @IBOutlet var noMentorView: UIView!
     
-    var mentors: [User]?
+    var mentors: [User]? {
+        didSet {
+            viewToPresent()
+        }
+    }
+    
     let defaultNearbyMentorRange = 0...50
     var selectedIndex: Int?
     
@@ -30,6 +35,7 @@ class NearbyMentorViewController: UIViewController {
         super.viewWillAppear(animated)
         
         SVProgressHUD.show()
+        view.userInteractionEnabled = false
         
         loadNearbyMentorsInRange(defaultNearbyMentorRange, distanceFilter: 10)
     }
@@ -38,11 +44,19 @@ class NearbyMentorViewController: UIViewController {
         ParseHelper.mentorsNearbyCurrentUser(range, distanceFilter: distanceFilter) {
             (result, error) -> Void in
             
+            // Handle error
+            if error != nil {
+                SVProgressHUD.showErrorWithStatus("Error Loading nearby mentors")
+                return
+            }
+            
             let mentors = result as? [User] ?? []
             
             self.mentors = mentors
             SVProgressHUD.dismiss()
-            self.viewToPresent()
+            self.view.userInteractionEnabled = true
+            
+            
         }
     }
     

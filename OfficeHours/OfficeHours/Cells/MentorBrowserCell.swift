@@ -26,8 +26,6 @@ class MentorBrowserCell: UICollectionViewCell {
             mentor?.userJobTitle.bindTo(jobTitle.bnd_text)
             mentor?.userAbout.bindTo(summary.bnd_text)
             canConnect = User.currentUser()?.isUserConnectedWithMentor(mentor!)
-            connectionButton.selected = canConnect!
-            
         }
     }
     
@@ -37,15 +35,25 @@ class MentorBrowserCell: UICollectionViewCell {
             Change the state of the connect button based on whether or not
             it is possible to connect with a user.
             */
+            connectionButton.selected = false
+            connectionButton.highlighted = false
             if let canConnect = canConnect {
                 connectionButton.selected = canConnect
+                if canConnect {
+                    connectionButton.backgroundColorSelected = UIColor.primaryBlueColor()
+                    connectionButton.backgroundColor = UIColor.primaryBlueColor()
+                    connectionButton.textColorHighlightedSelected = UIColor.whiteColor()
+                    connectionButton.setTitle("Connected", forState: .Selected)
+
+                }
+                
             }
         }
     }
   
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.roundCorners([UIRectCorner.TopRight, UIRectCorner.TopLeft], radius: 6)
+        roundCorners([UIRectCorner.TopRight, UIRectCorner.TopLeft], radius: 6)
     }
     
     override func awakeFromNib() {
@@ -59,35 +67,9 @@ class MentorBrowserCell: UICollectionViewCell {
             sender.selected = false
             sender.setTitle("Request", forState: .Normal)
         } else {
+            ParseHelper.requestConnectionFromUser(User.currentUser()!, toUser: mentor!)
             sender.selected = true
             sender.setTitle("Pending", forState: .Selected)
-        }
-    }
-    
-    @IBAction func handlePanGesture(sender: UIPanGestureRecognizer) {
-        if sender.state == UIGestureRecognizerState.Ended {
-            // 1
-            let velocity = sender.velocityInView(contentView)
-            let magnitude = sqrt((velocity.x * velocity.x) + (velocity.y * velocity.y))
-            let slideMultiplier = magnitude / 200
-            print("magnitude: \(magnitude), slideMultiplier: \(slideMultiplier)")
-            
-            // 2
-            let slideFactor = 0.3 * slideMultiplier     //Increase for more of a slide
-            // 3
-            var finalPoint = CGPoint(x:sender.view!.center.x,
-                y:sender.view!.center.y + (velocity.y * slideFactor))
-            // 4
-            finalPoint.x = min(max(finalPoint.x, 0), self.contentView.bounds.size.width)
-            finalPoint.y = min(max(finalPoint.y, 0), self.contentView.bounds.size.height)
-            
-            // 5
-            UIView.animateWithDuration(Double(slideFactor * 2),
-                delay: 0,
-                // 6
-                options: UIViewAnimationOptions.CurveEaseOut,
-                animations: {sender.view!.center = finalPoint },
-                completion: nil)
         }
     }
     

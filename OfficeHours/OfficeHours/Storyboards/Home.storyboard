@@ -71,10 +71,10 @@
             </objects>
             <point key="canvasLocation" x="-656" y="371"/>
         </scene>
-        <!--SettingsVC-->
+        <!--ActivityVC-->
         <scene sceneID="MsR-6h-IQS">
             <objects>
-                <viewControllerPlaceholder storyboardName="Settings" referencedIdentifier="SettingsVC" id="luV-Y4-tQK" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Activity" referencedIdentifier="ActivityVC" id="luV-Y4-tQK" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="efC-bB-HWH"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nDV-0w-j7F" userLabel="First Responder" sceneMemberID="firstResponder"/>
