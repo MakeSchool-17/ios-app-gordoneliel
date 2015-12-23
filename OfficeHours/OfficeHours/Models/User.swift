@@ -43,19 +43,29 @@ class User: PFUser {
         }
         // 2
         ParseHelper.connectionsForUser(self) {
-            (var connections: [PFObject]?, error: NSError?)  -> Void in
+            (let connections: [PFObject]?, error: NSError?)  -> Void in
             
             // 3
-            connections = connections?.filter { connection in
-                
-                connection[ParseHelper.ParseToUser] != nil
-            }
+//            connections = connections?.filter { connection in
             
-            // 4
-            self.connections.value = connections?.map { connection in
-                let toUser = connection[ParseHelper.ParseToUser] as! User
+//                connection[ParseHelper.ParseToUser].objectId != User.currentUser()!.objectId! ||
+//                    connection[ParseHelper.ParseFromUser].objectId != User.currentUser()!.objectId!
                 
-                return toUser
+//                                connection[ParseHelper.ParseToUser] != nil
+//            }
+            // 4
+//            self.connections.value = connections?.map { connection in
+//                let currentUser = User.currentUser()!
+//                let toUser = connection[ParseHelper.ParseToUser] as! User
+//                let fromUser = connection[ParseHelper.ParseFromUser] as! User
+//                if toUser.objectId != currentUser.objectId {
+//                    return toUser
+//                } else {
+//                    return fromUser
+//                }
+//            }
+            self.connections.value = connections?.map { connection in
+                return connection as! User
             }
         }
     }

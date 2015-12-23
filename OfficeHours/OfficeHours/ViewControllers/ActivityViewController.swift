@@ -58,14 +58,14 @@ class ActivityViewController: UIViewController {
 extension ActivityViewController: UICollectionViewDelegate {
     // Handle Accepting Connection Requests
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        ParseHelper
+        ParseHelper.acceptConnectionRequest(connectionRequests![indexPath.row])
     }
 }
 
 extension ActivityViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         let width = Int((collectionView.frame.size.width) - (insets.left * 2))
-        let height = 85
+        let height = 70
         let size = CGSize(width: width, height: height)
         
         return size

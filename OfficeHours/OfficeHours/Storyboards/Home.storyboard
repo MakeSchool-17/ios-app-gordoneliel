@@ -31,7 +31,7 @@
             <objects>
                 <navigationController id="Mns-SA-a3z" customClass="OfficeHoursNavigation" customModule="OfficeHours" customModuleProvider="target" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <tabBarItem key="tabBarItem" title="Nearby" image="Location" id="mgV-fl-ckJ"/>
+                    <tabBarItem key="tabBarItem" title="Nearby" image="DiscoverIcon" id="mgV-fl-ckJ"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="eWV-9i-YnY">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -58,7 +58,7 @@
         <scene sceneID="K2O-OF-b0d">
             <objects>
                 <navigationController id="QzY-PX-ho3" customClass="OfficeHoursNavigation" customModule="OfficeHours" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Activity" image="AddFriend" id="5ud-Eg-dr6"/>
+                    <tabBarItem key="tabBarItem" title="Activity" image="ActivityIcon" id="5ud-Eg-dr6"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="tbR-fy-ffr">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -137,9 +137,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="AddFriend" width="30" height="22"/>
-        <image name="Connections" width="29" height="23"/>
-        <image name="Location" width="15" height="21"/>
-        <image name="Messaging" width="23" height="23"/>
+        <image name="ActivityIcon" width="32" height="27"/>
+        <image name="Connections" width="25" height="25"/>
+        <image name="DiscoverIcon" width="18" height="25"/>
+        <image name="Messaging" width="28" height="25"/>
     </resources>
 </document>

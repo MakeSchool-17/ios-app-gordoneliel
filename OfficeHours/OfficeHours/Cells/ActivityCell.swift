@@ -17,7 +17,7 @@ class ActivityCell: UICollectionViewCell {
     var connectionRequest: ConnectionRequest? {
         didSet {
             let username = connectionRequest!.fromUser.name!
-//            infoLabel.text = "\(username) wants to connect"
+            
             let string = NSMutableAttributedString(string: "\(username) wants to connect")
             string.addAttribute(NSForegroundColorAttributeName, value: UIColor.darkGrayColor(), range: NSMakeRange(0, username.characters.count))
                 

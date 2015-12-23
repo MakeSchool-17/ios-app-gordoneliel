@@ -15,6 +15,7 @@ class ParseHelper: NSObject {
     static let ParseFromUser = "fromUser"
     static let ParseToUser = "toUser"
     static let ParseAccepted = "accepted"
+    static let ParseConnectionRelation = "connections"
     
     // User properties
     static let ParseIsMentor = "isMentor"
@@ -50,13 +51,11 @@ class ParseHelper: NSObject {
     }
     
     static func connectionsForUser(user: User, completionBlock: PFQueryArrayResultBlock) {
-        let userConnectionQuery = PFQuery(className: ParseConnectionClass)
-        userConnectionQuery.cachePolicy = .NetworkOnly
-        userConnectionQuery.includeKey(ParseToUser)
+        let connectionRelation = user.relationForKey("connections")
+        let connectionQuery = connectionRelation.query()
+        connectionQuery.cachePolicy = .CacheThenNetwork
         
-        userConnectionQuery.whereKey(ParseFromUser, equalTo: User.currentUser()!)
-        
-        userConnectionQuery.findObjectsInBackgroundWithBlock(completionBlock)
+        connectionQuery.findObjectsInBackgroundWithBlock(completionBlock)
     }
     
     /**
@@ -97,15 +96,15 @@ class ParseHelper: NSObject {
      */
     static func acceptConnectionRequest(request: ConnectionRequest) {
         let fromUser = request.fromUser
-        PFCloud.callFunctionInBackground("addToConnections", withParameters: ["connectionRequest":request.objectId!]) {
+        PFCloud.callFunctionInBackground("AddToConnections", withParameters: ["connectionRequest":request.objectId!]) {
             (object, error) -> Void in
             
             if error != nil {
                 
             }else {
-                let connection = PFObject(className: ParseConnectionClass)
-                connection[ParseFromUser] = fromUser
-//                connection[ParseToUser] =
+                let relation = User.currentUser()!.relationForKey(ParseConnectionRelation)
+                relation.addObject(fromUser)
+                User.currentUser()!.saveInBackgroundWithBlock(ErrorHandler.errorHandlingCallback)
             }
         }
     }

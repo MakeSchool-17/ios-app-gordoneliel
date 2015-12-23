@@ -1,4 +1,133 @@
+var Connection = Parse.Object.extend("Connection");
+var ConnectionRequest = Parse.Object.extend("ConnectionRequest");
 var Appointment = Parse.Object.extend("Appointment");
+
+Parse.Cloud.define("AddToConnections", function(request, response) {
+    Parse.Cloud.useMasterKey();
+
+    var connectionRequestId = request.params.connectionRequest;
+    var query = new Parse.Query(ConnectionRequest);
+
+    //get the ConnectionRequest object
+    query.get(connectionRequestId, {
+
+        success: function(connectionRequest) {
+
+            //get the user the request was from
+            var fromUser = connectionRequest.get("fromUser");
+            //get the user the request is to
+            var toUser = connectionRequest.get("toUser");
+
+        //     var connectionObject = new Connection();
+        //     connectionObject.set("fromUser", fromUser);
+        //     connectionObject.set("toUser", toUser);
+        //
+        //     // Save the connection relation
+        //     connectionObject.save(null, {
+        //         success: function(connectionObject) {
+        //
+        //             // Update the connection request to reflect connection status
+        //             connectionRequest.set("accepted", true);
+        //             connectionRequest.save(null, {
+        //
+        //                 success: function() {
+        //
+        //                     response.success("Saved connection and updated Connection Request");
+        //                 },
+        //
+        //                 error: function(error) {
+        //
+        //                     response.error(error);
+        //                 }
+        //
+        //             });
+        //         }
+        //     },
+        //       error: function(connectionObject, error) {
+        //         // Execute any logic that should take place if the save fails.
+        //         // error is a Parse.Error with an error code and message.
+        //         console.log(error.message);
+        //       }
+        // });
+//     });
+// });
+            // console.log(fromUser)
+            // console.log(toUser);
+            // console.log(connectionObject);
+
+            var relation = fromUser.relation("connections");
+            //add the user the request was to (the accepting user) to the fromUsers friends
+            relation.add(toUser);
+
+            fromUser.save(null, {
+
+                success: function() {
+
+                    //saved the user, now edit the request status and save it
+                    connectionRequest.set("accepted", true);
+                    connectionRequest.save(null, {
+
+                        success: function() {
+
+                            response.success("Saved connection and updated Connection Request");
+                        },
+
+                        error: function(error) {
+
+                            response.error(error);
+                        }
+
+                    });
+
+                },
+
+                error: function(error) {
+
+                 response.error(error);
+
+                }
+
+            });
+
+        },
+
+        error: function(error) {
+
+            response.error(error);
+
+        }
+
+    });
+});
+
+Parse.Cloud.afterSave("ConnectionRequest", function(request) {
+    var toUser = request.object.get("toUser");
+
+    var user = new Parse.User();
+    user.id = toUser.get("objectId");
+
+    console.log("User is: " + request.params);
+
+    var pushQuery = new Parse.Query(Parse.Installation);
+    pushQuery.equalTo('deviceType', 'ios');
+
+    Parse.Push.send({
+        where: pushQuery, // Set our Installation query
+        data: {
+          alert: "Recieved a connection request from " + user.get("name")
+        }
+      }, {
+        success: function() {
+          // Push was successful
+          console.log("Push successful");
+        },
+        error: function(error) {
+            console.log("Got an error " + error.code + " : " + error.message);
+            throw "Got an error " + error.code + " : " + error.message;
+        }
+    });
+
+});
 
 /* Prevents duplicate booked times */
 Parse.Cloud.beforeSave("Appointment", function (request, response) {

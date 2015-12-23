@@ -14,6 +14,7 @@ class NearbyMentorViewController: UIViewController {
     
     @IBOutlet var mentorView: MentorView!
     @IBOutlet var noMentorView: UIView!
+    var activeView: UIView!
     
     var mentors: [User]? {
         didSet {
@@ -27,10 +28,6 @@ class NearbyMentorViewController: UIViewController {
     let insets = UIEdgeInsets(top: 10, left: 5, bottom: 10, right: 5)
     var dataSource: ArrayDataSource?
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -39,6 +36,13 @@ class NearbyMentorViewController: UIViewController {
         
         loadNearbyMentorsInRange(defaultNearbyMentorRange, distanceFilter: 10)
     }
+    
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        activeView.removeFromSuperview()
+    }
+    
     // MARK: Load Nearby Mentors
     func loadNearbyMentorsInRange(range: Range<Int>, distanceFilter: Double) {
         ParseHelper.mentorsNearbyCurrentUser(range, distanceFilter: distanceFilter) {
@@ -50,7 +54,11 @@ class NearbyMentorViewController: UIViewController {
                 return
             }
             
-            let mentors = result as? [User] ?? []
+            var mentors = result as? [User] ?? []
+            
+            mentors = mentors.filter { mentor in
+                mentor.isUserConnectedWithMentor(User.currentUser()!) == false
+            }
             
             self.mentors = mentors
             SVProgressHUD.dismiss()
@@ -72,17 +80,19 @@ class NearbyMentorViewController: UIViewController {
         let frame = CGRect(origin: CGPoint(x: 0, y: 0), size: self.view.frame.size)
         
         if mentors.count == 0 {
-            noMentorView.frame = frame
-            noMentorView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
-            self.view.addSubview(noMentorView)
+            activeView = noMentorView
+            view.addSubview(activeView)
         } else  {
-            mentorView.frame = frame
-            mentorView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
-            self.view.addSubview(mentorView)
+            activeView =  mentorView
+            view.addSubview(activeView)
             
             mentorView.mentors = mentors
             mentorView.setupCollectionView()
         }
+        
+        activeView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+        activeView.frame = frame
+
     }
 
     override func willRotateToInterfaceOrientation(toInterfaceOrientation: UIInterfaceOrientation, duration: NSTimeInterval) {
