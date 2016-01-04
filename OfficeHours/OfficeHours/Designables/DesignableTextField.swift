@@ -53,7 +53,6 @@ public class DesignableTextField: UITextField {
     
     // Adds a thin borderline to a UITextField
     @IBInspectable var bottomBorder: Bool = true {
-        
         didSet{
             let bottomBorder = CALayer()
             bottomBorder.frame = CGRectMake(0.0, self.frame.size.height - 1, self.frame.size.width, 0.5)
@@ -62,15 +61,16 @@ public class DesignableTextField: UITextField {
         }
     }
     
-    //    @IBInspectable var rightBorder: Bool = true {
-    //
-    //        didSet{
-    //            var rightBorder = CALayer()
-    //            rightBorder.frame = CGRectMake(self.frame.size.width - 0.5, 0, 0.5, self.frame.size.height)
-    //            rightBorder.backgroundColor = UIColor(red: 238/255, green: 238/255, blue: 238/255, alpha: 1).CGColor
-    //            layer.addSublayer(rightBorder)
-    //        }
-    //    }
+    @IBInspectable var rightBorder: Bool = true {
+        didSet{
+            let rightBorder = CALayer()
+            rightBorder.frame = CGRectMake(self.frame.size.width - 1, 0, 1, self.frame.size.height)
+            rightBorder.backgroundColor = UIColor(red: 238/255, green: 238/255, blue: 238/255, alpha: 1).CGColor
+            layer.addSublayer(rightBorder)
+            setNeedsDisplay()
+            
+        }
+    }
     
     @IBInspectable public var cornerRadius: CGFloat = 0 {
         didSet {
@@ -91,6 +91,7 @@ public class DesignableTextField: UITextField {
             attributedString.addAttribute(NSFontAttributeName, value: font!, range: NSMakeRange(0, attributedString.length))
             
             self.attributedText = attributedString
+            setNeedsDisplay()
         }
     }
     

@@ -51,7 +51,7 @@ class ParseHelper: NSObject {
     }
     
     static func connectionsForUser(user: User, completionBlock: PFQueryArrayResultBlock) {
-        let connectionRelation = user.relationForKey("connections")
+        let connectionRelation = user.relationForKey(ParseConnectionRelation)
         let connectionQuery = connectionRelation.query()
         connectionQuery.cachePolicy = .CacheThenNetwork
         
@@ -79,13 +79,13 @@ class ParseHelper: NSObject {
      - parameter user:             The recipient of a connection request
      - parameter complectionBlock: Completion block with results
      */
-    static func pendingRequestsForUser(user: User, complectionBlock: PFQueryArrayResultBlock) {
+    static func pendingRequestsForUser(user: User, completionBlock: PFQueryArrayResultBlock) {
         let requestQuery = ConnectionRequest.query()
         requestQuery?.whereKey(ParseToUser, equalTo: user)
             .whereKey(ParseAccepted, equalTo: false)
         requestQuery?.includeKey(ParseFromUser)
         
-        requestQuery?.findObjectsInBackgroundWithBlock(complectionBlock)
+        requestQuery?.findObjectsInBackgroundWithBlock(completionBlock)
     }
     
     /**
@@ -94,7 +94,7 @@ class ParseHelper: NSObject {
      
      - parameter request: The connection request
      */
-    static func acceptConnectionRequest(request: ConnectionRequest) {
+    static func acceptConnectionRequest(request: ConnectionRequest, completionCallback: PFBooleanResultBlock) {
         let fromUser = request.fromUser
         PFCloud.callFunctionInBackground("AddToConnections", withParameters: ["connectionRequest":request.objectId!]) {
             (object, error) -> Void in
@@ -104,7 +104,7 @@ class ParseHelper: NSObject {
             }else {
                 let relation = User.currentUser()!.relationForKey(ParseConnectionRelation)
                 relation.addObject(fromUser)
-                User.currentUser()!.saveInBackgroundWithBlock(ErrorHandler.errorHandlingCallback)
+                User.currentUser()!.saveInBackgroundWithBlock(completionCallback)
             }
         }
     }

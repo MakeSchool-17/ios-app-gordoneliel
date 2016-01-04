@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import DateTools
 
 let ActivityCellIdentifier = "ActivityCell"
 
 class ActivityCell: UICollectionViewCell {
 
+    @IBOutlet weak var timestamp: UILabel!
     @IBOutlet weak var infoLabel: UILabel!
     
     var connectionRequest: ConnectionRequest? {
@@ -23,6 +25,8 @@ class ActivityCell: UICollectionViewCell {
                 
             infoLabel.attributedText = string
             
+            //Timestamp
+            timestamp.text = connectionRequest!.createdAt!.timeAgoSinceNow()
         }
     }
     

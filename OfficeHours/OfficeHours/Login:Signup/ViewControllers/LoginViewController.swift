@@ -57,9 +57,6 @@ class LoginViewController: UIViewController {
         moveInputContainer(false)
     }
     
-    /*
-    Logs in a user from the REST API
-    */
     func loginUser() {
         SVProgressHUD.show()
         view.userInteractionEnabled = false
@@ -69,6 +66,9 @@ class LoginViewController: UIViewController {
         User.logInWithUsernameInBackground(username,
             password: password) {
                 (user, error) in
+                
+                let user = user as! User
+                user.fetchConnections()
                 
                 if error == nil {
                     self.moveToTabBarController()

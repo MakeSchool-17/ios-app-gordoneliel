@@ -100,33 +100,42 @@ Parse.Cloud.define("AddToConnections", function(request, response) {
     });
 });
 
-Parse.Cloud.afterSave("ConnectionRequest", function(request) {
-    var toUser = request.object.get("toUser");
+Parse.Cloud.afterSave("ConnectionRequest", function(request, response) {
 
-    var user = new Parse.User();
-    user.id = toUser.get("objectId");
+    var userQuery = new Parse.Query(Parse.User);
+    userQuery.get(request.object.get("toUser").id).then(
+        function (toUser) {
+            var fromUserQuery = new Parse.Query(Parse.User);
 
-    console.log("User is: " + request.params);
+            fromUserQuery.get(request.object.get("fromUser").id).then(
+                function (fromUser) {
+                    console.log("To User is: " + toUser.get("name"));
+                    console.log("From User is: " + fromUser.get("name"));
 
-    var pushQuery = new Parse.Query(Parse.Installation);
-    pushQuery.equalTo('deviceType', 'ios');
+                    var pushQuery = new Parse.Query(Parse.Installation);
+                    pushQuery.equalTo('user', toUser);
 
-    Parse.Push.send({
-        where: pushQuery, // Set our Installation query
-        data: {
-          alert: "Recieved a connection request from " + user.get("name")
-        }
-      }, {
-        success: function() {
-          // Push was successful
-          console.log("Push successful");
+                    Parse.Push.send({
+                        where: pushQuery, // Set our Installation query
+                        data: {
+                          alert: "Recieved a connection request from " + fromUser.get("name")
+                        }
+                    }).then(
+                        function() {
+                            console.log("Push successful");
+                        },
+                        function(error) {
+                            console.log("Got an error " + error.code + " : " + error.message);
+                            throw "Got an error " + error.code + " : " + error.message;
+                    });
+                },
+                function (error) {
+                    console.log("Got an error in push user query " + error.code + " : " + error.message);
+                });
         },
-        error: function(error) {
-            console.log("Got an error " + error.code + " : " + error.message);
-            throw "Got an error " + error.code + " : " + error.message;
-        }
-    });
-
+        function (error) {
+            // body...
+        });
 });
 
 /* Prevents duplicate booked times */

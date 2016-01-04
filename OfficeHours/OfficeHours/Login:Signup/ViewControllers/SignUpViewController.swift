@@ -58,9 +58,6 @@ class SignUpViewController: UIViewController {
         moveInputContainer(false)
     }
     
-    /*
-    Logs in a user from the REST API
-    */
     func signUpUser() {
         SVProgressHUD.showWithStatus("Signing you up", maskType: .Black)
 
@@ -70,16 +67,16 @@ class SignUpViewController: UIViewController {
     }
     // MARK: Login Action
     @IBAction func signUpPressed(sender: AnyObject) {
-        
         signUpUser()
     }
     
     func moveToTabBarController() {
         dispatch_async(dispatch_get_main_queue())  {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let viewController = storyboard.instantiateViewControllerWithIdentifier("PlannedTripsNav") as! UINavigationController
+            let storyboard = UIStoryboard(name: "Home", bundle: nil)
+            let viewController = storyboard.instantiateViewControllerWithIdentifier("HomeTabBar") as! UITabBarController
             let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
             appDelegate.window?.rootViewController = viewController
+            self.dismissViewControllerAnimated(true, completion: nil)
             
         }
     }
@@ -108,18 +105,15 @@ extension SignUpViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         
-        if textField == userNameTextField {
-            passwordTextField.becomeFirstResponder()
+        if(textField.returnKeyType == UIReturnKeyType.Next) {
+            let next: UIView = textField.superview?.viewWithTag(textField.tag+1) as UIView!
+            next.becomeFirstResponder()
+        } else if (textField.returnKeyType == UIReturnKeyType.Go) {
+            textField.resignFirstResponder()
+            moveInputContainer(false)
         }
         
-        else if textField == passwordTextField {
-            verifyPasswordTextField.becomeFirstResponder()
-        } else {
-            
-            moveInputContainer(false)
-            textField.resignFirstResponder()
-        }
-        return false
+        return true
     }
     
     /**

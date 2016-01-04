@@ -9,9 +9,11 @@
 import UIKit
 import SVProgressHUD
 import MCCardPickerCollectionViewController
+import Popover
 
 class NearbyMentorViewController: UIViewController {
     
+    @IBOutlet weak var filterButtonItem: UIBarButtonItem!
     @IBOutlet var mentorView: MentorView!
     @IBOutlet var noMentorView: UIView!
     var activeView: UIView!
@@ -28,6 +30,13 @@ class NearbyMentorViewController: UIViewController {
     let insets = UIEdgeInsets(top: 10, left: 5, bottom: 10, right: 5)
     var dataSource: ArrayDataSource?
     
+    //Popover
+    private var popover: Popover!
+    private var popoverOptions: [PopoverOption] = [
+        .Type(.Down),
+        .BlackOverlayColor(UIColor(white: 0.0, alpha: 0.7))
+    ]
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -41,6 +50,7 @@ class NearbyMentorViewController: UIViewController {
         super.viewDidDisappear(animated)
         
         activeView.removeFromSuperview()
+        SVProgressHUD.dismiss()
     }
     
     // MARK: Load Nearby Mentors
@@ -56,15 +66,14 @@ class NearbyMentorViewController: UIViewController {
             
             var mentors = result as? [User] ?? []
             
+            // Filter out connected mentors
             mentors = mentors.filter { mentor in
-                mentor.isUserConnectedWithMentor(User.currentUser()!) == false
+                User.currentUser()!.isUserConnectedWithMentor(mentor) == false
             }
             
             self.mentors = mentors
             SVProgressHUD.dismiss()
             self.view.userInteractionEnabled = true
-            
-            
         }
     }
     
@@ -101,6 +110,39 @@ class NearbyMentorViewController: UIViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     }
+    
+    @IBAction func filterPressed(sender: UIBarButtonItem) {
+        let tableView = UITableView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 150))
+        let startPoint = CGPoint(x: self.view.frame.width - 30, y:57)
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.rowHeight = 50
+        
+        tableView.scrollEnabled = false
+        self.popover = Popover(options: self.popoverOptions, showHandler: nil, dismissHandler: nil)
+        self.popover.show(tableView, point: startPoint)
+    }
+}
+
+extension NearbyMentorViewController: UITableViewDelegate {
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.popover.dismiss()
+    }
+}
+
+extension NearbyMentorViewController: UITableViewDataSource {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = UITableViewCell(style: .Default, reuseIdentifier: nil)
+        let tableViewItems = ["Distance", "Field", "Best Match"]
+        cell.textLabel!.text = tableViewItems[indexPath.row]
+        
+        return cell
+    }
 }
 
 // MARK: UICollectionView Delegate - NearbyMentor VC handles collection view display, MentorView handles DataSource
@@ -124,7 +166,7 @@ extension NearbyMentorViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         let width = ((collectionView.frame.size.width) / 3)  - (insets.left * 2)
-        let height: CGFloat = 170
+        let height: CGFloat = 160
         let size = CGSize(width: width, height: height)
         return size
     }

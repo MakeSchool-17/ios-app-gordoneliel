@@ -12,11 +12,11 @@ class PageViewController: UIViewController {
     
     var pageViewController: UIPageViewController!
     // Init
-    let pageTitles = ["Find mentors in your city", "Connect and engage with mentors", "Let's get started"]
+    let pageTitles = ["Find mentors in your city", "Connect and engage with mentors", "Let's get started", ""]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.primaryBlueColor()
+//        self.view.backgroundColor = UIColor.primaryBlueColor()
         
         /* Setup the page view controller */
         pageViewController = storyboard?.instantiateViewControllerWithIdentifier("PageViewController") as! UIPageViewController
@@ -28,7 +28,7 @@ class PageViewController: UIViewController {
         pageViewController.setViewControllers([pageContentViewController], direction: .Forward, animated: true, completion: nil)
         
         /* We are substracting 60 because we have a get started button whose height is 60*/
-        pageViewController.view.frame = CGRectMake(0, 0, self.view.frame.width, self.view.frame.height - 60)
+        pageViewController.view.frame = CGRectMake(0, 0, self.view.frame.width, self.view.frame.height)
         
         addChildViewController(pageViewController)
         view.addSubview(pageViewController.view)
@@ -38,6 +38,13 @@ class PageViewController: UIViewController {
     
     func createViewController(pageNumber: Int) -> UIViewController {
         let pageIndex = self.pageTitles[pageNumber]
+        
+        if pageNumber >= 3 {
+            let storyboard = UIStoryboard(name: "LoginSignup", bundle: nil)
+            let contentViewController = storyboard.instantiateViewControllerWithIdentifier("SignupVC")
+                as! SignUpViewController
+            return contentViewController
+        }
         
         let model = OnboardingDataModel(title: pageIndex, index: pageNumber)
         
@@ -73,8 +80,12 @@ extension PageViewController: UIPageViewControllerDataSource {
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
         var index = 0
         
-        index = (viewController as! PagingContentViewController).model!.index
-
+        if viewController is SignUpViewController {
+            index = 3
+        } else {
+            index = (viewController as! PagingContentViewController).model!.index
+        }
+        
         index++
         if index == self.pageTitles.count {
             return nil

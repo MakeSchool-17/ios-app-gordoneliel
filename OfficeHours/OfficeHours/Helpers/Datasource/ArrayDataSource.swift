@@ -15,7 +15,7 @@ class ArrayDataSource: NSObject {
     var cellIdentifier: String?
     var cellConfigureCallback: CellConfigureCallback?
 
-    init(items: [AnyObject], cellIdentifier: String, cellConfigureCallback: CellConfigureCallback){
+    init(items: [AnyObject], cellIdentifier: String?, cellConfigureCallback: CellConfigureCallback){
         self.items = items
         self.cellIdentifier = cellIdentifier
         self.cellConfigureCallback = cellConfigureCallback

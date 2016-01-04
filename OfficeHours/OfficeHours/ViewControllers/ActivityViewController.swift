@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class ActivityViewController: UIViewController {
     
@@ -25,18 +26,23 @@ class ActivityViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
+        SVProgressHUD.show()
+        view.userInteractionEnabled = false
+        
         ParseHelper.pendingRequestsForUser(User.currentUser()!) {
             (results, error) -> Void in
             let connectionRequests = results as? [ConnectionRequest] ?? []
             self.connectionRequests = connectionRequests
+            
+            SVProgressHUD.dismiss()
+            self.view.userInteractionEnabled = true
         }
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        SVProgressHUD.dismiss()
     }
-    
-    
+
     func setupCollectionView() {
         dataSource = ArrayDataSource(items: connectionRequests!, cellIdentifier: ActivityCellIdentifier) {
             (cell, request) in
@@ -58,14 +64,18 @@ class ActivityViewController: UIViewController {
 extension ActivityViewController: UICollectionViewDelegate {
     // Handle Accepting Connection Requests
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        ParseHelper.acceptConnectionRequest(connectionRequests![indexPath.row])
+        ParseHelper.acceptConnectionRequest(connectionRequests![indexPath.row]) {
+            (result, error) -> Void in
+            
+            self.collectionView.reloadData()
+        }
     }
 }
 
 extension ActivityViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         let width = Int((collectionView.frame.size.width) - (insets.left * 2))
-        let height = 70
+        let height = 65
         let size = CGSize(width: width, height: height)
         
         return size

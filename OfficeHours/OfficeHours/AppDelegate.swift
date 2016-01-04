@@ -41,7 +41,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func setupParse() {
         Parse.setApplicationId("ZAPP8nFlwnGTeeglDN8Yd9EC8koBJl3tABfFsjUQ", clientKey: "nWCKSkkOqjshjCvkv8STnMROFmDDEi0GRvBCxo22")
-        
         let acl = PFACL()
         acl.publicReadAccess = true
         PFACL.setDefaultACL(acl, withAccessForCurrentUser: true)
@@ -49,7 +48,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func setupPush(application: UIApplication) {
         let settings = UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil)
-        
+
         application.registerUserNotificationSettings(settings)
         application.registerForRemoteNotifications()
     }
@@ -66,10 +65,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     // MARK: Notifications
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+        
         // Store the deviceToken in the current Installation and save it to Parse
-        let installation = PFInstallation.currentInstallation()
-        installation.setDeviceTokenFromData(deviceToken)
-        installation.saveInBackground()
+        let currentInstallation = PFInstallation.currentInstallation()
+        
+        if let user = User.currentUser() {
+            currentInstallation["user"] = user
+        }
+        currentInstallation.setDeviceTokenFromData(deviceToken)
+        currentInstallation.saveInBackground()
     }
     
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject], fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
