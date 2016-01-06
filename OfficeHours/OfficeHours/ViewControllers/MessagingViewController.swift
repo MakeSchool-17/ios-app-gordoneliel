@@ -46,12 +46,27 @@ class MessagingViewController: UIViewController {
         collectionView.dataSource = dataSource
         collectionView.registerNib(ChatCell.nib(), forCellWithReuseIdentifier: ChatCellIdentifier)
     }
+    
+    // MARK: Navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let messagingVC = segue.destinationViewController as? InboxViewController {
+            messagingVC.senderId = User.currentUser()?.objectId
+            messagingVC.senderDisplayName = User.currentUser()?.name
+            messagingVC.outgoingUser = users![(collectionView.indexPathsForSelectedItems()?.first?.row)!]
+        }
+    }
+}
+
+extension MessagingViewController: UICollectionViewDelegate {
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        performSegueWithIdentifier("InboxViewSegue", sender: self)
+    }
 }
 
 extension MessagingViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         let width = collectionView.frame.size.width - (insets.left * 2)
-        let height: CGFloat = 70
+        let height: CGFloat = 80
         let size = CGSize(width: width, height: height)
         
         return size

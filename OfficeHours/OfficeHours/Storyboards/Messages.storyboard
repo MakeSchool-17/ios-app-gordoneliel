@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D9c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
@@ -13,12 +13,12 @@
                         <viewControllerLayoutGuide type="bottom" id="91l-FL-QhZ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="eZf-Zy-cMK">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="akV-QE-yUm">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <color key="backgroundColor" red="0.01176470611" green="0.50588238240000005" blue="0.78823530669999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                                <color key="backgroundColor" red="0.89023375019999995" green="0.89023375019999995" blue="0.89023375019999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dKc-bW-fJO">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -33,20 +33,21 @@
                             <constraint firstAttribute="trailing" secondItem="akV-QE-yUm" secondAttribute="trailing" id="9yK-5C-pss"/>
                             <constraint firstItem="akV-QE-yUm" firstAttribute="leading" secondItem="eZf-Zy-cMK" secondAttribute="leading" id="RBi-Xe-fod"/>
                             <constraint firstItem="91l-FL-QhZ" firstAttribute="top" secondItem="akV-QE-yUm" secondAttribute="bottom" id="e0o-df-cOZ"/>
+                            <constraint firstItem="akV-QE-yUm" firstAttribute="top" secondItem="aAc-Ni-C2l" secondAttribute="bottom" id="ipb-4M-aEE"/>
                             <constraint firstItem="akV-QE-yUm" firstAttribute="top" secondItem="eZf-Zy-cMK" secondAttribute="top" id="t4Y-qa-BzD"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="t4Y-qa-BzD"/>
+                            </mask>
+                        </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="Messages" id="k0R-Vb-L4B">
-                        <barButtonItem key="rightBarButtonItem" image="Add Button" id="qZB-40-bR6">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <connections>
-                                <segue destination="Z2K-3Q-eMI" kind="show" id="nec-vY-A5G"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <navigationItem key="navigationItem" title="Messages" id="k0R-Vb-L4B"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="collectionView" destination="akV-QE-yUm" id="xbO-1m-K0m"/>
+                        <segue destination="Z2K-3Q-eMI" kind="show" identifier="InboxViewSegue" id="apC-Kf-4wF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DO2-SS-i4N" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -72,10 +73,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Gl-2F-hEA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="833" y="190"/>
+            <point key="canvasLocation" x="865" y="190"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="Add Button" width="20" height="20"/>
-    </resources>
 </document>

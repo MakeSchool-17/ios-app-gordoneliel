@@ -17,17 +17,12 @@ class PagingContentViewController: UIViewController {
     
     var model: OnboardingDataModel?
     
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
+    override func viewDidLoad() {
+        super.viewDidLoad()
         configureTutorialView()
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
     func configureTutorialView() {
-        circleContainerView.roundCorners(.AllCorners, radius: circleContainerView.frame.size.width / 2)
         
         titleLabel.text = model?.title
         imageView.image = model?.circleImage.toUIImage()

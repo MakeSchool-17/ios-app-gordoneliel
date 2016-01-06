@@ -10,29 +10,30 @@ import UIKit
 import Foundation
 import JSQMessagesViewController
 import Firebase
+import Bond
 
 class InboxViewController: JSQMessagesViewController {
     
     var user: FAuthData?
     var ref: Firebase!
     var batchMessages = true
-    
+
     var avatars = Dictionary<String, JSQMessagesAvatarImage>()
     let incomingBubble = JSQMessagesBubbleImageFactory().incomingMessagesBubbleImageWithColor(UIColor.orangeMelon())
     let outgoingBubble = JSQMessagesBubbleImageFactory().outgoingMessagesBubbleImageWithColor(UIColor.whiteColor())
     
     var messages = [Message]()
     var messagesRef: Firebase!
+    var outgoingUser: User!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView!.backgroundColor = UIColor.primaryBlueColor()
-        collectionView!.collectionViewLayout.springinessEnabled = true
-        collectionView?.collectionViewLayout.messageBubbleFont =  UIFont(name: "AvenirNext-Medium", size: 15)
+
+        title = outgoingUser.name
+        collectionView!.backgroundColor = UIColor.lighterGrayColor()
+//        collectionView!.collectionViewLayout.springinessEnabled = true
+//        collectionView?.collectionViewLayout.messageBubbleFont =  UIFont(name: "AvenirNext-Medium", size: 15)
         automaticallyScrollsToMostRecentMessage = true
-        
-        setup()
-        senderId = senderDisplayName
         
         setupAvatarColor(senderDisplayName, incoming: false)
         setupFirebase()
@@ -43,9 +44,11 @@ class InboxViewController: JSQMessagesViewController {
 extension InboxViewController {
     func setupFirebase() {
         // *** STEP 2: SETUP FIREBASE
-        messagesRef = Firebase(url: "https://officehoursapp.firebaseio.com/messages")
+        messagesRef = Firebase(url: "https://officehoursapp.firebaseio.com/messages/")
+        messagesRef = messagesRef.childByAppendingPath(senderId + outgoingUser.objectId!)
+
         // *** STEP 4: RECEIVE MESSAGES FROM FIREBASE (limited to latest 25 messages)
-        messagesRef.queryLimitedToLast(25).observeEventType(.ChildAdded, withBlock: { (snapshot) in
+        messagesRef.queryLimitedToLast(50).observeEventType(.ChildAdded, withBlock: { (snapshot) in
             let text = snapshot.value["text"] as? String
             let senderId = snapshot.value["senderId"] as? String
             let senderDisplayName = snapshot.value["senderDisplayName"] as? String
@@ -76,7 +79,7 @@ extension InboxViewController {
         let color = UIColor(red: r, green: g, blue: b, alpha: 0.8)
         
         let nameLength = name.characters.count
-        let initials : String? = name.substringToIndex(senderDisplayName.startIndex.advancedBy(min(3, nameLength)))
+        let initials: String? = name.substringToIndex(senderDisplayName.startIndex.advancedBy(min(3, nameLength)))
         let userImage = JSQMessagesAvatarImageFactory.avatarImageWithUserInitials(initials, backgroundColor: color, textColor: UIColor.blackColor(), font: UIFont.systemFontOfSize(CGFloat(11)), diameter: diameter)
         
         avatars[name] = userImage
@@ -96,6 +99,7 @@ extension InboxViewController {
     *   You can send the media messages from here. Just modify this function call.
     */
     override func didPressAccessoryButton(sender: UIButton!) {
+        
     }
     
     func receivedMessagePressed(sender: UIBarButtonItem) {
@@ -136,7 +140,7 @@ extension InboxViewController {
         let cell = super.collectionView(collectionView, cellForItemAtIndexPath: indexPath) as! JSQMessagesCollectionViewCell
         
         let message = messages[indexPath.item]
-        if message.senderId() == senderDisplayName {
+        if message.senderId() == senderId {
             cell.textView!.textColor = UIColor.darkGrayColor()
         } else {
             cell.textView!.textColor = UIColor.whiteColor()
@@ -157,12 +161,5 @@ extension InboxViewController {
             setupAvatarColor(message.senderDisplayName(), incoming: true)
             return avatars[message.senderDisplayName()]
         }
-    }
-}
-
-extension InboxViewController {
-    func setup() {
-        self.senderId = UIDevice.currentDevice().identifierForVendor?.UUIDString
-        self.senderDisplayName = "Eliel Gordon"
     }
 }

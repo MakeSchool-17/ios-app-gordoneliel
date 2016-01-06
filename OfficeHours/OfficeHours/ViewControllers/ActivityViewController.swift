@@ -26,6 +26,8 @@ class ActivityViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
+        navigationController?.navigationBar.hidden = true
+    
         SVProgressHUD.show()
         view.userInteractionEnabled = false
         
@@ -58,24 +60,36 @@ class ActivityViewController: UIViewController {
         collectionView.delegate = self
         collectionView.registerNib(ActivityCell.nib(), forCellWithReuseIdentifier: ActivityCellIdentifier)
     }
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return .Default
+    }
 }
 
 // MARK: - UICollectionView Delegate
 extension ActivityViewController: UICollectionViewDelegate {
     // Handle Accepting Connection Requests
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        ParseHelper.acceptConnectionRequest(connectionRequests![indexPath.row]) {
-            (result, error) -> Void in
-            
-            self.collectionView.reloadData()
+        
+        let mentorBrowserVC = MentorBrowserViewController()
+        mentorBrowserVC.modalPresentationStyle = .OverFullScreen
+        mentorBrowserVC.modalTransitionStyle = .CrossDissolve
+        
+        // Filter out mentors from "From user"
+        let mentors = connectionRequests?.map { request in
+            request.fromUser
         }
+        
+        mentorBrowserVC.selectedIndex = indexPath.row
+        mentorBrowserVC.mentors = mentors
+        presentViewController(mentorBrowserVC, animated: true, completion: nil)
     }
 }
 
 extension ActivityViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         let width = Int((collectionView.frame.size.width) - (insets.left * 2))
-        let height = 65
+        let height = 140
         let size = CGSize(width: width, height: height)
         
         return size

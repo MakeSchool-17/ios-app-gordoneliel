@@ -32,6 +32,10 @@
 		053892131C162838009C109D /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053892121C162838009C109D /* UIColor+Extensions.swift */; };
 		053892151C164378009C109D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 053892141C164378009C109D /* MapKit.framework */; };
 		0549D4081C309EEE00E173AE /* PFObject+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0549D4071C309EEE00E173AE /* PFObject+Extensions.swift */; };
+		0555744D1C3B155D00BD07EA /* NearbySearchFilterTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0555744C1C3B155D00BD07EA /* NearbySearchFilterTableView.swift */; };
+		055574541C3B211100BD07EA /* DistanceFilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055574521C3B211100BD07EA /* DistanceFilterCell.swift */; };
+		055574551C3B211100BD07EA /* DistanceFilterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 055574531C3B211100BD07EA /* DistanceFilterCell.xib */; };
+		055574571C3CA65800BD07EA /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055574561C3CA65800BD07EA /* ProfileViewController.swift */; };
 		057F47661C1A18A3007AC5DB /* MentorBrowserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057F47641C1A18A3007AC5DB /* MentorBrowserCell.swift */; };
 		057F47671C1A18A3007AC5DB /* MentorBrowserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 057F47651C1A18A3007AC5DB /* MentorBrowserCell.xib */; };
 		057F476B1C1A1BE7007AC5DB /* MentorBrowserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 057F47691C1A1BE7007AC5DB /* MentorBrowserViewController.xib */; };
@@ -55,7 +59,6 @@
 		05B872BB1C0EB1E700F5D3FB /* ArrayDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B872BA1C0EB1E700F5D3FB /* ArrayDataSource.swift */; };
 		05C54D0E1C23707F0081B79C /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C54D0D1C23707F0081B79C /* UIView+Extensions.swift */; };
 		05D152E51C17EC04003DABFF /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D152E31C17EC04003DABFF /* ProfileView.swift */; };
-		05D152E61C17EC04003DABFF /* ProfileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05D152E41C17EC04003DABFF /* ProfileView.xib */; };
 		05D844541C372FC50068C49F /* DesignableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D844531C372FC50068C49F /* DesignableImageView.swift */; };
 		05D844561C37451E0068C49F /* OnboardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D844551C37451E0068C49F /* OnboardingPageViewController.swift */; };
 		05E461DC1C0E4F0F006D956F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E461DB1C0E4F0F006D956F /* AppDelegate.swift */; };
@@ -102,6 +105,10 @@
 		053892121C162838009C109D /* UIColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		053892141C164378009C109D /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		0549D4071C309EEE00E173AE /* PFObject+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PFObject+Extensions.swift"; sourceTree = "<group>"; };
+		0555744C1C3B155D00BD07EA /* NearbySearchFilterTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NearbySearchFilterTableView.swift; sourceTree = "<group>"; };
+		055574521C3B211100BD07EA /* DistanceFilterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DistanceFilterCell.swift; sourceTree = "<group>"; };
+		055574531C3B211100BD07EA /* DistanceFilterCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DistanceFilterCell.xib; sourceTree = "<group>"; };
+		055574561C3CA65800BD07EA /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		057F47641C1A18A3007AC5DB /* MentorBrowserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MentorBrowserCell.swift; sourceTree = "<group>"; };
 		057F47651C1A18A3007AC5DB /* MentorBrowserCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MentorBrowserCell.xib; sourceTree = "<group>"; };
 		057F47691C1A1BE7007AC5DB /* MentorBrowserViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MentorBrowserViewController.xib; sourceTree = "<group>"; };
@@ -125,7 +132,6 @@
 		05B872BA1C0EB1E700F5D3FB /* ArrayDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayDataSource.swift; sourceTree = "<group>"; };
 		05C54D0D1C23707F0081B79C /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		05D152E31C17EC04003DABFF /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
-		05D152E41C17EC04003DABFF /* ProfileView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileView.xib; sourceTree = "<group>"; };
 		05D844531C372FC50068C49F /* DesignableImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableImageView.swift; sourceTree = "<group>"; };
 		05D844551C37451E0068C49F /* OnboardingPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingPageViewController.swift; sourceTree = "<group>"; };
 		05E461D81C0E4F0F006D956F /* OfficeHours.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OfficeHours.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -176,9 +182,9 @@
 			children = (
 				051587761C0FB625005439ED /* Home.storyboard */,
 				0531488F1C111F7400AEADF2 /* NearbyMentors.storyboard */,
-				053148911C11210300AEADF2 /* Profile.storyboard */,
 				053148931C11210E00AEADF2 /* Messages.storyboard */,
 				053148951C11211500AEADF2 /* Activity.storyboard */,
+				053148911C11210300AEADF2 /* Profile.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -330,13 +336,14 @@
 				051587711C0F7358005439ED /* UserSummaryCell.swift */,
 				051587721C0F7358005439ED /* UserSummaryCell.xib */,
 				05D152E31C17EC04003DABFF /* ProfileView.swift */,
-				05D152E41C17EC04003DABFF /* ProfileView.xib */,
 				057F47641C1A18A3007AC5DB /* MentorBrowserCell.swift */,
 				057F47651C1A18A3007AC5DB /* MentorBrowserCell.xib */,
 				051447B51C2941A5003816C4 /* ActivityCell.swift */,
 				051447B61C2941A5003816C4 /* ActivityCell.xib */,
 				051771B51C2CA27B00DF97ED /* ChatCell.swift */,
 				051771B61C2CA27B00DF97ED /* ChatCell.xib */,
+				055574521C3B211100BD07EA /* DistanceFilterCell.swift */,
+				055574531C3B211100BD07EA /* DistanceFilterCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -379,6 +386,8 @@
 				051447B11C29403C003816C4 /* ActivityViewController.swift */,
 				05F6646C1C16D5A200304703 /* InboxViewController.swift */,
 				051771B31C2CA0DE00DF97ED /* MessagingViewController.swift */,
+				0555744C1C3B155D00BD07EA /* NearbySearchFilterTableView.swift */,
+				055574561C3CA65800BD07EA /* ProfileViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -510,10 +519,10 @@
 				05B872B41C0E791400F5D3FB /* ConnectionCell.xib in Resources */,
 				059703881C1B94C20014E024 /* Onboarding.storyboard in Resources */,
 				05E461E61C0E4F0F006D956F /* LaunchScreen.storyboard in Resources */,
+				055574551C3B211100BD07EA /* DistanceFilterCell.xib in Resources */,
 				05E461E31C0E4F0F006D956F /* Assets.xcassets in Resources */,
 				053148901C111F7400AEADF2 /* NearbyMentors.storyboard in Resources */,
 				05B872A51C0E70DA00F5D3FB /* LoginSignup.storyboard in Resources */,
-				05D152E61C17EC04003DABFF /* ProfileView.xib in Resources */,
 				051771B81C2CA27B00DF97ED /* ChatCell.xib in Resources */,
 				051587771C0FB625005439ED /* Home.storyboard in Resources */,
 				053148941C11210E00AEADF2 /* Messages.storyboard in Resources */,
@@ -606,8 +615,11 @@
 				051447B21C29403C003816C4 /* ActivityViewController.swift in Sources */,
 				051587731C0F7358005439ED /* UserSummaryCell.swift in Sources */,
 				05B872AE1C0E747B00F5D3FB /* DesignableButton.swift in Sources */,
+				055574571C3CA65800BD07EA /* ProfileViewController.swift in Sources */,
+				0555744D1C3B155D00BD07EA /* NearbySearchFilterTableView.swift in Sources */,
 				05184D4D1C21735300263BBE /* PhotoTakingHelper.swift in Sources */,
 				05E461DC1C0E4F0F006D956F /* AppDelegate.swift in Sources */,
+				055574541C3B211100BD07EA /* DistanceFilterCell.swift in Sources */,
 				05F6646D1C16D5A200304703 /* InboxViewController.swift in Sources */,
 				051447B71C2941A5003816C4 /* ActivityCell.swift in Sources */,
 				057F476D1C1A3A5A007AC5DB /* MentorBrowserViewController.swift in Sources */,

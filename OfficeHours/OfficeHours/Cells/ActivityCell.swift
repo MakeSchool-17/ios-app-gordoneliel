@@ -8,11 +8,13 @@
 
 import UIKit
 import DateTools
+import SVProgressHUD
 
 let ActivityCellIdentifier = "ActivityCell"
 
 class ActivityCell: UICollectionViewCell {
 
+    @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var timestamp: UILabel!
     @IBOutlet weak var infoLabel: UILabel!
     
@@ -27,6 +29,19 @@ class ActivityCell: UICollectionViewCell {
             
             //Timestamp
             timestamp.text = connectionRequest!.createdAt!.timeAgoSinceNow()
+            
+            connectionRequest?.fromUser.fetchProfileImage()
+            connectionRequest?.fromUser.image.bindTo(profileImage.bnd_image)
+        }
+    }
+    
+    @IBAction func acceptRequestPressed(sender: AnyObject) {
+        SVProgressHUD.show()
+        
+        ParseHelper.acceptConnectionRequest(connectionRequest!) {
+            (result, error) -> Void in
+
+            SVProgressHUD.showSuccessWithStatus("Accepted")
         }
     }
     
