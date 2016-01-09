@@ -47,9 +47,15 @@ class ProfileViewController: UITableViewController {
         return .Default
     }
     
-//    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        let view = UIView()
-//        view.backgroundColor = UIColor.whiteColor()
-//        return view
-//    }
+    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 30.0
+    }
+    override func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int)
+    {
+        let header = view as! UITableViewHeaderFooterView
+        header.textLabel?.font = UIFont(name: "AvenirNext-Medium", size: 17)!
+        header.textLabel?.textColor = UIColor.darkTextColor()
+        header.textLabel?.text = header.textLabel?.text?.capitalizedString
+//        header.contentView.backgroundColor = UIColor.whiteColor()
+    }
 }

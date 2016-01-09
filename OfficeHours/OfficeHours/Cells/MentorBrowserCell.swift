@@ -63,11 +63,9 @@ class MentorBrowserCell: UICollectionViewCell {
         
         if sender.selected {
             sender.selected = false
-            sender.setTitle("Connect", forState: .Normal)
         } else {
             ParseHelper.requestConnectionFromUser(User.currentUser()!, toUser: mentor!)
             sender.selected = true
-            sender.setTitle("Pending", forState: .Selected)
         }
     }
     

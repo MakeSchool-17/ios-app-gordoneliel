@@ -68,29 +68,24 @@ Ported and re-architeched an Objective C iOS game</string>
                                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="15"/>
                                                         <color key="tintColor" red="0.01176470611" green="0.50588238240000005" blue="0.78823530669999997" alpha="1" colorSpace="calibratedRGB"/>
                                                         <state key="normal" title="Connect">
-                                                            <color key="titleColor" red="0.01176470611" green="0.50588238240000005" blue="0.78823530669999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
+                                                        <state key="selected" title="Pending"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                                 <real key="value" value="3"/>
                                                             </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                                <color key="value" red="0.01176470611" green="0.50588238240000005" blue="0.78823530669999997" alpha="1" colorSpace="calibratedRGB"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                                <real key="value" value="1"/>
-                                                            </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="backgroundColorNormal">
-                                                                <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                                <color key="value" red="0.011764706112444401" green="0.5058823823928833" blue="0.78823530673980713" alpha="1" colorSpace="calibratedRGB"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="backgroundColorHighlighted">
-                                                                <color key="value" red="0.01176470611" green="0.50588238240000005" blue="0.78823530669999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <color key="value" red="0.054901961237192154" green="0.32941177487373352" blue="0.48627451062202454" alpha="1" colorSpace="calibratedRGB"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="backgroundColorSelected">
-                                                                <color key="value" red="0.01176470611" green="0.50588238240000005" blue="0.78823530669999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <color key="value" red="0.011764706112444401" green="0.5058823823928833" blue="0.78823530673980713" alpha="1" colorSpace="calibratedRGB"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="backgroundColorHighlightedSelected">
-                                                                <color key="value" red="0.01176470611" green="0.50588238240000005" blue="0.78823530669999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <color key="value" red="0.054901961237192154" green="0.32941177487373352" blue="0.48627451062202454" alpha="1" colorSpace="calibratedRGB"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="textColorHighlightedSelected">
                                                                 <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>

@@ -34,24 +34,28 @@ class NearbyMentorViewController: UIViewController {
         .BlackOverlayColor(UIColor(white: 0.0, alpha: 0.7))
     ]
     
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
         SVProgressHUD.show()
         view.userInteractionEnabled = false
         
-        loadNearbyMentorsInRange(defaultNearbyMentorRange, distanceFilter: 10)
+        let defaults = NSUserDefaults.standardUserDefaults()
+        let object = defaults.doubleForKey("FilterState") ?? 5
+        
+        loadNearbyMentorsInRange(defaultNearbyMentorRange, distanceFilter: object)
     }
     
     override func viewDidDisappear(animated: Bool) {
         super.viewDidDisappear(animated)
         
-        activeView?.removeFromSuperview()
+//        activeView?.removeFromSuperview()
         SVProgressHUD.dismiss()
     }
     
     // MARK: Load Nearby Mentors
     func loadNearbyMentorsInRange(range: Range<Int>, distanceFilter: Double) {
+        activeView?.removeFromSuperview()
         ParseHelper.mentorsNearbyCurrentUser(range, distanceFilter: distanceFilter) {
             (result, error) -> Void in
             
@@ -99,38 +103,25 @@ class NearbyMentorViewController: UIViewController {
         
         activeView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
         activeView.frame = frame
-
+        
     }
-
+    
     override func willRotateToInterfaceOrientation(toInterfaceOrientation: UIInterfaceOrientation, duration: NSTimeInterval) {
         mentorView.collectionView.collectionViewLayout.invalidateLayout()
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    }
-    
     @IBAction func filterPressed(sender: UIBarButtonItem) {
-
-        let tableView = NearbySearchFilterTableView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 150), style: .Plain)
-
-        let startPoint = CGPoint(x: self.view.frame.width - 30, y:57)
-        tableView.delegate = self
-        tableView.rowHeight = 50
         
-        tableView.scrollEnabled = false
+        let tableView = NearbySearchFilterTableView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height), style: .Grouped)
+        
+        let startPoint = CGPoint(x: view.frame.width - 30, y:57)
+        
         self.popover = Popover(options: self.popoverOptions, showHandler: nil, dismissHandler: nil)
         self.popover.show(tableView, point: startPoint)
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return .Default
-    }
-}
-
-extension NearbyMentorViewController: UITableViewDelegate {
-    
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.popover.dismiss()
     }
 }
 
@@ -141,8 +132,8 @@ extension NearbyMentorViewController: UICollectionViewDelegate {
         let mentorBrowserVC = MentorBrowserViewController()
         mentorBrowserVC.modalPresentationStyle = .FullScreen
         mentorBrowserVC.modalTransitionStyle = .CrossDissolve
-
-
+        
+        
         if let mentors = mentors.value {
             mentorBrowserVC.selectedIndex = indexPath.row
             mentorBrowserVC.mentors = mentors

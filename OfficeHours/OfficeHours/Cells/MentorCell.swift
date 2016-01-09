@@ -30,17 +30,18 @@ class MentorCell: UICollectionViewCell {
         return UINib(nibName: MentorCellIdentifier, bundle: nil)
     }
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    override func layoutSubviews() {
+        super.layoutSubviews()
         
         let selectedView = UIView()
         selectedView.backgroundColor = UIColor.whiteColor()
         selectedBackgroundView = selectedView
+        selectedView.roundCorners(.AllCorners, radius: 6)
         
-        profileImage.roundCorners(.AllCorners, radius: profileImage.frame.size.width / 2)
-        
-        layer.cornerRadius = 3
-        clipsToBounds = true
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
     }
     
     

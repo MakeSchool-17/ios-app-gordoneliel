@@ -86,16 +86,14 @@ class MentorBrowserViewController: UIViewController {
 
 extension MentorBrowserViewController: UICollectionViewDelegate {
     func scrollViewDidScroll(scrollView: UIScrollView) {
-//        var tmp = floor(CGRectGetMidX(scrollView.bounds) / CGRectGetWidth(scrollView.bounds))
-//        tmp %= CGFloat(mentors!.count)
-//        pageControl.currentPage = Int(tmp)
-        
-        let pageMetric = scrollView.frame.size.width;
         
         let contentOffset = scrollView.contentOffset.x
- 
         
-        let page = Int(ceil((contentOffset - pageMetric / 2) / pageMetric) + 1)
-        pageControl.currentPage = page;
+        // Page Calc
+        var pageWidth = collectionView.bounds.size.width - (20 * 2)
+        pageWidth += (20 / 2)
+
+        let page = Int(floor((contentOffset - pageWidth / 2) / pageWidth) + 1)
+        pageControl.currentPage = page
     }
 }

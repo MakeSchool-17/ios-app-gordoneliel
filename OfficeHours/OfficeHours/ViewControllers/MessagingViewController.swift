@@ -7,9 +7,13 @@
 //
 
 import UIKit
+import SVProgressHUD
+import Bond
 
 class MessagingViewController: UIViewController {
 
+    @IBOutlet weak var searchBar: UISearchBar!
+    
     @IBOutlet weak var collectionView: UICollectionView!
     
     var dataSource: ArrayDataSource?
@@ -18,18 +22,25 @@ class MessagingViewController: UIViewController {
             setupCollectionView()
         }
     }
+    var connectionDisposable: DisposableType?
     
     let insets = UIEdgeInsets(top: 10, left: 8, bottom: 10, right: 8)
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        ParseHelper.connectionsForUser(User.currentUser()!) {
-            (users, error) in
-            
-            self.users = users as? [User] ?? []
-            
+        SVProgressHUD.show()
+        
+        connectionDisposable?.dispose()
+        User.currentUser()?.fetchConnections()
+        connectionDisposable = User.currentUser()?.connections.observe {
+            (value: [User]?) -> () in
+            if let value = value {
+                self.users = value
+                SVProgressHUD.dismiss()
+            }
         }
+    
     }
 
     func setupCollectionView() {
@@ -71,7 +82,6 @@ extension MessagingViewController: UICollectionViewDelegateFlowLayout {
         let width = collectionView.frame.size.width - (insets.left * 2)
         let height: CGFloat = 80
         let size = CGSize(width: width, height: height)
-        
         return size
     }
     
@@ -81,5 +91,15 @@ extension MessagingViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
         return insets
+    }
+}
+
+extension MessagingViewController: UISearchBarDelegate {
+    func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
+        
+    }
+    
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
     }
 }

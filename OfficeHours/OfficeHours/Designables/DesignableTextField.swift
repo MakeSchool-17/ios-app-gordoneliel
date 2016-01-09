@@ -56,8 +56,9 @@ public class DesignableTextField: UITextField {
         didSet{
             let bottomBorder = CALayer()
             bottomBorder.frame = CGRectMake(0.0, self.frame.size.height - 1, self.frame.size.width, 0.5)
-            bottomBorder.backgroundColor = UIColor(red: 238/255, green: 238/255, blue: 238/255, alpha: 1).CGColor
             layer.addSublayer(bottomBorder)
+            bottomBorder.backgroundColor = borderColor.CGColor
+            setNeedsDisplay()
         }
     }
     

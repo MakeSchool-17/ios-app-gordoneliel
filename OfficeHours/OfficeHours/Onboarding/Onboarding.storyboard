@@ -114,13 +114,13 @@
                                 <rect key="frame" x="248" y="50" width="104" height="150"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Guy" translatesAutoresizingMaskIntoConstraints="NO" id="SxR-q3-mIh">
-                                <rect key="frame" x="45" y="193" width="95" height="134"/>
+                                <rect key="frame" x="45" y="263" width="95" height="134"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Girl" translatesAutoresizingMaskIntoConstraints="NO" id="a8s-MC-nbG">
-                                <rect key="frame" x="425" y="308" width="135" height="185"/>
+                                <rect key="frame" x="425" y="347.5" width="135" height="185"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find Mentors In Your City" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cJh-e4-Yn9">
-                                <rect key="frame" x="150" y="553" width="300" height="32"/>
+                                <rect key="frame" x="150" y="553.5" width="300" height="31.5"/>
                                 <color key="tintColor" red="0.01176470611" green="0.50588238240000005" blue="0.78823530669999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="300" id="S3P-dI-4Mq">
@@ -139,9 +139,9 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="SxR-q3-mIh" firstAttribute="centerY" secondItem="wrs-Yx-tS3" secondAttribute="centerY" constant="-40" id="4MY-KR-T14"/>
+                            <constraint firstItem="SxR-q3-mIh" firstAttribute="centerY" secondItem="wrs-Yx-tS3" secondAttribute="centerY" constant="30" id="4MY-KR-T14"/>
                             <constraint firstAttribute="trailingMargin" secondItem="a8s-MC-nbG" secondAttribute="trailing" constant="20" id="4Pu-Q8-7c7"/>
-                            <constraint firstItem="a8s-MC-nbG" firstAttribute="centerY" secondItem="wrs-Yx-tS3" secondAttribute="centerY" constant="100" id="65T-Ba-B7y">
+                            <constraint firstItem="a8s-MC-nbG" firstAttribute="centerY" secondItem="wrs-Yx-tS3" secondAttribute="centerY" constant="140" id="65T-Ba-B7y">
                                 <variation key="heightClass=regular-widthClass=regular" constant="80"/>
                             </constraint>
                             <constraint firstItem="cJh-e4-Yn9" firstAttribute="centerY" secondItem="wrs-Yx-tS3" secondAttribute="centerY" constant="30" id="AoZ-Ya-IDp"/>
@@ -223,7 +223,7 @@
                                 </variation>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="APy-46-eVj">
-                                <rect key="frame" x="166" y="110" width="268" height="380"/>
+                                <rect key="frame" x="166" y="135" width="268" height="330"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="2UA-mq-baF">
                                         <rect key="frame" x="0.0" y="0.0" width="268" height="150"/>
@@ -258,10 +258,10 @@
                                         </variation>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Envelope" translatesAutoresizingMaskIntoConstraints="NO" id="cqJ-iZ-gz8">
-                                        <rect key="frame" x="37" y="230" width="194" height="150"/>
+                                        <rect key="frame" x="37" y="230" width="194" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="cqJ-iZ-gz8" secondAttribute="height" multiplier="27:37" id="PRs-DM-cHC"/>
-                                            <constraint firstAttribute="height" constant="150" id="kDO-mn-uzZ"/>
+                                            <constraint firstAttribute="height" constant="100" id="kDO-mn-uzZ"/>
                                             <constraint firstAttribute="height" constant="185" id="kOK-ld-w2o"/>
                                         </constraints>
                                         <variation key="default">
