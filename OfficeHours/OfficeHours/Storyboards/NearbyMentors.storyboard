@@ -37,50 +37,75 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6kJ-yh-y6t" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <view contentMode="scaleToFill" id="tib-nK-Fp0" userLabel="NoMentorView">
-                    <rect key="frame" x="0.0" y="0.0" width="424" height="390"/>
+                    <rect key="frame" x="0.0" y="0.0" width="502" height="547"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EmptyState" translatesAutoresizingMaskIntoConstraints="NO" id="I2E-wc-zQ1">
-                            <rect key="frame" x="0.0" y="79.5" width="424" height="310.5"/>
-                            <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="J1D-hZ-2Nn">
+                            <rect key="frame" x="0.0" y="0.0" width="502" height="547"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Oops. Looks like there aren’t any mentors in your area" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QmR-mb-jhL">
+                                    <rect key="frame" x="15" y="0.0" width="472" height="25"/>
+                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
+                                    <color key="textColor" red="0.39950478142076506" green="0.39950478142076506" blue="0.39950478142076506" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Qb-cA-cFB" customClass="DesignableButton" customModule="OfficeHours" customModuleProvider="target">
+                                    <rect key="frame" x="151" y="45" width="200" height="36"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="36" id="5gF-dK-Tcn"/>
+                                        <constraint firstAttribute="width" constant="200" id="eVf-tS-Uhu"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
+                                    <state key="normal" title="Become a mentor">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="backgroundColorNormal">
+                                            <color key="value" red="0.98039215800000001" green="0.41176471110000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="3"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EmptyState" translatesAutoresizingMaskIntoConstraints="NO" id="I2E-wc-zQ1">
+                                    <rect key="frame" x="0.0" y="101" width="502" height="446"/>
+                                    <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="I2E-wc-zQ1" secondAttribute="height" multiplier="1:1" id="8zA-fT-PdD"/>
+                                        <constraint firstAttribute="height" constant="200" id="o6h-VK-Ha6"/>
+                                    </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="8zA-fT-PdD"/>
+                                            <exclude reference="o6h-VK-Ha6"/>
+                                        </mask>
+                                    </variation>
+                                </imageView>
+                            </subviews>
                             <constraints>
-                                <constraint firstAttribute="width" secondItem="I2E-wc-zQ1" secondAttribute="height" multiplier="1:1" id="8zA-fT-PdD"/>
-                                <constraint firstAttribute="height" constant="200" id="o6h-VK-Ha6"/>
+                                <constraint firstItem="QmR-mb-jhL" firstAttribute="top" secondItem="J1D-hZ-2Nn" secondAttribute="top" id="1aD-T2-7Lo"/>
+                                <constraint firstAttribute="trailing" secondItem="QmR-mb-jhL" secondAttribute="trailing" constant="15" id="Afc-bU-10G"/>
+                                <constraint firstItem="QmR-mb-jhL" firstAttribute="leading" secondItem="J1D-hZ-2Nn" secondAttribute="leading" constant="15" id="NHr-g6-ERW"/>
+                                <constraint firstAttribute="bottom" secondItem="I2E-wc-zQ1" secondAttribute="bottom" id="YWU-Sc-CH6"/>
+                                <constraint firstItem="I2E-wc-zQ1" firstAttribute="top" secondItem="2Qb-cA-cFB" secondAttribute="bottom" constant="10" id="aBF-JA-5kB"/>
+                                <constraint firstAttribute="trailing" secondItem="I2E-wc-zQ1" secondAttribute="trailing" id="p6v-PB-weL"/>
+                                <constraint firstItem="I2E-wc-zQ1" firstAttribute="leading" secondItem="J1D-hZ-2Nn" secondAttribute="leading" id="teH-RM-icV"/>
                             </constraints>
                             <variation key="default">
                                 <mask key="constraints">
-                                    <exclude reference="8zA-fT-PdD"/>
-                                    <exclude reference="o6h-VK-Ha6"/>
+                                    <exclude reference="aBF-JA-5kB"/>
                                 </mask>
                             </variation>
-                        </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Oops. Looks like there aren’t any mentors in your area" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QmR-mb-jhL">
-                            <rect key="frame" x="15" y="15" width="394" height="49.5"/>
-                            <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
-                            <color key="textColor" red="0.39950478142076506" green="0.39950478142076506" blue="0.39950478142076506" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
+                        </stackView>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstItem="I2E-wc-zQ1" firstAttribute="top" relation="greaterThanOrEqual" secondItem="QmR-mb-jhL" secondAttribute="bottom" constant="15" id="KeM-c1-I88"/>
-                        <constraint firstItem="QmR-mb-jhL" firstAttribute="leading" secondItem="tib-nK-Fp0" secondAttribute="leading" constant="15" id="Pao-dy-vKq"/>
-                        <constraint firstItem="QmR-mb-jhL" firstAttribute="top" secondItem="tib-nK-Fp0" secondAttribute="top" constant="15" id="QBT-sp-bry"/>
-                        <constraint firstAttribute="bottom" secondItem="I2E-wc-zQ1" secondAttribute="bottom" id="XYR-61-QCw"/>
-                        <constraint firstItem="I2E-wc-zQ1" firstAttribute="top" secondItem="tib-nK-Fp0" secondAttribute="top" constant="20" id="Z7n-eQ-aJE"/>
-                        <constraint firstItem="I2E-wc-zQ1" firstAttribute="centerY" secondItem="tib-nK-Fp0" secondAttribute="centerY" constant="-20" id="gq7-JR-QAV"/>
-                        <constraint firstItem="I2E-wc-zQ1" firstAttribute="leading" secondItem="tib-nK-Fp0" secondAttribute="leading" id="ied-Uh-tSu"/>
-                        <constraint firstAttribute="trailing" secondItem="I2E-wc-zQ1" secondAttribute="trailing" id="mvu-0E-9Ve"/>
-                        <constraint firstItem="I2E-wc-zQ1" firstAttribute="centerX" secondItem="tib-nK-Fp0" secondAttribute="centerX" id="ujs-Ob-FOQ"/>
-                        <constraint firstAttribute="trailing" secondItem="QmR-mb-jhL" secondAttribute="trailing" constant="15" id="vWB-iO-hqe"/>
+                        <constraint firstItem="J1D-hZ-2Nn" firstAttribute="top" secondItem="tib-nK-Fp0" secondAttribute="top" id="VLI-4K-M1n"/>
+                        <constraint firstAttribute="bottom" secondItem="J1D-hZ-2Nn" secondAttribute="bottom" id="fLZ-W2-35j"/>
+                        <constraint firstAttribute="trailing" secondItem="J1D-hZ-2Nn" secondAttribute="trailing" id="iTz-RX-HTQ"/>
+                        <constraint firstItem="J1D-hZ-2Nn" firstAttribute="leading" secondItem="tib-nK-Fp0" secondAttribute="leading" id="mqt-z9-OkD"/>
                     </constraints>
-                    <variation key="default">
-                        <mask key="constraints">
-                            <exclude reference="Z7n-eQ-aJE"/>
-                            <exclude reference="gq7-JR-QAV"/>
-                            <exclude reference="ujs-Ob-FOQ"/>
-                        </mask>
-                    </variation>
                 </view>
                 <view contentMode="scaleToFill" id="Xuv-vD-BSj" userLabel="MentorView" customClass="MentorView" customModule="OfficeHours" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="462" height="387"/>
@@ -104,7 +129,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="462" height="35"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BiL-sd-qDm">
-                                    <rect key="frame" x="10" y="8" width="55" height="19.5"/>
+                                    <rect key="frame" x="10" y="8" width="55" height="20"/>
                                     <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="14"/>
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
@@ -124,7 +149,7 @@
                                     <real key="value" value="2"/>
                                 </userDefinedRuntimeAttribute>
                                 <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                    <real key="value" value="0.29999999999999999"/>
+                                    <real key="value" value="0.20000000000000001"/>
                                 </userDefinedRuntimeAttribute>
                                 <userDefinedRuntimeAttribute type="number" keyPath="shadowOffsetY">
                                     <real key="value" value="1.5"/>

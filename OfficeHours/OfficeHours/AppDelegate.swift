@@ -30,7 +30,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // Custom back icon
             UINavigationBar.appearance().backIndicatorImage = UIImage(named: "BackButton");
             UINavigationBar.appearance().backIndicatorTransitionMaskImage = UIImage(named: "BackButton");
-            UINavigationBar.appearance().tintColor = UIColor.whiteColor()
             
             // Adjust the back text for our new image
             UIBarButtonItem.appearance().setBackButtonTitlePositionAdjustment(UIOffset(horizontal: -600.0, vertical: 100.0), forBarMetrics: .Default);

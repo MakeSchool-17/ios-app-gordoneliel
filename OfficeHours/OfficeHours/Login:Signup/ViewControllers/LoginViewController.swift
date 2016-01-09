@@ -17,6 +17,8 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var inputContainerCenterConstraint : NSLayoutConstraint!
     @IBOutlet weak var loginButton: DesignableButton!
     
+    @IBOutlet weak var logoView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -67,10 +69,10 @@ class LoginViewController: UIViewController {
             password: password) {
                 (user, error) in
                 
-                let user = user as! User
-                user.fetchConnections()
+                let user = user as? User
+                user?.fetchConnections()
                 
-                if error == nil {
+                if error == nil && user != nil {
                     self.moveToTabBarController()
                 }else {
                     SVProgressHUD.showErrorWithStatus("Username or password incorrect", maskType: .Black)
@@ -113,9 +115,6 @@ class LoginViewController: UIViewController {
 // MARK: - UITextField Delegate & Helpers
 
 extension LoginViewController: UITextFieldDelegate {
-    func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
-        return true
-    }
     
     func textFieldDidBeginEditing(textField: UITextField) {
         // Move the input container containing all the textfields up for convienience
@@ -126,12 +125,12 @@ extension LoginViewController: UITextFieldDelegate {
         
         if textField == userNameTextField {
             passwordTextField.becomeFirstResponder()
+            return false
         } else {
-            
             moveInputContainer(false)
             textField.resignFirstResponder()
+            return true
         }
-        return false
     }
     
     /**
@@ -142,6 +141,8 @@ extension LoginViewController: UITextFieldDelegate {
             // Move TextFields up
             UIView.animateWithDuration(0.4, delay: 0.0, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.5, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
                 self.inputContainerCenterConstraint.constant = 100
+                self.view.backgroundColor = UIColor.primaryBlueColor()
+                self.logoView.tintColor = UIColor.whiteColor()
                 self.view.layoutIfNeeded()
                 
                 }, completion: nil)
@@ -149,6 +150,8 @@ extension LoginViewController: UITextFieldDelegate {
         } else {
             // Move TextFields down
             UIView.animateWithDuration(0.3) {
+                self.view.backgroundColor = UIColor.whiteColor()
+                self.logoView.tintColor = UIColor.primaryBlueColor()
                 self.inputContainerCenterConstraint.constant = 0
                 self.view.layoutIfNeeded()
             }

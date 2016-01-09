@@ -30,7 +30,7 @@ class ActivityCell: UICollectionViewCell {
             //Timestamp
             timestamp.text = connectionRequest!.createdAt!.timeAgoSinceNow()
             
-            connectionRequest?.fromUser.fetchProfileImage()
+            connectionRequest?.fromUser.fetchProfileInfo()
             connectionRequest?.fromUser.image.bindTo(profileImage.bnd_image)
         }
     }

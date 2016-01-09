@@ -24,6 +24,7 @@ class User: PFUser {
     var userJobTitle: Observable<String?> = Observable(nil)
     var userWorkName: Observable<String?> = Observable(nil)
     var userAbout: Observable<String?> = Observable(nil)
+    var userEmail: Observable<String?> = Observable(nil)
     var connectionRequests: Observable<User?> = Observable(nil)
     var connections: Observable<[User]?> = Observable(nil)
     
@@ -44,26 +45,7 @@ class User: PFUser {
         // 2
         ParseHelper.connectionsForUser(self) {
             (let connections: [PFObject]?, error: NSError?)  -> Void in
-            
-            // 3
-//            connections = connections?.filter { connection in
-            
-//                connection[ParseHelper.ParseToUser].objectId != User.currentUser()!.objectId! ||
-//                    connection[ParseHelper.ParseFromUser].objectId != User.currentUser()!.objectId!
-                
-//                                connection[ParseHelper.ParseToUser] != nil
-//            }
-            // 4
-//            self.connections.value = connections?.map { connection in
-//                let currentUser = User.currentUser()!
-//                let toUser = connection[ParseHelper.ParseToUser] as! User
-//                let fromUser = connection[ParseHelper.ParseFromUser] as! User
-//                if toUser.objectId != currentUser.objectId {
-//                    return toUser
-//                } else {
-//                    return fromUser
-//                }
-//            }
+
             self.connections.value = connections?.map { connection in
                 return connection as! User
             }
@@ -79,13 +61,14 @@ class User: PFUser {
     }
     
     // MARK: Fetch Profile image from parse
-    func fetchProfileImage() {
+    func fetchProfileInfo() {
         
-        if userWorkName.value == nil && userName.value == nil && userJobTitle.value == nil && userAbout.value == nil {
+        if userWorkName.value == nil && userName.value == nil && userJobTitle.value == nil && userAbout.value == nil && userEmail.value == nil {
             userWorkName.value = workName
             userName.value = name
             userJobTitle.value = jobTitle
             userAbout.value = about
+            userEmail.value = email
         }
         
         if image.value == nil {

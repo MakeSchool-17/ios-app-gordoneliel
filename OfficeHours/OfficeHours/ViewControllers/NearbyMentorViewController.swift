@@ -10,6 +10,7 @@ import UIKit
 import SVProgressHUD
 import MCCardPickerCollectionViewController
 import Popover
+import Bond
 
 class NearbyMentorViewController: UIViewController {
     
@@ -18,11 +19,7 @@ class NearbyMentorViewController: UIViewController {
     @IBOutlet var noMentorView: UIView!
     var activeView: UIView!
     
-    var mentors: [User]? {
-        didSet {
-            viewToPresent()
-        }
-    }
+    var mentors: Observable<[User]?> = Observable(nil)
     
     let defaultNearbyMentorRange = 0...50
     var selectedIndex: Int?
@@ -49,7 +46,7 @@ class NearbyMentorViewController: UIViewController {
     override func viewDidDisappear(animated: Bool) {
         super.viewDidDisappear(animated)
         
-        activeView.removeFromSuperview()
+        activeView?.removeFromSuperview()
         SVProgressHUD.dismiss()
     }
     
@@ -71,7 +68,8 @@ class NearbyMentorViewController: UIViewController {
                 User.currentUser()!.isUserConnectedWithMentor(mentor) == false
             }
             
-            self.mentors = mentors
+            self.mentors.value = mentors
+            self.viewToPresent()
             SVProgressHUD.dismiss()
             self.view.userInteractionEnabled = true
         }
@@ -83,7 +81,7 @@ class NearbyMentorViewController: UIViewController {
     */
     func viewToPresent() {
         
-        guard let mentors = mentors else {return}
+        guard let mentors = mentors.value else {return}
         
         // TODO:  Replace with better implementation - problem originates from storyboard offset by 64px, resetting origin to 0,0
         let frame = CGRect(origin: CGPoint(x: 0, y: 0), size: self.view.frame.size)
@@ -114,7 +112,7 @@ class NearbyMentorViewController: UIViewController {
     @IBAction func filterPressed(sender: UIBarButtonItem) {
 
         let tableView = NearbySearchFilterTableView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 150), style: .Plain)
-        
+
         let startPoint = CGPoint(x: self.view.frame.width - 30, y:57)
         tableView.delegate = self
         tableView.rowHeight = 50
@@ -122,6 +120,10 @@ class NearbyMentorViewController: UIViewController {
         tableView.scrollEnabled = false
         self.popover = Popover(options: self.popoverOptions, showHandler: nil, dismissHandler: nil)
         self.popover.show(tableView, point: startPoint)
+    }
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return .Default
     }
 }
 
@@ -137,11 +139,11 @@ extension NearbyMentorViewController: UICollectionViewDelegate {
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
         let mentorBrowserVC = MentorBrowserViewController()
-        mentorBrowserVC.modalPresentationStyle = .OverFullScreen
+        mentorBrowserVC.modalPresentationStyle = .FullScreen
         mentorBrowserVC.modalTransitionStyle = .CrossDissolve
 
 
-        if let mentors = mentors {
+        if let mentors = mentors.value {
             mentorBrowserVC.selectedIndex = indexPath.row
             mentorBrowserVC.mentors = mentors
             presentViewController(mentorBrowserVC, animated: true, completion: nil)

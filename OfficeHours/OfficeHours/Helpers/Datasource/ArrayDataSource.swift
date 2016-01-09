@@ -50,16 +50,6 @@ extension ArrayDataSource: UICollectionViewDataSource {
         
         return cell
     }
-    
-    func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
-        if kind == UICollectionElementKindSectionHeader {
-            let headerView = collectionView.dequeueReusableSupplementaryViewOfKind(UICollectionElementKindSectionHeader,
-                withReuseIdentifier:ProfileViewCellIdentifier, forIndexPath: indexPath) as! ProfileView
-            return headerView
-        } else {
-            return UICollectionReusableView()
-        }
-    }
 }
 
 // MARK : UITableViewDataSource

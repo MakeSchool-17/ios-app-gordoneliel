@@ -55,6 +55,9 @@ class MessagingViewController: UIViewController {
             messagingVC.outgoingUser = users![(collectionView.indexPathsForSelectedItems()?.first?.row)!]
         }
     }
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return .Default
+    }
 }
 
 extension MessagingViewController: UICollectionViewDelegate {

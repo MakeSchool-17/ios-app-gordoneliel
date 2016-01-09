@@ -13,11 +13,18 @@ import SVProgressHUD
 class SignUpViewController: UIViewController {
 
     // Outlets
+    @IBOutlet weak var profileImageButton: DesignableButton!
     @IBOutlet weak var userNameTextField : UITextField!
     @IBOutlet weak var passwordTextField : UITextField!
     @IBOutlet weak var verifyPasswordTextField: DesignableTextField!
     @IBOutlet weak var inputContainerCenterConstraint : NSLayoutConstraint!
     @IBOutlet weak var loginButton: DesignableButton!
+    
+    @IBOutlet weak var profileViewTopConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var titleTopConstraint: NSLayoutConstraint!
+    
+    var photoTakingHelper: PhotoTakingHelper?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -89,6 +96,17 @@ class SignUpViewController: UIViewController {
     override func prefersStatusBarHidden() -> Bool {
         return true
     }
+    
+    func takePhoto() {
+        photoTakingHelper = PhotoTakingHelper(viewController: self) {
+           [unowned self] photo in
+            self.profileImageButton.setBackgroundImage(photo, forState: .Normal)
+            self.profileImageButton.setTitle("", forState: .Normal)
+        }
+    }
+    @IBAction func profileImagePressed(sender: AnyObject) {
+        takePhoto()
+    }
 }
 
 // MARK: - UITextField Delegate & Helpers
@@ -125,7 +143,9 @@ extension SignUpViewController: UITextFieldDelegate {
             
             // Move TextFields up
             UIView.animateWithDuration(0.4, delay: 0.0, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.5, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
-                self.inputContainerCenterConstraint.constant = 100
+//                self.inputContainerCenterConstraint.constant = 100
+                self.profileViewTopConstraint.active = true
+                self.titleTopConstraint.active = false
                 self.view.layoutIfNeeded()
                 
                 }, completion: nil)
@@ -134,7 +154,9 @@ extension SignUpViewController: UITextFieldDelegate {
             
             // Move TextFields down
             UIView.animateWithDuration(0.3) {
-                self.inputContainerCenterConstraint.constant = 0
+//                self.inputContainerCenterConstraint.constant = 0
+                self.profileViewTopConstraint.active = false
+                self.titleTopConstraint.active = true
                 self.view.layoutIfNeeded()
             }
         }

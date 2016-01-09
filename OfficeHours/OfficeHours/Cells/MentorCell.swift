@@ -19,7 +19,7 @@ class MentorCell: UICollectionViewCell {
     
     var mentor: User? {
         didSet {
-            mentor?.fetchProfileImage()
+            mentor?.fetchProfileInfo()
             mentor?.image.bindTo(profileImage.bnd_image)
             mentor?.userName.bindTo(name.bnd_text)
             mentor?.userJobTitle.bindTo(jobTitle.bnd_text)

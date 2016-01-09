@@ -84,11 +84,13 @@
         <!--Profile-->
         <scene sceneID="nFO-tf-n7t">
             <objects>
-                <navigationController navigationBarHidden="YES" id="Lha-Qc-5q0" customClass="OfficeHoursNavigation" customModule="OfficeHours" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController id="Lha-Qc-5q0" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Profile" image="Connections" id="bgD-46-AGH"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="wRu-VB-yLV">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="wRu-VB-yLV">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.01176470611" green="0.50588238240000005" blue="0.78823530669999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </navigationBar>
                     <connections>
                         <segue destination="IP0-29-9Ds" kind="relationship" relationship="rootViewController" id="25k-q9-PiR"/>

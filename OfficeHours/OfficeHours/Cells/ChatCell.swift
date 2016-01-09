@@ -16,13 +16,14 @@ class ChatCell: UICollectionViewCell {
     @IBOutlet weak var username: UILabel!
     @IBOutlet weak var jobTitle: UILabel!
     
-    
     var user: User? {
         didSet {
-            user?.fetchProfileImage()
+            user?.fetchProfileInfo()
             user?.image.bindTo(profileImage.bnd_image)
             user?.userName.bindTo(username.bnd_text)
-            user?.userJobTitle.bindTo(jobTitle.bnd_text)
+            user?.userJobTitle.map {
+                $0! + ", " + (self.user?.userWorkName.value)!
+                }.bindTo(jobTitle.bnd_text)
         }
     }
     
@@ -32,7 +33,6 @@ class ChatCell: UICollectionViewCell {
     }
     override func awakeFromNib() {
         super.awakeFromNib()
-        
         profileImage.roundCorners(.AllCorners, radius: profileImage.frame.size.width / 2)
     }
     

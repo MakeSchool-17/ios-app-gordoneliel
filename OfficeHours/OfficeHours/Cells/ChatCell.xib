@@ -8,10 +8,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ChatCell" id="gTV-IL-0wX" customClass="ChatCell" customModule="OfficeHours" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="495" height="93"/>
+            <rect key="frame" x="0.0" y="0.0" width="495" height="92"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="495" height="93"/>
+                <rect key="frame" x="0.0" y="0.0" width="495" height="92"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Avatar-Default" translatesAutoresizingMaskIntoConstraints="NO" id="9o7-Nt-bOy" customClass="DesignableImageView" customModule="OfficeHours" customModuleProvider="target">
                         <rect key="frame" x="15" y="21" width="50" height="50"/>
@@ -32,8 +32,8 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Position" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cps-ad-eWy">
-                        <rect key="frame" x="80" y="42" width="405" height="18"/>
-                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="13"/>
+                        <rect key="frame" x="80" y="42" width="405" height="20"/>
+                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="14"/>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -42,6 +42,7 @@
             </view>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="cps-ad-eWy" firstAttribute="trailing" secondItem="AEd-jc-fSh" secondAttribute="trailing" id="5Mk-Mx-W8Q"/>
                 <constraint firstItem="cps-ad-eWy" firstAttribute="top" secondItem="AEd-jc-fSh" secondAttribute="bottom" constant="-1" id="Bad-sl-cPd"/>
                 <constraint firstItem="cps-ad-eWy" firstAttribute="trailing" secondItem="AEd-jc-fSh" secondAttribute="trailing" id="Jg6-wo-HJQ"/>
                 <constraint firstAttribute="trailing" secondItem="AEd-jc-fSh" secondAttribute="trailing" constant="10" id="Lu5-Xj-IQc"/>
@@ -55,13 +56,14 @@
                 <constraint firstAttribute="trailing" secondItem="9o7-Nt-bOy" secondAttribute="trailing" id="wYC-qj-HZa"/>
                 <constraint firstAttribute="bottom" secondItem="9o7-Nt-bOy" secondAttribute="bottom" id="ztG-Fn-euA"/>
             </constraints>
-            <size key="customSize" width="495" height="93"/>
+            <size key="customSize" width="495" height="92"/>
             <variation key="default">
                 <mask key="constraints">
                     <exclude reference="Wqa-6a-h3f"/>
                     <exclude reference="wYC-qj-HZa"/>
                     <exclude reference="ztG-Fn-euA"/>
                     <exclude reference="Si5-HS-CBV"/>
+                    <exclude reference="Jg6-wo-HJQ"/>
                 </mask>
             </variation>
             <connections>
@@ -69,7 +71,7 @@
                 <outlet property="profileImage" destination="9o7-Nt-bOy" id="2db-B5-GoT"/>
                 <outlet property="username" destination="AEd-jc-fSh" id="813-0J-ouj"/>
             </connections>
-            <point key="canvasLocation" x="390.5" y="266.5"/>
+            <point key="canvasLocation" x="390.5" y="267"/>
         </collectionViewCell>
     </objects>
     <resources>

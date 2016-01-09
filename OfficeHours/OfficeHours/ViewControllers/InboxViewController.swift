@@ -19,23 +19,26 @@ class InboxViewController: JSQMessagesViewController {
     var batchMessages = true
 
     var avatars = Dictionary<String, JSQMessagesAvatarImage>()
-    let incomingBubble = JSQMessagesBubbleImageFactory().incomingMessagesBubbleImageWithColor(UIColor.orangeMelon())
-    let outgoingBubble = JSQMessagesBubbleImageFactory().outgoingMessagesBubbleImageWithColor(UIColor.whiteColor())
+    let incomingBubble = JSQMessagesBubbleImageFactory().incomingMessagesBubbleImageWithColor(UIColor.lighterGrayColor())
+    let outgoingBubble = JSQMessagesBubbleImageFactory().outgoingMessagesBubbleImageWithColor(UIColor.lighterBlueColor())
     
     var messages = [Message]()
     var messagesRef: Firebase!
     var outgoingUser: User!
     
+    var photoTakingHelper: PhotoTakingHelper?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         title = outgoingUser.name
-        collectionView!.backgroundColor = UIColor.lighterGrayColor()
-//        collectionView!.collectionViewLayout.springinessEnabled = true
-//        collectionView?.collectionViewLayout.messageBubbleFont =  UIFont(name: "AvenirNext-Medium", size: 15)
+        collectionView!.backgroundColor = UIColor.whiteColor()
+        showLoadEarlierMessagesHeader = true
         automaticallyScrollsToMostRecentMessage = true
         
-        setupAvatarColor(senderDisplayName, incoming: false)
+//        setupAvatarColor(senderDisplayName, incoming: false)
+        setupAvatarImage(senderDisplayName, incoming: false)
+        collectionView!.collectionViewLayout.outgoingAvatarViewSize = CGSizeZero
         setupFirebase()
     }
 }
@@ -45,7 +48,8 @@ extension InboxViewController {
     func setupFirebase() {
         // *** STEP 2: SETUP FIREBASE
         messagesRef = Firebase(url: "https://officehoursapp.firebaseio.com/messages/")
-        messagesRef = messagesRef.childByAppendingPath(senderId + outgoingUser.objectId!)
+        let hashValue = senderId.hash + outgoingUser.objectId!.hash
+        messagesRef = messagesRef.childByAppendingPath("\(hashValue)")
 
         // *** STEP 4: RECEIVE MESSAGES FROM FIREBASE (limited to latest 25 messages)
         messagesRef.queryLimitedToLast(50).observeEventType(.ChildAdded, withBlock: { (snapshot) in
@@ -67,6 +71,18 @@ extension InboxViewController {
             "senderId":senderId,
             "senderDisplayName": senderDisplayName
             ])
+    }
+    
+    /*
+    *   This is the helper function to grab the image from the URL and put it there
+    *   into the avatar. It also configures the diameter for the avatar image.
+    */
+    func setupAvatarImage(name: String, incoming: Bool) {
+        let diameter = incoming ? UInt(collectionView!.collectionViewLayout.incomingAvatarViewSize.width) : UInt(collectionView!.collectionViewLayout.outgoingAvatarViewSize.width)
+        
+            let avatarImage = JSQMessagesAvatarImageFactory.avatarImageWithImage(outgoingUser.image.value, diameter: diameter)
+
+            avatars[name] = avatarImage
     }
     
     func setupAvatarColor(name: String, incoming: Bool) {
@@ -99,7 +115,19 @@ extension InboxViewController {
     *   You can send the media messages from here. Just modify this function call.
     */
     override func didPressAccessoryButton(sender: UIButton!) {
+        let alert = UIAlertController(title: "Attachment", message: "Send an attachment", preferredStyle: .ActionSheet)
+        alert.addAction( UIAlertAction(title: "Send Photo", style: .Default) {
+            action in
+            self.photoTakingHelper = PhotoTakingHelper(viewController: self) {
+                photo in
+                
+            }
+        })
+        alert.addAction( UIAlertAction(title: "Send Location", style: .Default, handler: nil))
+        alert.addAction( UIAlertAction(title: "Cancel", style: .Destructive, handler: nil))
         
+        alert.popoverPresentationController?.sourceView = sender
+        presentViewController(alert, animated: true, completion: nil)
     }
     
     func receivedMessagePressed(sender: UIBarButtonItem) {
@@ -141,9 +169,9 @@ extension InboxViewController {
         
         let message = messages[indexPath.item]
         if message.senderId() == senderId {
-            cell.textView!.textColor = UIColor.darkGrayColor()
-        } else {
             cell.textView!.textColor = UIColor.whiteColor()
+        } else {
+            cell.textView!.textColor = UIColor.darkGrayColor()
         }
         
         let attributes: [String:AnyObject] = [NSForegroundColorAttributeName:cell.textView!.textColor!, NSUnderlineStyleAttributeName: 1]
@@ -153,12 +181,13 @@ extension InboxViewController {
     }
     
     override func collectionView(collectionView: JSQMessagesCollectionView!, avatarImageDataForItemAtIndexPath indexPath: NSIndexPath!) -> JSQMessageAvatarImageDataSource! {
+//        return JSQMessagesAvatarImage(placeholder: outgoingUser.image.value)
         let message = messages[indexPath.item]
         if let avatar = avatars[message.senderDisplayName()] {
             return avatar
         }
         else {
-            setupAvatarColor(message.senderDisplayName(), incoming: true)
+            setupAvatarImage(message.senderDisplayName(), incoming: true)
             return avatars[message.senderDisplayName()]
         }
     }

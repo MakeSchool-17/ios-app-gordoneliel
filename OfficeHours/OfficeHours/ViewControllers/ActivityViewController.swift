@@ -72,7 +72,7 @@ extension ActivityViewController: UICollectionViewDelegate {
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
         let mentorBrowserVC = MentorBrowserViewController()
-        mentorBrowserVC.modalPresentationStyle = .OverFullScreen
+        mentorBrowserVC.modalPresentationStyle = .FullScreen
         mentorBrowserVC.modalTransitionStyle = .CrossDissolve
         
         // Filter out mentors from "From user"

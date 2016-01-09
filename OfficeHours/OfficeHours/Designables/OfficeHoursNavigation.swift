@@ -15,10 +15,10 @@ class OfficeHoursNavigation: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationBar.barTintColor = NavBarColor
+        navigationBar.barTintColor = UIColor.primaryBlueColor()
         navigationBar.barStyle = .Black
         navigationBar.translucent = false
-        
+        navigationBar.tintColor = UIColor.whiteColor()
         navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Avenir-Medium", size: 18.0)!, NSForegroundColorAttributeName:UIColor.whiteColor()]
         
     }

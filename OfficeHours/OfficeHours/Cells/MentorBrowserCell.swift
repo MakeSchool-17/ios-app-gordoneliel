@@ -20,7 +20,7 @@ class MentorBrowserCell: UICollectionViewCell {
     
     var mentor: User? {
         didSet {
-            mentor?.fetchProfileImage()
+            mentor?.fetchProfileInfo()
             mentor?.image.bindTo(profileImage.bnd_image)
             mentor?.userName.bindTo(name.bnd_text)
             mentor?.userJobTitle.bindTo(jobTitle.bnd_text)
@@ -44,7 +44,6 @@ class MentorBrowserCell: UICollectionViewCell {
                     connectionButton.backgroundColor = UIColor.primaryBlueColor()
                     connectionButton.textColorHighlightedSelected = UIColor.whiteColor()
                     connectionButton.setTitle("Connected", forState: .Selected)
-
                 }
                 
             }
@@ -58,14 +57,13 @@ class MentorBrowserCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
     }
     
     @IBAction func requestPressed(sender: DesignableButton) {
         
         if sender.selected {
             sender.selected = false
-            sender.setTitle("Request", forState: .Normal)
+            sender.setTitle("Connect", forState: .Normal)
         } else {
             ParseHelper.requestConnectionFromUser(User.currentUser()!, toUser: mentor!)
             sender.selected = true
