@@ -26,7 +26,7 @@ class LocationHelper: NSObject, CLLocationManagerDelegate {
     /*
     * Gets the address of a coordinate location
     */
-    func getUserLocationName(callback : LocationCallback) {
+    func getUserLocationName(callback: LocationCallback) {
         let geoCoder = CLGeocoder()
         
         guard let locValue = locationManager.location?.coordinate else {return}

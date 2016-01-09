@@ -18,26 +18,28 @@ class MentorBrowserViewController: UIViewController {
     var (mentors, selectedIndex): ([User]?, Int?)
     
     let insets = UIEdgeInsets(top: 50, left: 20, bottom: 10, right: 20)
+    var scrolled = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupCollectionView()
         pageControl.numberOfPages = mentors!.count
-        
-        
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        let indexPath = NSIndexPath(forItem: selectedIndex!, inSection: 0)
-        //
-        if selectedIndex > 1 {
-            collectionView.scrollToItemAtIndexPath(NSIndexPath(forItem: selectedIndex! - 1, inSection: 0), atScrollPosition: UICollectionViewScrollPosition.CenteredHorizontally, animated: false)
+        if !scrolled {
+            let indexPath = NSIndexPath(forItem: selectedIndex!, inSection: 0)
+            //
+            if selectedIndex > 1 {
+                collectionView.scrollToItemAtIndexPath(NSIndexPath(forItem: selectedIndex! - 1, inSection: 0), atScrollPosition: UICollectionViewScrollPosition.CenteredHorizontally, animated: false)
+            }
+            
+            collectionView.scrollToItemAtIndexPath(indexPath, atScrollPosition: UICollectionViewScrollPosition.CenteredHorizontally, animated: true)
         }
-        
-        collectionView.scrollToItemAtIndexPath(indexPath, atScrollPosition: UICollectionViewScrollPosition.CenteredHorizontally, animated: true)
+        scrolled = true
     }
     
     func setupCollectionView() {
@@ -61,7 +63,7 @@ class MentorBrowserViewController: UIViewController {
         
         var anOffset = UIOffsetZero
         if (layout.layoutType == .Horizontal) {
-            anOffset = UIOffsetMake(20, 20)
+            anOffset = UIOffsetMake(20, 10)
             layout.offset = anOffset
             layout.layoutType = .Horizontal
         }
@@ -69,32 +71,29 @@ class MentorBrowserViewController: UIViewController {
         collectionView.registerNib(MentorBrowserCell.nib(), forCellWithReuseIdentifier: MentorBrowserCellIdentifier)
     }
     
-    override func willRotateToInterfaceOrientation(toInterfaceOrientation: UIInterfaceOrientation, duration: NSTimeInterval) {
-        collectionView.collectionViewLayout.invalidateLayout()
-    }
-    
-    
     @IBAction func dismissMentorBrowser(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
+        return .Portrait
+    }
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return .LightContent
     }
 }
 
 extension MentorBrowserViewController: UICollectionViewDelegate {
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+    func scrollViewDidScroll(scrollView: UIScrollView) {
         
-    }
-}
+        let contentOffset = scrollView.contentOffset.x
+        
+        // Page Calc
+        var pageWidth = collectionView.bounds.size.width - (20 * 2)
+        pageWidth += (20 / 2)
 
-extension MentorBrowserViewController: UICollectionViewDelegateFlowLayout {
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        let width = Int((collectionView.frame.size.width) - (insets.left * 2))
-        let height = Int((view.frame.height) - (insets.bottom))
-        let size = CGSize(width: width, height: height)
-        
-        return size
-    }
-    
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
-        return insets
+        let page = Int(floor((contentOffset - pageWidth / 2) / pageWidth) + 1)
+        pageControl.currentPage = page
     }
 }

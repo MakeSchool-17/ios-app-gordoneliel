@@ -18,7 +18,7 @@ class UserSummaryCell: UICollectionViewCell {
     
     var mentor: User? {
         didSet {
-            mentor?.fetchProfileImage()
+            mentor?.fetchProfileInfo()
             mentor?.userName.bindTo(name.bnd_text)
             mentor?.userJobTitle.bindTo(jobTitle.bnd_text)
             mentor?.userAbout.bindTo(userSummary.bnd_text)

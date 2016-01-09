@@ -18,12 +18,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AppLogo" translatesAutoresizingMaskIntoConstraints="NO" id="FoO-BM-F9w">
-                                <rect key="frame" x="225" y="225" width="150" height="150"/>
+                                <rect key="frame" x="200" y="200" width="200" height="200"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="FoO-BM-F9w" secondAttribute="height" multiplier="1:1" id="6OK-r9-fRs"/>
-                                    <constraint firstAttribute="height" constant="150" id="j0J-MS-hjO">
+                                    <constraint firstAttribute="height" constant="200" id="j0J-MS-hjO">
                                         <variation key="widthClass=compact" constant="100"/>
                                     </constraint>
                                 </constraints>
@@ -42,6 +42,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="AppLogo" width="324" height="364"/>
+        <image name="AppLogo" width="300" height="300"/>
     </resources>
 </document>

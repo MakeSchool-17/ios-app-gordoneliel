@@ -1,6 +1,0 @@
-framework module MCCardPickerCollectionViewController {
-  umbrella header "MCCardPickerCollectionViewController-umbrella.h"
-
-  export *
-  module * { export * }
-}

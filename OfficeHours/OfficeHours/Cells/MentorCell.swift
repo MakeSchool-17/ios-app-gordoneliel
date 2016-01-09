@@ -19,7 +19,7 @@ class MentorCell: UICollectionViewCell {
     
     var mentor: User? {
         didSet {
-            mentor?.fetchProfileImage()
+            mentor?.fetchProfileInfo()
             mentor?.image.bindTo(profileImage.bnd_image)
             mentor?.userName.bindTo(name.bnd_text)
             mentor?.userJobTitle.bindTo(jobTitle.bnd_text)
@@ -30,18 +30,18 @@ class MentorCell: UICollectionViewCell {
         return UINib(nibName: MentorCellIdentifier, bundle: nil)
     }
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    override func layoutSubviews() {
+        super.layoutSubviews()
         
         let selectedView = UIView()
         selectedView.backgroundColor = UIColor.whiteColor()
         selectedBackgroundView = selectedView
+        selectedView.roundCorners(.AllCorners, radius: 6)
         
-        profileImage.layer.cornerRadius = profileImage.frame.size.width / 2
-        profileImage.clipsToBounds = true
-        
-        layer.cornerRadius = 3
-        clipsToBounds = true
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
     }
     
     

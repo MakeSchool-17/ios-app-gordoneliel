@@ -24,6 +24,7 @@ class User: PFUser {
     var userJobTitle: Observable<String?> = Observable(nil)
     var userWorkName: Observable<String?> = Observable(nil)
     var userAbout: Observable<String?> = Observable(nil)
+    var userEmail: Observable<String?> = Observable(nil)
     var connectionRequests: Observable<User?> = Observable(nil)
     var connections: Observable<[User]?> = Observable(nil)
     
@@ -41,22 +42,12 @@ class User: PFUser {
         if (connections.value != nil) {
             return
         }
-        
         // 2
         ParseHelper.connectionsForUser(self) {
-            (var connections: [PFObject]?, error: NSError?)  -> Void in
-            
-            // 3
-            connections = connections?.filter { connection in
-                
-                connection[ParseHelper.ParseToUser] != nil
-            }
-            
-            // 4
+            (let connections: [PFObject]?, error: NSError?)  -> Void in
+
             self.connections.value = connections?.map { connection in
-                let toUser = connection[ParseHelper.ParseToUser] as! User
-                
-                return toUser
+                return connection as! User
             }
         }
     }
@@ -70,13 +61,14 @@ class User: PFUser {
     }
     
     // MARK: Fetch Profile image from parse
-    func fetchProfileImage() {
+    func fetchProfileInfo() {
         
-        if userWorkName.value == nil && userName.value == nil && userJobTitle.value == nil && userAbout.value == nil {
+        if userWorkName.value == nil && userName.value == nil && userJobTitle.value == nil && userAbout.value == nil && userEmail.value == nil {
             userWorkName.value = workName
             userName.value = name
             userJobTitle.value = jobTitle
             userAbout.value = about
+            userEmail.value = email
         }
         
         if image.value == nil {

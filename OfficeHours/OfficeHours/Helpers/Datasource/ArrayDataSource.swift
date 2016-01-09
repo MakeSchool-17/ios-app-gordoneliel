@@ -15,7 +15,7 @@ class ArrayDataSource: NSObject {
     var cellIdentifier: String?
     var cellConfigureCallback: CellConfigureCallback?
 
-    init(items: [AnyObject], cellIdentifier: String, cellConfigureCallback: CellConfigureCallback){
+    init(items: [AnyObject], cellIdentifier: String?, cellConfigureCallback: CellConfigureCallback){
         self.items = items
         self.cellIdentifier = cellIdentifier
         self.cellConfigureCallback = cellConfigureCallback
@@ -49,16 +49,6 @@ extension ArrayDataSource: UICollectionViewDataSource {
         cellConfigureCallback?(cell: cell, item: item)
         
         return cell
-    }
-    
-    func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
-        if kind == UICollectionElementKindSectionHeader {
-            let headerView = collectionView.dequeueReusableSupplementaryViewOfKind(UICollectionElementKindSectionHeader,
-                withReuseIdentifier:ProfileViewCellIdentifier, forIndexPath: indexPath) as! ProfileView
-            return headerView
-        } else {
-            return UICollectionReusableView()
-        }
     }
 }
 

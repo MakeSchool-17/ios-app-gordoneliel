@@ -13,11 +13,18 @@ import SVProgressHUD
 class SignUpViewController: UIViewController {
 
     // Outlets
+    @IBOutlet weak var profileImageButton: DesignableButton!
     @IBOutlet weak var userNameTextField : UITextField!
     @IBOutlet weak var passwordTextField : UITextField!
     @IBOutlet weak var verifyPasswordTextField: DesignableTextField!
     @IBOutlet weak var inputContainerCenterConstraint : NSLayoutConstraint!
     @IBOutlet weak var loginButton: DesignableButton!
+    
+    @IBOutlet weak var profileViewTopConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var titleTopConstraint: NSLayoutConstraint!
+    
+    var photoTakingHelper: PhotoTakingHelper?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,9 +65,6 @@ class SignUpViewController: UIViewController {
         moveInputContainer(false)
     }
     
-    /*
-    Logs in a user from the REST API
-    */
     func signUpUser() {
         SVProgressHUD.showWithStatus("Signing you up", maskType: .Black)
 
@@ -70,16 +74,16 @@ class SignUpViewController: UIViewController {
     }
     // MARK: Login Action
     @IBAction func signUpPressed(sender: AnyObject) {
-        
         signUpUser()
     }
     
     func moveToTabBarController() {
         dispatch_async(dispatch_get_main_queue())  {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let viewController = storyboard.instantiateViewControllerWithIdentifier("PlannedTripsNav") as! UINavigationController
+            let storyboard = UIStoryboard(name: "Home", bundle: nil)
+            let viewController = storyboard.instantiateViewControllerWithIdentifier("HomeTabBar") as! UITabBarController
             let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
             appDelegate.window?.rootViewController = viewController
+            self.dismissViewControllerAnimated(true, completion: nil)
             
         }
     }
@@ -91,6 +95,17 @@ class SignUpViewController: UIViewController {
     */
     override func prefersStatusBarHidden() -> Bool {
         return true
+    }
+    
+    func takePhoto() {
+        photoTakingHelper = PhotoTakingHelper(viewController: self) {
+           [unowned self] photo in
+            self.profileImageButton.setBackgroundImage(photo, forState: .Normal)
+            self.profileImageButton.setTitle("", forState: .Normal)
+        }
+    }
+    @IBAction func profileImagePressed(sender: AnyObject) {
+        takePhoto()
     }
 }
 
@@ -108,18 +123,15 @@ extension SignUpViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         
-        if textField == userNameTextField {
-            passwordTextField.becomeFirstResponder()
+        if(textField.returnKeyType == UIReturnKeyType.Next) {
+            let next: UIView = textField.superview?.viewWithTag(textField.tag+1) as UIView!
+            next.becomeFirstResponder()
+        } else if (textField.returnKeyType == UIReturnKeyType.Go) {
+            textField.resignFirstResponder()
+            moveInputContainer(false)
         }
         
-        else if textField == passwordTextField {
-            verifyPasswordTextField.becomeFirstResponder()
-        } else {
-            
-            moveInputContainer(false)
-            textField.resignFirstResponder()
-        }
-        return false
+        return true
     }
     
     /**
@@ -131,7 +143,9 @@ extension SignUpViewController: UITextFieldDelegate {
             
             // Move TextFields up
             UIView.animateWithDuration(0.4, delay: 0.0, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.5, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
-                self.inputContainerCenterConstraint.constant = 100
+//                self.inputContainerCenterConstraint.constant = 100
+                self.profileViewTopConstraint.active = true
+                self.titleTopConstraint.active = false
                 self.view.layoutIfNeeded()
                 
                 }, completion: nil)
@@ -140,7 +154,9 @@ extension SignUpViewController: UITextFieldDelegate {
             
             // Move TextFields down
             UIView.animateWithDuration(0.3) {
-                self.inputContainerCenterConstraint.constant = 0
+//                self.inputContainerCenterConstraint.constant = 0
+                self.profileViewTopConstraint.active = false
+                self.titleTopConstraint.active = true
                 self.view.layoutIfNeeded()
             }
         }

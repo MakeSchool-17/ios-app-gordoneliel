@@ -9,43 +9,73 @@
 import UIKit
 import SVProgressHUD
 import MCCardPickerCollectionViewController
+import Popover
+import Bond
 
 class NearbyMentorViewController: UIViewController {
     
+    @IBOutlet weak var filterButtonItem: UIBarButtonItem!
     @IBOutlet var mentorView: MentorView!
     @IBOutlet var noMentorView: UIView!
+    var activeView: UIView!
     
-    var mentors: [User]?
+    var mentors: Observable<[User]?> = Observable(nil)
+    
     let defaultNearbyMentorRange = 0...50
     var selectedIndex: Int?
     
     let insets = UIEdgeInsets(top: 10, left: 5, bottom: 10, right: 5)
     var dataSource: ArrayDataSource?
     
+    //Popover
+    private var popover: Popover!
+    private var popoverOptions: [PopoverOption] = [
+        .Type(.Down),
+        .BlackOverlayColor(UIColor(white: 0.0, alpha: 0.7))
+    ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        SVProgressHUD.show()
+        view.userInteractionEnabled = false
+        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        let object = defaults.doubleForKey("FilterState") ?? 5
+        
+        loadNearbyMentorsInRange(defaultNearbyMentorRange, distanceFilter: object)
     }
     
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        SVProgressHUD.show()
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
         
-        loadNearbyMentorsInRange(defaultNearbyMentorRange, distanceFilter: 10) {
-            [unowned self] users in
-            
-            self.mentors = users
-            SVProgressHUD.dismiss()
-            self.viewToPresent()
-        }
+//        activeView?.removeFromSuperview()
+        SVProgressHUD.dismiss()
     }
+    
     // MARK: Load Nearby Mentors
-    func loadNearbyMentorsInRange(range: Range<Int>, distanceFilter: Double, completionBlock: ([User]?) -> Void) {
+    func loadNearbyMentorsInRange(range: Range<Int>, distanceFilter: Double) {
+        activeView?.removeFromSuperview()
         ParseHelper.mentorsNearbyCurrentUser(range, distanceFilter: distanceFilter) {
             (result, error) -> Void in
             
-            let mentors = result as? [User] ?? []
+            // Handle error
+            if error != nil {
+                SVProgressHUD.showErrorWithStatus("Error Loading nearby mentors")
+                return
+            }
             
-            completionBlock(mentors)
+            var mentors = result as? [User] ?? []
+            
+            // Filter out connected mentors
+            mentors = mentors.filter { mentor in
+                User.currentUser()!.isUserConnectedWithMentor(mentor) == false
+            }
+            
+            self.mentors.value = mentors
+            self.viewToPresent()
+            SVProgressHUD.dismiss()
+            self.view.userInteractionEnabled = true
         }
     }
     
@@ -55,30 +85,43 @@ class NearbyMentorViewController: UIViewController {
     */
     func viewToPresent() {
         
-        guard let mentors = mentors else {return}
+        guard let mentors = mentors.value else {return}
         
         // TODO:  Replace with better implementation - problem originates from storyboard offset by 64px, resetting origin to 0,0
         let frame = CGRect(origin: CGPoint(x: 0, y: 0), size: self.view.frame.size)
         
         if mentors.count == 0 {
-            noMentorView.frame = frame
-            noMentorView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
-            self.view.addSubview(noMentorView)
+            activeView = noMentorView
+            view.addSubview(activeView)
         } else  {
-            mentorView.frame = frame
-            mentorView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
-            self.view.addSubview(mentorView)
+            activeView =  mentorView
+            view.addSubview(activeView)
             
             mentorView.mentors = mentors
             mentorView.setupCollectionView()
         }
+        
+        activeView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+        activeView.frame = frame
+        
     }
-
+    
     override func willRotateToInterfaceOrientation(toInterfaceOrientation: UIInterfaceOrientation, duration: NSTimeInterval) {
         mentorView.collectionView.collectionViewLayout.invalidateLayout()
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    @IBAction func filterPressed(sender: UIBarButtonItem) {
+        
+        let tableView = NearbySearchFilterTableView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height), style: .Grouped)
+        
+        let startPoint = CGPoint(x: view.frame.width - 30, y:57)
+        
+        self.popover = Popover(options: self.popoverOptions, showHandler: nil, dismissHandler: nil)
+        self.popover.show(tableView, point: startPoint)
+    }
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return .Default
     }
 }
 
@@ -87,11 +130,11 @@ extension NearbyMentorViewController: UICollectionViewDelegate {
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
         let mentorBrowserVC = MentorBrowserViewController()
-        mentorBrowserVC.modalPresentationStyle = .OverFullScreen
+        mentorBrowserVC.modalPresentationStyle = .FullScreen
         mentorBrowserVC.modalTransitionStyle = .CrossDissolve
-
-
-        if let mentors = mentors {
+        
+        
+        if let mentors = mentors.value {
             mentorBrowserVC.selectedIndex = indexPath.row
             mentorBrowserVC.mentors = mentors
             presentViewController(mentorBrowserVC, animated: true, completion: nil)
@@ -103,13 +146,13 @@ extension NearbyMentorViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         let width = ((collectionView.frame.size.width) / 3)  - (insets.left * 2)
-        let height: CGFloat = 170
+        let height: CGFloat = 160
         let size = CGSize(width: width, height: height)
         return size
     }
     
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
-        return 10
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAtIndex section: Int) -> CGFloat {
+        return 0
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {

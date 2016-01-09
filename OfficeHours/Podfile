@@ -4,6 +4,8 @@ use_frameworks!
 pod 'Parse'
 pod 'Bond'
 pod 'SVProgressHUD'
-pod 'JSQMessagesViewController' 
-pod 'MCCardPickerCollectionViewController'
+pod 'JSQMessagesViewController'
 pod 'EBCardCollectionViewLayout'
+pod 'Firebase', '~> 2.5'
+pod 'DateTools'
+pod "Popover"
