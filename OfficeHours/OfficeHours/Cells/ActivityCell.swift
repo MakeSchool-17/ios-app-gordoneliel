@@ -9,6 +9,7 @@
 import UIKit
 import DateTools
 import SVProgressHUD
+import Bond
 
 let ActivityCellIdentifier = "ActivityCell"
 
@@ -17,6 +18,8 @@ class ActivityCell: UICollectionViewCell {
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var timestamp: UILabel!
     @IBOutlet weak var infoLabel: UILabel!
+    
+    var connectionDisposable: DisposableType?
     
     var connectionRequest: ConnectionRequest? {
         didSet {
@@ -31,7 +34,7 @@ class ActivityCell: UICollectionViewCell {
             timestamp.text = connectionRequest!.createdAt!.timeAgoSinceNow()
             
             connectionRequest?.fromUser.fetchProfileInfo()
-            connectionRequest?.fromUser.image.bindTo(profileImage.bnd_image)
+            connectionDisposable = connectionRequest?.fromUser.image.bindTo(profileImage.bnd_image)
         }
     }
     
@@ -40,7 +43,7 @@ class ActivityCell: UICollectionViewCell {
         
         ParseHelper.acceptConnectionRequest(connectionRequest!) {
             (result, error) -> Void in
-
+            
             SVProgressHUD.showSuccessWithStatus("Accepted")
         }
     }

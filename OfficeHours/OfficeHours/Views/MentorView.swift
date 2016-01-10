@@ -7,19 +7,23 @@
 //
 
 import UIKit
+import Bond
 
 class MentorView: UIView {
     
     var dataSource: ArrayDataSource?
-    var mentors: [User]?
+//    var mentors: [User]?
+    var mentors: Observable<[User]?> = Observable(nil)
     
     let insets = UIEdgeInsets(top: 10, left: 5, bottom: 10, right: 5)
     
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     
+    
+    
     func setupCollectionView() {
-        dataSource = ArrayDataSource(items:mentors!, cellIdentifier: MentorCellIdentifier) {
+        dataSource = ArrayDataSource(items:mentors.value!, cellIdentifier: MentorCellIdentifier) {
             (cell, item) in
             
             if let mentorCell = cell as? MentorCell {

@@ -8,61 +8,96 @@
 
 import UIKit
 import SVProgressHUD
+import Bond
 
 class ActivityViewController: UIViewController {
     
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet var noConnectionView: UIView!
+    
+    @IBOutlet var connectionView: ConnectionView!
     
     var dataSource: ArrayDataSource?
     
-    var connectionRequests: [ConnectionRequest]? {
-        didSet {
-            setupCollectionView()
-        }
-    }
+    var connectionRequests: Observable<[ConnectionRequest]?> = Observable(nil)
     
+    var activeView: UIView!
+    var refreshControl = UIRefreshControl()
     let insets = UIEdgeInsets(top: 10, left: 8, bottom: 10, right: 8)
     
+    override func viewDidLoad() {
+        connectionView.collectionView.addSubview(refreshControl)
+        refreshControl.addTarget(self, action: "fetchPendingRequests", forControlEvents: .ValueChanged)
+//
+        navigationController?.navigationBar.hidden = true
+//        SVProgressHUD.show()
+//        fetchPendingRequests()
+    }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
-        navigationController?.navigationBar.hidden = true
-    
         SVProgressHUD.show()
+        fetchPendingRequests()
+    }
+    
+    func fetchPendingRequests() {
         view.userInteractionEnabled = false
         
-        ParseHelper.pendingRequestsForUser(User.currentUser()!) {
+        ParseHelper.pendingRequestsForUser() {
             (results, error) -> Void in
             let connectionRequests = results as? [ConnectionRequest] ?? []
-            self.connectionRequests = connectionRequests
+            self.connectionRequests.value = connectionRequests
             
+            
+            self.viewToPresent()
             SVProgressHUD.dismiss()
             self.view.userInteractionEnabled = true
+            self.refreshControl.endRefreshing()
         }
     }
-    override func viewWillDisappear(animated: Bool) {
-        super.viewWillDisappear(animated)
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        activeView?.removeFromSuperview()
         SVProgressHUD.dismiss()
     }
-
-    func setupCollectionView() {
-        dataSource = ArrayDataSource(items: connectionRequests!, cellIdentifier: ActivityCellIdentifier) {
-            (cell, request) in
+    
+    // MARK: View To Present
+    /**
+    Presents a view based on whether a user has trips or not
+    */
+    func viewToPresent() {
+        
+        guard let connectionRequests = connectionRequests.value else {return}
+        
+        // TODO:  Replace with better implementation - problem originates from storyboard offset by 64px, resetting origin to 0,0
+        let frame = CGRect(origin: CGPoint(x: 0, y: 0), size: self.view.frame.size)
+        
+//        let myTopLayoutGuide = topLayoutGuide
+//        activeView.addConstraints([NSLayoutConstraint.constraintsWithVisualFormat("V:[topGuide]-20-[button]", options: NSLayoutFormatOptions.AlignAllTop, metrics: nil, views: self)])
+        
+        if connectionRequests.count == 0 {
+            activeView = noConnectionView
+            view.addSubview(activeView)
+        } else  {
+            activeView = connectionView
+            view.addSubview(activeView)
             
-            let activityCell = cell as! ActivityCell
+            connectionView.connectionRequests = self.connectionRequests
             
-            if let request = request as? ConnectionRequest {
-                activityCell.connectionRequest = request
-            }
+            connectionView.setupCollectionView()
         }
         
-        collectionView.dataSource = dataSource
-        collectionView.delegate = self
-        collectionView.registerNib(ActivityCell.nib(), forCellWithReuseIdentifier: ActivityCellIdentifier)
+        activeView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+        activeView.frame = frame
+        
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return .Default
+    }
+    
+    override func willRotateToInterfaceOrientation(toInterfaceOrientation: UIInterfaceOrientation, duration: NSTimeInterval) {
+        connectionView.collectionView.collectionViewLayout.invalidateLayout()
     }
 }
 
@@ -76,7 +111,7 @@ extension ActivityViewController: UICollectionViewDelegate {
         mentorBrowserVC.modalTransitionStyle = .CrossDissolve
         
         // Filter out mentors from "From user"
-        let mentors = connectionRequests?.map { request in
+        let mentors = connectionRequests.value?.map { request in
             request.fromUser
         }
         

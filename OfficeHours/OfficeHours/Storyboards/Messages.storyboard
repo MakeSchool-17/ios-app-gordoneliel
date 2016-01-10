@@ -19,10 +19,11 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="9RC-P6-TAY">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="492"/>
                                 <subviews>
-                                    <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search mentors" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d3X-X4-tIB">
+                                    <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search mentors" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d3X-X4-tIB" customClass="DesignableSearchBar" customModule="OfficeHours">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" red="0.01176470611" green="0.50588238240000005" blue="0.78823530669999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="barTintColor" red="0.01176470611" green="0.50588238240000005" blue="0.78823530669999997" alpha="1" colorSpace="calibratedRGB"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
                                             <outlet property="delegate" destination="DSD-C8-tsw" id="wSh-jK-J5o"/>
@@ -30,7 +31,7 @@
                                     </searchBar>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="akV-QE-yUm">
                                         <rect key="frame" x="0.0" y="44" width="600" height="448"/>
-                                        <color key="backgroundColor" red="0.91764705882352937" green="0.92156862745098034" blue="0.92941176470588238" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.86814038080191513" green="0.87767670130594455" blue="0.90628566281803269" alpha="1" colorSpace="calibratedRGB"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dKc-bW-fJO">
                                             <size key="itemSize" width="50" height="50"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>

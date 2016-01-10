@@ -8,7 +8,6 @@
 
 import UIKit
 import SVProgressHUD
-import MCCardPickerCollectionViewController
 import Popover
 import Bond
 
@@ -33,29 +32,37 @@ class NearbyMentorViewController: UIViewController {
         .Type(.Down),
         .BlackOverlayColor(UIColor(white: 0.0, alpha: 0.7))
     ]
+    var refreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Refresh Control
+        mentorView.collectionView.addSubview(refreshControl)
+        refreshControl.addTarget(self, action: "loadMentors", forControlEvents: .ValueChanged)
         
         SVProgressHUD.show()
         view.userInteractionEnabled = false
         
         let defaults = NSUserDefaults.standardUserDefaults()
-        let object = defaults.doubleForKey("FilterState") ?? 5
+        let object = defaults.doubleForKey("FilterState") ?? 10
         
         loadNearbyMentorsInRange(defaultNearbyMentorRange, distanceFilter: object)
+    }
+    
+    func loadMentors() {
+        loadNearbyMentorsInRange(defaultNearbyMentorRange, distanceFilter: 15)
     }
     
     override func viewDidDisappear(animated: Bool) {
         super.viewDidDisappear(animated)
         
-//        activeView?.removeFromSuperview()
+        //        activeView?.removeFromSuperview()
         SVProgressHUD.dismiss()
     }
     
     // MARK: Load Nearby Mentors
     func loadNearbyMentorsInRange(range: Range<Int>, distanceFilter: Double) {
-        activeView?.removeFromSuperview()
         ParseHelper.mentorsNearbyCurrentUser(range, distanceFilter: distanceFilter) {
             (result, error) -> Void in
             
@@ -75,6 +82,7 @@ class NearbyMentorViewController: UIViewController {
             self.mentors.value = mentors
             self.viewToPresent()
             SVProgressHUD.dismiss()
+            self.refreshControl.endRefreshing()
             self.view.userInteractionEnabled = true
         }
     }
@@ -94,10 +102,11 @@ class NearbyMentorViewController: UIViewController {
             activeView = noMentorView
             view.addSubview(activeView)
         } else  {
-            activeView =  mentorView
+            activeView = mentorView
             view.addSubview(activeView)
             
-            mentorView.mentors = mentors
+            mentorView.mentors = self.mentors
+            
             mentorView.setupCollectionView()
         }
         

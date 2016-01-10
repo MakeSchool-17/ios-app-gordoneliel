@@ -80,9 +80,9 @@ class ParseHelper: NSObject {
      - parameter user:             The recipient of a connection request
      - parameter complectionBlock: Completion block with results
      */
-    static func pendingRequestsForUser(user: User, completionBlock: PFQueryArrayResultBlock) {
+    static func pendingRequestsForUser(completionBlock: PFQueryArrayResultBlock) {
         let requestQuery = ConnectionRequest.query()
-        requestQuery?.whereKey(ParseToUser, equalTo: user)
+        requestQuery?.whereKey(ParseToUser, equalTo: User.currentUser()!)
             .whereKey(ParseAccepted, equalTo: false)
         requestQuery?.includeKey(ParseFromUser)
         

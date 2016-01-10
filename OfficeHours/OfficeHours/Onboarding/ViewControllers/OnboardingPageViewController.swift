@@ -15,23 +15,27 @@ class OnboardingPageViewController: UIPageViewController {
     override func viewDidLoad() {
         dataSource = self
         delegate = self
-
+        
         view.backgroundColor = UIColor.lightBlueColor()
-
-
+        
+        
         setViewControllers([getStepOne()], direction: .Forward, animated: true, completion: nil)
     }
     
     func getStepOne() -> StepOne {
         return storyboard!.instantiateViewControllerWithIdentifier("StepOne") as! StepOne
     }
-
+    
     func getStepTwo() -> StepTwo {
         return storyboard!.instantiateViewControllerWithIdentifier("StepTwo") as! StepTwo
     }
     
     func getStepThree() -> StepThree {
         return storyboard!.instantiateViewControllerWithIdentifier("StepThree") as! StepThree
+    }
+    
+    func getStepFour() -> StepFour {
+        return storyboard!.instantiateViewControllerWithIdentifier("StepFour") as! StepFour
     }
     
     override func prefersStatusBarHidden() -> Bool {
@@ -44,7 +48,12 @@ class OnboardingPageViewController: UIPageViewController {
 extension OnboardingPageViewController: UIPageViewControllerDataSource {
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
-        if viewController is StepThree {
+        
+        
+        if viewController is StepFour {
+            // 4 -> 3
+            return getStepThree()
+        } else if viewController is StepThree {
             // 3 -> 2
             return getStepTwo()
         } else if viewController is StepTwo {
@@ -55,7 +64,7 @@ extension OnboardingPageViewController: UIPageViewControllerDataSource {
             return nil
         }
     }
-
+    
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
         if viewController is StepOne {
             // 1 -> 2
@@ -63,6 +72,9 @@ extension OnboardingPageViewController: UIPageViewControllerDataSource {
         } else if viewController is StepTwo {
             // 2 -> 3
             return getStepThree()
+        } else if viewController is StepThree {
+            // 3 -> 4
+            return getStepFour()
         } else {
             // 0 -> end of the road
             return nil
@@ -71,7 +83,7 @@ extension OnboardingPageViewController: UIPageViewControllerDataSource {
     
     // Enables pagination dots
     func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
-        return 3
+        return 4
     }
     
     // This only gets called once, when setViewControllers is called
@@ -84,25 +96,25 @@ extension OnboardingPageViewController: UIPageViewControllerDataSource {
 // MARK: - UIPageViewControllerDelegate methods
 
 extension OnboardingPageViewController: UIPageViewControllerDelegate {
-//    func pageViewControllerSupportedInterfaceOrientations(pageViewController: UIPageViewController) -> UIInterfaceOrientationMask {
-//        return [.Portrait, .PortraitUpsideDown]
-//    }
-//    
-//    func pageViewController(pageViewController: UIPageViewController, willTransitionToViewControllers pendingViewControllers: [UIViewController]) {
-//        if pendingViewControllers.first is LoginViewController {
-//            UIView.animateWithDuration(0.3) {
-//                self.view.backgroundColor = UIColor.whiteColor()
-//            }
-//        } else {
-//            UIView.animateWithDuration(0.3) {
-//                self.view.backgroundColor = UIColor.primaryBlueColor()
-//            }
-//        }
-//    }
-//
-//    func pageViewController(pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
-//        if finished && completed {
-//
-//        }
-//    }
+    //    func pageViewControllerSupportedInterfaceOrientations(pageViewController: UIPageViewController) -> UIInterfaceOrientationMask {
+    //        return [.Portrait, .PortraitUpsideDown]
+    //    }
+    //
+    //    func pageViewController(pageViewController: UIPageViewController, willTransitionToViewControllers pendingViewControllers: [UIViewController]) {
+    //        if pendingViewControllers.first is LoginViewController {
+    //            UIView.animateWithDuration(0.3) {
+    //                self.view.backgroundColor = UIColor.whiteColor()
+    //            }
+    //        } else {
+    //            UIView.animateWithDuration(0.3) {
+    //                self.view.backgroundColor = UIColor.primaryBlueColor()
+    //            }
+    //        }
+    //    }
+    //
+    //    func pageViewController(pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+    //        if finished && completed {
+    //
+    //        }
+    //    }
 }

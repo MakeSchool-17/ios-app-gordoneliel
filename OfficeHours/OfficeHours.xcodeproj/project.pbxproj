@@ -39,6 +39,9 @@
 		0555745D1C3D0E8D00BD07EA /* StepThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0555745C1C3D0E8D00BD07EA /* StepThree.swift */; };
 		05567F171C41032A00F5920B /* IndustryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05567F151C41032A00F5920B /* IndustryCell.swift */; };
 		05567F181C41032A00F5920B /* IndustryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05567F161C41032A00F5920B /* IndustryCell.xib */; };
+		055D26B41C422D2D006AF9EE /* DesignableSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055D26B31C422D2D006AF9EE /* DesignableSearchBar.swift */; };
+		055D26B61C424F65006AF9EE /* StepFour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055D26B51C424F65006AF9EE /* StepFour.swift */; };
+		055D26B81C42738B006AF9EE /* ConnectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055D26B71C42738B006AF9EE /* ConnectionView.swift */; };
 		057F47661C1A18A3007AC5DB /* MentorBrowserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057F47641C1A18A3007AC5DB /* MentorBrowserCell.swift */; };
 		057F47671C1A18A3007AC5DB /* MentorBrowserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 057F47651C1A18A3007AC5DB /* MentorBrowserCell.xib */; };
 		057F476B1C1A1BE7007AC5DB /* MentorBrowserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 057F47691C1A1BE7007AC5DB /* MentorBrowserViewController.xib */; };
@@ -46,6 +49,7 @@
 		057F47751C1B72CE007AC5DB /* LocationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057F47741C1B72CE007AC5DB /* LocationHelper.swift */; };
 		058B160E1C41D36F008574F6 /* IndustryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058B160D1C41D36F008574F6 /* IndustryViewController.swift */; };
 		058B16101C41E81C008574F6 /* NearbySearchFilterTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058B160F1C41E81C008574F6 /* NearbySearchFilterTableView.swift */; };
+		058B16121C41EBFD008574F6 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058B16111C41EBFD008574F6 /* UserSettings.swift */; };
 		059703881C1B94C20014E024 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 059703821C1B94C20014E024 /* Onboarding.storyboard */; };
 		05B872A51C0E70DA00F5D3FB /* LoginSignup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05B872A11C0E70DA00F5D3FB /* LoginSignup.storyboard */; };
 		05B872A61C0E70DA00F5D3FB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B872A31C0E70DA00F5D3FB /* LoginViewController.swift */; };
@@ -111,6 +115,9 @@
 		0555745C1C3D0E8D00BD07EA /* StepThree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepThree.swift; sourceTree = "<group>"; };
 		05567F151C41032A00F5920B /* IndustryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndustryCell.swift; sourceTree = "<group>"; };
 		05567F161C41032A00F5920B /* IndustryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IndustryCell.xib; sourceTree = "<group>"; };
+		055D26B31C422D2D006AF9EE /* DesignableSearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableSearchBar.swift; sourceTree = "<group>"; };
+		055D26B51C424F65006AF9EE /* StepFour.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepFour.swift; sourceTree = "<group>"; };
+		055D26B71C42738B006AF9EE /* ConnectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionView.swift; sourceTree = "<group>"; };
 		057F47641C1A18A3007AC5DB /* MentorBrowserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = MentorBrowserCell.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		057F47651C1A18A3007AC5DB /* MentorBrowserCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MentorBrowserCell.xib; sourceTree = "<group>"; };
 		057F47691C1A1BE7007AC5DB /* MentorBrowserViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MentorBrowserViewController.xib; sourceTree = "<group>"; };
@@ -118,6 +125,7 @@
 		057F47741C1B72CE007AC5DB /* LocationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationHelper.swift; sourceTree = "<group>"; };
 		058B160D1C41D36F008574F6 /* IndustryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndustryViewController.swift; sourceTree = "<group>"; };
 		058B160F1C41E81C008574F6 /* NearbySearchFilterTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NearbySearchFilterTableView.swift; sourceTree = "<group>"; };
+		058B16111C41EBFD008574F6 /* UserSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		059703821C1B94C20014E024 /* Onboarding.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		05B872A11C0E70DA00F5D3FB /* LoginSignup.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LoginSignup.storyboard; sourceTree = "<group>"; };
 		05B872A31C0E70DA00F5D3FB /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -218,6 +226,7 @@
 				055574581C3D0E3000BD07EA /* StepOne.swift */,
 				0555745A1C3D0E6D00BD07EA /* StepTwo.swift */,
 				0555745C1C3D0E8D00BD07EA /* StepThree.swift */,
+				055D26B51C424F65006AF9EE /* StepFour.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -261,6 +270,7 @@
 				05B872AD1C0E747B00F5D3FB /* DesignableView.swift */,
 				053148991C11298100AEADF2 /* OfficeHoursNavigation.swift */,
 				05D844531C372FC50068C49F /* DesignableImageView.swift */,
+				055D26B31C422D2D006AF9EE /* DesignableSearchBar.swift */,
 			);
 			path = Designables;
 			sourceTree = "<group>";
@@ -360,6 +370,7 @@
 				05B872A81C0E724500F5D3FB /* User.swift */,
 				05184D491C216D5700263BBE /* ConnectionRequest.swift */,
 				051771A91C2BE52D00DF97ED /* Message.swift */,
+				058B16111C41EBFD008574F6 /* UserSettings.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -393,6 +404,7 @@
 			children = (
 				058B160F1C41E81C008574F6 /* NearbySearchFilterTableView.swift */,
 				0515877A1C0FFB2F005439ED /* MentorView.swift */,
+				055D26B71C42738B006AF9EE /* ConnectionView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -601,8 +613,10 @@
 				055574591C3D0E3000BD07EA /* StepOne.swift in Sources */,
 				05B872AF1C0E747B00F5D3FB /* DesignableTextField.swift in Sources */,
 				0515877B1C0FFB2F005439ED /* MentorView.swift in Sources */,
+				055D26B81C42738B006AF9EE /* ConnectionView.swift in Sources */,
 				057F47751C1B72CE007AC5DB /* LocationHelper.swift in Sources */,
 				058B160E1C41D36F008574F6 /* IndustryViewController.swift in Sources */,
+				058B16121C41EBFD008574F6 /* UserSettings.swift in Sources */,
 				05B872A71C0E70DA00F5D3FB /* SignUpViewController.swift in Sources */,
 				0531489F1C11300300AEADF2 /* ParseHelper.swift in Sources */,
 				05B872A61C0E70DA00F5D3FB /* LoginViewController.swift in Sources */,
@@ -620,6 +634,7 @@
 				055574541C3B211100BD07EA /* DistanceFilterCell.swift in Sources */,
 				05F6646D1C16D5A200304703 /* InboxViewController.swift in Sources */,
 				051447B71C2941A5003816C4 /* ActivityCell.swift in Sources */,
+				055D26B61C424F65006AF9EE /* StepFour.swift in Sources */,
 				057F476D1C1A3A5A007AC5DB /* MentorBrowserViewController.swift in Sources */,
 				0549D4081C309EEE00E173AE /* PFObject+Extensions.swift in Sources */,
 				05C54D0E1C23707F0081B79C /* UIView+Extensions.swift in Sources */,
@@ -629,6 +644,7 @@
 				0555745D1C3D0E8D00BD07EA /* StepThree.swift in Sources */,
 				053892131C162838009C109D /* UIColor+Extensions.swift in Sources */,
 				051587791C0FFAF8005439ED /* NearbyMentorViewController.swift in Sources */,
+				055D26B41C422D2D006AF9EE /* DesignableSearchBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
