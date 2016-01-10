@@ -18,6 +18,7 @@ class User: PFUser {
     @NSManaged var workName: String?
     @NSManaged var name: String?
     @NSManaged var location: PFGeoPoint?
+    @NSManaged var industry: String?
     
     var image: Observable<UIImage?> = Observable(nil)
     var userName: Observable<String?> = Observable(nil)
@@ -25,6 +26,7 @@ class User: PFUser {
     var userWorkName: Observable<String?> = Observable(nil)
     var userAbout: Observable<String?> = Observable(nil)
     var userEmail: Observable<String?> = Observable(nil)
+    var userIndustry: Observable<String?> = Observable(nil)
     var connectionRequests: Observable<User?> = Observable(nil)
     var connections: Observable<[User]?> = Observable(nil)
     
@@ -63,12 +65,13 @@ class User: PFUser {
     // MARK: Fetch Profile image from parse
     func fetchProfileInfo() {
         
-        if userWorkName.value == nil && userName.value == nil && userJobTitle.value == nil && userAbout.value == nil && userEmail.value == nil {
+        if userWorkName.value == nil && userName.value == nil && userJobTitle.value == nil && userAbout.value == nil && userEmail.value == nil && userIndustry.value == nil {
             userWorkName.value = workName
             userName.value = name
             userJobTitle.value = jobTitle
             userAbout.value = about
             userEmail.value = email
+            userIndustry.value = industry
         }
         
         if image.value == nil {

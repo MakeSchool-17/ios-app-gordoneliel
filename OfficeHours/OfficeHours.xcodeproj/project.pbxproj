@@ -45,6 +45,7 @@
 		057F476B1C1A1BE7007AC5DB /* MentorBrowserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 057F47691C1A1BE7007AC5DB /* MentorBrowserViewController.xib */; };
 		057F476D1C1A3A5A007AC5DB /* MentorBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057F476C1C1A3A5A007AC5DB /* MentorBrowserViewController.swift */; };
 		057F47751C1B72CE007AC5DB /* LocationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057F47741C1B72CE007AC5DB /* LocationHelper.swift */; };
+		058B160E1C41D36F008574F6 /* IndustryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058B160D1C41D36F008574F6 /* IndustryViewController.swift */; };
 		059703881C1B94C20014E024 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 059703821C1B94C20014E024 /* Onboarding.storyboard */; };
 		05B872A51C0E70DA00F5D3FB /* LoginSignup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05B872A11C0E70DA00F5D3FB /* LoginSignup.storyboard */; };
 		05B872A61C0E70DA00F5D3FB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B872A31C0E70DA00F5D3FB /* LoginViewController.swift */; };
@@ -116,6 +117,7 @@
 		057F47691C1A1BE7007AC5DB /* MentorBrowserViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MentorBrowserViewController.xib; sourceTree = "<group>"; };
 		057F476C1C1A3A5A007AC5DB /* MentorBrowserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MentorBrowserViewController.swift; sourceTree = "<group>"; };
 		057F47741C1B72CE007AC5DB /* LocationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationHelper.swift; sourceTree = "<group>"; };
+		058B160D1C41D36F008574F6 /* IndustryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndustryViewController.swift; sourceTree = "<group>"; };
 		059703821C1B94C20014E024 /* Onboarding.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		05B872A11C0E70DA00F5D3FB /* LoginSignup.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LoginSignup.storyboard; sourceTree = "<group>"; };
 		05B872A31C0E70DA00F5D3FB /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -382,6 +384,7 @@
 				051771B31C2CA0DE00DF97ED /* MessagingViewController.swift */,
 				0555744C1C3B155D00BD07EA /* NearbySearchFilterTableView.swift */,
 				055574561C3CA65800BD07EA /* ProfileViewController.swift */,
+				058B160D1C41D36F008574F6 /* IndustryViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -599,6 +602,7 @@
 				05B872AF1C0E747B00F5D3FB /* DesignableTextField.swift in Sources */,
 				0515877B1C0FFB2F005439ED /* MentorView.swift in Sources */,
 				057F47751C1B72CE007AC5DB /* LocationHelper.swift in Sources */,
+				058B160E1C41D36F008574F6 /* IndustryViewController.swift in Sources */,
 				05B872A71C0E70DA00F5D3FB /* SignUpViewController.swift in Sources */,
 				0531489F1C11300300AEADF2 /* ParseHelper.swift in Sources */,
 				05B872A61C0E70DA00F5D3FB /* LoginViewController.swift in Sources */,

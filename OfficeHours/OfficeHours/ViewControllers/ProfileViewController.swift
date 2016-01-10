@@ -7,30 +7,40 @@
 //
 
 import UIKit
+import Bond
 
 class ProfileViewController: UITableViewController {
 
+    @IBOutlet weak var industry: UILabel!
     @IBOutlet weak var email: UILabel!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var profileImage: DesignableButton!
     
     var photoTakingHelper: PhotoTakingHelper?
+    var disposable: DisposableType?
     
     var user: User? {
         didSet {
             user?.fetchProfileInfo()
+            disposable?.dispose()
+            
+            disposable = user?.image.observe {
+                image in
+                if image.value != nil {
+                    self.profileImage.setBackgroundImage(image, forState: .Normal)
+                }
+            }
+            
             profileImage.contentMode = .ScaleAspectFill
-            profileImage.setBackgroundImage(UIImage(data: try! user!.profileImage!.getData()), forState: .Normal)
             user?.userName.bindTo(name.bnd_text)
             user?.userEmail.bindTo(email.bnd_text)
+            user?.userIndustry.bindTo(industry.bnd_text)
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         user = User.currentUser()
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func profileImagePressed(sender: AnyObject) {
@@ -53,7 +63,7 @@ class ProfileViewController: UITableViewController {
     override func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int)
     {
         let header = view as! UITableViewHeaderFooterView
-        header.textLabel?.font = UIFont(name: "AvenirNext-Medium", size: 17)!
+        header.textLabel?.font = UIFont(name: "AvenirNext-Medium", size: 15)!
         header.textLabel?.textColor = UIColor.darkTextColor()
         header.textLabel?.text = header.textLabel?.text?.capitalizedString
 //        header.contentView.backgroundColor = UIColor.whiteColor()

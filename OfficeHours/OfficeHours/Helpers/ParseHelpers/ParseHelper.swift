@@ -8,6 +8,7 @@
 
 import Parse
 
+typealias IndustryConfigCallback = ([String]) -> Void
 class ParseHelper: NSObject {
     
     // Connection Relation
@@ -105,6 +106,25 @@ class ParseHelper: NSObject {
                 let relation = User.currentUser()!.relationForKey(ParseConnectionRelation)
                 relation.addObject(fromUser)
                 User.currentUser()!.saveInBackgroundWithBlock(completionCallback)
+            }
+        }
+    }
+    
+    /**
+     Fetches the industries from parse config
+     
+     - returns: An array of industries
+     */
+    static func fetchIndustryConfig(callback: IndustryConfigCallback) {
+        PFConfig.getConfigInBackgroundWithBlock {
+            (var config: PFConfig?, error: NSError?) -> Void in
+
+            if error == nil {
+                 let industries = config?["Industries"] as! [String]
+                callback(industries)
+            } else {
+                print("Failed to fetch. Using Cached Config.")
+                config = PFConfig.currentConfig()
             }
         }
     }

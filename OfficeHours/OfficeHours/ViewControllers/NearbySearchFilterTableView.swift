@@ -10,8 +10,10 @@ import UIKit
 
 class NearbySearchFilterTableView: UITableView {
     
-    let industries = ["Accounting", "Administrative", "Architecture", "Design (UI/UX)", "Education", "Finance", "Technology", "Entrepreneurship", "Marketing", "Management"]
+//    let industries = ["Accounting", "Administrative", "Architecture", "Design (UI/UX)", "Education", "Finance", "Technology", "Entrepreneurship", "Marketing", "Management"]
     
+    var industries = [String]()
+
     override init(frame: CGRect, style: UITableViewStyle) {
         super.init(frame: frame, style: style)
         dataSource = self
@@ -23,6 +25,13 @@ class NearbySearchFilterTableView: UITableView {
         backgroundColor = UIColor.whiteColor()
         separatorInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
         
+        ParseHelper.fetchIndustryConfig {
+            industries in
+            
+            self.industries = industries
+            self.reloadData()
+        }
+    
         // Register Cells
         registerNib(UINib(nibName: FilterCellIdentifier, bundle: nil), forCellReuseIdentifier: FilterCellIdentifier)
         
