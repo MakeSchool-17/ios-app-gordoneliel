@@ -46,15 +46,16 @@ class LocationHelper: NSObject, CLLocationManagerDelegate {
                 var placeMark: CLPlacemark!
                 placeMark = placeArray?[0]
                 
-                let streetNum = placeMark.subThoroughfare ?? ""
+//                let streetNum = placeMark.subThoroughfare ?? ""
                 let postCode = placeMark.postalCode ?? ""
                 let state = placeMark.administrativeArea ?? ""
                 //                 City
                 if let city = placeMark.addressDictionary!["City"] as? String {
-                    if let street = placeMark.addressDictionary!["Thoroughfare"] as? String {
-                        let address = streetNum + " " + street + ", " + city + " " + state + " " + postCode
-                        callback(address: address)
-                    }
+                    let address = city + " " + state + " " + postCode
+                    callback(address: address)
+//                    if let street = placeMark.addressDictionary!["Thoroughfare"] as? String {
+//                        
+//                    }
                 }
             }
         }

@@ -39,7 +39,7 @@ class MentorView: UIView {
         locationHelper.getUserLocationName() {
             (address) -> Void in
             
-            self.locationLabel.text = address
+            self.locationLabel.text = "Software & I.T in " + address
         }
     }
 }
