@@ -9,6 +9,7 @@
 import UIKit
 import QuartzCore
 import SVProgressHUD
+import Bond
 
 class SignUpViewController: UIViewController {
 
@@ -93,9 +94,9 @@ class SignUpViewController: UIViewController {
     
     - returns: true -> we want a hidden status bar
     */
-    override func prefersStatusBarHidden() -> Bool {
-        return true
-    }
+//    override func prefersStatusBarHidden() -> Bool {
+//        return true
+//    }
     
     func takePhoto() {
         photoTakingHelper = PhotoTakingHelper(viewController: self) {

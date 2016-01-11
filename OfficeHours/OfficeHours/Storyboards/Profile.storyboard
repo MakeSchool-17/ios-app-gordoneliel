@@ -101,7 +101,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
-                                            <segue destination="Fsr-I7-YlL" kind="show" id="9Ya-be-dRA"/>
+                                            <segue destination="2YS-ba-eyx" kind="show" identifier="industrySettingsSegue" id="TZE-H4-oOh"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -283,6 +283,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MC5-nS-yjy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1704" y="-388"/>
+        </scene>
+        <!--IndustryCV-->
+        <scene sceneID="ClQ-g5-3QM">
+            <objects>
+                <viewControllerPlaceholder storyboardName="LoginSignup" referencedIdentifier="IndustryCV" id="2YS-ba-eyx" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8lF-Mz-kDp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1606.5" y="-52"/>
         </scene>
         <!--Experience-->
         <scene sceneID="gEJ-V8-97b">

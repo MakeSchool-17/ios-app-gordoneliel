@@ -39,5 +39,4 @@ class ChatCell: UICollectionViewCell {
     static func nib() -> UINib {
         return UINib(nibName: ChatCellIdentifier, bundle: nil)
     }
-
 }

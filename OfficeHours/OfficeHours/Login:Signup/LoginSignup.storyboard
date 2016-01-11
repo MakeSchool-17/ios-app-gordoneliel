@@ -4,7 +4,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Segues with Peek and Pop" minToolsVersion="7.1"/>
     </dependencies>
     <scenes>
         <!--Login View Controller-->
@@ -19,9 +18,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ld-KL-F5l" userLabel="LoginButton" customClass="DesignableButton" customModule="OfficeHours">
-                                <rect key="frame" x="15" y="549" width="278" height="36"/>
-                                <color key="backgroundColor" red="0.039215686274509803" green="0.396078431372549" blue="0.67450980392156867" alpha="1" colorSpace="calibratedRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ld-KL-F5l" userLabel="LoginButton" customClass="DesignableButton" customModule="OfficeHours">
+                                <rect key="frame" x="15" y="549" width="277.5" height="36"/>
+                                <color key="backgroundColor" red="0.72292089280000005" green="0.73086201100000003" blue="0.75468536539999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="FQd-40-mIM"/>
                                     <constraint firstAttribute="width" constant="100" id="zSO-j4-iMF"/>
@@ -31,36 +30,24 @@
                                 <state key="normal" title="Log In">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <state key="disabled">
+                                    <color key="titleColor" red="0.72027621243169393" green="0.72027621243169393" blue="0.72027621243169393" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="3"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                        <real key="value" value="0.20000000000000001"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                        <real key="value" value="0.0"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOffsetY">
-                                        <real key="value" value="3"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                        <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="backgroundColorNormal">
-                                        <color key="value" red="0.01176470611" green="0.50588238240000005" blue="0.78823530669999997" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="backgroundColorHighlightedSelected">
-                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="textColorHighlightedSelected">
-                                        <color key="value" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="value" red="0.054901961237192154" green="0.32941177487373352" blue="0.48627451062202454" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="backgroundColorHighlighted">
-                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="value" red="0.054901961237192154" green="0.32941177487373352" blue="0.48627451062202454" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="backgroundColorSelected">
-                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="value" red="0.054901961237192154" green="0.32941177487373352" blue="0.48627451062202454" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="backgroundColorNormal">
+                                        <color key="value" red="0.1137254909" green="0.6784313917" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <variation key="default">
@@ -68,12 +55,9 @@
                                         <exclude reference="zSO-j4-iMF"/>
                                     </mask>
                                 </variation>
-                                <connections>
-                                    <action selector="loginPressed:" destination="ZfJ-pr-9TD" eventType="touchUpInside" id="S2p-qq-73d"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MRp-nP-Twd" customClass="DesignableButton" customModule="OfficeHours" customModuleProvider="target">
-                                <rect key="frame" x="308" y="549" width="277" height="36"/>
+                                <rect key="frame" x="307" y="549" width="277.5" height="36"/>
                                 <color key="backgroundColor" red="1" green="0.85882352939999995" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="Xkm-xL-kM8"/>
@@ -89,29 +73,14 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="3"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                        <real key="value" value="0.20000000000000001"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                        <real key="value" value="0.0"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOffsetY">
-                                        <real key="value" value="2"/>
-                                    </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="backgroundColorNormal">
-                                        <color key="value" red="0.98039215803146362" green="0.4117647111415863" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="backgroundColorHighlighted">
-                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="backgroundColorSelected">
-                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="value" red="0.98039215800000001" green="0.41176471110000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="backgroundColorHighlightedSelected">
-                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="value" red="0.67630421789999995" green="0.28578800339999999" blue="0.0026340839780000002" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="textColorHighlightedSelected">
-                                        <color key="value" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="backgroundColorHighlighted">
+                                        <color key="value" red="0.67630421789999995" green="0.28578800339999999" blue="0.0026340839780000002" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <variation key="default">
@@ -121,25 +90,23 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <segue destination="YeV-uk-ZAy" kind="show" action="showDetailViewController:sender:" id="am8-DD-hwk">
-                                        <segue key="commit" inheritsFrom="parent" id="y8r-Fa-tF3"/>
-                                        <segue key="preview" inheritsFrom="commit" id="nX7-pa-4gL"/>
-                                    </segue>
+                                    <segue destination="YeV-uk-ZAy" kind="custom" customClass="CustomSegue" customModule="OfficeHours" customModuleProvider="target" id="am8-DD-hwk"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pz9-Yp-LEF" userLabel="TextFieldHolder">
-                                <rect key="frame" x="0.0" y="250" width="600" height="100"/>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pz9-Yp-LEF" userLabel="TextFieldHolder" customClass="DesignableView" customModule="OfficeHours" customModuleProvider="target">
+                                <rect key="frame" x="100" y="250" width="400" height="100"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jpt-g7-eFy" customClass="DesignableTextField" customModule="OfficeHours">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="400" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="JlM-wV-0EU"/>
                                         </constraints>
+                                        <color key="textColor" red="0.27843138575553894" green="0.27843138575553894" blue="0.27843138575553894" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="15"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" red="0.89023375019999995" green="0.89023375019999995" blue="0.89023375019999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="value" red="0.93157658809999999" green="0.93157658809999999" blue="0.93157658809999999" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                 <real key="value" value="0.0"/>
@@ -158,12 +125,13 @@
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="65B-q1-fEG" customClass="DesignableTextField" customModule="OfficeHours">
-                                        <rect key="frame" x="0.0" y="50" width="600" height="50"/>
+                                        <rect key="frame" x="0.0" y="50" width="400" height="50"/>
+                                        <color key="textColor" red="0.27843138575553894" green="0.27843138575553894" blue="0.27843138575553894" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="15"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="next" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" red="0.89023375019999995" green="0.89023375019999995" blue="0.89023375019999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="value" red="0.93157658809999999" green="0.93157658809999999" blue="0.93157658809999999" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                 <real key="value" value="0.0"/>
@@ -191,10 +159,16 @@
                                     <constraint firstItem="65B-q1-fEG" firstAttribute="height" secondItem="jpt-g7-eFy" secondAttribute="height" id="Q78-q7-czV"/>
                                     <constraint firstAttribute="bottom" secondItem="65B-q1-fEG" secondAttribute="bottom" id="Uey-Wo-fSl"/>
                                     <constraint firstItem="65B-q1-fEG" firstAttribute="width" secondItem="jpt-g7-eFy" secondAttribute="width" id="aqh-dM-DgP"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="400" id="cXo-d3-70T"/>
                                     <constraint firstItem="jpt-g7-eFy" firstAttribute="top" secondItem="Pz9-Yp-LEF" secondAttribute="top" id="jfu-Pd-GRG"/>
                                     <constraint firstItem="jpt-g7-eFy" firstAttribute="leading" secondItem="Pz9-Yp-LEF" secondAttribute="leading" id="xSo-IB-Pv9"/>
                                     <constraint firstItem="65B-q1-fEG" firstAttribute="top" secondItem="jpt-g7-eFy" secondAttribute="bottom" id="xXy-ZH-yt4"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AppLogo" translatesAutoresizingMaskIntoConstraints="NO" id="vYK-gC-e91" userLabel="Logo">
                                 <rect key="frame" x="250" y="70" width="100" height="100"/>
@@ -296,7 +270,7 @@
                         <constraints>
                             <constraint firstItem="vYK-gC-e91" firstAttribute="top" secondItem="3BV-4L-9DA" secondAttribute="bottom" constant="15" id="2Lj-6w-bzF"/>
                             <constraint firstItem="MRp-nP-Twd" firstAttribute="trailing" secondItem="yu6-Rc-ife" secondAttribute="trailing" id="5Yl-Hs-7h2"/>
-                            <constraint firstAttribute="trailing" secondItem="Pz9-Yp-LEF" secondAttribute="trailing" id="5eM-Wj-34J"/>
+                            <constraint firstAttribute="trailing" secondItem="Pz9-Yp-LEF" secondAttribute="trailing" priority="999" constant="15" id="5eM-Wj-34J"/>
                             <constraint firstItem="MRp-nP-Twd" firstAttribute="leading" secondItem="6ld-KL-F5l" secondAttribute="trailing" constant="42" id="748-er-OlZ">
                                 <variation key="heightClass=compact" constant="10"/>
                             </constraint>
@@ -311,7 +285,7 @@
                             <constraint firstItem="MRp-nP-Twd" firstAttribute="top" secondItem="6ld-KL-F5l" secondAttribute="top" id="QO0-99-JtG"/>
                             <constraint firstItem="yu6-Rc-ife" firstAttribute="centerX" secondItem="nT5-at-eE7" secondAttribute="centerX" id="QrS-m6-fhh"/>
                             <constraint firstItem="Pz9-Yp-LEF" firstAttribute="top" secondItem="vYK-gC-e91" secondAttribute="bottom" constant="80" id="RM0-LF-n8y"/>
-                            <constraint firstItem="Pz9-Yp-LEF" firstAttribute="leading" secondItem="nT5-at-eE7" secondAttribute="leading" id="RXw-O9-mvN"/>
+                            <constraint firstItem="Pz9-Yp-LEF" firstAttribute="leading" secondItem="nT5-at-eE7" secondAttribute="leading" priority="999" constant="15" id="RXw-O9-mvN"/>
                             <constraint firstItem="MRp-nP-Twd" firstAttribute="leading" secondItem="6ld-KL-F5l" secondAttribute="leading" priority="998" id="Ru1-J3-gSL"/>
                             <constraint firstItem="6ld-KL-F5l" firstAttribute="top" secondItem="yu6-Rc-ife" secondAttribute="bottom" constant="30" id="Suh-y0-Vhc">
                                 <variation key="heightClass=compact" constant="15"/>
@@ -322,6 +296,7 @@
                             <constraint firstItem="6ld-KL-F5l" firstAttribute="trailing" secondItem="yu6-Rc-ife" secondAttribute="trailing" id="YeL-BR-AfQ"/>
                             <constraint firstItem="MRp-nP-Twd" firstAttribute="centerX" secondItem="6ld-KL-F5l" secondAttribute="centerX" id="ZGo-W8-i0l"/>
                             <constraint firstItem="vYK-gC-e91" firstAttribute="centerX" secondItem="yu6-Rc-ife" secondAttribute="centerX" id="aGU-jF-cBs"/>
+                            <constraint firstItem="Pz9-Yp-LEF" firstAttribute="centerX" secondItem="nT5-at-eE7" secondAttribute="centerX" id="b71-WQ-2Dt"/>
                             <constraint firstItem="MRp-nP-Twd" firstAttribute="top" secondItem="6ld-KL-F5l" secondAttribute="bottom" constant="30" id="dK3-Lt-7SY"/>
                             <constraint firstItem="vYK-gC-e91" firstAttribute="leading" secondItem="nT5-at-eE7" secondAttribute="leading" constant="15" id="dKy-ph-mxL"/>
                             <constraint firstItem="yu6-Rc-ife" firstAttribute="top" secondItem="vYK-gC-e91" secondAttribute="bottom" constant="100" id="dS2-MM-Ous"/>
@@ -462,31 +437,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fiK-0S-f1P" customClass="DesignableButton" customModule="OfficeHours">
-                                <rect key="frame" x="305" y="549" width="275" height="36"/>
+                                <rect key="frame" x="100" y="549" width="400" height="36"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="DuH-4D-OvR"/>
                                     <constraint firstAttribute="width" constant="100" id="GTZ-w2-Pcj"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="400" id="kYa-Lt-sYd"/>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" priority="999" constant="150" id="oXT-A2-Yfg"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="15"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="Sign Up"/>
+                                <state key="normal" title="Next"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                         <real key="value" value="0.0"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="3"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                        <real key="value" value="0.20000000000000001"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                        <real key="value" value="0.0"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOffsetY">
-                                        <real key="value" value="2"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="backgroundColorNormal">
                                         <color key="value" red="0.98039215803146362" green="0.4117647111415863" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -504,15 +471,18 @@
                                         <exclude reference="oXT-A2-Yfg"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <segue destination="lbi-Xy-VaR" kind="custom" customClass="CustomSegue" customModule="OfficeHours" id="hIn-YV-A5G"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Setup Your Account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E84-oa-jfc">
-                                <rect key="frame" x="200" y="50" width="199" height="31"/>
+                                <rect key="frame" x="200" y="20" width="199" height="30.5"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="22"/>
                                 <color key="textColor" red="0.24531463456284153" green="0.24531463456284153" blue="0.24531463456284153" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fnB-d6-cFh" customClass="DesignableButton" customModule="OfficeHours" customModuleProvider="target">
-                                <rect key="frame" x="250" y="111" width="100" height="100"/>
+                                <rect key="frame" x="250" y="80" width="100" height="100"/>
                                 <color key="backgroundColor" red="0.84705883264541626" green="0.84705883264541626" blue="0.84705883264541626" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="E1c-3i-lYn"/>
@@ -532,19 +502,20 @@
                                     <action selector="profileImagePressed:" destination="YeV-uk-ZAy" eventType="touchUpInside" id="W7X-Ch-KDX"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bsP-Mv-VH3" userLabel="TextFieldHolder">
-                                <rect key="frame" x="0.0" y="260" width="600" height="150"/>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bsP-Mv-VH3" userLabel="TextFieldHolder" customClass="DesignableView" customModule="OfficeHours" customModuleProvider="target">
+                                <rect key="frame" x="100" y="230" width="400" height="150"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MrL-oZ-AkD" customClass="DesignableTextField" customModule="OfficeHours">
-                                        <rect key="frame" x="0.0" y="0.0" width="300" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="KlQ-iu-NNg"/>
                                         </constraints>
+                                        <color key="textColor" red="0.27843138575553894" green="0.27843138575553894" blue="0.27843138575553894" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="15"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" red="0.89023375019999995" green="0.89023375019999995" blue="0.89023375019999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="value" red="0.93157658809999999" green="0.93157658809999999" blue="0.93157658809999999" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                 <real key="value" value="0.0"/>
@@ -563,12 +534,13 @@
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last Name" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eDM-So-NJ6" customClass="DesignableTextField" customModule="OfficeHours">
-                                        <rect key="frame" x="300" y="0.0" width="300" height="50"/>
+                                        <rect key="frame" x="200" y="0.0" width="200" height="50"/>
+                                        <color key="textColor" red="0.27843138575553894" green="0.27843138575553894" blue="0.27843138575553894" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="15"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" red="0.89023375019999995" green="0.89023375019999995" blue="0.89023375019999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="value" red="0.93157658809999999" green="0.93157658809999999" blue="0.93157658809999999" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                 <real key="value" value="0.0"/>
@@ -589,12 +561,13 @@
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email Address" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="98S-3Q-7Ja" customClass="DesignableTextField" customModule="OfficeHours">
-                                        <rect key="frame" x="0.0" y="50" width="300" height="50"/>
+                                        <rect key="frame" x="0.0" y="50" width="200" height="50"/>
+                                        <color key="textColor" red="0.27843138575553894" green="0.27843138575553894" blue="0.27843138575553894" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="15"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" red="0.89023375019999995" green="0.89023375019999995" blue="0.89023375019999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="value" red="0.93157658809999999" green="0.93157658809999999" blue="0.93157658809999999" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                 <real key="value" value="0.0"/>
@@ -616,12 +589,13 @@
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4kx-vV-Vfd" customClass="DesignableTextField" customModule="OfficeHours">
-                                        <rect key="frame" x="300" y="50" width="300" height="50"/>
+                                        <rect key="frame" x="200" y="50" width="200" height="50"/>
+                                        <color key="textColor" red="0.27843138575553894" green="0.27843138575553894" blue="0.27843138575553894" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="15"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="next" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" red="0.89023375019999995" green="0.89023375019999995" blue="0.89023375019999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="value" red="0.93157658809999999" green="0.93157658809999999" blue="0.93157658809999999" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                 <real key="value" value="0.0"/>
@@ -642,12 +616,13 @@
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Verify Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d06-cm-063" customClass="DesignableTextField" customModule="OfficeHours">
-                                        <rect key="frame" x="0.0" y="100" width="300" height="50"/>
+                                        <rect key="frame" x="0.0" y="100" width="200" height="50"/>
+                                        <color key="textColor" red="0.27843138575553894" green="0.27843138575553894" blue="0.27843138575553894" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="15"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="go" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" red="0.89023375019999995" green="0.89023375019999995" blue="0.89023375019999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="value" red="0.93157658809999999" green="0.93157658809999999" blue="0.93157658809999999" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                 <real key="value" value="0.0"/>
@@ -674,6 +649,7 @@
                                     <constraint firstItem="4kx-vV-Vfd" firstAttribute="top" secondItem="eDM-So-NJ6" secondAttribute="bottom" id="0fl-Cb-fzp"/>
                                     <constraint firstItem="MrL-oZ-AkD" firstAttribute="top" secondItem="bsP-Mv-VH3" secondAttribute="top" id="5DI-aZ-qxi"/>
                                     <constraint firstItem="d06-cm-063" firstAttribute="leading" secondItem="bsP-Mv-VH3" secondAttribute="leading" id="7zJ-2n-xg0"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="400" id="Bni-LE-E8Y"/>
                                     <constraint firstItem="MrL-oZ-AkD" firstAttribute="leading" secondItem="bsP-Mv-VH3" secondAttribute="leading" id="JJb-K4-tyB"/>
                                     <constraint firstItem="d06-cm-063" firstAttribute="top" secondItem="98S-3Q-7Ja" secondAttribute="bottom" id="OGp-TB-bIg"/>
                                     <constraint firstItem="98S-3Q-7Ja" firstAttribute="top" secondItem="MrL-oZ-AkD" secondAttribute="bottom" id="RMk-Ow-yxQ"/>
@@ -693,76 +669,36 @@
                                     <constraint firstItem="4kx-vV-Vfd" firstAttribute="width" secondItem="MrL-oZ-AkD" secondAttribute="width" id="xtd-8F-jY4"/>
                                     <constraint firstItem="98S-3Q-7Ja" firstAttribute="width" secondItem="MrL-oZ-AkD" secondAttribute="width" id="zYM-x5-ABT"/>
                                 </constraints>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OG1-Sw-HTw" customClass="DesignableButton" customModule="OfficeHours">
-                                <rect key="frame" x="15" y="549" width="275" height="36"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="lessThanOrEqual" priority="999" constant="150" id="0E6-KT-QwG"/>
-                                    <constraint firstAttribute="height" constant="36" id="AaZ-vk-7Dt"/>
-                                    <constraint firstAttribute="width" constant="185" id="oXw-Zc-e9h"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="15"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="Signup with LinkedIn"/>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="0.0"/>
-                                    </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="3"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                        <real key="value" value="0.20000000000000001"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                        <real key="value" value="0.0"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOffsetY">
-                                        <real key="value" value="2"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="backgroundColorNormal">
-                                        <color key="value" red="0.1137254909" green="0.6784313917" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="backgroundColorHighlighted">
-                                        <color key="value" red="0.054901961237192154" green="0.32941177487373352" blue="0.48627451062202454" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="backgroundColorHighlightedSelected">
-                                        <color key="value" red="0.054901961237192154" green="0.32941177487373352" blue="0.48627451062202454" alpha="1" colorSpace="calibratedRGB"/>
+                                        <real key="value" value="6"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="0E6-KT-QwG"/>
-                                        <exclude reference="oXw-Zc-e9h"/>
-                                    </mask>
-                                </variation>
-                            </button>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="fiK-0S-f1P" firstAttribute="centerY" secondItem="OG1-Sw-HTw" secondAttribute="centerY" id="82z-gT-mAk"/>
-                            <constraint firstItem="OG1-Sw-HTw" firstAttribute="leading" secondItem="zYM-gx-n6o" secondAttribute="leading" constant="15" id="DmT-dL-qIi"/>
-                            <constraint firstItem="bsP-Mv-VH3" firstAttribute="leading" secondItem="zYM-gx-n6o" secondAttribute="leading" id="FGC-Pd-Tky"/>
-                            <constraint firstItem="Ezi-s3-xCw" firstAttribute="top" secondItem="OG1-Sw-HTw" secondAttribute="bottom" constant="15" id="I84-aX-mHy"/>
-                            <constraint firstItem="E84-oa-jfc" firstAttribute="top" secondItem="Kuy-Gu-Hcl" secondAttribute="bottom" constant="50" id="JcE-Sx-ydG"/>
-                            <constraint firstAttribute="trailing" secondItem="fiK-0S-f1P" secondAttribute="trailing" constant="20" id="KxE-gN-FNf"/>
+                            <constraint firstItem="fiK-0S-f1P" firstAttribute="leading" secondItem="zYM-gx-n6o" secondAttribute="leading" priority="999" constant="20" id="40h-NF-DqA"/>
+                            <constraint firstItem="bsP-Mv-VH3" firstAttribute="centerX" secondItem="zYM-gx-n6o" secondAttribute="centerX" id="EjV-AY-v9n"/>
+                            <constraint firstItem="bsP-Mv-VH3" firstAttribute="leading" secondItem="zYM-gx-n6o" secondAttribute="leading" priority="999" constant="15" id="FGC-Pd-Tky"/>
+                            <constraint firstItem="E84-oa-jfc" firstAttribute="top" secondItem="Kuy-Gu-Hcl" secondAttribute="bottom" constant="20" id="JcE-Sx-ydG"/>
+                            <constraint firstAttribute="trailing" secondItem="fiK-0S-f1P" secondAttribute="trailing" priority="999" constant="20" id="KxE-gN-FNf"/>
                             <constraint firstItem="E84-oa-jfc" firstAttribute="centerX" secondItem="zYM-gx-n6o" secondAttribute="centerX" id="L3I-cC-4a5"/>
                             <constraint firstItem="bsP-Mv-VH3" firstAttribute="top" secondItem="fnB-d6-cFh" secondAttribute="bottom" constant="50" id="NMb-jB-4xL"/>
-                            <constraint firstItem="fiK-0S-f1P" firstAttribute="leading" secondItem="OG1-Sw-HTw" secondAttribute="trailing" constant="15" id="TRG-nO-EGi"/>
-                            <constraint firstAttribute="trailing" secondItem="bsP-Mv-VH3" secondAttribute="trailing" id="XRi-gu-E8Z"/>
+                            <constraint firstAttribute="trailing" secondItem="bsP-Mv-VH3" secondAttribute="trailing" priority="999" constant="15" id="XRi-gu-E8Z"/>
+                            <constraint firstItem="Ezi-s3-xCw" firstAttribute="top" secondItem="fiK-0S-f1P" secondAttribute="bottom" constant="15" id="cWH-vL-kDi"/>
                             <constraint firstItem="fnB-d6-cFh" firstAttribute="centerX" secondItem="E84-oa-jfc" secondAttribute="centerX" id="fx0-4O-DDP"/>
                             <constraint firstAttribute="centerY" secondItem="bsP-Mv-VH3" secondAttribute="centerY" id="gxH-KJ-4Hq"/>
+                            <constraint firstItem="fnB-d6-cFh" firstAttribute="top" secondItem="Kuy-Gu-Hcl" secondAttribute="bottom" constant="10" id="jc6-nB-zWa"/>
                             <constraint firstItem="bsP-Mv-VH3" firstAttribute="centerX" secondItem="fnB-d6-cFh" secondAttribute="centerX" id="n7M-ch-fa5"/>
-                            <constraint firstItem="fnB-d6-cFh" firstAttribute="top" secondItem="zYM-gx-n6o" secondAttribute="top" constant="15" id="rIs-fV-v2U"/>
-                            <constraint firstItem="OG1-Sw-HTw" firstAttribute="width" secondItem="fiK-0S-f1P" secondAttribute="width" id="t6G-Pn-Vcm"/>
+                            <constraint firstItem="fiK-0S-f1P" firstAttribute="centerX" secondItem="zYM-gx-n6o" secondAttribute="centerX" id="tCn-dy-AvQ"/>
                             <constraint firstItem="fnB-d6-cFh" firstAttribute="top" secondItem="E84-oa-jfc" secondAttribute="bottom" constant="30" id="uM8-hF-MoQ"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="gxH-KJ-4Hq"/>
                                 <exclude reference="n7M-ch-fa5"/>
-                                <exclude reference="rIs-fV-v2U"/>
+                                <exclude reference="jc6-nB-zWa"/>
                             </mask>
                         </variation>
                     </view>
@@ -770,13 +706,87 @@
                     <connections>
                         <outlet property="inputContainerCenterConstraint" destination="gxH-KJ-4Hq" id="JyX-Xn-hDe"/>
                         <outlet property="profileImageButton" destination="fnB-d6-cFh" id="YIx-bT-zX8"/>
-                        <outlet property="profileViewTopConstraint" destination="rIs-fV-v2U" id="YaP-j0-3Pe"/>
+                        <outlet property="profileViewTopConstraint" destination="jc6-nB-zWa" id="iZp-mR-dXc"/>
                         <outlet property="titleTopConstraint" destination="JcE-Sx-ydG" id="1z5-WM-5aD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Id7-fi-d7q" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1111" y="272"/>
+        </scene>
+        <!--Industry-->
+        <scene sceneID="6nd-hj-YN3">
+            <objects>
+                <collectionViewController storyboardIdentifier="IndustryCV" title="Industry" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ST9-rJ-2UQ" customClass="IndustryCollectionView" customModule="OfficeHours" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" id="Q8H-pQ-b6T">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.94901961088180542" green="0.94901961088180542" blue="0.94901961088180542" alpha="1" colorSpace="calibratedRGB"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="AzQ-iT-ifD">
+                            <size key="itemSize" width="570" height="131"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="15" minY="10" maxX="15" maxY="10"/>
+                        </collectionViewFlowLayout>
+                        <cells/>
+                        <connections>
+                            <outlet property="dataSource" destination="ST9-rJ-2UQ" id="iT1-H5-sXl"/>
+                            <outlet property="delegate" destination="ST9-rJ-2UQ" id="LIM-hB-qTP"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QPg-Kz-THE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1820" y="134"/>
+        </scene>
+        <!--Work-->
+        <scene sceneID="RgT-wr-0kj">
+            <objects>
+                <viewController title="Work" id="lbi-Xy-VaR" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gSf-gQ-ypn"/>
+                        <viewControllerLayoutGuide type="bottom" id="EL5-3U-BB5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="31S-bL-3Ru">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Work / School name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kRW-hy-zSc" customClass="DesignableTextField" customModule="OfficeHours" customModuleProvider="target">
+                                <rect key="frame" x="100" y="277.5" width="400" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="7Js-yn-fIw"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="400" id="t0l-ic-ZAO"/>
+                                </constraints>
+                                <color key="textColor" red="0.27843138575553894" green="0.27843138575553894" blue="0.27843138575553894" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="lineHeight">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="bottomBorder" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.94901961088180542" green="0.94901961088180542" blue="0.94901961088180542" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="delegate" destination="lbi-Xy-VaR" id="OCh-o8-rcJ"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="kRW-hy-zSc" firstAttribute="centerX" secondItem="31S-bL-3Ru" secondAttribute="centerX" id="1bo-6n-lwL"/>
+                            <constraint firstItem="kRW-hy-zSc" firstAttribute="leading" secondItem="31S-bL-3Ru" secondAttribute="leadingMargin" priority="999" constant="15" id="Ses-uq-e0f"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="kRW-hy-zSc" secondAttribute="trailing" priority="999" constant="15" id="bTQ-Rx-cAg"/>
+                            <constraint firstItem="kRW-hy-zSc" firstAttribute="centerX" secondItem="31S-bL-3Ru" secondAttribute="centerX" id="wN4-S7-wRc"/>
+                            <constraint firstItem="kRW-hy-zSc" firstAttribute="centerY" secondItem="31S-bL-3Ru" secondAttribute="centerY" id="zdM-ZX-Iqs"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nRS-uo-m0Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1820" y="818"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="DeI-Wz-HVa">
@@ -789,6 +799,10 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="BXS-K4-RgM">
+                        <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="ZfJ-pr-9TD" kind="relationship" relationship="rootViewController" id="K0o-LI-geC"/>
                     </connections>
@@ -802,7 +816,4 @@
         <image name="AppLogo" width="182" height="201"/>
         <image name="Avatar-Default" width="225" height="225"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="am8-DD-hwk"/>
-    </inferredMetricsTieBreakers>
 </document>

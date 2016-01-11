@@ -62,6 +62,11 @@
 		05B872B81C0EAEFC00F5D3FB /* MentorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05B872B61C0EAEFC00F5D3FB /* MentorCell.xib */; };
 		05B872BB1C0EB1E700F5D3FB /* ArrayDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B872BA1C0EB1E700F5D3FB /* ArrayDataSource.swift */; };
 		05C54D0E1C23707F0081B79C /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C54D0D1C23707F0081B79C /* UIView+Extensions.swift */; };
+		05C913631C431435006F7DFF /* IndustryCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C913621C431435006F7DFF /* IndustryCollectionView.swift */; };
+		05C913661C431589006F7DFF /* IndustrySelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C913641C431589006F7DFF /* IndustrySelectionCell.swift */; };
+		05C913671C431589006F7DFF /* IndustrySelectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05C913651C431589006F7DFF /* IndustrySelectionCell.xib */; };
+		05C9136A1C432E63006F7DFF /* CustomPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C913691C432E63006F7DFF /* CustomPresentation.swift */; };
+		05C9136C1C4333B2006F7DFF /* CustomSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C9136B1C4333B2006F7DFF /* CustomSegue.swift */; };
 		05D844541C372FC50068C49F /* DesignableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D844531C372FC50068C49F /* DesignableImageView.swift */; };
 		05D844561C37451E0068C49F /* OnboardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D844551C37451E0068C49F /* OnboardingPageViewController.swift */; };
 		05E461DC1C0E4F0F006D956F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E461DB1C0E4F0F006D956F /* AppDelegate.swift */; };
@@ -138,6 +143,11 @@
 		05B872B61C0EAEFC00F5D3FB /* MentorCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MentorCell.xib; sourceTree = "<group>"; };
 		05B872BA1C0EB1E700F5D3FB /* ArrayDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayDataSource.swift; sourceTree = "<group>"; };
 		05C54D0D1C23707F0081B79C /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		05C913621C431435006F7DFF /* IndustryCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndustryCollectionView.swift; sourceTree = "<group>"; };
+		05C913641C431589006F7DFF /* IndustrySelectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndustrySelectionCell.swift; sourceTree = "<group>"; };
+		05C913651C431589006F7DFF /* IndustrySelectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IndustrySelectionCell.xib; sourceTree = "<group>"; };
+		05C913691C432E63006F7DFF /* CustomPresentation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomPresentation.swift; path = CustomTransition/CustomPresentation.swift; sourceTree = "<group>"; };
+		05C9136B1C4333B2006F7DFF /* CustomSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomSegue.swift; path = CustomTransition/CustomSegue.swift; sourceTree = "<group>"; };
 		05D844531C372FC50068C49F /* DesignableImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableImageView.swift; sourceTree = "<group>"; };
 		05D844551C37451E0068C49F /* OnboardingPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingPageViewController.swift; sourceTree = "<group>"; };
 		05E461D81C0E4F0F006D956F /* OfficeHours.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OfficeHours.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -234,6 +244,7 @@
 		05B8729F1C0E708C00F5D3FB /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				05C913681C432E32006F7DFF /* CustomTransition */,
 				051447AE1C293D5A003816C4 /* ErrorHandler */,
 				05184D4B1C21735300263BBE /* PhotoTaking */,
 				057F47731C1B72BF007AC5DB /* LocationHelper */,
@@ -258,6 +269,7 @@
 			children = (
 				05B872A31C0E70DA00F5D3FB /* LoginViewController.swift */,
 				05B872A41C0E70DA00F5D3FB /* SignUpViewController.swift */,
+				05C913621C431435006F7DFF /* IndustryCollectionView.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -281,6 +293,15 @@
 				05B872BA1C0EB1E700F5D3FB /* ArrayDataSource.swift */,
 			);
 			path = Datasource;
+			sourceTree = "<group>";
+		};
+		05C913681C432E32006F7DFF /* CustomTransition */ = {
+			isa = PBXGroup;
+			children = (
+				05C913691C432E63006F7DFF /* CustomPresentation.swift */,
+				05C9136B1C4333B2006F7DFF /* CustomSegue.swift */,
+			);
+			name = CustomTransition;
 			sourceTree = "<group>";
 		};
 		05E461CF1C0E4F0F006D956F = {
@@ -351,6 +372,8 @@
 				055574531C3B211100BD07EA /* DistanceFilterCell.xib */,
 				05567F151C41032A00F5920B /* IndustryCell.swift */,
 				05567F161C41032A00F5920B /* IndustryCell.xib */,
+				05C913641C431589006F7DFF /* IndustrySelectionCell.swift */,
+				05C913651C431589006F7DFF /* IndustrySelectionCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -528,6 +551,7 @@
 				059703881C1B94C20014E024 /* Onboarding.storyboard in Resources */,
 				05567F181C41032A00F5920B /* IndustryCell.xib in Resources */,
 				05E461E61C0E4F0F006D956F /* LaunchScreen.storyboard in Resources */,
+				05C913671C431589006F7DFF /* IndustrySelectionCell.xib in Resources */,
 				055574551C3B211100BD07EA /* DistanceFilterCell.xib in Resources */,
 				05E461E31C0E4F0F006D956F /* Assets.xcassets in Resources */,
 				053148901C111F7400AEADF2 /* NearbyMentors.storyboard in Resources */,
@@ -608,11 +632,14 @@
 				05567F171C41032A00F5920B /* IndustryCell.swift in Sources */,
 				05B872B71C0EAEFC00F5D3FB /* MentorCell.swift in Sources */,
 				05184D4A1C216D5700263BBE /* ConnectionRequest.swift in Sources */,
+				05C9136A1C432E63006F7DFF /* CustomPresentation.swift in Sources */,
 				05B872A91C0E724500F5D3FB /* User.swift in Sources */,
 				05D844561C37451E0068C49F /* OnboardingPageViewController.swift in Sources */,
+				05C913631C431435006F7DFF /* IndustryCollectionView.swift in Sources */,
 				055574591C3D0E3000BD07EA /* StepOne.swift in Sources */,
 				05B872AF1C0E747B00F5D3FB /* DesignableTextField.swift in Sources */,
 				0515877B1C0FFB2F005439ED /* MentorView.swift in Sources */,
+				05C913661C431589006F7DFF /* IndustrySelectionCell.swift in Sources */,
 				055D26B81C42738B006AF9EE /* ConnectionView.swift in Sources */,
 				057F47751C1B72CE007AC5DB /* LocationHelper.swift in Sources */,
 				058B160E1C41D36F008574F6 /* IndustryViewController.swift in Sources */,
@@ -622,6 +649,7 @@
 				05B872A61C0E70DA00F5D3FB /* LoginViewController.swift in Sources */,
 				051771AA1C2BE52D00DF97ED /* Message.swift in Sources */,
 				057F47661C1A18A3007AC5DB /* MentorBrowserCell.swift in Sources */,
+				05C9136C1C4333B2006F7DFF /* CustomSegue.swift in Sources */,
 				0555745B1C3D0E6D00BD07EA /* StepTwo.swift in Sources */,
 				05D844541C372FC50068C49F /* DesignableImageView.swift in Sources */,
 				05B872B01C0E747B00F5D3FB /* DesignableView.swift in Sources */,

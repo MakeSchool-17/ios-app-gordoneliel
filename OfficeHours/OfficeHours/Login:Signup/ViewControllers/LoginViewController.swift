@@ -8,6 +8,7 @@
 import UIKit
 import QuartzCore
 import SVProgressHUD
+import Bond
 
 class LoginViewController: UIViewController {
     
@@ -22,13 +23,20 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Disable the login button till there is input for username and password
-//        loginButton(false)
         userNameTextField.text = "gordoneliel"
         passwordTextField.text = "men"
         
-        userNameTextField.addTarget(self, action: "textFieldDidChangeAnimation", forControlEvents: UIControlEvents.EditingChanged)
-        passwordTextField.addTarget(self, action: "textFieldDidChangeAnimation", forControlEvents: UIControlEvents.EditingChanged)
+        loginButton.bnd_controlEvent
+            .filter { $0 == UIControlEvents.TouchUpInside }
+            .observe { e in
+                self.loginUser()
+        }
+
+        combineLatest(userNameTextField.bnd_text, passwordTextField.bnd_text)
+            .map { email, pass in
+                return email?.characters.count > 0 && pass?.characters.count > 2
+        }.bindTo(loginButton.bnd_enabled)
+        
     }
     
     /**
@@ -77,16 +85,11 @@ class LoginViewController: UIViewController {
                 }else {
                     SVProgressHUD.showErrorWithStatus("Username or password incorrect", maskType: .Black)
                 }
-                
-                SVProgressHUD.dismiss()
+
                self.view.userInteractionEnabled = true
         }
     }
-    // MARK: Login Action
-    @IBAction func loginPressed(sender: AnyObject) {
-        loginUser()
-    }
-    
+
     @IBAction func unwindSignUp(segue: UIStoryboardSegue, sender: UIButton) {
         dismissViewControllerAnimated(true, completion: nil)
     }
@@ -97,7 +100,8 @@ class LoginViewController: UIViewController {
             let viewController = storyboard.instantiateViewControllerWithIdentifier("HomeTabBar") as! UITabBarController
             let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
             appDelegate.window?.rootViewController = viewController
-            self.dismissViewControllerAnimated(true, completion: nil)
+            appDelegate.window?.makeKeyAndVisible()
+            self.navigationController?.popToRootViewControllerAnimated(false)
             
         }
     }
@@ -108,7 +112,7 @@ class LoginViewController: UIViewController {
      - returns: true -> we want a hidden status bar
      */
     override func prefersStatusBarHidden() -> Bool {
-        return true
+        return false
     }
 }
 
@@ -155,18 +159,6 @@ extension LoginViewController: UITextFieldDelegate {
                 self.inputContainerCenterConstraint.constant = 0
                 self.view.layoutIfNeeded()
             }
-        }
-    }
-    
-    /**
-     Enables or disables the login button, based on text entry
-     */
-    func textFieldDidChangeAnimation() {
-        if userNameTextField.text!.isEmpty || passwordTextField.text!.isEmpty {
-            self.loginButton(false)
-        }
-        else {
-            self.loginButton(true)
         }
     }
 }
