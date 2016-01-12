@@ -28,7 +28,7 @@ class ActivityViewController: UIViewController {
         connectionView.collectionView.addSubview(refreshControl)
         refreshControl.addTarget(self, action: "fetchPendingRequests", forControlEvents: .ValueChanged)
 //
-        navigationController?.navigationBar.hidden = true
+//        navigationController?.navigationBar.hidden = true
 //        SVProgressHUD.show()
 //        fetchPendingRequests()
     }

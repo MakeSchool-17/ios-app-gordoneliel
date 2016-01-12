@@ -24,7 +24,6 @@ class NearbyMentorViewController: UIViewController {
     var selectedIndex: Int?
     
     let insets = UIEdgeInsets(top: 10, left: 5, bottom: 10, right: 5)
-    var dataSource: ArrayDataSource?
     
     //Popover
     private var popover: Popover!

@@ -57,9 +57,9 @@
         <!--Activity-->
         <scene sceneID="K2O-OF-b0d">
             <objects>
-                <navigationController navigationBarHidden="YES" id="QzY-PX-ho3" customClass="OfficeHoursNavigation" customModule="OfficeHours" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController id="QzY-PX-ho3" customClass="OfficeHoursNavigation" customModule="OfficeHours" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Activity" image="ActivityIcon" id="5ud-Eg-dr6"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="tbR-fy-ffr">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="tbR-fy-ffr">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -84,7 +84,7 @@
         <!--Profile-->
         <scene sceneID="nFO-tf-n7t">
             <objects>
-                <navigationController id="Lha-Qc-5q0" sceneMemberID="viewController">
+                <navigationController id="Lha-Qc-5q0" customClass="OfficeHoursNavigation" customModule="OfficeHours" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Profile" image="Connections" id="bgD-46-AGH"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="wRu-VB-yLV">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

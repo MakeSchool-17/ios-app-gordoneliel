@@ -19,8 +19,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Ue-Uv-b7o">
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="83"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Industry" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x8z-rU-tNG">
-                                        <rect key="frame" x="15" y="31.5" width="56" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Industry" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x8z-rU-tNG">
+                                        <rect key="frame" x="15" y="32" width="360" height="21"/>
                                         <color key="tintColor" red="0.2588235438" green="0.61960786580000005" blue="0.82352942230000004" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="15"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -29,6 +29,7 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="x8z-rU-tNG" secondAttribute="trailing" constant="15" id="5JI-hd-uwT"/>
                                     <constraint firstItem="x8z-rU-tNG" firstAttribute="centerY" secondItem="2Ue-Uv-b7o" secondAttribute="centerY" id="OO9-zU-aQp"/>
                                     <constraint firstItem="x8z-rU-tNG" firstAttribute="leading" secondItem="2Ue-Uv-b7o" secondAttribute="leading" constant="15" id="tJb-Ic-mvD"/>
                                 </constraints>

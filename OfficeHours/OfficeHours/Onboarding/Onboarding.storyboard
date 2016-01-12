@@ -115,16 +115,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="50" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ur5-yv-Ruh">
-                                <rect key="frame" x="75" y="157.5" width="450" height="185"/>
+                                <rect key="frame" x="75" y="158" width="450" height="185"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Guy" translatesAutoresizingMaskIntoConstraints="NO" id="SxR-q3-mIh">
-                                        <rect key="frame" x="0.0" y="25.5" width="98.5" height="134"/>
+                                        <rect key="frame" x="0.0" y="26" width="99" height="134"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Doctor" translatesAutoresizingMaskIntoConstraints="NO" id="5OY-Kx-AZC">
-                                        <rect key="frame" x="148.5" y="17.5" width="108" height="150"/>
+                                        <rect key="frame" x="149" y="18" width="108" height="150"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Girl" translatesAutoresizingMaskIntoConstraints="NO" id="a8s-MC-nbG">
-                                        <rect key="frame" x="306.5" y="0.0" width="143.5" height="185"/>
+                                        <rect key="frame" x="307" y="0.0" width="143" height="185"/>
                                     </imageView>
                                 </subviews>
                                 <constraints>
@@ -132,7 +132,7 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="756" verticalCompressionResistancePriority="756" text="Find Mentors Nearby" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cJh-e4-Yn9">
-                                <rect key="frame" x="107" y="362.5" width="386" height="32"/>
+                                <rect key="frame" x="107" y="363" width="386" height="32"/>
                                 <color key="tintColor" red="0.01176470611" green="0.50588238240000005" blue="0.78823530669999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="500" id="S3P-dI-4Mq">
@@ -152,7 +152,7 @@
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="255" verticalHuggingPriority="255" text="Browse our index of helpful and experienced mentors" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wa8-Uz-SAe">
-                                <rect key="frame" x="24" y="394" width="551" height="23.5"/>
+                                <rect key="frame" x="24" y="394" width="551" height="24"/>
                                 <color key="tintColor" red="0.01176470611" green="0.50588238240000005" blue="0.78823530669999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="300" id="boS-bl-wHJ">
@@ -308,7 +308,7 @@
                                 </variation>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connect and engage" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="FtF-Bt-ea7">
-                                <rect key="frame" x="100" y="43.5" width="400" height="35"/>
+                                <rect key="frame" x="100" y="44" width="400" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="400" id="i23-Yf-exJ">
                                         <variation key="heightClass=regular-widthClass=regular" constant="500"/>
@@ -324,7 +324,7 @@
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Regardless of your experience level, there’s always more to learn" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TBw-Rk-ehs">
-                                <rect key="frame" x="100" y="78" width="400" height="46.5"/>
+                                <rect key="frame" x="100" y="78" width="400" height="47"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="300" id="IGN-vG-em5">
                                         <variation key="heightClass=regular-widthClass=regular" constant="500"/>
@@ -408,13 +408,13 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="hWq-W9-9Ye">
-                                <rect key="frame" x="169.5" y="380" width="261" height="137"/>
+                                <rect key="frame" x="170" y="380" width="261" height="137"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="JtC-wX-BD1">
                                         <rect key="frame" x="0.0" y="0.0" width="261" height="81"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We need your location" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3zC-i8-C3s">
-                                                <rect key="frame" x="0.0" y="0.0" width="261" height="34.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="261" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="350" id="nCV-Is-Zsf">
                                                         <variation key="heightClass=regular-widthClass=regular" constant="500"/>
@@ -430,7 +430,7 @@
                                                 </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yqk-zh-Jfm">
-                                                <rect key="frame" x="0.0" y="34" width="261" height="46.5"/>
+                                                <rect key="frame" x="0.0" y="34" width="261" height="47"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="300" id="KS7-0U-NS7">
                                                         <variation key="heightClass=regular-widthClass=regular" constant="500"/>

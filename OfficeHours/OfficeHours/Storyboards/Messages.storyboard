@@ -19,18 +19,8 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="9RC-P6-TAY">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="492"/>
                                 <subviews>
-                                    <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search mentors" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d3X-X4-tIB" customClass="DesignableSearchBar" customModule="OfficeHours">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
-                                        <color key="backgroundColor" red="0.01176470611" green="0.50588238240000005" blue="0.78823530669999997" alpha="1" colorSpace="calibratedRGB"/>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <color key="barTintColor" red="0.01176470611" green="0.50588238240000005" blue="0.78823530669999997" alpha="1" colorSpace="calibratedRGB"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <connections>
-                                            <outlet property="delegate" destination="DSD-C8-tsw" id="wSh-jK-J5o"/>
-                                        </connections>
-                                    </searchBar>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="akV-QE-yUm">
-                                        <rect key="frame" x="0.0" y="44" width="600" height="448"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="492"/>
                                         <color key="backgroundColor" red="0.86814038080191513" green="0.87767670130594455" blue="0.90628566281803269" alpha="1" colorSpace="calibratedRGB"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dKc-bW-fJO">
                                             <size key="itemSize" width="50" height="50"/>
@@ -41,6 +31,9 @@
                                         <cells/>
                                     </collectionView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="akV-QE-yUm" firstAttribute="top" secondItem="9RC-P6-TAY" secondAttribute="top" id="IEr-vC-FBr"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -58,7 +51,6 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="collectionView" destination="akV-QE-yUm" id="xbO-1m-K0m"/>
-                        <outlet property="searchBar" destination="d3X-X4-tIB" id="Fn9-MF-YXr"/>
                         <segue destination="Z2K-3Q-eMI" kind="show" identifier="InboxViewSegue" id="apC-Kf-4wF"/>
                     </connections>
                 </viewController>

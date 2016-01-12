@@ -12,8 +12,8 @@
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="332" height="64"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Industry" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NHW-6X-2FF">
-                        <rect key="frame" x="15" y="22" width="56" height="20.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Industry" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NHW-6X-2FF">
+                        <rect key="frame" x="15" y="22.5" width="302" height="20.5"/>
                         <color key="tintColor" red="0.2588235438" green="0.61960786580000005" blue="0.82352942230000004" alpha="1" colorSpace="calibratedRGB"/>
                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="15"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -24,6 +24,7 @@
             </view>
             <color key="backgroundColor" red="0.11372549086809158" green="0.67843139171600342" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="NHW-6X-2FF" secondAttribute="trailing" constant="15" id="9AU-2x-cgf"/>
                 <constraint firstItem="NHW-6X-2FF" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="15" id="Nhp-DW-rL5"/>
                 <constraint firstItem="NHW-6X-2FF" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="VNX-a7-mSw"/>
             </constraints>

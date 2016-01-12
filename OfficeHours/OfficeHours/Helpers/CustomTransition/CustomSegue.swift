@@ -11,29 +11,35 @@ import UIKit
 class CustomSegue: UIStoryboardSegue {
     override func perform() {
         let initialVC = self.sourceViewController.view as UIView!
-        let destinationVC = self.destinationViewController.view as UIView!
+        let destinationVC = self.destinationViewController as UIViewController!
         
-        
+        let nav = self.sourceViewController.navigationController
         // Specify the initial position of the destination view.
-        destinationVC.transform = CGAffineTransformMakeScale(2, 2)
+        destinationVC.view.transform = CGAffineTransformMakeScale(2, 2)
 //        destinationVC.frame = CGRectMake(0.0, screenHeight, screenWidth, screenHeight)
         
         // Access the app's key window and insert the destination view above the current (source) one.
         let window = UIApplication.sharedApplication().keyWindow
-        window?.insertSubview(destinationVC, aboveSubview: initialVC)
+        window?.insertSubview(destinationVC.view, aboveSubview: initialVC)
         
         // Animate the transition.
         UIView.animateWithDuration(0.9, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity:0.5, options: .CurveEaseOut, animations: { () -> Void in
-            destinationVC.transform = CGAffineTransformIdentity
+            destinationVC.view.transform = CGAffineTransformIdentity
             initialVC.backgroundColor = UIColor.whiteColor()
             }) { (Finished) -> Void in
                 UIView.animateWithDuration(0.8, animations: { () -> Void in
 
                     }, completion: { (Finished) -> Void in
-                        destinationVC.transform = CGAffineTransformIdentity
+                        destinationVC.view.transform = CGAffineTransformIdentity
+                        if let nav = nav {
+                            nav.pushViewController(self.destinationViewController, animated: false)
+                        }else {
+//                        self.sourceViewController.showViewController(self.destinationViewController, sender: initialVC)
+//                        self.sourceViewController.showDetailViewController(self.destinationViewController, sender: initialVC)
                         self.sourceViewController.presentViewController(self.destinationViewController as UIViewController,
                             animated: false,
                             completion: nil)
+                        }
                 })
 
         }

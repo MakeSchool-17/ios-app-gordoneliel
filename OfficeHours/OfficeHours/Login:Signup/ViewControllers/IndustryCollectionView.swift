@@ -56,7 +56,7 @@ class IndustryCollectionView: UICollectionViewController {
 
 extension IndustryCollectionView: UICollectionViewDelegateFlowLayout {
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        let width = Int((collectionView.frame.size.width) - (insets.left * 2))
+        let width = Int((collectionView.frame.size.width) / 2 - (insets.left * 2))
         let height = 55
         let size = CGSize(width: width, height: height)
         
@@ -76,6 +76,7 @@ extension IndustryCollectionView {
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
         if let user = User.currentUser() {
+            user.fetchProfileInfo()
             let industry = industries![indexPath.row]
             user.industry = industry
             user.saveInBackground()

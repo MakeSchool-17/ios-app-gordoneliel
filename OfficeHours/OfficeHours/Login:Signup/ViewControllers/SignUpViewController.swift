@@ -14,10 +14,10 @@ import Bond
 class SignUpViewController: UIViewController {
 
     // Outlets
+    @IBOutlet weak var emailTextField: DesignableTextField!
     @IBOutlet weak var profileImageButton: DesignableButton!
-    @IBOutlet weak var userNameTextField : UITextField!
-    @IBOutlet weak var passwordTextField : UITextField!
-    @IBOutlet weak var verifyPasswordTextField: DesignableTextField!
+    @IBOutlet weak var userNameTextField : DesignableTextField!
+    @IBOutlet weak var passwordTextField : DesignableTextField!
     @IBOutlet weak var inputContainerCenterConstraint : NSLayoutConstraint!
     @IBOutlet weak var loginButton: DesignableButton!
     
@@ -30,12 +30,6 @@ class SignUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Disable the login button till there is input for username and password
-        //        loginButton(false)
-        
-        
-        //        userNameTextField.addTarget(self, action: "textFieldDidChangeAnimation", forControlEvents: UIControlEvents.EditingChanged)
-        //        passwordTextField.addTarget(self, action: "textFieldDidChangeAnimation", forControlEvents: UIControlEvents.EditingChanged)
     }
     
     /**
@@ -160,18 +154,6 @@ extension SignUpViewController: UITextFieldDelegate {
                 self.titleTopConstraint.active = true
                 self.view.layoutIfNeeded()
             }
-        }
-    }
-    
-    /**
-    Enables or disables the login button, based on text entry
-    */
-    func textFieldDidChangeAnimation() {
-        if userNameTextField.text!.isEmpty || passwordTextField.text!.isEmpty {
-            self.loginButton(false)
-        }
-        else {
-            self.loginButton(true)
         }
     }
 
